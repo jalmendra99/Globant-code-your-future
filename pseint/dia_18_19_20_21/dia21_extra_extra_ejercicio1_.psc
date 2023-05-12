@@ -22,7 +22,7 @@ Algoritmo clase21_extras_extra_ejercicio1
 	// Se informa la premisa al usuario.
 	escribir "Se solicitará ingresar unna frase, y se mostrará cuantas palabras contiene."
 	
-	// Se solicita la frase al usuario...	
+	// Se solicita la frase al usuario...
 	// Y se fuerza a que tenga al menos un caracter.
 	Hacer
 		escribir "Ingrese una frase (no vacía)."
