@@ -29,7 +29,7 @@ Algoritmo clase22_extras_ejercicio5
 	// Se solicita el número n al usuario.
 	// Se fuerza a que esté entre 1 y 10
 	Hacer
-		escribir "Ingrese un número entero entre 1 y 10 para n:"
+		escribir "Ingrese un número entero entre 1 y 10 para n:" sin saltar
 		leer n
 	Mientras Que n < 1 o n > 10
 	
@@ -43,18 +43,29 @@ Algoritmo clase22_extras_ejercicio5
 				// Se solicita al usuario ingresar los valores para las dos primeras columnas de la fila.
 				// Se fuerza a que estén entre 1 y 100
 				Hacer
-					escribir "Ingrese un número entero entre 1 y 100 para matriz[", fila, ",", columna, "]"
+					escribir "Ingrese un número entero entre 1 y 100 para matriz[", fila, ",", columna, "]" sin saltar
 					leer num
-					matriz[fila, columna] = num
+					
+					// Se valida que el número ingresado esté en el rango solicitado
+					si num < 1 o num > 100 Entonces
+						// Si no está en el rango se muestra un mensaje.
+						escribir "Solo se aceptan números entre 1 y 100."
+					SiNo
+						// Si está en el rango se guarda en la matriz.
+						matriz[fila, columna] = num	
+					FinSi
+					
 				Mientras Que num < 1 o num > 100
 				
 			FinSi
 		FinPara
 	FinPara
 	
+	// Se imprime la matriz por pantalla de la forma solicitada en el planteo.
 	imprimeMatriznx3(matriz, n)
 	
 finAlgoritmo
+
 
 
 // Subprograma imprimeMatriznx3 (recibe el nombre de la matriz y el número n).
