@@ -67,12 +67,12 @@ Algoritmo clase18_practicos_ejercicio6
 	Dimension vector[20]
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar una frase de máximo 20 caracteres y luego "
-	escribir sin saltar "se solicitará ingresar un caracter y una posición para insertar ese "
-	escribir            "caracter en el vector."
-	escribir sin saltar "El caracter se insertará _empujando_ al resto de la frase hacia la izquierda "
-	escribir sin saltar "o hacia la derecha dependiendo de hacia que lado haya más cerca un espacio "
-	escribir            "respecto de la posición elejida por el usuario."
+	escribir "Se solicitará ingresar una frase de máximo 20 caracteres y luego " sin saltar
+	escribir "se solicitará ingresar un caracter y una posición para insertar ese " sin saltar
+	escribir "caracter en el vector."
+	escribir "El caracter se insertará _empujando_ al resto de la frase hacia la izquierda " sin saltar
+	escribir "o hacia la derecha dependiendo de hacia que lado haya más cerca un espacio " sin saltar
+	escribir "respecto de la posición elejida por el usuario."
 	
 	// Se solicita ingresar la frase al usuario...	
 	escribir "Ingrese una frase de máximo 20 caracteres (más de 20 se ignorarán): "
@@ -116,7 +116,6 @@ Algoritmo clase18_practicos_ejercicio6
 		// el carácter en cuestión en el lugar deseado. 
 		// El procedimiento de reordenamiento debe ubicar el espacio más cercano. [...]
 		
-		///// DEBUG INFO.
 		escribir "La posición ", posicionElegida, " está ocupada con el caracter ", vector[posicionElegida]
 		
 		// SE BUSCA desde posicionElegida el siguiente ESPACIO HACIA LA IZQUIERDA...
@@ -164,9 +163,9 @@ Algoritmo clase18_practicos_ejercicio6
 		Fin Mientras
 		
 		
-		/////////// DEBUG INFO.
-////////		escribir "izquierda: ", izquierda
-////////		escribir "derecha: ", derecha
+////////////		/// DEBUG INFO.
+////////////		escribir "izquierda: ", izquierda
+////////////		escribir "derecha: ", derecha
 		
 		// se compara la distancia por izquierda y por derecha para saber 
 		// para que lado se desplazará la cadena, luego de insertar el caracterElegido por el usuario.
@@ -205,8 +204,8 @@ FinAlgoritmo
 
 // Subprograma muestraVector
 // Muestra un "vector" de 20 caracteres.
-// NOTA: Reformado para que si algun(os) valor(es) de vector está(n) vacío(s),
-// se muestre un espacio en vez de no imprimirse nada.
+// NOTA: Si algun(os) valor(es) de "vector" está(n) vacío(s),
+// se muestra un espacio en esa(s) posición(es).
 SubProceso muestraVector(vector por referencia)
 	
 	definir posicion Como Entero

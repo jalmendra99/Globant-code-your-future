@@ -17,28 +17,29 @@ Algoritmo clase21_extras_extras_ejercicio2
 	definir posicion como entero
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar al usuario su nombre y apellido y se mostrará "
-	escribir            "de la forma correcta (Primera letra en mayúsculas y el resto en minúsculas)."
+	escribir "Se solicitará ingresar al usuario su nombre y apellido y se mostrará " sin saltar
+	escribir "de la forma correcta (Primera letra en mayúsculas y el resto en minúsculas)."
 	
 	// Se solicita el nombre y apellido al usuario
 	// Y se fuerza a que al menos tenga un caracter.
 	hacer
-	escribir "Ingrese un número n para crear el vector (de 1 a 10):"
+	escribir "Ingrese su nombre y apellido: " sin saltar
 	leer nombre
 	mientras que Longitud(nombre) < 1
 	
 	// Se imprime el primer caracter en mayúsculas...
 	escribir sin saltar Mayusculas(subcadena(nombre, 0, 0))
 	
-	// Los restantes se imprimen en minúsculas....
+	// Los restantes se imprimen en minúsculas, excepto....
 	para posicion = 1 hasta longitud(nombre) - 1 con paso 1 Hacer
+		
 		// si el caracter de la posición anterior a la actual
 		// fué un espacio, entonces este caracter se imprimirá en mayúsculas
 		// (esto es para los segundos nombres, apellidos, etc.)
 		si subcadena(nombre, posicion - 1, posicion - 1) == " " entonces
 			escribir sin saltar mayusculas(subcadena(nombre, posicion, posicion))
 		SiNo
-			// El resto de los caracteres, se escribe en minúsculas
+			// El resto de los caracteres, se escribe en minúsculas.
 			escribir sin saltar Minusculas(subcadena(nombre, posicion, posicion))
 		finsi
 	FinPara

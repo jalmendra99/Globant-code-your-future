@@ -13,14 +13,14 @@ Algoritmo clase18_extras_ejercicio7
 	definir vector, posicion, n, producto como entero
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número n para crear un vector de tamaño n, y "
-	escribir sin saltar "luego se llenará al mismo con valores al azar. Luego se calculará la "
-	escribir            "multiplicación entre todos sus valores."
+	escribir "Se solicitará ingresar un número n para crear un vector de tamaño n, y " sin saltar
+	escribir "luego se llenará al mismo con valores al azar. Luego se calculará la " sin saltar
+	escribir "multiplicación entre todos sus valores."
 	
 	// Se solicita el número n al usuario...	
 	// Se fuerza a que esté entre 1 y 10.
 	Hacer
-		escribir "Ingrese un número n para crear el vector (de 1 a 10):"
+		escribir "Ingrese un número n para crear el vector (de 1 a 10): " sin saltar
 		leer n
 	Mientras Que n < 1 o n > 10
 	
@@ -38,9 +38,8 @@ Algoritmo clase18_extras_ejercicio7
 	// Se muestra la información solicitada por pantalla.
 	escribir "Multiplicar todos los valores del vector, da como resultado: ", producto, "."
 	
-	//////// DEBUG INFO.
-	// Se imprimen los valores del vector para poder verificar visualmente.
-	escribir Sin Saltar "El vector es: "
+	// Se imprimen los valores del vector para poder verificar visualmente por pantalla.
+	escribir "El vector es: "
 	imprimeVector(vector, n)
 	
 finAlgoritmo
@@ -62,7 +61,7 @@ funcion producto = productoDeVector(vector por referencia, n)
 FinFuncion
 
 
-// Subprograma imprimeVector
+// Subprograma imprimeVector(n)
 // Imprime los valores de un "vector" de tamaño "n".
 SubProceso imprimeVector (vector por referencia, n)
 	

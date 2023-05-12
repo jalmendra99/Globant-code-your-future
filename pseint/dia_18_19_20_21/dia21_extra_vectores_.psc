@@ -60,8 +60,9 @@ funcion password = generaPassword (n)
 	
 	definir caracteress como cadena
 	Dimension caracteress[4]
+	
 	// Inicialización de variables
-	// (estas tendrían que ser constantes)
+	// (estas tendrían que ser constantes porque su valor no va a variar en todo el programa).
 	caracteress[0]="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	caracteress[1]="abcdefghijklmnopqrstuvwxyz"
 	caracteress[2]="0123456789"
@@ -73,7 +74,7 @@ funcion password = generaPassword (n)
 	para posicion = 0 hasta n - 1 con paso 1 Hacer
 		
 		// Se elige al azar el número de cadena (0=mayúsculas, 1=minúsculas, 2=números o 3=caracteres especiales).
-		// Ej: nroAzarCadena=2 entonces la cadena elegida al azar es la de números.
+		// Ej: nroAzarCadena=1 entonces la cadena elegida al azar es la de letras minúsculas.
 		nroAzarCadena = aleatorio(0,3)
 		
 		// Se elige un número al azar entre 0 y la longitúd de la cadena previamente seleccionada al azar.
@@ -83,16 +84,16 @@ funcion password = generaPassword (n)
 		nroAzarCaracter = aleatorio(0, Longitud(caracteress[nroAzarCadena]) - 1 )
 		
 		// Se elige un caracter al azar, que forme parte de la cadena previamente 
-		// seleccionada al azar (nroAzarCadena=2) y de la posición seleccionada 
+		// seleccionada al azar (nroAzarCadena=1) y de la posición seleccionada 
 		// al azar en esa cadena (nroAzarCaracter=5)
-		// para el ejemplo. la cadena 2 es "0123456789", y en su posición 5
-		// está el caracter "5", así que
-		// en este ejemplo, caracterAzar = "5"
+		// para el ejemplo. la cadena 1 es "abcdefghijklmnopqrstuvwxyz", y en su posición 5
+		// está el caracter "f", así que
+		// en este ejemplo, caracterAzar = "f"
 		caracterAzar = subcadena(caracteress[nroAzarCadena], nroAzarCaracter, nroAzarCaracter)
 		
 		// Agregar un caracter aleatorio a la password...
-		// Ej: en el ejemplo, caracterAzar = "5"
-		// así que a lo que contenga la password, se le agrega el caracter "5".
+		// Ej: en el ejemplo, caracterAzar = "f"
+		// así que a lo que contenía hasta ahora la password, se le agrega el caracter "f".
 		password = concatenar(password, caracterAzar)
 	FinPara
 	

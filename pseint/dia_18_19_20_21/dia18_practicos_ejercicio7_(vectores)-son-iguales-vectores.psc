@@ -17,15 +17,21 @@ Algoritmo clase18_practicos_ejercicio7
 	definir sonIguales Como Logico
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número n para crear dos vectores de tamaño n. "
-	escribir sin saltar "Luego se rellenarn ambos vectores con números aleatorios y después se "
-	escribir            "compararán para ver si todos sus valores son iguales o no."
+	escribir "Se solicitará ingresar un número n para crear dos vectores de tamaño n. " sin saltar
+	escribir "Luego se rellenarn ambos vectores con números aleatorios y después se " sin saltar
+	escribir "compararán para ver si todos sus valores son iguales o no."
 	
 	// Se solicita el número n al usuario...	
 	// Se fuerza a que esté entre 1 y 10.
 	Hacer
-		escribir "Ingrese un número n para crear los vectores (de 1 a 10):"
+		escribir "Ingrese un número n para crear los vectores (de 1 a 10): " sin saltar
 		leer n
+		
+		// Si el número ingresado no está en el rango aceptado, se muestra un mensaje.
+		si n < 1 o n > 10 Entonces
+			escribir "Por favor ingrese un número entre 1 y 10."
+		FinSi
+		
 	Mientras Que n < 1 o n > 10
 	
 	// Se dimensionan los vectores al tamaño "n" ingresado por el usuario.
@@ -45,14 +51,14 @@ Algoritmo clase18_practicos_ejercicio7
 		escribir "Los vectores son distintos."
 	FinSi
 	
-	////////// DEBUG INFO.
-	// Se muestran ambos vectores para que el usuario pueda confirmar visualmente el resultado.
+	// Se muestran ambos vectores para que el usuario pueda confirmar visualmente el resultado por pantalla.
 	escribir "El vector 1 es:"
-	muestraVector(vector1, n)
+	imprimeVector(vector1, n)
 	escribir "El vector 2 es:"
-	muestraVector(vector2, n)
+	imprimeVector(vector2, n)
 	
 FinAlgoritmo
+
 
 
 // Subprograma llenarVector
@@ -65,12 +71,10 @@ SubProceso llenarVector(vector por referencia, n)
 	para posicion = 0 hasta n - 1 con paso 1 Hacer
 		// Se le asigna a la misma un número aleatorio entre 0 y 9 (para simplificar las comprobaciones).
 		vector[posicion] = Aleatorio(0, 9) 
-	FinPara
-	
-	// Se agrega un salto de línea para que la salida quede prolija.
-	escribir ""
+	FinPara	
 	
 FinSubProceso
+
 
 
 // Función compararVectores
@@ -99,17 +103,24 @@ funcion iguales = compararVectores(vector1 Por Referencia, vector2 Por Referenci
 FinFuncion
 
 
-// Subprograma muestraVector
-// Muestra un "vector" de n caracteres.
-SubProceso muestraVector(vector por referencia, n)
+
+// Subprograma imprimeVector(n)
+// Imprime los valores de un "vector" de tamaño "n".
+SubProceso imprimeVector (vector por referencia, n)
 	
-	definir posicion Como Entero
+	definir posicion como entero
 	
+	// Para cada posición del vector, se imprime el valor del vector en esa posición.
 	para posicion = 0 hasta n - 1 con paso 1 Hacer
-		escribir sin saltar vector[posicion] " "
+		// Imprime cada valor del vector.
+		escribir Sin Saltar vector[posicion]
+		// Agrega un separador entre cada valor, a menos que sea la última posición
+		si posicion <> n - 1 entonces
+			escribir sin saltar " "
+		finsi	
+		
 	FinPara
-	
-	// Se agrega un salto de línea para que la salida quede prolija.
+	// Imprime un salto de línea para pasar a la siguiente línea en pantalla.
 	escribir ""
 	
 FinSubProceso

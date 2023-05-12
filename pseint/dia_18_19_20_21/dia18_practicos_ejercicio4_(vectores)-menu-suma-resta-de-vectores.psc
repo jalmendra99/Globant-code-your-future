@@ -41,13 +41,13 @@ Algoritmo clase18_practicos_ejercicio4
 	vectorCInicializado = Falso
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número n para crear tres vectores de tamaño n, "
-	escribir            "y luego se mostrará un menú con distintas opciones."
+	escribir "Se solicitará ingresar un número n para crear tres vectores de tamaño n, " sin saltar
+	escribir "y luego se mostrará un menú con distintas opciones."
 	
 	// Se solicita el número n al usuario...	
 	// Se fuerza a que esté entre 1 y 10.
 	Hacer
-		escribir "Ingrese un número n para crear los vectores (de 1 a 10):"
+		escribir "Ingrese un número n para crear los vectores (de 1 a 10): " sin saltar
 		leer n
 	Mientras Que n < 1 o n > 10
 	
@@ -59,6 +59,7 @@ Algoritmo clase18_practicos_ejercicio4
 	// Se muestra el menú de opciones solicitado.
 	Hacer
 		
+		escribir ""
 		escribir "------------------------------------------------------"
 		escribir "A. Llenar Vector A de manera aleatoria."
 		escribir "B. Llenar Vector B de manera aleatoria."
@@ -71,9 +72,17 @@ Algoritmo clase18_practicos_ejercicio4
 		// Se fuerza a que la elección del usuario esté entre las letras A y F.
 		// Funciona con mayúsculas y minusculas.
 		Hacer			
-			escribir Sin Saltar "Seleccione una opción: "
+			escribir "Seleccione una opción: " sin saltar
 			leer eleccion
-		Mientras Que Mayusculas(eleccion) < "A" o Mayusculas(eleccion) > "F"
+			
+			eleccion = Mayusculas(eleccion)
+			
+			// Si el caracter ingresado no está dentro del rango aceptado, se muestra un mensaje.
+			si eleccion < "A" o eleccion > "F" Entonces
+				escribir "Por favor ingrese una letra entre A y F."
+			FinSi
+			
+		Mientras Que eleccion < "A" o eleccion > "F"
 		
 		segun mayusculas(eleccion)
 			"A" : // llenar vector a
@@ -190,7 +199,7 @@ SubProceso restaVectores(vector1 por referencia, vector2 por referencia, vector3
 FinSubProceso
 
 
-// Subprograma imprimeVector
+// Subprograma imprimeVector(n)
 // Imprime los valores de un "vector" de tamaño "n".
 SubProceso imprimeVector (vector por referencia, n)
 	
@@ -199,11 +208,11 @@ SubProceso imprimeVector (vector por referencia, n)
 	// Para cada posición del vector, se imprime el valor del vector en esa posición.
 	para posicion = 0 hasta n - 1 con paso 1 Hacer
 		// Imprime cada valor del vector.
-		escribir Sin Saltar vector[posicion]		
+		escribir Sin Saltar vector[posicion]
 		// Agrega un separador entre cada valor, a menos que sea la última posición
 		si posicion <> n - 1 entonces
 			escribir sin saltar " "
-		finsi
+		finsi	
 		
 	FinPara
 	// Imprime un salto de línea para pasar a la siguiente línea en pantalla.

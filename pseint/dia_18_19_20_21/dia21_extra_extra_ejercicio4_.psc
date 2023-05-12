@@ -20,18 +20,18 @@ Algoritmo clase21_extras_extras_ejercicio4
 	definir presos, caramelos, podrido Como Entero	
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitarán ingresar al usuario dos cantidades (presos y caramelos) "
-	escribir sin saltar "se ordenarán los presos en una ronda y se les repartirá un caramelo "
-	escribir            "a cada uno. El último caramelo repartido esta ~podrido~. "
-	escribir            "Se calculará a que número de preso le tocará el ~caramelo podrido~."
+	escribir "Se solicitarán ingresar al usuario dos cantidades (presos y caramelos) " sin saltar
+	escribir "se ordenarán los presos en una ronda y se les repartirá un caramelo " sin saltar
+	escribir "a cada uno. El último caramelo repartido esta ~podrido~. "
+	escribir "Se calculará a que número de preso le tocará el ~caramelo podrido~."
 	
 	// Se solicita la cantidad de presos y caramelos
 	// Se fuerza a que los presos sean entre 1 y 10 para simplificar comprobaciones.
 	// Se fuerza a que los caramelos sean entre 1 y 100 para simplificar comprobaciones.
 	hacer
-		escribir "Ingrese la cantidad de presos: "
+		escribir "Ingrese la cantidad de presos: " sin saltar
 		leer presos
-		escribir "Ingrese la cantidad de caramelos: "
+		escribir "Ingrese la cantidad de caramelos: " sin saltar
 		leer caramelos
 	mientras que presos < 1 o presos > 10 o caramelos < 1 o caramelos > 100
 	
@@ -39,8 +39,6 @@ Algoritmo clase21_extras_extras_ejercicio4
 	podrido = prisioneroDulce(presos, caramelos)
 	
 	// Se muestra la información solicitada por pantalla.
-//////	escribir "Si el preso que inicia la ronda es el preso # 0, entonces.."
-//////	escribir "El caramelo podrido le tocará al preso # ", podrido - 1, "."
 	escribir "El caramelo podrido le tocará al preso # ", podrido, "."
 	escribir ""
 	escribir "...pero si el primer preso cuenta como # 0 en vez de # 1"

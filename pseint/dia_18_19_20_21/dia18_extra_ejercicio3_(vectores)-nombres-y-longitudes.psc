@@ -17,15 +17,15 @@ Algoritmo clase18_extras_ejercicio3
 	definir vectorNombres, nombre como cadena	
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número n para crear dos vectores de tamaño n, y "
-	escribir sin saltar "luego se solicitarán ingresar n nombres para llenar el primer vector. Luego "
-	escribir sin saltar "se calculará el tamaño de cada nombre y se guardará en el segundo vector. "
-	escribir            "Finalmente se mostrarán los nombres y sus longitudes."
+	escribir "Se solicitará ingresar un número n para crear dos vectores de tamaño n, y " sin saltar
+	escribir "luego se solicitarán ingresar n nombres para llenar el primer vector. Luego " sin saltar
+	escribir "se calculará el tamaño de cada nombre y se guardará en el segundo vector. "
+	escribir "Finalmente se mostrarán los nombres y sus longitudes."
 	
 	// Se solicita el número n al usuario...	
 	// Se fuerza a que esté entre 1 y 10.
 	Hacer
-		escribir "Ingrese un número n para crear los vectores (de 1 a 10):"
+		escribir "Ingrese un número n para crear los vectores (de 1 a 10): " sin saltar
 		leer n
 	Mientras Que n < 1 o n > 10
 	
@@ -89,7 +89,8 @@ SubProceso imprimeVectores (vectorNombres por referencia, vectorLongitudes por r
 	// O sea: Para la posición 0, se imprimen vectorNombres[0] y vectorLongitudes[0], etc...
 	para posicion = 0 hasta n - 1 con paso 1 Hacer
 		// Imprime cada valor de los vectores.
-		escribir "El vector ", posicion + 1, " es: ", vectorNombres[posicion], " y ocupa ", vectorLongitudes[posicion], " caracteres."				
+		escribir "El vector ", posicion + 1, " es: ", vectorNombres[posicion], " y ocupa " sin saltar
+		escribir vectorLongitudes[posicion], " caracteres."				
 	FinPara
 	
 FinSubProceso

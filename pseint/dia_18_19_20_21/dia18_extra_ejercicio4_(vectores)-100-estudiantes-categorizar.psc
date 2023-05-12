@@ -29,10 +29,10 @@ Algoritmo clase18_extras_ejercicio4
 	excelentes = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se creará un vector de tamaño 100 y se llenará de numeros generados "
-	escribir sin saltar "al azar entre 0 y 20 que representarán las notas de 100 alumnos. Luego "
-	escribir sin saltar "se mostrará, de acuerdo a esas notas, cuantos alumnos son deficientes (0-5), "
-	escribir            "regulares (6-10), buenos (11-15) o excelentes (16-20)."
+	escribir "Se creará un vector de tamaño 100 y se llenará de numeros generados " sin saltar
+	escribir "al azar entre 0 y 20 que representarán las notas de 100 alumnos. Luego " sin saltar
+	escribir "se mostrará, de acuerdo a esas notas, cuantos alumnos son deficientes (0-5), " sin saltar
+	escribir "regulares (6-10), buenos (11-15) o excelentes (16-20)."
 	
 	// Se llena el vector con 100 notas aleatorias entre 0 y 20.
 	para posicion = 0 hasta 100 - 1 con paso 1 Hacer
@@ -54,14 +54,15 @@ Algoritmo clase18_extras_ejercicio4
 	escribir "- Buenos:      ", buenos,      "."
 	escribir "- Excelentes:  ", excelentes,  "."
 	
-	////// DEBUG INFO.
-	// Se muestra la información del vector para poder "intentar" verificar visualmente (es de tamaño 100).
+	// Se muestra la información del vector para poder verificar visualmente por pantalla.
+	escribir "El vector de notas es:"
 	imprimeVector(vector, 100)
 	
 finAlgoritmo
 
 
-// Subprograma imprimeVector
+
+// Subprograma imprimeVector(n)
 // Imprime los valores de un "vector" de tamaño "n".
 SubProceso imprimeVector (vector por referencia, n)
 	
@@ -81,3 +82,4 @@ SubProceso imprimeVector (vector por referencia, n)
 	escribir ""
 	
 FinSubProceso
+

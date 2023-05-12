@@ -21,8 +21,8 @@ Algoritmo clase18_practicos_ejercicio1
 	multiplicacion = 1
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar 10 números enteros para cargar un vector "
-	escribir            "y luego se mostrarán por pantalla la suma, resta y multiplicación de todos sus valores."
+	escribir "Se solicitará ingresar 10 números enteros para cargar un vector " sin saltar
+	escribir "y luego se mostrarán por pantalla la suma, resta y multiplicación de todos sus valores."
 	
 	// Se solicita la información al usuario...	
 	para elemento = 0 hasta 9 con paso 1
@@ -30,14 +30,18 @@ Algoritmo clase18_practicos_ejercicio1
 		// Para simplificar la comprobación de las cuentas 
 		// se fuerza a que los valores ingresados estén entre 1 y 10.
 		Hacer
-			escribir "Ingrese un número entero para vector[", elemento, "]: "
+			escribir "Ingrese un número entero para vector[", elemento, "]: " sin saltar
 			leer vector[elemento]
 			
+			// Si el valor ingresado no está dentro del rango aceptado, se muestra un mensaje.
+			si vector[elemento] < 1 o vector[elemento] > 10 Entonces
+				escribir "Por favor solo ingresar valores entre 1 y 10."
+			FinSi
 		Mientras Que vector[elemento] < 1 o vector[elemento] > 10
 		
 		// Se calculan las operaciones solicitadas con todos los valores del vector.
 		suma = suma + vector[elemento]
-		resta = resta - vector[elemento]
+		resta = resta - vector[elemento] //// El primer elemento se toma como positivo o negativo?
 		multiplicacion = multiplicacion * vector[elemento]
 		
 	FinPara

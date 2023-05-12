@@ -17,7 +17,7 @@ Algoritmo clase18_practicos_ejercicio1
 	
 	// Se solicita la información al usuario...	
 	para elemento = 0 hasta 4 con paso 1 Hacer
-		escribir "Ingrese un número entero para vector[", elemento, "]: "
+		escribir "Ingrese un número entero para vector[", elemento, "]: " sin saltar
 		leer vector[elemento]			
 	FinPara
 	

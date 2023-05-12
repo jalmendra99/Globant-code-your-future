@@ -35,10 +35,10 @@ Algoritmo clase21_extras_extras_ejercicio3
 	mujeresSueldoTot = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar los dtos de 6 personas para una encuesta "
-	escribir sin saltar "y luego, para cada una se solicitará: sexo (m/f), si trabaja o no "
-	escribir sin saltar "y si trabaja, su sueldo. Luego se calculará y mostrará el porcentaje "
-	escribir sin saltar "de hombres/mujeres, el porcentaje de hombres que trabajan / mujeres "
+	escribir "Se solicitará ingresar los datos de 6 personas para una encuesta " sin saltar
+	escribir "y luego, para cada una se solicitará: sexo (m/f), si trabaja o no " sin saltar
+	escribir "y si trabaja, su sueldo. Luego se calculará y mostrará el porcentaje " sin saltar
+	escribir "de hombres/mujeres, el porcentaje de hombres que trabajan / mujeres " sin saltar
 	escribir "que trabajan y el sueldo promedio de los hombres que trabajan y las mujeres que trabajan."
 	
 	// Se solicita ingresar los datos al usuario...

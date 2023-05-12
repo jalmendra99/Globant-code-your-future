@@ -14,14 +14,14 @@ Algoritmo clase18_extras_ejercicio2
 	definir promedio como real
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número n para crear un vector de tamaño n, y "
-	escribir sin saltar "luego se solicitarán ingresar todos los valores para llenar ese vector. Finalmente "
-	escribir            "se calculará el promedio de todos los valores contenidos en el vector."
+	escribir "Se solicitará ingresar un número n para crear un vector de tamaño n, y " sin saltar
+	escribir "luego se solicitarán ingresar todos los valores para llenar ese vector. Finalmente " sin saltar
+	escribir "se calculará el promedio de todos los valores contenidos en el vector."
 	
 	// Se solicita el número n al usuario...	
 	// Se fuerza a que esté entre 1 y 10.
 	Hacer
-		escribir "Ingrese un número n para crear el vector (de 1 a 10):"
+		escribir "Ingrese un número n para crear el vector (de 1 a 10):" sin saltar
 		leer n
 	Mientras Que n < 1 o n > 10
 	
@@ -32,8 +32,14 @@ Algoritmo clase18_extras_ejercicio2
 	para elemento = 0 hasta n - 1 con paso 1 Hacer
 		// Se fuerza a que los valores estén entre 1 y 10 para simplificar las comprobaciones.
 		hacer
-			escribir "Ingrese un número entre 1 y 10 para la posición ", elemento, " del vector."
+			escribir "Ingrese un número entre 1 y 10 para la posición ", elemento, " del vector." sin saltar
 			leer vector[elemento]
+			
+			// Si el número ingresado no está dentro del rango aceptado, se muestra un mensaje.
+			si vector[elemento] < 1 o vector[elemento] > 10 Entonces
+				escribir "Solo se aceptan valores entre 1 y 10."			
+			FinSi
+			
 		mientras que vector[elemento] < 1 o vector[elemento] > 10
 	FinPara	
 	
@@ -43,7 +49,7 @@ Algoritmo clase18_extras_ejercicio2
 	escribir "El promedio de los elementos del vector es ", promedio, "."
 	
 	// Se imprime el vector para poder verificar visualmente.
-	escribir sin saltar "El vector es: "
+	escribir "El vector es: "
 	imprimeVector(vector, n)
 	
 finAlgoritmo
@@ -66,7 +72,7 @@ funcion promedio = promedioVector(vector por referencia, n)
 FinFuncion
 
 
-// Subprograma imprimeVector
+// Subprograma imprimeVector(n)
 // Imprime los valores de un "vector" de tamaño "n".
 SubProceso imprimeVector (vector por referencia, n)
 	
