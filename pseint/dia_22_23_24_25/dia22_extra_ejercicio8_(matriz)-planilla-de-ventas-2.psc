@@ -82,6 +82,7 @@ Algoritmo clase22_extras_ejercicio8
 	// Total vtas x zona    ___a)____|___a)____|___a)____|___a)____|___a)____|___c)____  (fila4)
 
 	
+	// ----------------------------------
 	// a) el total de ventas de una zona introducida por teclado 
 	
 	// Para cada columna de zona...
@@ -99,6 +100,7 @@ Algoritmo clase22_extras_ejercicio8
 	FinPara
 	
 	
+	// ----------------------------------
 	// b) el total de ventas de un vendedor introducido por teclado en cada una de las zonas 
 	
 	// Para cada representante...
@@ -116,6 +118,7 @@ Algoritmo clase22_extras_ejercicio8
 	FinPara
 	
 	
+	// ----------------------------------
 	// c) el total de ventas de todos los representantes.
 	// (La sumatoria de la columna 5, que se guardará en matriz[4,5]
 	// (también se podría hacer la sumatoria de la fila 4. El resultado tiene que ser el mismo.)
@@ -133,15 +136,15 @@ Algoritmo clase22_extras_ejercicio8
 	
 	// Se muestra la información solicitada. La matriz completa.
 	escribir "La matriz es:"
-	imprimeMatriz(matriz)
+	imprimePlanilla(matriz)
 	escribir ""
 	
 finAlgoritmo
 
 
-// Subprograma imprimeMatriz
+// Subprograma imprimePlanilla
 // Imprime los valores de la "matriz" (de 5x6).
-SubProceso imprimeMatriz (matriz por referencia)
+SubProceso imprimePlanilla (matriz por referencia)
 	
 	definir fila, columna como entero
 	
@@ -165,8 +168,8 @@ SubProceso imprimeMatriz (matriz por referencia)
 			// Agrega un separador entre cada columna, a menos que sea la última columna.
 			si columna < 6 entonces
 				
-				////// HORRIBLE. EXPLICAR.
-				segun calculaLargo(matriz[fila, columna]) hacer
+				////// HORRIBLE. EXPLICAR. O REUSAR IMPRIMEMATRIZENTEROS() DE LOS EJERCICIOS PRÁCTICOS 4 O 6
+				segun cantidadDigitos(matriz[fila, columna]) hacer
 					1: escribir sin saltar "|    "
 					2: escribir sin saltar "|   "
 					3: escribir sin saltar "|  "
@@ -190,19 +193,21 @@ SubProceso imprimeMatriz (matriz por referencia)
 FinSubProceso
 
 
-// Funcin calculaLargo
-// Retorna la cantidad de caracteres que ocupa "num".
-// Se usa para que al imprimir las columnas, no queden muy desprolijas o corridas.
-funcion largo = calculaLargo(num)
-	definir largo como entero
-	definir cantidad Como Entero
+
+// Función cantidadDigitos()   <--- Usada por la función imprimePlanilla()
+// retorna la cantidad de dígitos que ocupa un número entero.
+// ej: 100 retorna 3; 10 retorna 2, 1000 retorna 4, etc
+funcion digitos = cantidadDigitos(num)
+	definir digitos Como Entero
+	definir temporal Como Real
 	
-	cantidad = 1
-	largo = cantidad
+	temporal = num
+	digitos = 1
 	
-	mientras trunc(num / 10  ^ cantidad) <> 0 Hacer		
-		cantidad = cantidad + 1
-		largo = cantidad
-	FinMientras
+	// Se calcula la cantidad de dígitos usando trunc()
+	mientras trunc(temporal / 10) > 0 hacer
+		digitos = digitos + 1
+		temporal = temporal / 10
+	FinMientras	
 	
 FinFuncion

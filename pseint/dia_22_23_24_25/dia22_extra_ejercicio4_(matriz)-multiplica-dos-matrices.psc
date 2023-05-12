@@ -11,9 +11,9 @@ Algoritmo clase22_extras_ejercicio4
 	// Definición de variables.
 	definir fila, columna, matrices, nroMatriz como entero
 	
-	// matriz[0, 3, 3] <-- matriz 1
-	// matriz[1, 3, 3] <-- matriz 2
-	// matriz[2, 3, 3] <-- resultado de multiplicar matriz 1 y matriz 2.
+	// matriz[<0>, 3, 3] <-- matriz 1
+	// matriz[<1>, 3, 3] <-- matriz 2
+	// matriz[<2>, 3, 3] <-- resultado de multiplicar matriz 1 y matriz 2.
 	Dimension matrices[3,3,3]
 	
 	// Se informa la premisa al usuario.
@@ -46,7 +46,7 @@ Algoritmo clase22_extras_ejercicio4
 	
 	// Imprime las 3 matrices
 	para nroMatriz = 0 hasta 2 con paso 1 hacer
-		escribir "La matriz #", nroMatriz + 1, " es:"
+		escribir "La matriz # ", nroMatriz + 1, " es:"
 		imprimeMatriz3x3(matrices,nroMatriz)
 	finpara
 	

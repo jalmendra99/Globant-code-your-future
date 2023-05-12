@@ -28,9 +28,9 @@ Algoritmo clase22_extras_ejercicio6
 	dimension vector[3]
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se crearán una matríz de 3 x 3 y un vector de 3 elementos "
-	escribir Sin Saltar "y se llenarán de valores al azar. Luego se calculará el producto "
-	escribir            "de la matríz por el vector y se mostrará el resultado."
+	escribir "Se crearán una matríz de 3 x 3 y un vector de 3 elementos " sin saltar
+	escribir "y se llenarán de valores al azar. Luego se calculará el producto " sin saltar
+	escribir "de la matríz por el vector y se mostrará el resultado."
 	
 	// Se lena la matriz con números aleatorios entre 1 y 10
 	// para que las verificaciones sean fáciles.

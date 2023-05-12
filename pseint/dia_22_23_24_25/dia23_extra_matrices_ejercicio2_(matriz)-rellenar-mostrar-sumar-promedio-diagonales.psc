@@ -29,17 +29,23 @@ Algoritmo clase22_extras_matrices_ejercicio2
 	Hacer
 		
 		hacer
-		escribir "Menú de opciones."
-		escribir "-----------------"
-		escribir "1. Rellenar matriz."
-		escribir "2. Mostrar una fila de la matriz."
-		escribir "3. Sumar una columna de la matriz."
-		escribir "4. Sumar diagonal principal y diagonal inversa de matriz."
-		escribir "5. Calcular el promedio de todos los valores de la matriz."
-		escribir "6. [Fer] Mostrar matriz completa."
-		escribir "7. Salir."
-		escribir "Elija una opción: " Sin Saltar
-		leer eleccion
+			escribir ""
+			escribir "Menú de opciones."
+			escribir "-----------------"
+			escribir "1. Rellenar matriz."
+			escribir "2. Mostrar una fila de la matriz."
+			escribir "3. Sumar una columna de la matriz."
+			escribir "4. Sumar diagonal principal y diagonal inversa de matriz."
+			escribir "5. Calcular el promedio de todos los valores de la matriz."
+			escribir "6. [Fer] Mostrar matriz completa."
+			escribir "7. Salir."
+			escribir "Elija una opción: " Sin Saltar
+			leer eleccion
+			
+			si eleccion < 1 o eleccion > 7 Entonces
+				escribir "Opción inválida. Por favor ingrese un número entre 1 y 7."
+			FinSi
+			
 		mientras que eleccion < 1 o eleccion > 7
 		
 		// Si la matriz todavía no fué inicializada...
@@ -52,14 +58,14 @@ Algoritmo clase22_extras_matrices_ejercicio2
 				// Si la matriz no fué inicializada, no se puede realizar
 				// ninguna de las operaciones (mostrar, sumar, promedio, etc)
 				// porque la matriz está vacía.
-				escribir sin saltar "La matriz todavía no fué inicializada. Use la opción 1."
+				escribir "La matriz todavía no fué inicializada. Use la opción 1."
 			finsi
 			
 		SiNo // Si la matriz ya fué inicializada...
 			
 			segun eleccion					
-				1: // La opción 1 ya fué tomada en cuenta en el IF que está unas líneas arriba.
-					escribir "La matriz ya había sido inicializada."					
+				1: // La opción 1 ya fué tomada en cuenta en el "SI...FINSI" que está unas líneas arriba.
+					escribir "La matriz ya había sido inicializada anteriormente."					
 				2: muestraFila(matriz)					
 				3: sumaColumna(matriz)					
 				4: SumaDiagonalesPrincipales(matriz)
@@ -87,9 +93,7 @@ SubProceso rellenaMatriz (matriz por referencia)
 		FinPara
 	FinPara
 	
-	escribir "*******************************************"
 	escribir "La matriz se ha llenado con valores al azar"
-	escribir "*******************************************"
 	
 FinSubProceso
 
@@ -142,9 +146,7 @@ SubProceso sumaColumna (matriz por referencia)
 	FinPara
 	
 	// Escribe la información solicitada por pantalla.
-	escribir "************************************"
 	escribir "La sumatoria de la columna ", columna , " es ", sumatoria, "."
-	escribir "************************************"
 	
 FinSubProceso
 
@@ -171,10 +173,8 @@ SubProceso SumaDiagonalesPrincipales (matriz por referencia)
 	FinPara
 	
 	// Escribe la información solicitada por pantalla.
-	escribir "**************************************"
 	escribir "La sumatoria de las diagonales es ", sumatoria, "."
-	escribir "**************************************"
-
+	
 FinSubProceso
 
 
@@ -197,9 +197,7 @@ SubProceso promedio (matriz por referencia)
 	
 	media = sumatoria / 16
 	
-	escribir "*********************************************************"
 	escribir "El promedio de todos los valores de la matriz es de ", media, "."
-	escribir "*********************************************************"
 	
 FinSubProceso
 
@@ -226,7 +224,5 @@ SubProceso imprimeMatriz (matriz por referencia, n)
 		// Imprime un salto de línea para pasar a la siguiente línea en pantalla.
 		escribir ""
 	FinPara
-	
-	escribir ""
 	
 FinSubProceso

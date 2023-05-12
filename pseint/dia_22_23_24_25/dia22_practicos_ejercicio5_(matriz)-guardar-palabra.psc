@@ -1,10 +1,10 @@
 // Clase 22 - Prácticos - Ejercicio 5 - página 2
 // Fer V - jalmendra99@gmail.com
 //
-// Rellenar euna matriz, de 3 x 3, con una palabra de 9 de longitud, 
+// Rellenar una matriz, de tamaño 3 x 3, con una palabra de 9 caracteres de longitud, 
 // pedida por el usuario, encontrando la manera de que la frase se muestre 
 // de manera continua en la matriz.
-// Por ejemplo, si tenemos la palabra habilidad, nuestra matriz se debería ver así:
+// Por ejemplo, si se recibe la palabra habilidad, la matriz se debería ver así:
 // H A B
 // I L I
 // D A D
@@ -35,7 +35,7 @@ Algoritmo clase22_practicos_ejercicio5
 	
 	
 	// Se lena la matriz con la frase de la manera solicitada por el planteo.
-	// Por ejemplo, si tenemos la palabra habilidad, nuestra matriz se debería ver así:
+	// Por ejemplo, si se ingresa la palabra "HABILIDAD", la matriz se debería ver así:
 	// H A B
 	// I L I
 	// D A D
@@ -46,24 +46,13 @@ Algoritmo clase22_practicos_ejercicio5
 	FinPara
 	
 	// Se imprime la información solicitada por pantalla: se imprime la matriz usando la función solicitada.
-	imprimeMatriz3x3(matriz)	
-	
-//////	// Se imprime toda la matriz para verificar
-//////	para fila = 0 hasta 2 con paso 1 Hacer
-//////		para columna = 0 hasta 2 con paso 1 Hacer
-//////			escribir "matriz [", fila, ",", columna, "] = ", matriz[fila, columna]
-//////		FinPara	
-//////	FinPara
+	imprimeMatriz3x3(matriz)
 	
 FinAlgoritmo
 
 
 // Subprograma imprimeMatriz3x3
-// Imprime los valores de una "matriz" de 3x3 de la manera solicitada por el planteo.
-// Por ejemplo, si tenemos la palabra habilidad, nuestra matriz se debería ver así:
-// H A B
-// I L I
-// D A D
+// Imprime los valores de una "matriz" de caracteres de tamaño 3x3.
 SubProceso imprimeMatriz3x3 (matriz por referencia)
 	
 	definir fila, columna como entero

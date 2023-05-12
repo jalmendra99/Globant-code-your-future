@@ -54,9 +54,9 @@ Algoritmo clase22_extras_ejercicio7
 	diaSemana[4] = "Viernes"
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se calculará la estadística de venta de productos de una empresa a "
-	escribir Sin Saltar "lo largo de una semana basándose en los datos ingresados "
-	escribir            "que corresponderán a las ventas de cada producto a lo largo de la semana."
+	escribir "Se calculará la estadística de venta de productos de una empresa a " sin saltar
+	escribir "lo largo de una semana basándose en los datos ingresados en una matriz " sin saltar
+	escribir "que corresponderán a las ventas de cada producto a lo largo de la semana."
 	
 	
 	// El usuario carga las ventas en la matriz principal.
@@ -66,8 +66,8 @@ Algoritmo clase22_extras_ejercicio7
 		// Y para los 5 días de la semana... (0=Lunes, 1=Martes, ..., 4=Viernes)
 		para dia = 0 hasta 4 con paso 1 Hacer
 			
-			// El usuario ingresa la venta correspondiente al "producto" y al "día".
-			// Se fuerza a que el valor ingresado sea un número real no negativo.
+////////			// El usuario ingresa la venta correspondiente al "producto" y al "día".
+////////			// Se fuerza a que el valor ingresado sea un número real no negativo.
 ////////			Hacer
 ////////				escribir "Ingrese un el importe de la venta correspondiente al producto ", producto + 1, " y al día ", diaSemana[dia], "."
 ////////				leer matriz[producto, dia]		
@@ -103,9 +103,10 @@ Algoritmo clase22_extras_ejercicio7
 	
 	//////////// arreglar esto.
 	// Estos campos nunca van a tener valores, así que se les asigna cualquier número
-	matriz[5, 5] = -1
-	matriz[6, 5] = -1
+	matriz[5, 5] = 0
+	matriz[6, 5] = 0
 	
+	// ----------------------------------------------
 	// a) Total de ventas por cada día de la semana. 
 	
 	// Para cada columna de día...
@@ -123,6 +124,7 @@ Algoritmo clase22_extras_ejercicio7
 	FinPara
 	
 	
+	// ----------------------------------------------
 	// b) Total de ventas de cada producto a lo largo de la semana. 
 	
 	// Para cada producto...
@@ -140,6 +142,7 @@ Algoritmo clase22_extras_ejercicio7
 	FinPara
 	
 	
+	// ----------------------------------------------
 	// c) El producto más vendido en cada semana.
 	// Por lo tanto se buscará el Producto con mayor total de ventas de la semana.
 	// (El mayor valor de la columna 5)
@@ -162,6 +165,7 @@ Algoritmo clase22_extras_ejercicio7
 	escribir "El producto más vendido fué el producto #", prodMasVendido + 1, " con un total de ventas de ", maximo, "."
 	
 	
+	// ----------------------------------------------
 	// d) El nombre, el día de la semana y la cantidad del producto más vendido.
 	
 	// Para cada columna de día...
@@ -184,7 +188,7 @@ Algoritmo clase22_extras_ejercicio7
 	
 	// Se muestra la información solicitada. La matriz completa.
 	escribir "La matriz es:"
-	imprimeMatriz(matriz)
+	imprimePlanilla(matriz)
 	escribir ""
 	
 finAlgoritmo
@@ -192,7 +196,7 @@ finAlgoritmo
 
 // Subprograma imprimeMatriz
 // Imprime los valores de la "matriz" (de 7x6).
-SubProceso imprimeMatriz (matriz por referencia)
+SubProceso imprimePlanilla (matriz por referencia)
 	
 	definir fila, columna como entero
 	
@@ -218,7 +222,7 @@ SubProceso imprimeMatriz (matriz por referencia)
 			si columna <> 7 - 1 entonces
 				
 				////// HORRIBLE. EXPLICAR.
-				segun calculaLargo(matriz[fila, columna]) hacer
+				segun cantidadDigitos(matriz[fila, columna]) hacer
 					1: escribir sin saltar "|   "
 					2: escribir sin saltar "|  "
 					3: escribir sin saltar "| "
@@ -242,19 +246,39 @@ SubProceso imprimeMatriz (matriz por referencia)
 FinSubProceso
 
 
-// Función calculaLargo
-// Retorna la cantidad de caracteres que ocupa "num".
-// Se usa para que al imprimir las columnas, no queden muy desprolijas o corridas.
-funcion largo = calculaLargo(num)
-	definir largo como entero
-	definir cantidad Como Entero
+
+
+// Función cantidadDigitos()   <--- Usada por la función imprimePlanilla()
+// retorna la cantidad de dígitos que ocupa un número entero.
+// ej: 100 retorna 3; 10 retorna 2, 1000 retorna 4, etc
+funcion digitos = cantidadDigitos(num)
+	definir digitos Como Entero
+	definir temporal Como Real
 	
-	cantidad = 1
-	largo = cantidad
+	temporal = num
+	digitos = 1
 	
-	mientras trunc(num / 10  ^ cantidad) <> 0 Hacer		
-		cantidad = cantidad + 1
-		largo = cantidad
-	FinMientras
+	// Se calcula la cantidad de dígitos usando trunc()
+	mientras trunc(temporal / 10) > 0 hacer
+		digitos = digitos + 1
+		temporal = temporal / 10
+	FinMientras	
 	
 FinFuncion
+////////
+////////// Función calculaLargo
+////////// Retorna la cantidad de caracteres que ocupa "num".
+////////// Se usa para que al imprimir las columnas, no queden muy desprolijas o corridas.
+////////funcion largo = calculaLargo(num)
+////////	definir largo como entero
+////////	definir cantidad Como Entero
+////////	
+////////	cantidad = 1
+////////	largo = cantidad
+////////	
+////////	mientras trunc(num / 10  ^ cantidad) <> 0 Hacer		
+////////		cantidad = cantidad + 1
+////////		largo = cantidad
+////////	FinMientras
+////////	
+////////FinFuncion

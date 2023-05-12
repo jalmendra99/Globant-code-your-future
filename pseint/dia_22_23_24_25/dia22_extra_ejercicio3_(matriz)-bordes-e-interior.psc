@@ -45,11 +45,11 @@ Algoritmo clase22_extras_ejercicio3
 			// Imprime cada valor de la matriz.
 			escribir Sin Saltar matriz[fila, columna]
 			si columna <> 14 entonces
-				// Agrega un separador entre cada valor, a menos que sea la última columna.
+				// Agrega un separador después de imprimir cada valor de columna, a menos que sea la última columna.
 				escribir sin saltar " "
 			finsi			
 		FinPara	
-		// Imprime un salto de línea para pasar a la siguiente línea en pantalla.
+		// Imprime un salto de línea para pasar a la mostrar siguiente línea en pantalla.
 		escribir ""
 	FinPara
 	

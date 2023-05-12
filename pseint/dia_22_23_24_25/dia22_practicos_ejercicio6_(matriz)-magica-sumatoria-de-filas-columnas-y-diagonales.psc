@@ -31,15 +31,15 @@ Algoritmo clase22_practicos_ejercicio6
 	escribir "2 7 6"
 	escribir "9 5 1"
 	escribir "4 3 8"
-	escribir "También se puede probar con matrices llenas de unos, para cualquier valor de n, " Sin Saltar
-	escribir "por ejemplo, una matriz de 2 x 2 (n=2) que sea: "
+	escribir "También se puede probar con matrices llenas de números iguales, para cualquier valor de n, " Sin Saltar
+	escribir "por ejemplo, una matriz de 2 x 2 (n=2) llena de unos: "
 	escribir "1 1"
 	escribir "1 1"
 	
 	// Se solicita el número n al usuario.
 	// Se fuerza a que esté entre 1 y 10 para que no quede una matriz muy grande de imprimír por pantalla.
 	Hacer
-		escribir "Ingrese un número entero entre 1 y 10 para n:"
+		escribir "Ingrese un número entero entre 1 y 10 para n: " sin saltar
 		leer n
 	Mientras Que n < 1 o n > 10
 	
@@ -47,14 +47,25 @@ Algoritmo clase22_practicos_ejercicio6
 	Dimension matriz[n,n]
 	
 	// Se solicitan al usuario los nxn valores para llenar la matriz.
-	// Se fuerza a que todos estén entre 1 y 9.
+	// Se fuerza a que todos estén entre 1 y 1000.
 	para fila = 0 hasta n - 1 con paso 1 Hacer
 		para columna = 0 hasta n - 1 con paso 1 Hacer
+			
+			// Se valida que el número ingresado esté en el rango 1...1000
+			// para que la matriz no quede muy "ancha".
 			Hacer
 				escribir "Ingrese un número entero entre 1 y 9 para matriz[", fila, ",", columna, "]:" sin saltar
 				leer num
-				matriz[fila, columna] = num
-			Mientras Que num < 1 o num > 9
+				
+				// Si el número ingresado está fuera del rango válido que se pidió, se muestra un mensaje.
+				si num < 1 o num > 1000 Entonces
+					escribir "Por favor ingrese solo números entre 1 y 1000 inclusive."
+				SiNo // Si el número ingresado está en un rango válido, se asigna a la posición actual de la matriz.
+					matriz[fila, columna] = num
+				FinSi
+				
+			Mientras Que num < 1 o num > 1000
+			
 		FinPara	
 	FinPara
 	
@@ -68,7 +79,7 @@ Algoritmo clase22_practicos_ejercicio6
 	FinSi	
 	
 	// Se imprime toda la matriz para verificar visualmente por pantalla.
-	imprimeMatriz(matriz, n)
+	imprimeMatrizEnteros(matriz, n)
 	
 FinAlgoritmo
 
@@ -155,24 +166,94 @@ funcion magica = sumasMatriz (matriz por referencia, n)
 FinFuncion
 
 
-// Subprograma imprimeMatriz 
-// Imprime los valores de una "matriz" de nxn.
-SubProceso imprimeMatriz (matriz por referencia, n)
+
+// Subprograma imprimeMatrizEnteros 
+// Imprime los valores de una "matriz" de números enteros, de tamaño "n" x "n".
+// Ordena los espaciados de las columnas pero por ahora solo para números de hasta 3 dígitos.
+SubProceso imprimeMatrizEnteros (matriz por referencia, n)
 	
-	definir fila, columna como entero
+	definir fila, columna, num, mayor, espacios, i como entero
 	
 	// Para cada fila y columna, se imprime el valor de la matriz.
 	para fila = 0 hasta n - 1 con paso 1 Hacer
-		para columna = 0 hasta n - 1 con paso 1 Hacer	
-			// Imprime cada valor de la matriz.
-			escribir Sin Saltar matriz[fila, columna]
-			// Agrega un separador entre cada valor, a menos que sea la última columna.
-			si columna <> n -1 entonces
-				escribir sin saltar " "
-			finsi			
-		FinPara	
-		// Imprime un salto de línea para pasar a la siguiente línea en pantalla.
+		para columna = 0 hasta n - 1 con paso 1 Hacer
+			
+			// Se asigna el número de la posición actual de la matriz en "num".
+			num = matriz[fila, columna]
+			
+			// se calcula el numero mayor que haya en la matriz...
+			mayor = calculaMayor(matriz, n)
+			
+			//... para calcular el espaciado necesario que hay que escribir 
+			// entre columnas para que la matriz quede prolija.
+			espacios = cantidadDigitos(mayor)
+			
+			// Se calcula la cantidad de dígitos del número actual "num", y dependiendo
+			// de la misma, se agregan o quitan espacios antes de escribirlo.
+			// ej: 
+			//     num =   1 -> se imprime -> "  1" (o sea, dos espacios y el número de un dígito).
+			//     num =  10 -> se imprime -> " 10" (o sea, un espacio y el número de dos dígitos).
+			//     num = 100 -> se imprime -> "100" (o sea, ningún espacio y el número de tres dígitos).
+			
+			// Se escribe la cantidad de espacios antes del número actual.
+			para i = 0 hasta espacios - 1 - cantidadDigitos(num) con paso 1 Hacer
+				escribir " " sin saltar
+			FinPara
+			
+			// Se escribe el número actual.
+			escribir num Sin Saltar
+			
+			// Mientras la columna que se está imprimiendo no sea la última, se escribe un espacio 
+			// para separar el valor de la columna actual, del de la siguiente.
+			si columna <> n - 1 Entonces
+				escribir " " sin saltar
+			FinSi
+			
+		FinPara			
+		
+		// Imprime un salto de línea para pasar a imprimir la siguiente línea de la matriz en pantalla.
 		escribir ""
 	FinPara
 	
 FinSubProceso
+
+
+
+// Función cantidadDigitos()   <--- Usada por la función imprimeMatrizEnteros()
+// retorna la cantidad de dígitos que ocupa un número entero.
+// ej: 100 retorna 3; 10 retorna 2, 1000 retorna 4, etc
+funcion digitos = cantidadDigitos(num)
+	definir digitos Como Entero
+	definir temporal Como Real
+	
+	temporal = num
+	digitos = 1
+	
+	// Se calcula la cantidad de dígitos usando trunc()
+	mientras trunc(temporal / 10) > 0 hacer
+		digitos = digitos + 1
+		temporal = temporal / 10
+	FinMientras	
+	
+FinFuncion
+
+
+
+// Función calculaMayor(matriz, n)   <--- Usada por la función imprimeMatrizEnteros()
+// retorna el número mayor de una "matriz" de tamaño "n" x "n".
+funcion mayor = calculaMayor(matriz por referencia, n)
+	definir mayor, fila, columna Como Entero
+	
+	mayor = 0
+	para fila = 0 hasta n - 1 con paso 1 Hacer
+		para columna = 0 hasta n - 1 con paso 1 Hacer
+			si fila == 0 y columna == 0 Entonces
+				mayor = matriz[fila, columna]
+			FinSi
+			si matriz[fila, columna] > mayor Entonces
+				mayor = matriz[fila, columna]
+			FinSi
+		FinPara
+	FinPara
+	
+FinFuncion
