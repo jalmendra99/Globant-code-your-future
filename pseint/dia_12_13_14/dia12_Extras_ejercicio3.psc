@@ -4,8 +4,7 @@
 // 3. Diseñar una función que permita obtener el máximo común divisor 
 // de dos números mediante el algoritmo de Euclides
 
-////// Nota: Info de Internet:
-////// Fuente: 
+////// Nota: Información sobre el algoritmo de Euclides:
 ////// https://www.youtube.com/watch?v=zlNBABppxds
 //
 // Para calcular el MCM entre a y b - notación: MCM(a, b)
@@ -31,7 +30,7 @@ Algoritmo ejercicio3
 	// Se solicita la información al usuario.	
 	// Se fuerza a >= b ; a <> 0 ; b <> 0
 	hacer
-		escribir "Ingrese un número positivo para usar como dividendo: "
+		escribir "Ingrese un número positivo para usar como dividendo: " sin saltar
 		leer a
 		escribir "Ingrese otro número positivo para usar como divisor (tiene que ser menor al dividendo): "
 		leer b

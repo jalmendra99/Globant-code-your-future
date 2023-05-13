@@ -18,7 +18,7 @@ Algoritmo ejercicio2
 	escribir "Se solicitará ingresar un número y se calcularan su valor absoluto y su raíz cuadrada."
 	
 	// Se solicita la información al usuario.	
-	escribir "Ingrese un número positivo: "
+	escribir "Ingrese un número: " sin saltar
 	leer num
 	
 	// Se calcula el valor absoluto del número num usando la función solicitada.
@@ -32,9 +32,9 @@ Algoritmo ejercicio2
 FinAlgoritmo
 
 
-// Función Absoluto
+// Función absoluto()
 // Retorna el valor absoluto del número num.
-Funcion retorno = Absoluto (num)
+Funcion retorno = absoluto (num)
 	definir retorno Como real
 	
 	retorno = abs(num)
@@ -44,7 +44,8 @@ fin funcion
 
 // Función raizCuadrada
 // Retorna la raíz cuadrada del número num.
-////////// Nota: No se puede calcular la raíz cuadrada de un número negativo.
+// No se puede calcular la raíz cuadrada de un número negativo, 
+// por eso se usa la función absoluto()
 Funcion retorno = raizCuadrada (num)
 	definir retorno Como real
 	

@@ -17,16 +17,16 @@ Algoritmo ejercicio1
 	num = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un mínimo y un máximo y se procedera a mostrar un número "
-	escribir            " aleatorio comprendido entre ese rango."
+	escribir "Se solicitará ingresar un mínimo y un máximo y se procedera a mostrar un número " sin saltar
+	escribir " aleatorio comprendido entre ese rango."
 	
 	// Se solicita la información al usuario.	
 	// Se fuerza a que los números ingresados sean mayores o iguales a cero
 	// y que máximo >= mínimo.
 	Hacer
-		escribir "Ingrese un número entero positivo para el mínimo: "
+		escribir "Ingrese un número entero positivo para el mínimo: " sin saltar
 		leer minimo
-		escribir "Ingrese un número entero positivo para el máximo: "
+		escribir "Ingrese un número entero positivo para el máximo: " sin saltar
 		leer maximo
 	Mientras Que minimo < 0 o maximo < 0 o minimo > maximo
 	
