@@ -100,7 +100,7 @@ Algoritmo ejercicio3
 			
 			segun eleccion
 				1: // Ingresar botellas.
-					escribir "Ingrese la cantidad de botellas: "
+					escribir "Ingrese la cantidad de botellas: " sin saltar
 					leer cantidadBotellas				
 					
 					// Se inicializa el saldo.

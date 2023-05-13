@@ -9,10 +9,11 @@ Algoritmo ejercicio1
 	
 	definir num, i, j como entero	
 	
-	escribir "Ingresará 5 números enteros y se imprimirá la misma cantidad de asteríscos que el número seleccionado."
+	escribir "Ingresará 5 números enteros y se imprimirá la misma cantidad " Sin Saltar
+	escribir "de asteríscos que el número seleccionado."
 	
 	para i = 1 hasta 5 con paso 1 Hacer
-		escribir "Ingrese un número entero (restan ", 5-i+1, " números): "
+		escribir "Ingrese un número entero (restan ", 5-i+1, " números): " sin saltar
 		leer num
 		
 		escribir sin saltar "", num
