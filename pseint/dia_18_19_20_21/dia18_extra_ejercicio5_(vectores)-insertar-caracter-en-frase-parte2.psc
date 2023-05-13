@@ -88,13 +88,13 @@ Algoritmo clase18_practicos_ejercicio6
 	muestraVector(vector)
 	
 	// Se solicita al usuario ingresar un caracter y una posición	
-	escribir sin saltar "Ingrese un caracter para insertar en la frase: "
+	escribir "Ingrese un caracter para insertar en la frase: " sin saltar
 	leer caracterElegido	
 	escribir ""
 	
 	// Se fuerza a que la posición seleccionada por el usuario esté entre 0 y 19.
 	hacer
-		escribir "Elija la posición donde insertar el caracter (entre 0 y 19)"
+		escribir "Elija la posición donde insertar el caracter (entre 0 y 19): " sin saltar
 		leer posicionElegida
 	mientras que posicionElegida < 0 o posicionElegida > 20 - 1
 	
@@ -163,7 +163,7 @@ Algoritmo clase18_practicos_ejercicio6
 		Fin Mientras
 		
 		
-////////////		/// DEBUG INFO.
+////////////		/// INFO.
 ////////////		escribir "izquierda: ", izquierda
 ////////////		escribir "derecha: ", derecha
 		
@@ -226,6 +226,9 @@ SubProceso muestraVector(vector por referencia)
 FinSubProceso
 
 // Pruebas:
-// Frase:                 Posición
-// hola amigos            18
-// 
+// Frase:                 	Posición	caracter	frase2
+// "hola mundo"          	18			@			"hola mundo       @"
+// "hola mundo"          	4			@			"hola@mundo"
+// "hola hola hola hola."	10			@			"ola hola h@ola hola."
+// "hola hola hola hola."	6			@			"ola h@ola hola hola."
+// "hola hola hola hola."	8			@			"hola hol@a hola hola"
