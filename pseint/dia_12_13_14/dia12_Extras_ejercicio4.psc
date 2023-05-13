@@ -20,14 +20,15 @@ Algoritmo ejercicio4
 	num2 = 0
 	
 	// Se informa la premisa al usuario.
-	escribir "Se solicitará ingresar dos números y se calculará si son _amigos_."
+	escribir "Se solicitará ingresar dos números y se calculará si son _amigos_ " Sin Saltar
+	escribir "cada uno de ellos es igual a la suma de los divisores del otro."
 	
 	// Se solicita la información al usuario.	
 	// Se fuerza a ingresar enteros positivos.
 	hacer
-		escribir "Ingrese un número entero positivo: "
+		escribir "Ingrese un número entero positivo: " sin saltar
 		leer num1	
-		escribir "Ingrese otro número entero positivo: "
+		escribir "Ingrese otro número entero positivo: " sin saltar
 		leer num2
 	mientras que num1 < 0 o num2 < 0
 	
@@ -62,6 +63,7 @@ Funcion retorno = SumaDeDivisores (num)
 		// Si num es múltiplo de i, entonces i es divisor de num.
 		si num mod i == 0 Entonces			
 			
+			/////////////// INFO.
 			///////////escribir "Se encontró un divisor de ", num, ". ", i, "."
 			
 			// No toma en cuenta a los divisores que sean iguales al número 'num'.

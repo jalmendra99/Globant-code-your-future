@@ -11,18 +11,8 @@
 Algoritmo teoria_ejercicio1
 
 	// Definición de variables.
-	definir hora, minuto, horaIngreso, minutoIngreso, horaDiferencia, minutoDiferencia como entero	
-	definir horaValida, minutosValidos Como Logico
-	
-	// Inicialización de variables.
-	hora = 0
-	minuto = 0
-	horaIngreso = 0
-	minutoIngreso = 0
-	horaDiferencia = 0
-	minutoDiferencia = 0
-	horaValida = Falso
-	minutosValidos = Falso
+	definir horaPactada, minutoPactado, horaIngreso, minutoIngreso como entero	
+	definir horarioPactadoEnMinutos, horarioIngresoEnMinutos, DiferenciaEnMinutos como entero
 	
 	// Se informa premisa al usuario
 	escribir "Se pedira ingresar el horario de ingreso a clases en zoom"
@@ -30,52 +20,67 @@ Algoritmo teoria_ejercicio1
 	escribir "Se informará si corresponde tardanza o ausente."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la hora del horario pactado de ingreso al zoom (solo hora, de 0 a 23): "
-	leer hora
-	escribir "Ingrese los minutos del horario pactado de ingreso al zoom (solo los minutos, de 0 a 59): "
-	leer minuto
+	hacer
+		escribir "Ingrese el horario pactado de ingreso al zoom."
+		escribir "Hora (de 0 a 23): " sin saltar
+		leer horaPactada
+	mientras que horaPactada < 0 o horaPactada > 23
 	
-	escribir "Ingrese la hora del horario que el usuario se conectó al zoom (solo hora, de 0 a 23): "
-	leer horaIngreso
-	escribir "Ingrese los minutos del horario que el usuario se conectó al zoom (solo los minutos, de 0 a 59): "
-	leer minutoIngreso
+	hacer
+		escribir "Minutos (de 0 a 59): " sin saltar
+		leer minutoPactado
+	mientras que minutoPactado < 0 o minutoPactado > 59
 	
-	// Se calcula la respuesta correspondiente y se muestra por pantalla
-	// valida que el horario esté entre 0 y 23
-	horaValida = hora >= 0 y hora <= 23
-	minutosValidos = minuto >=0 y minuto <= 59
+	hacer
+		escribir "Ingrese del horario en que el usuario se conectó al zoom."
+		escribir "Hora (de 0 a 23): " sin saltar	
+		leer horaIngreso
+	mientras que horaIngreso < 0 o horaIngreso > 23
 	
-	si no horaValida o no minutosValidos Entonces
-		escribir "Error al ingresar datos."
-	SiNo
-		// Calcula que el horario de entrada esté entre los primeros 15 minutos..
-		si (horaIngreso < hora ) entonces 
-			horaDiferencia = 24 - hora + horaIngreso - 1
-		SiNo
-			horaDiferencia = horaIngreso - hora
-		FinSi
-		
-		si (minutoIngreso < minuto) Entonces
-			minutoDiferencia = 60 - minuto + minutoIngreso
-		SiNo
-			minutoDiferencia = minutoIngreso - minuto
-		FinSi
-		
-		escribir "debug horaDiferencia: ", horaDiferencia, " y minutoDiferencia: ", minutoDiferencia
-		
-		si horaDiferencia > 0 Entonces
-			escribir "Hoy tendrás tardanza. Recuerda avisarle a tus coaches cuando llegarás tarde."
-		SiNo
-			si minutoDiferencia <= 15 Entonces
-				escribir "Llegaste a tiempo, tienes presente."
-			FinSi
-		FinSi
-		
+	hacer
+		escribir "Minutos (de 0 a 59): " sin saltar
+		leer minutoIngreso
+	mientras que minutoIngreso < 0 o minutoIngreso > 59
+	
+	// Inicialización de variables.
+	horarioPactadoEnMinutos = 0
+	horarioIngresoEnMinutos = 0
+	horarioDiferenciaEnMinutos = 0
+
+	// convierte horario pactado a minutos:
+	horarioPactadoEnMinutos = (horaPactada * 60) + minutoPactado
+	
+	// convierte horario de ingreso a minutos:
+	horarioIngresoEnMinutos = (horaIngreso * 60) + minutoIngreso
+	
+	// Se asume que si la HORA de ingreso es menor a la horaPactada
+	// entonces cambió el día, y se toma la diferencia hacia adelante y no hacia atrás.
+	// ej: horaPactada: 23:59 ; hora de ingreso 00:00 
+	//    (resulta en 1 minuto de diferencia, y no en 23:59 horas)
+	// Por lo tanto, se suma un día al horario de ingreso, para poder calcular bien las diferencias.
+	si horarioIngresoEnMinutos < horarioPactadoEnMinutos Entonces
+		horarioIngresoEnMinutos = horarioIngresoEnMinutos + (24 * 60)
 	FinSi
 	
-	// Pruebas:
-	// 23 59 y 00 01	-> 2 min. Presente.
-	// 10 10 y 11 11	-> 1 hs y 1 min. Ausente.
-	// 10 10 y 10 11	-> 1 min. Presente.
+	// Se calcula la diferencia en minutos entre el horario de ingreso y el horario pactado.
+	DiferenciaEnMinutos = horarioIngresoEnMinutos - horarioPactadoEnMinutos
+	
+//////	//////// INFO.
+//////	escribir "minutos de diferencia: ", horarioDiferenciaEnMinutos
+	
+	si DiferenciaEnMinutos > 15 Entonces
+		escribir "Hoy tendrás tardanza. Recuerda avisarle a tus coaches cuando llegarás tarde."
+	SiNo
+		escribir "Llegaste a tiempo, tienes presente."			
+	FinSi	
 
 FinAlgoritmo
+
+// Pruebas:
+// 22 00 y 22 00	-> 0 hs 0 min. Presente.
+// 23 59 y 00 01	-> 0 hs 2 min. Presente.
+// 22 59 y 23 01	-> 0 hs 2 min. Presente.	
+// 10 10 y 10 11	-> 0 hs 1 min. Presente.
+// 10 10 y 11 09	-> 0 hs 59 min. Ausente.	
+// 20 00 y 22 05	-> 2 hs 5 min. Ausente.    (125 min)
+// 20 05 y 22 00	-> 1 hs 55 min. Ausente.   (115 min)
