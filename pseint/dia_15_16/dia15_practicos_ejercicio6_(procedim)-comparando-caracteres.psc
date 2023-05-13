@@ -17,12 +17,12 @@ Algoritmo ejercicio6
 	letra = ""
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar una letra y se procederá a verificar si la misma "
-	escribir            "está o no entre las letras M y T."
+	escribir "Se solicitará ingresar una letra y se procederá a " sin saltar
+	escribir "verificar si la misma está o no entre las letras M y T."
 	
 	// Se solicita la información al usuario...	
 	
-	escribir "Ingrese una letra: "
+	escribir "Ingrese una letra: " sin saltar
 	leer letra
 	
 	// Se verifica si la letra está entre M y T usando el procedimiento solicitado.

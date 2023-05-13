@@ -21,14 +21,14 @@ Algoritmo ejercicio7
 	num = 0
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar un número entero N y se procederá a mostrar una escalera "
-	escribir            "de números con alto y ancho N."
+	escribir "Se solicitará ingresar un número entero N y se procederá a mostrar una escalera " sin saltar
+	escribir "de números con alto y ancho N."
 	
 	// Se solicita la información al usuario...	
 	
 	// Se fuerza a ingresar un número positivo.
 	hacer
-		escribir "Ingrese un número entero mayor a cero: "
+		escribir "Ingrese un número entero mayor a cero: " sin saltar
 		leer num
 	mientras que num <= 0
 	

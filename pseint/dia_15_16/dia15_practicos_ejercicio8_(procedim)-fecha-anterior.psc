@@ -24,8 +24,8 @@ Algoritmo ejercicio8
 	anioBisiesto = Falso
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar el día, mes y año de una fecha como números enteros "
-	escribir            "y se mostrará la fecha correspondiente al día anterior."
+	escribir "Se solicitará ingresar el día, mes y año de una fecha como números " sin saltar
+	escribir "enteros y se mostrará la fecha correspondiente al día anterior."
 	
 	// Se solicita la información al usuario...	
 	
@@ -33,7 +33,7 @@ Algoritmo ejercicio8
 	
 	// Se fuerza a ingresar el año (entre 1900 y 2900)
 	Hacer
-		escribir "Ingrese un número entero correspondiente al año (de 1900 a 2900): "
+		escribir "Ingrese un número entero correspondiente al año (de 1900 a 2900): " sin saltar
 		leer anio
 		
 		// Se calcula para saber si es bisiesto
@@ -43,7 +43,7 @@ Algoritmo ejercicio8
 	
 	// Se fuerza a que el mes esté entre 1 y 12 
 	Hacer
-		escribir "Ingrese un número entero correspondiente al mes (de 1 a 12): "
+		escribir "Ingrese un número entero correspondiente al mes (de 1 a 12): " sin saltar
 		leer mes
 		
 	Mientras Que mes < 1 o mes > 12 
@@ -51,7 +51,7 @@ Algoritmo ejercicio8
 	// Se fuerza a que el día ingresado esté entre los límites correspondientes al mes y al año elegidos.	
 	diaCorrecto = Falso
 	hacer
-		escribir "Ingrese un número entero correspondiente al día del mes (de 1 a 31): "
+		escribir "Ingrese un número entero correspondiente al día del mes (de 1 a 31): " sin saltar
 		leer dia		
 		
 		// Si el día ingresado no corresponde al mes. (ej 30 de febrero),

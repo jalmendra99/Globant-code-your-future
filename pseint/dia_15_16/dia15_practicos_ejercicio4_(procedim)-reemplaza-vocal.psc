@@ -28,8 +28,8 @@ Algoritmo ejercicio4
 	frase = ""
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar una frase terminada en punto y se procederá a reemplazar "
-	escribir            "a las vocales por caracteres seleccionados en el planteo.."
+	escribir "Se solicitará ingresar una frase terminada en punto y se procederá " sin saltar
+	escribir "a reemplazar a las vocales por caracteres seleccionados en el planteo.."
 	
 	// Se solicita la información al usuario...	
 	
