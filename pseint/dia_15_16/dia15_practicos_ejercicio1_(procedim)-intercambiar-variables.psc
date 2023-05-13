@@ -17,15 +17,15 @@ Algoritmo ejercicio1
 	num2 = 0
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar dos números enteros positivos y "
-	escribir            "se invertirán sus valores dentro de un procedimiento."
+	escribir "Se solicitará ingresar dos números enteros positivos y " sin saltar
+	escribir "se invertirán sus valores dentro de un procedimiento."
 	
 	// Se solicita la información al usuario.	
 	// Se fuerza a que los números ingresados sean mayores o iguales a cero.
 	Hacer
-		escribir "Ingrese un número entero positivo: "
+		escribir "Ingrese un número entero positivo: " sin saltar
 		leer num1		
-		escribir "Ingrese otro número entero positivo: "
+		escribir "Ingrese otro número entero positivo: " sin saltar
 		leer num2		
 	Mientras Que num1 < 0 o num2 < 0
 	

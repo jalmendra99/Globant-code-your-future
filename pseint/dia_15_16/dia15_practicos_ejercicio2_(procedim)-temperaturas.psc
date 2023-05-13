@@ -22,14 +22,14 @@ Algoritmo ejercicio2
 	dias = 0
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar la cantidad de dias para cada uno de los cuales "
-	escribir            "se ingresarán las temperaturas máxima y mínima para luego calcular la media de cada día."
+	escribir "Se solicitará ingresar la cantidad de dias para cada uno de los cuales " sin saltar
+	escribir "se ingresarán las temperaturas máxima y mínima para luego calcular la media de cada día."
 	
 	// Se solicita la información al usuario...
 	
 	// Se fuerza a que la cantidad de días sea positiva o cero.
 	Hacer
-		escribir "Ingrese la cantidad de días a procesar: "
+		escribir "Ingrese la cantidad de días a procesar: " sin saltar
 		leer dias
 	Mientras Que dias < 0
 	
@@ -47,10 +47,10 @@ FinAlgoritmo
 SubProceso ingresarTemperaturas (minima por referencia, maxima por referencia, dia)
 	
 	escribir "Para el día ", dia, ":"
-	escribir "Ingrese la temperatura mínima: "
+	escribir "Ingrese la temperatura mínima: " sin saltar
 	leer minima
 	
-	escribir "Ingrese la temperatura máxima: "
+	escribir "Ingrese la temperatura máxima: " sin saltar
 	leer maxima	
 	
 FinSubProceso

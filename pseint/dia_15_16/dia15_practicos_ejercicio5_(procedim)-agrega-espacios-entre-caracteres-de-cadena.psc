@@ -17,8 +17,8 @@ Algoritmo ejercicio5
 	frase = ""
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar una frase y se procederá a agregar espacios entre "
-	escribir            "cada uno de sus caracteres."
+	escribir "Se solicitará ingresar una frase y se procederá a " sin saltar
+	escribir "agregar espacios entre cada uno de sus caracteres."
 	
 	// Se solicita la información al usuario...	
 	
