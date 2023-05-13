@@ -3,4 +3,4 @@ Download from: [pseint.sourceforge.net](https://pseint.sourceforge.net/index.php
 
 Apply Egg academy's profile file "Perfil_EggCooperation_PseInt" 
 
-*menu -> configurar -> Opciones del lenguaje (perfiles) -> cargar*
+On PSeInt go to: *menu -> configurar -> Opciones del lenguaje (perfiles) -> cargar*
