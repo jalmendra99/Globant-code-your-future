@@ -26,14 +26,14 @@ Algoritmo practicos_ejercicio4
 	// Se continuará solicitando ingresar números enteros y positivos	
 	// mientras que no se responda n/N (no).
 	hacer 		
-		escribir "Ingrese un número entero: "
+		escribir "Ingrese un número entero: " sin saltar
 		leer num
 		
 		sumatoria = sumatoria + num
 		
 		// Valida que solamente se responda S/s (si) o N/n (no).
 		hacer
-			escribir "¿Desea ingresar otro número? Responda S/s (si) o N/n (no): "
+			escribir "¿Desea ingresar otro número? Responda S/s (si) o N/n (no): " sin saltar
 			leer continuar		
 		mientras que (mayusculas(continuar) <> "N") y (mayusculas(continuar) <> "S")
 		

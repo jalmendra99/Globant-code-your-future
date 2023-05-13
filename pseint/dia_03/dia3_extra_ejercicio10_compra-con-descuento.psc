@@ -16,7 +16,7 @@ Algoritmo extra_ejercicio10
 	escribir "Se calculará el 15% de descuento sobre el importe ingresado."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el importe: "
+	escribir "Ingrese el importe: " sin saltar
 	leer importe
 	
 	// Calcular importe y mostrar en pantalla

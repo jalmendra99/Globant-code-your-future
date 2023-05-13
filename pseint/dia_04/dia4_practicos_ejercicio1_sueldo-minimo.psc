@@ -15,13 +15,13 @@ Algoritmo extra_ejercicio1
 	sueldoMinimo = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se informará si el sueldo de una persona es mayor al sueldo mínimo"
-	escribir "basado en los datos ingresados."
+	escribir "Se informará si el sueldo de una persona es mayor al " sin saltar
+	escribir "sueldo mínimo basado en los datos ingresados."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el sueldo actual: "
+	escribir "Ingrese el sueldo actual: " sin saltar
 	leer sueldoActual
-	escribir "Ingrese el sueldo mínimo: "
+	escribir "Ingrese el sueldo mínimo: " sin saltar
 	leer sueldoMinimo
 	
 	// Se informa por pantalla si sueldo actual es mayor a sueldo mínimo

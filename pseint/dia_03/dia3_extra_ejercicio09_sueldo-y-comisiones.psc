@@ -19,17 +19,17 @@ Algoritmo extra_ejercicio9
 	comisiones = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará el dinero obtenido por comisiones y el total incluyendo sueldo+comisiones"
-	escribir "basado en los datos ingresados."
+	escribir "Se calculará el dinero obtenido por comisiones y el total " sin saltar
+	escribir "incluyendo sueldo+comisiones basado en los datos ingresados."
 	
 	// Cargar datos ingresados por el usuario en variables.
 	escribir "Ingrese el salario: "		// Se podría usar un loop con el array de venta
 	leer sueldo
-	escribir "Ingrese el importe de la primera venta: "
+	escribir "Ingrese el importe de la primera venta: " sin saltar
 	leer venta1
-	escribir "Ingrese el importe de la segunda venta: "
+	escribir "Ingrese el importe de la segunda venta: " sin saltar
 	leer venta2
-	escribir "Ingrese el importe de la tercera venta: "
+	escribir "Ingrese el importe de la tercera venta: " sin saltar
 	leer venta3
 	
 	// Calcular comisiones

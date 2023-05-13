@@ -30,11 +30,11 @@ Algoritmo Correccion_Mientras
 	Definir num Como Entero 
 	
 	//Se solicitará ingresar números mientras los ingresados sean pares.
-	Escribir "Ingrese un número" 
+	Escribir "Ingrese un número: " sin saltar
 	Leer num 
 	
 	Mientras num mod 2 == 0 Hacer 
-		Escribir "Ingrese otro número"
+		Escribir "Ingrese otro número: " sin saltar
 		leer num
 	fin mientras
 	

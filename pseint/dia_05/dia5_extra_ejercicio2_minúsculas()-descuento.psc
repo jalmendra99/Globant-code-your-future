@@ -21,13 +21,13 @@ Algoritmo extra_ejercicio2
 	
 	// Se informa premisa al usuario.
 	escribir "Se pedira ingresar el importe de una compra y el mes en el que fué realizada."
-	escribir "Se calculará un descuento del 10% si la misma se realizó en los meses de"
+	escribir "Se calculará un descuento del 10% si la misma se realizó en los meses de " sin saltar
 	escribir "septiembre, octubre o noviembre."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el importe de la compra: "
+	escribir "Ingrese el importe de la compra: " sin saltar
 	leer importe
-	escribir "Ingrese el mes de la compra: "
+	escribir "Ingrese el mes de la compra: " sin saltar
 	leer mes
 	
 	// Se verifica si corresponde descuento al mes ingresado

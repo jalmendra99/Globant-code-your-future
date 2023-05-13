@@ -26,8 +26,8 @@ Algoritmo extra_ejercicio2
 	anioBisiesto = Falso
 	
 	// Se informa premisa al usuario
-	escribir "Se pedirá al usuario ingresar una fecha (día, mes, año),"
-	escribir "luego se comprobará que la misma es una fecha válida"
+	escribir "Se pedirá al usuario ingresar una fecha (día, mes, año), " sin saltar
+	escribir "luego se comprobará que la misma es una fecha válida " sin saltar
 	escribir "y finalmente se imprimirá la misma cambiando el número del mes por su nombre."
 	
 	// Cargando la fecha ingresada por el usuario.

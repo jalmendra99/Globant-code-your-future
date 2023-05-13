@@ -27,15 +27,15 @@ Algoritmo extra_ejercicio11
 	escribir "c. 15% de la calificación de un trabajo final."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la calificación del primer parcial: "
+	escribir "Ingrese la calificación del primer parcial: " sin saltar
 	leer parc1
-	escribir "Ingrese la calificación del segundo parcial: "
+	escribir "Ingrese la calificación del segundo parcial: " sin saltar
 	leer parc2
-	escribir "Ingrese la calificación del tercer parcial: "
+	escribir "Ingrese la calificación del tercer parcial: " sin saltar
 	leer parc3
-	escribir "Ingrese la calificación del examen final: "
+	escribir "Ingrese la calificación del examen final: " sin saltar
 	leer ex_final
-	escribir "Ingrese la calificación del trabajo final: "
+	escribir "Ingrese la calificación del trabajo final: " sin saltar
 	leer tr_final
 	
 	// Calcular calificación final 

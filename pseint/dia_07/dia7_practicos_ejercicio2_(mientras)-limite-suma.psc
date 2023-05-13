@@ -21,7 +21,7 @@ Algoritmo practicos_ejercicio2
 	escribir "hasta llegar al límite ingresado."
 	
 	// Se solicita al usuario ingresar el límite.
-	escribir "Por favor ingrese número entero para usar como límite: "
+	escribir "Por favor ingrese número entero para usar como límite: " sin saltar
 	leer limite
 	
 	// Se suman los números ingresados hasta que la suma supere el límite inicial.

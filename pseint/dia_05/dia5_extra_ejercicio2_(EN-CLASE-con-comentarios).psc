@@ -19,9 +19,9 @@ Algoritmo sin_titulo
 	mes = ""
 	
 	// Ingreso de valores por el usuario.
-	escribir "Ingrese el importe de la compra: "
-	leer importe	
-	escribir "Ingrese el mes de la compra: "
+	escribir "Ingrese el importe de la compra: " sin saltar
+	leer importe
+	escribir "Ingrese el mes de la compra: " sin saltar
 	leer mes
 	
 	// Se calcula si corresponde descuento o no.

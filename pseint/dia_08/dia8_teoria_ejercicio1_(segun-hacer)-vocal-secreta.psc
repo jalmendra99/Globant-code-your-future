@@ -26,16 +26,23 @@ Algoritmo teoria_ejercicio1
 		de otro modo: escribir "Error grave al asignar valor a vocal."			
 	FinSegun
 	
-	escribir "Adivine la vocal que ha sido seleccionada."
-	leer ingresada	
-	
 	// Se continúa pidiendo al usuario que intente hasta que adivine la vocal correcta.
-	hacer 
-		// Se solicita al usuario ingresar una vocal.		
-		escribir "No es la correcta. Intente denuevo: "
-		leer ingresada		
-	mientras que minusculas(ingresada) <> secreta		
+	hacer
+		escribir "Adivine la vocal que ha sido seleccionada."
+		leer ingresada	
+		
+		// Se pasa la letra ingresada a minúsculas, para que las comparaciónes sean más simples.
+		ingresada = minusculas(ingresada)
+		
+		// Si la vocal ingresada no es la correcta...
+		si ingresada <> secreta entonces
+			// Se muestra un mensaje al usuaior para que intente denuevo.
+			escribir "No es la correcta. Intente denuevo: "
+		finsi
+		
+	mientras que minusculas(ingresada) <> secreta	
 	
+	// Salír del bucle "hacer" anterior, implica SI o SI que la vocal ingresada ha sido finalmente la correcta.
 	escribir "Adivinó la vocal!"
 	
 FinAlgoritmo

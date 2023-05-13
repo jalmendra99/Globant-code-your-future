@@ -17,9 +17,9 @@ Algoritmo practicos_ejercicio4
 	precio_final = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará el porcentaje de aumento del precio de un producto."
-	escribir "basándose en los precios ingresados del mismo"
-	escribir "correspondientes al inicio y al final del año"
+	escribir "Se calculará el porcentaje de aumento del precio de un producto " sin saltar
+	escribir "basándose en los precios ingresados del mismo " sin saltar
+	escribir "correspondientes al inicio y al final del año."
 	
 	// Cargar datos ingresados por el usuario en variables.
 	escribir "Ingrese el precio que tenía el producto al inicio del año: "

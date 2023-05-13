@@ -21,23 +21,23 @@ Algoritmo practicos_ejercicio5
 	contador = 0
 	
 	// Se informa premisa al usuario.
-	escribir "Se solicitará ingresar un número entero mínimo, un máximo"
-	escribir "y luego se solicitarán ingresar números enteros entre el máximo y mínimo ingresado"
-	escribir "Si el número ingresado se encuentra en ese intervalo se contará"
+	escribir "Se solicitará ingresar un número entero mínimo, un máximo " sin saltar
+	escribir "y luego se solicitarán ingresar números enteros entre el máximo y mínimo ingresado." sin saltar
+	escribir "Si el número ingresado se encuentra en ese intervalo se contará."
 	escribir "El programa terminará cuando se escriba un número que no pertenezca al intervalo."
 		
 	// Se solicita al usuario ingresar el minimo y máximo.
-	escribir "Por favor ingrese un número entero para usar como mínimo: "
+	escribir "Ingrese un número entero para usar como mínimo: " sin saltar
 	leer minimo
-	escribir "Por favor ingrese un número entero para usar como máximo: "
+	escribir "Ingrese un número entero para usar como máximo: " sin saltar
 	leer maximo	
-	escribir "Por favor ingrese un número que se encuentre entre ese intervalo (o por fuera para salír): "
+	escribir "Ingrese un número dentro de ese intervalo (o por fuera para salír): " sin saltar
 	leer num
 	
 	// Se continúa solicitando ingresar números mientras el número ingresado se encuentre en el intervalo.
 	mientras num <= maximo y num >= minimo Hacer
 		contador = contador + 1
-		Escribir "Ingrese otro número entero que se encuentre entre ese intervalo (o por fuera para salr): "
+		Escribir "Ingrese otro número entero dentro de ese intervalo (o por fuera para salr): " sin saltar
 		leer num		
 	FinMientras	
 	

@@ -19,14 +19,15 @@ Algoritmo practicos_ejercicio5
 	correctas = Falso
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedira ingresar tres notas entre 1 y 10 y luego se informará si han sido ingresadas correctamente o no."
+	escribir "Se pedira ingresar tres notas entre 1 y 10 y luego se " sin saltar
+	escribir "informará si han sido ingresadas correctamente o no."
 	
 	// Cargar las tres notas ingresadas por el usuario en variables.
-	escribir "Ingrese la primera nota (número entre 1 y 10): "
+	escribir "Ingrese la primera nota (número entre 1 y 10): " sin saltar
 	leer nota1
-	escribir "Ingrese la segunda nota (número entre 1 y 10): "
+	escribir "Ingrese la segunda nota (número entre 1 y 10): " sin saltar
 	leer nota2
-	escribir "Ingrese la tercera nota (número entre 1 y 10): "
+	escribir "Ingrese la tercera nota (número entre 1 y 10): " sin saltar
 	leer nota3		
 	
 	// Se verifican las notas ingresadas.

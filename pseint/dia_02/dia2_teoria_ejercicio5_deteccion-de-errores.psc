@@ -16,8 +16,7 @@ Algoritmo prueba
 	
 	Escribir "Ingrese una letra."
 	leer letra
-		
+	
 	escribir "La letra ingresada es: ", letra
 	
 FinAlgoritmo
-		

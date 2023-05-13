@@ -19,13 +19,13 @@ Algoritmo practicos_ejercicio3
 	altura = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se pedirá ingresar un número entero (altura) "
-	escribir            "y se creará una escalera invertida de asteriscos con esa altura."
+	escribir "Se pedirá ingresar un número entero (altura) " sin saltar
+	escribir "y se creará una escalera invertida de asteriscos con esa altura."
 	
 	// Se fuerza a que el número ingresado sea positivo.
 	hacer
 		//Se ingresa el tamaño del lado.
-		escribir "Ingrese un número entero (tamaño de la altura): "
+		escribir "Ingrese un número entero (tamaño de la altura): " sin saltar
 		leer altura
 	mientras que altura <= 0
 	

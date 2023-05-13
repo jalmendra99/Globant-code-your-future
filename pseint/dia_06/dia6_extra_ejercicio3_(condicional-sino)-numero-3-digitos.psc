@@ -15,11 +15,11 @@ Algoritmo extra_ejercicio3
 	tresDigitos = Falso
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá al usuario ingresar un número"
+	escribir "Se pedirá al usuario ingresar un número " sin saltar
 	escribir "y se determinará si el mismo tiene tres dígitos."
 	
 	// Cargando el número ingresado por el usuario.
-	escribir "Ingrese un número entero (de tres dígitos o no): "
+	escribir "Ingrese un número entero (de tres dígitos o no): " sin saltar
 	leer num
 	
 	// Se determina si el número ingresado tiene tres dígitos o no.

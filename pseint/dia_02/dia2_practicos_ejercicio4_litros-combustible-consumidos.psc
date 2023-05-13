@@ -9,20 +9,20 @@
 
 Algoritmo practicos_ejercicio4
 	
-	/// Definiendo variables.
+	// Definición de variables.
 	definir litros, kilometros como real
 	
-	/// Inicializando variables.
+	// Inicialización de variables.
 	litros = 0
 	kilometros = 0
 	
-	/// Usuario ingresa valores a variables.
+	// Usuario ingresa valores a variables.
 	escribir "Ingrese la cantidad de litros cargados en la estación."
 	leer litros
 	escribir "Ingrese la cantidad de kilómetros recorridos."
 	leer kilometros
 	
-	/// Se calcula e imprime el consumo (kilómetros por litro) y se lo muestra al usuario
+	// Se calcula y muestra por pantalla el consumo (en kilómetros por litro).
 	escribir "El consumo ha sido de ", kilometros / litros , " kilómetros recorridos por cada litro de combustible."
 	
 FinAlgoritmo

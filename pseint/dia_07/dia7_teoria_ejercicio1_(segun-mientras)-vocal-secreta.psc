@@ -27,12 +27,12 @@ Algoritmo teoria_ejercicio1
 	FinSegun
 	
 	// Se solicita al usuario ingresar la primera vocal.
-	escribir "Adivine la vocal que ha sido seleccionada."
+	escribir "Adivine la vocal que ha sido seleccionada: " sin saltar
 	leer ingresada	
 	
 	// Se continúa pidiendo al usuario que intente hasta que adivine la vocal correcta.
 	mientras minusculas(ingresada) <> secreta		
-		escribir "No es la correcta. Intente denuevo: "
+		escribir "No es la correcta. Intente denuevo: " sin saltar
 		leer ingresada		
 	fin mientras
 		

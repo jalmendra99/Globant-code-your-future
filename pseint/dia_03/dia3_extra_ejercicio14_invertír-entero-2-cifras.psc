@@ -18,7 +18,7 @@ Algoritmo extra_ejercicio14
 	escribir "Ejemplo, si se introduce 23 que muestre 32."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el número: "
+	escribir "Ingrese el número: " sin saltar
 	leer numero1
 	
 	// Invertir y mostrar en pantalla

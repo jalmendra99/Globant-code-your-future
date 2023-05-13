@@ -10,6 +10,7 @@ Algoritmo practicos_ejercicio7
 
 	// Definición de variables.
 	definir palabra como cadena
+	definir primeraLetra, ultimaLetra Como Caracter
 	definir primeraLetraIgualAUltima Como Logico
 	
 	// Inicialización de variables.
@@ -23,11 +24,22 @@ Algoritmo practicos_ejercicio7
 	escribir "Ingrese una palabra: "
 	leer palabra	
 	
+///////////////// INFO.	
 //////////	imprimir subcadena(palabra, longitud(palabra)-1, longitud(palabra)-1)
 	
-	// Se verifica la palabra ingresada.
-	///////// Hacer más legible esta línea horrible.
-	primeraLetraIgualAUltima = mayusculas(subcadena(palabra, 0, 0)) == mayusculas(subcadena(palabra, longitud(palabra)-1, longitud(palabra)-1))
+	// Se toma la primera letra de la cadena "palabra".
+	// De la "palabra" se toma una subcadena que va desde la posición 0 hasta la 0.
+	// O sea la primera letra de la cadena "palabra".
+	primeraLetra = mayusculas(subcadena(palabra, 0, 0)) 
+	
+	// Se toma la última letra de la cadena "palabra".
+	// De la "palabra" se toma una subcadena que va desde su última posición, 
+	// hasta su última posición - longitud(palabra) -1
+	// o sea la última letra de la cadena "palabra".
+	ultimaLetra = mayusculas(subcadena(palabra, longitud(palabra)-1, longitud(palabra)-1))
+	
+	// Se verifica si la primeraLetra y la ultimaLetra son iguales o no.
+	primeraLetraIgualAUltima = primeraLetra == ultimaLetra
 	
 	// Se muestra el mensaje correspondiente en pantalla.
 	si primeraLetraIgualAUltima Entonces

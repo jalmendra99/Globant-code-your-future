@@ -27,7 +27,8 @@ Algoritmo extra_ejercicio4
 	importe = 0
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedira ingresar la cantidad de horas que se usó el auto alquilado y se calculará el importe a abonar."
+	escribir "Se pedira ingresar la cantidad de horas que se usó el auto " sin saltar
+	escribir "alquilado y se calculará el importe a abonar."
 	
 	// Cargar datos ingresados por el usuario en variables.
 	escribir "Ingrese la cantidad de horas que se usó el auto alquilado (formato HH:MM): "

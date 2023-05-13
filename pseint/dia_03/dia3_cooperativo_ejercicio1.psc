@@ -23,7 +23,7 @@ Algoritmo cooperativo_ejercicio1
 	escribir "Se mostrará la unidad, decena y centena basados en el número de tres cifras ingresado."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese un número de tres cifras: "	
+	escribir "Ingrese un número de tres cifras: " sin saltar
 	leer num
 	
 	// Calculando la unidad, decena y centena del número ingresado...	

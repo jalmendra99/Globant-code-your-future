@@ -20,7 +20,7 @@ Algoritmo practicos_ejercicio2
 	escribir "Se pedira ingresar un número entero y se determinará si el mismo es par o impar."
 	
 	// Cargar el número ingresado por el usuario en una variable.
-	escribir "Ingrese un número entero: "
+	escribir "Ingrese un número entero: " sin saltar
 	leer num
 	
 	// Se verifica el caracter ingresado.

@@ -37,7 +37,7 @@ Algoritmo practicos_ejercicio6
 	frase = ""
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se pedirá ingresar una frase y se mostrará la misma invertida y "
+	escribir "Se pedirá ingresar una frase y se mostrará la misma invertida y " sin saltar
 	escribir "con un espacio entre cada letra."
 	
 	// Se ingresa la frase.

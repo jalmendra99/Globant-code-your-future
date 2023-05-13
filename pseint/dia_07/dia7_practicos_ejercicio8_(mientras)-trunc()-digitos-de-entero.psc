@@ -10,26 +10,31 @@ Algoritmo practicos_ejercicio8
 	
 	// Definición de variables.
 	definir num, digitos como entero
+	definir temporal como real
 	
 	// Inicialización de variables.	
 	num = -1
 	digitos = 1	// Se inicia con 1 para no dividir por cero al calcular la cantidad de dígitos
 	
 	// Se informa premisa al usuario.
-	escribir "Se solicitará ingresar un número entero positivo y se calculará la cantidad"
-	escribir "de dígitos que el mismo tiene, sin convertirlo a una cadena."
+	escribir "Se solicitará ingresar un número entero positivo y se calculará " sin saltar
+	escribir "la cantidad de dígitos que el mismo tiene, sin convertirlo a una cadena."
 	
 	// Se solicita al usuario ingresar el número
 	// Y se continúa pidiendo un número mientras el ingresado no sea positivo. (Si es 30.001 o más, falla)
 	mientras num <= 0 Hacer
-		escribir "Por favor ingrese un número entero positivo (de 1 a 30.000): "
+		escribir "Por favor ingrese un número entero positivo (de 1 a 30.000): " sin saltar
 		leer num
 	FinMientras	
 	
+	// No se puede usar num para calcular divisiones porque puede quedar con coma,
+	// así que se usa una variable "temporal" real que permite tomar valores con coma.
+	temporal = num
+	
 	// Se calcula la cantidad de dígitos usando trunc()
-	mientras trunc(num / 10) > 0 hacer
+	mientras trunc(temporal / 10) > 0 hacer
 		digitos = digitos + 1
-		num = num / 10
+		temporal = temporal / 10
 	FinMientras	
 	
 	// Se presenta la información solicitada por pantalla.

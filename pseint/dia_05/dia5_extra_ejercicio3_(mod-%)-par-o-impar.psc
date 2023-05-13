@@ -23,9 +23,9 @@ Algoritmo extra_ejercicio3
 	escribir "Se pedira ingresar dos números enteros y se calculará si ambos son pares o no."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el primer número: "
+	escribir "Ingrese el primer número: " sin saltar
 	leer nro1
-	escribir "Ingrese el segundo número: "
+	escribir "Ingrese el segundo número: " sin saltar
 	leer nro2
 	
 	// Se verifica si ambos números son par

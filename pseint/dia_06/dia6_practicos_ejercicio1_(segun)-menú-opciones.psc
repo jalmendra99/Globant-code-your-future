@@ -23,18 +23,18 @@ Algoritmo practicos_ejercicio1
 	operacion = ""
 	
 	// Se informa premisa al usuario
-	escribir "Se pedirá al usuario ingresar dos números enteros y una letra para indicar"
-	escribir "la operación a realizar entre los mismos"
-	escribir "([S]uma, [R]esta, [M]ultiplicación o [D]ivisión."
-	escribir "finalmente se presentará el resultado de la operación."
+	escribir "Se pedirá al usuario ingresar dos números enteros y una letra para indicar " sin saltar
+	escribir "la operación a realizar entre los mismos " sin saltar
+	escribir "([S]uma, [R]esta, [M]ultiplicación o [D]ivisión). " sin saltar
+	escribir "Finalmente se presentará el resultado de la operación."
 	
 	// Preguntas al usuario para definir que prefiere tomár.
-	escribir "Ingrese el primer número entero: "
+	escribir "Ingrese el primer número entero: " sin saltar
 	leer num1
-	escribir "Ingrese el segundo número entero: "
+	escribir "Ingrese el segundo número entero: " sin saltar
 	leer num2
 	escribir "Ingrese la operación a realizar entre ambos números."
-	escribir "[S]uma, [R]esta, [M]ultiplicación o [D]ivisión: "
+	escribir "[S]uma, [R]esta, [M]ultiplicación o [D]ivisión: " sin saltar
 	leer operacion
 	
 	segun operacion Hacer

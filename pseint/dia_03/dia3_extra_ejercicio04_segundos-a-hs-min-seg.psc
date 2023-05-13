@@ -13,10 +13,11 @@ Algoritmo extra_ejercicio4
 	cant_segundos = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se informará la cantidad de horas, minutos y segundos que existen en el valor ingresado (en segundos)."
+	escribir "Se informará la cantidad de horas, minutos y segundos que " sin saltar
+	escribir "existen en el valor ingresado (en segundos)."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese un número de segundos: "
+	escribir "Ingrese un número de segundos: " sin saltar
 	leer cant_segundos
 	
 	// Calcular horas, min y segundos y mostrar al usuario

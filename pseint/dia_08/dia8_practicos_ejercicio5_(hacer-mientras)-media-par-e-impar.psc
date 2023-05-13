@@ -27,7 +27,7 @@ Algoritmo practicos_ejercicio5
 	// Se continuará solicitando ingresar números enteros 10 veces
 	hacer 		
 		
-		escribir "Ingrese un número entero (restan ", 10 - contador, ") : "
+		escribir "Ingrese un número entero (restan ", 10 - contador, ") : " sin saltar
 		leer num
 		
 		contador = contador + 1

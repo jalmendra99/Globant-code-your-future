@@ -22,17 +22,17 @@ Algoritmo extra_ejercicio7
 	promedio = 0
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá ingresar las cuatro notas de los trabajos prácticos de un curso"	
-	escribir "Y se calculará el promedio de las tres más altas."
+	escribir "Se pedirá ingresar las cuatro notas de los trabajos prácticos de un curso " sin saltar
+	escribir "y se calculará el promedio de las tres más altas."
 	
 	// Cargando las cuatro notas de los trabajos prácticos.
-	escribir "Ingrese la primera nota: "
+	escribir "Ingrese la primera nota: " sin saltar
 	leer nota1
-	escribir "Ingrese la segunda nota: "
+	escribir "Ingrese la segunda nota: " sin saltar
 	leer nota2
-	escribir "Ingrese la tercera nota: "
+	escribir "Ingrese la tercera nota: " sin saltar
 	leer nota3
-	escribir "Ingrese la cuarta nota: "
+	escribir "Ingrese la cuarta nota: " sin saltar
 	leer nota4
 		
 	// Se determinan la nota menor y el promedio de las tres restantes

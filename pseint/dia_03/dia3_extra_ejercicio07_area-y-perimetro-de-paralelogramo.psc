@@ -15,12 +15,13 @@ Algoritmo extra_ejercicio7
 	lado2 = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará el área y perímetro de un paralelogramo con los valores ingresados de sus lados."
+	escribir "Se calculará el área y perímetro de un paralelogramo " sin saltar
+	escribir "con los valores ingresados de sus lados."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el largo de un lado: "
+	escribir "Ingrese el largo de un lado: " sin saltar
 	leer lado1
-	escribir "Ingrese el largo de otro lado: "
+	escribir "Ingrese el largo de otro lado: " sin saltar
 	leer lado2
 	
 	// Calcular área y perímetro y mostrar al usuario

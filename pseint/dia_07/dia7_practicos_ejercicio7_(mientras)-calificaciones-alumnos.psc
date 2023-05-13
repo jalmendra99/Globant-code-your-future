@@ -29,10 +29,10 @@ Algoritmo practicos_ejercicio7
 	notaValida = Falso
 	
 	// Se informa premisa al usuario.
-	escribir "Se solicitará ingresar el nombre del alumno y las tres notas obtenidas"
-	escribir "para proceder a calcular la nota final, si el nombre del alumno no es una cadena vacía"
-	escribir "(sinó el programa finalizará) y las notas ingresadas están comprendidas entre 0 y 10"
-	escribir "(sinó el programa mostrará un mensaje de error."
+	escribir "Se solicitará ingresar el nombre del alumno y las tres notas obtenidas " sin saltar
+	escribir "para proceder a calcular la nota final, si el nombre del alumno no es " sin saltar
+	escribir "una cadena vacía (sinó el programa finalizará) y las notas ingresadas " sin saltar
+	escribir "están comprendidas entre 0 y 10 (sinó el programa mostrará un mensaje de error."
 	
 	// Se solicita al usuario ingresar el primer nombre
 	escribir "Por favor ingrese el nombre de un alumno: "
@@ -40,11 +40,11 @@ Algoritmo practicos_ejercicio7
 	
 	// Se continúa solicitando ingresar nombres mientras el nombre no sea "".
 	mientras nombre <> "" Hacer		
-		escribir "Ingrese la nota de la parte práctica (vale el 10% de la nota final): "
+		escribir "Ingrese la nota de la parte práctica (vale el 10% de la nota final): " sin saltar
 		leer nota1
-		escribir "Ingrese la nota de la parte problemas (vale el 50% de la nota final): "
+		escribir "Ingrese la nota de la parte problemas (vale el 50% de la nota final): " sin saltar
 		leer nota2
-		escribir "Ingrese la nota de la parte teórica (vale el 40% de la nota final): "
+		escribir "Ingrese la nota de la parte teórica (vale el 40% de la nota final): " sin saltar
 		leer nota3
 		
 		notaValida = nota1 >= 0 y nota1 <= 10 y nota2 >= 0 y nota2 <= 10 y nota3 >= 0 y nota3 <= 10

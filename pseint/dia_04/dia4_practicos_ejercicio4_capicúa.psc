@@ -19,7 +19,7 @@ Algoritmo extra_ejercicio4
 	escribir "Se informará si el número de tres cifras ingresado es capicúa."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el número (de tres cífras): "
+	escribir "Ingrese el número (de tres cífras): " sin saltar
 	leer numeroIng
 	
 	nroInicial = trunc(numeroIng / 100)

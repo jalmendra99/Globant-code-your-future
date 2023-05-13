@@ -26,7 +26,7 @@ Algoritmo practicos_ejercicio1
 	// Se continuará solicitando ingresar una clave al usuario mientras esta sea incorrecta, 
 	// y los intentos sean <= 3.
 	hacer 
-		escribir "Ingrese una clave (restan ", 3 - intentos, " intentos): "
+		escribir "Ingrese una clave (restan ", 3 - intentos, " intentos): " sin saltar
 		leer claveIngresada
 		intentos = intentos + 1
 	mientras que (intentos < 3) y (claveIngresada <> claveElegida)

@@ -16,7 +16,7 @@ Algoritmo extra_ejercicio2
 	escribir "Se informará si el número ingresado es mayor que 500."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el número: "
+	escribir "Ingrese el número: " sin saltar
 	leer numeroIngresado
 	
 	// Se informa por pantalla si sueldo actual es mayor a sueldo mínimo

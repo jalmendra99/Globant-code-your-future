@@ -20,13 +20,13 @@ Algoritmo practicos_ejercicio2
 	lado = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se pedirá ingresar un número entero (tamaño del lado) "
-	escribir            "y se creará un cuadrado de asteriscos de ese tamaño."
+	escribir "Se pedirá ingresar un número entero (tamaño del lado) " sin saltar
+	escribir "y se creará un cuadrado de asteriscos de ese tamaño."
 	
 	// Se fuerza a que el número ingresado sea positivo.
 	hacer
 		//Se ingresa el tamaño del lado.
-		escribir "Ingrese un número entero (tamaño del lado): "
+		escribir "Ingrese un número entero (tamaño del lado): " sin saltar
 		leer lado
 	mientras que lado <= 0
 	

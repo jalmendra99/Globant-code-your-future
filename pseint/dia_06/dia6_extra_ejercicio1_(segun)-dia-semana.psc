@@ -18,11 +18,11 @@ Algoritmo extra_ejercicio1
 	dia = ""
 	
 	// Se informa premisa al usuario
-	escribir "Se pedirá al usuario ingresar un número del 1 al 7"
+	escribir "Se pedirá al usuario ingresar un número del 1 al 7 " sin saltar
 	escribir "y se determinará a que día corresponde."
 	
 	// Cargando el número ingresado por el usuario.
-	escribir "Ingrese un número entero del 1 al 7: "
+	escribir "Ingrese un número entero del 1 al 7: " sin saltar
 	leer num
 	
 	// Se elije el día según el número ingresado

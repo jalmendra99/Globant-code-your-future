@@ -15,7 +15,7 @@ Algoritmo teoria_ejercicio1
 	definir horarioPactadoEnMinutos, horarioIngresoEnMinutos, DiferenciaEnMinutos como entero
 	
 	// Se informa premisa al usuario
-	escribir "Se pedira ingresar el horario de ingreso a clases en zoom"
+	escribir "Se pedira ingresar el horario de ingreso a clases en zoom " sin saltar
 	escribir "y el horario en el que el usuario se conectó al zoom."
 	escribir "Se informará si corresponde tardanza o ausente."
 	

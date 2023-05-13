@@ -19,9 +19,9 @@ Algoritmo practicos_ejercicio1
 	escribir "Se calculará el área y el perímetro de un rectángulo basado en la base y altura ingresados."
 
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la base de un rectángulo: "
+	escribir "Ingrese la base de un rectángulo: " sin saltar
 	leer base
-	escribir "Ingrese la altura de un rectángulo: "
+	escribir "Ingrese la altura de un rectángulo: " sin saltar
 	leer altura
 	
 	// Calcular área, perímetro y mostrar en pantalla.

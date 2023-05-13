@@ -22,11 +22,11 @@ Algoritmo extra_ejercicio1
 	escribir "Se pedira ingresar tres notas y si su promedio es mayor o igual a 70 se informará que el alumno aprobó"
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la primera nota (1-100): "
+	escribir "Ingrese la primera nota (1-100): " sin saltar
 	leer nota1
-	escribir "Ingrese la segunda nota (1-100): "
+	escribir "Ingrese la segunda nota (1-100): " sin saltar
 	leer nota2
-	escribir "Ingrese la tercera nota (1-100): "
+	escribir "Ingrese la tercera nota (1-100): " sin saltar
 	leer nota3
 	
 	// Se verifican las notas ingresadas.

@@ -28,9 +28,9 @@ Algoritmo practicos_ejercicio3
 	condicion2 = Falso
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá al usuario ingresar la cantidad de tornillos defectuosos y correctos"
-	escribir "que un empleado produjo durante un período de prueba y se calculará"
-	escribir "su grado de eficiencia"
+	escribir "Se pedirá al usuario ingresar la cantidad de tornillos defectuosos " sin saltar
+	escribir "y correctos que un empleado produjo durante un período de prueba " Sin Saltar
+	escribir "y se calculará su grado de eficiencia."
 	
 	// Cargando los datos ingresados por el usuario.	
 	escribir "¿Cuantos tornillos defectuosos produjo el empleado?"

@@ -19,13 +19,13 @@ Algoritmo practicos_ejercicio5
 	total = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará el porcentaje de niños y niñas que hay en el curso actual"
+	escribir "Se calculará el porcentaje de niños y niñas que hay en el curso actual " sin saltar
 	escribir "basándose en las cantidades totales de niños y de niñas ingresados."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la cantidad total de niños en el curso: "	
+	escribir "Ingrese la cantidad total de niños en el curso: "	sin saltar
 	leer ninios
-	escribir "Ingrese la cantidad total de niñas en el curso: "	
+	escribir "Ingrese la cantidad total de niñas en el curso: "	sin saltar
 	leer ninias
 	
 	// se calcula el total

@@ -25,17 +25,17 @@ Algoritmo practicos_ejercicio1
 	comisiones = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se pedirá ingresar la cantidad de vendedores "
-	escribir sin saltar "y se procederá a solicitar por cada vendedor "
-	escribir sin saltar "cuanto es su sueldo base, cuantas ventas realizó, y "
-	escribir            "cuales fueron los importes de cada una de esas ventas."
-	escribir sin saltar "Luego se calcularan las comisiones de las ventas que realizó "
-	escribir            "y su sueldo total (sueldo base + comisiones)"
+	escribir "Se pedirá ingresar la cantidad de vendedores " sin saltar
+	escribir "y se procederá a solicitar por cada vendedor " sin saltar
+	escribir "cuanto es su sueldo base, cuantas ventas realizó, y " sin saltar
+	escribir "cuales fueron los importes de cada una de esas ventas."
+	escribir "Luego se calcularan las comisiones de las ventas que realizó " sin saltar
+	escribir "y su sueldo total (sueldo base + comisiones)."
 	
 	// Se fuerza a que el número que se vá a ingresar sea positivo.
 	hacer
 		//Se ingresa la cantidad de vendedores.
-		escribir "Ingrese la cantidad de vendedores: "
+		escribir "Ingrese la cantidad de vendedores: " sin saltar
 		leer vendedores
 	mientras que vendedores <= 0
 	
@@ -45,19 +45,19 @@ Algoritmo practicos_ejercicio1
 		// Se inicializa la sumatoria de ventas para cada vendedor.
 		sumaVentas = 0
 		
-		escribir "Para el vendedor ", nroVendedor, ", ingrese el sueldo base: "
+		escribir "Para el vendedor ", nroVendedor, ", ingrese el sueldo base: " sin saltar
 		leer sueldo
 		
 		// Se fuerza a que la cantidad de ventas ingresada sea positiva.
 		hacer
-			escribir "Para el vendedor ", nroVendedor, " ingrese la cantidad de ventas realizadas: "
+			escribir "Para el vendedor ", nroVendedor, " ingrese la cantidad de ventas realizadas: " sin saltar
 			leer ventas
 		mientras que ventas <= 0
 		
 		// Por cada venta...
 		para nroVenta = 1 hasta ventas con paso 1 Hacer
 			
-			escribir "Ingrese cuanto se cobró por la venta ", nroVenta, ": "
+			escribir "Ingrese cuanto se cobró por la venta ", nroVenta, ": " sin saltar
 			leer importeVenta
 			
 			sumaVentas = sumaVentas + importeVenta
@@ -67,7 +67,7 @@ Algoritmo practicos_ejercicio1
 		comisiones = sumaVentas * 0.1
 		
 		// Se presenta la información solicitada por pantalla.
-		escribir sin saltar "El vendedor ", nroVendedor, " cobrará $", comisiones , " de comisiones "
+		escribir "El vendedor ", nroVendedor, " cobrará $", comisiones , " de comisiones " sin saltar 
 		escribir "y $", sueldo + comisiones, " de sueldo total."
 	FinPara	
 	

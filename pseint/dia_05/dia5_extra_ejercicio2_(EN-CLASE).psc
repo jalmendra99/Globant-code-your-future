@@ -16,10 +16,10 @@ Algoritmo sin_titulo
 	total = 0
 	mes = ""
 	
-	escribir "Ingrese el importe de la compra: "
+	escribir "Ingrese el importe de la compra: " sin saltar
 	leer importe
 	
-	escribir "Ingrese el mes de la compra: "
+	escribir "Ingrese el mes de la compra: " sin saltar
 	leer mes
 	
 	mesConDescuento = minusculas(mes)=="septiembre" o minusculas(mes)=="octubre" o minusculas(mes) == "noviembre"

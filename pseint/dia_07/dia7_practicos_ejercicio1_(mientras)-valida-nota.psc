@@ -13,12 +13,12 @@ Algoritmo practicos_ejercicio1
 	nota = 0
 	
 	// Se solicita al usuario ingresar la nota.
-	escribir "Por favor ingrese una nota del 0 al 10: "
+	escribir "Por favor ingrese una nota del 0 al 10: " sin saltar
 	leer nota
 	
 	// Se valida que la nota esté en el rango permitido.
 	mientras nota < 0 o nota > 10 Hacer
-		Escribir "Nota no válida. Por favor ingrese una nota del 1 al 9: "
+		Escribir "Nota no válida. Por favor ingrese una nota del 0 al 10: " sin saltar
 		leer nota
 	FinMientras
 	

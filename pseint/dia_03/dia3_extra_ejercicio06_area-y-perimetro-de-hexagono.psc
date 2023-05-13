@@ -16,12 +16,13 @@ Algoritmo extra_ejercicio6
 	apotema = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará el área y perímetro de un hexágono usando el largo de su lado y apotema ingresados."
+	escribir "Se calculará el área y perímetro de un hexágono usando " sin saltar
+	escribir "el largo de su lado y apotema ingresados."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el largo de un lado: "
+	escribir "Ingrese el largo de un lado: " sin saltar
 	leer lado
-	escribir "Ingrese el largo del apotema: "
+	escribir "Ingrese el largo del apotema: " sin saltar
 	leer apotema
 	
 	// Calcular área y perímetro y mostrar al usuario

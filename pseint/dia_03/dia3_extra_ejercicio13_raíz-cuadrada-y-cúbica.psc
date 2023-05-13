@@ -19,7 +19,7 @@ Algoritmo extra_ejercicio13
 	escribir "Se calculará la raíz cuadrada y la raíz cúbica del número ingresado."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el número: "
+	escribir "Ingrese el número: " sin saltar
 	leer numero1
 	
 	// Calcular la raíz cuadrada

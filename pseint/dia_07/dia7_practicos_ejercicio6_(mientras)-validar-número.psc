@@ -22,17 +22,17 @@ Algoritmo practicos_ejercicio6
 	escribir "El programa finalizará en cuanto se ingrese un número igual o menor al primer número ingresado."
 	
 	// Se solicita al usuario ingresar el primer número	
-	escribir "Por favor ingrese un número real: "
+	escribir "Por favor ingrese un número real: " sin saltar
 	leer num
 	
 	primero = num	
 	
-	Escribir "Ingrese otro número real: "
+	Escribir "Ingrese otro número real: " sin saltar
 	leer num
 	
 	// Se continúa solicitando ingresar números mientras el número ingresado sea mayor al primero.
 	mientras num > primero Hacer		
-		Escribir "Ingrese otro número real: "
+		Escribir "Ingrese otro número real: " sin saltar
 		leer num		
 	FinMientras	
 	

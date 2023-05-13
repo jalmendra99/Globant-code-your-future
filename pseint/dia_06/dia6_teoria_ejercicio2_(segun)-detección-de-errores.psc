@@ -27,7 +27,7 @@ Algoritmo PRACTICA_SEGUN
 	
 	Definir num Como entero 
 	
-	Escribir "Ingrese un número entre 1 y 3" 
+	Escribir "Ingrese un número entre 1 y 3: " sin saltar
 	leer num
 	
 	Segun num Hacer

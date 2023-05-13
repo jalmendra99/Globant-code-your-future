@@ -24,7 +24,7 @@ Algoritmo extra_ejercicio15
 	llegadaSegundos = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará la hora de llegada de un ciclista, basado en los datos ingresados"
+	escribir "Se calculará la hora de llegada de un ciclista, basado en los datos ingresados " sin saltar
 	escribir "que serán la hora, minutos y segundos, más el tiempo de viaje en segundos."
 	
 	// Cargar datos ingresados por el usuario en variables.

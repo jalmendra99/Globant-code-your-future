@@ -14,7 +14,7 @@ Algoritmo practicos_ejercicio4
 	multiplos3 = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se mostrará la cantidad de números que son múltiplos de 2 o de 3 "
+	escribir "Se mostrará la cantidad de números que son múltiplos de 2 o de 3 " sin saltar
 	escribir "comprendidos entre 1 y 100."
 	
 	// Se calculan los múltiplos.
@@ -27,7 +27,7 @@ Algoritmo practicos_ejercicio4
 	FinPara
 	
 	// Se presenta la información solicitada por pantalla.
-	escribir sin saltar "Entre 1 y 100 los múltiplos de 2 son ", multiplos2
-	escribir " y los múltiplos de 3 son ", multiplos3, "."
+	escribir "Entre 1 y 100 los múltiplos de 2 son " sin saltar
+	escribir multiplos2, " y los múltiplos de 3 son ", multiplos3, "."
 
 FinAlgoritmo

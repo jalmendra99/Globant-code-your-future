@@ -16,9 +16,9 @@ Algoritmo extra_ejercicio5
 	escribir "Se calculará el área y perímetro de un rombo con los valores ingresados de sus lados."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el largo de un lado: "
+	escribir "Ingrese el largo de un lado: " sin saltar
 	leer base
-	escribir "Ingrese el largo de otro lado: "
+	escribir "Ingrese el largo de otro lado: " sin saltar
 	leer altura
 	
 	// Calcular área y perímetro y mostrar al usuario

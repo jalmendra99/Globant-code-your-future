@@ -35,7 +35,7 @@ Algoritmo practicos_ejercicio7
 		
 		// Se valida que se ingrese un número entre 1 y 10.
 		hacer
-			escribir "Ingrese un número entero entre 1 y 10: "
+			escribir "Ingrese un número entero entre 1 y 10: " sin saltar
 			leer num
 			si (num <= 0) o (num > 10) Entonces
 				escribir "El número ingresado no está entre 1 y 10."

@@ -22,7 +22,7 @@ Algoritmo practicos_ejercicio6
 	
 	// Se valida que se ingrese un número positivo.
 	hacer
-		escribir "Ingrese un número entero positivo: "
+		escribir "Ingrese un número entero positivo: " sin saltar
 		leer num
 	mientras que (num <= 0)
 	
@@ -31,7 +31,10 @@ Algoritmo practicos_ejercicio6
 		contador = contador + 1	
 		parActual = ParActual + 2
 		suma = suma + parActual
+		
+		/////////////// INFO.
 		////////imprimir "parActual: ", parActual, ", suma: ", suma, "."
+		
 	mientras que (contador < num)
 	
 	// Se presenta la información solicitada por pantalla.

@@ -17,13 +17,17 @@ Algoritmo extra_ejercicio3
 	escribir "Se informará si la letra ingresada es vocal o consonante."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la letra: "
+	escribir "Ingrese la letra: " sin saltar
 	leer letra
 	
-	// Habría que verificar que el caracter ingresado sea uno solo
-	// y que sea un caracter y no un número o simbolo, por ejemplo
+	//// Habría que verificar que el caracter ingresado sea uno solo
+	//// y que sea un caracter y no un número o simbolo, por ejemplo
 	
-	esVocal = ((letra == "a") o (letra == "A") o (letra == "e") o (letra == "E") o (letra == "i") o (letra == "I") o (letra == "o") o (letra == "O") o (letra == "u") o (letra == "U"))
+	// Se pasa la letra ingresada a mayúsculas para que la comparación que sigue
+	// sea más simple y fácil de leer.
+	letra = mayusculas(letra)
+	
+	esVocal = ((letra == "A") o (letra == "E") o (letra == "I") o (letra == "O") o (letra == "U"))
 	
 	// Se informa por pantalla si sueldo actual es mayor a sueldo mínimo
 	si esVocal Entonces
@@ -35,7 +39,8 @@ Algoritmo extra_ejercicio3
 	// Pruebas:
 	// a
 	// x
-	// 80		<-- falla
-	// gato		<-- falla
+	// 80		<-- falla. dice que es consonante 
+	//               porque cualquier cosa que no sea vocal se toma como consonante
+	// agua		<-- falla. Igual que el anterior. 
 	
 FinAlgoritmo

@@ -17,12 +17,12 @@ Algoritmo extra_ejercicio12
 	distancia = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se calculará la distancia entre dos números ingresados."
+	escribir "Se calculará la <distancia> entre dos números ingresados."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el primer número: "
+	escribir "Ingrese el primer número: " sin saltar
 	leer numero1
-	escribir "Ingrese el segundo número: "
+	escribir "Ingrese el segundo número: " sin saltar
 	leer numero2
 	
 	// Calcular la distancia

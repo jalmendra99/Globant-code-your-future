@@ -22,9 +22,9 @@ Algoritmo practicos_ejercicio4
 	n = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se calcularán las factoriales de todos los números enteros "
-	escribir            "desde el 1 hasta el número ingresado."
-	escribir            "Ingrese el factorial que desea calcular (máximo 170): "
+	escribir "Se calcularán las factoriales de todos los números enteros " sin saltar
+	escribir "desde el 1 hasta el número ingresado."
+	escribir "Ingrese el factorial que desea calcular (máximo 170): "
 	leer n	
 	
 	// Se inicializa factorial para cada entero.

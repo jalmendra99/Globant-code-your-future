@@ -23,11 +23,11 @@ Algoritmo extra_ejercicio6
 	descuento = 0
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá al usuario ingresar la cantidad de kilos de manzanas comprado"
-	escribir "Y se calculará el descuento correspondiente."
+	escribir "Se pedirá al usuario ingresar la cantidad de kilos de manzanas comprado " sin saltar
+	escribir "y se calculará el descuento correspondiente."
 	
 	// Cargando la cantidad de kilos de manzanas ingresado por el usuario.
-	escribir "Ingrese la cantidad de kilos comprados: "
+	escribir "Ingrese la cantidad de kilos comprados: " sin saltar
 	leer kilos
 	
 	// Se determina el descuento basado en los kilos ingresados.

@@ -15,7 +15,7 @@ Algoritmo ejercicio2
 	respuesta = ""
 	
 	// Se informa premisa al usuario
-	escribir "Se preguntará al usuario si hoy le tocó ser facilitador de su equipo."
+	escribir "Se preguntará al usuario si hoy le tocó ser facilitador de su equipo " sin saltar
 	escribir "y se mostrará un mensaje de felicidades si le tocó."
 	
 	// Cargar datos ingresados por el usuario en variables.

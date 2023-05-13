@@ -15,7 +15,7 @@ Algoritmo extra_ejercicio8
 	escribir "Se calculará el equivalente en Celcius a la cantidad ingresada en grados farenheit."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese la cantidad en grados farenheit: "
+	escribir "Ingrese la cantidad en grados farenheit: " sin saltar
 	leer farenheit
 	
 	// Convertir a celcius y mostrar al usuario

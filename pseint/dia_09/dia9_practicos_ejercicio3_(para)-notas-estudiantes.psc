@@ -39,15 +39,15 @@ Algoritmo practicos_ejercicio3
 	totalEstudiantes = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se pedirá ingresar la cantidad de alumnos que tiene un profesor "
-	escribir sin saltar "luego por cada alumno se solicitarán ingresar su nombre "
-	escribir sin saltar "y las 3 notas registradas a su nombre. "
+	escribir "Se pedirá ingresar la cantidad de alumnos que tiene un profesor " sin saltar
+	escribir "luego por cada alumno se solicitarán ingresar su nombre " sin saltar
+	escribir "y las 3 notas registradas a su nombre. " sin saltar
 	escribir "Luego se calcularán y presentaran en pantalla varios informes."
 	
 	// Se ingresa el nombre del alumno
 	// y se verifica que sea un número entero y positivo
 	Hacer
-		escribir "Ingrese la cantidad de alumnos: "
+		escribir "Ingrese la cantidad de alumnos: " sin saltar
 		leer cantidadAlumnos
 	Mientras Que cantidadAlumnos <= 0
 	
@@ -55,11 +55,11 @@ Algoritmo practicos_ejercicio3
 	para i = 1 hasta cantidadAlumnos con paso 1 Hacer
 		
 		escribir "Para el alumno #", i, " ingrese.."
-		escribir "La nota del trabajo práctico Integrador: "
+		escribir "La nota del trabajo práctico Integrador: " sin saltar
 		leer nota1
-		escribir "La nota de la exposición: "
+		escribir "La nota de la exposición: " sin saltar
 		leer nota2
-		escribir "La nota del parcial: "
+		escribir "La nota del parcial: " sin saltar
 		leer nota3
 		
 		notaFinal = (nota1 * 0.35) + (nota2 * 0.25) + (nota3 * 0.4)
@@ -112,7 +112,7 @@ Algoritmo practicos_ejercicio3
 	
 FinAlgoritmo
 
-//Pruebas: 
+/////// Agregar pruebas: 
 //	
 //	estud	nota1	nota2	nota3	final	Prom	porcent		mayor	total
 //		1		1		5		6		1		

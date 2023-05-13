@@ -21,8 +21,8 @@ Algoritmo practicos_ejercicio4
 	// Inicialización de variables.	
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se calcularán las factoriales de todos los números enteros "
-	escribir            "desde el 1 hasta el 5."
+	escribir "Se calcularán las factoriales de todos los números enteros " sin saltar
+	escribir "desde el 1 hasta el 5."
 	
 	// Si se usa un número x, entonces factorial se debería definir como real
 	// ya que si se define como entero, el límite es solo !12. Si es real el límite es !170.

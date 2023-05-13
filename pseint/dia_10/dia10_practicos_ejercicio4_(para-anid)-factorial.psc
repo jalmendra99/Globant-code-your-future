@@ -20,8 +20,8 @@ Algoritmo practicos_ejercicio4
 	// Inicialización de variables.	
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se calcularán las factoriales de todos los números enteros "
-	escribir            "desde el 1 hasta el 5."
+	escribir "Se calcularán las factoriales de todos los números enteros " sin saltar
+	escribir "desde el 1 hasta el 5."
 	
 	// Para los enteros desde el 1 hasta el 5...
 	para n = 1 hasta 5 con paso 1 Hacer

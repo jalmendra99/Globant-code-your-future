@@ -14,7 +14,8 @@ Algoritmo extra_ejercicio2
 	cotiz_euro = 0
 	
 	// Se informa premisa al usuario
-	escribir "Se informará el cambio de monedas en dólares y euros basado en la cantidad de dinero en pesos y las cotizaciones ingresadas."
+	escribir "Se informará el cambio de monedas en dólares y euros basado " sin saltar
+	escribir "en la cantidad de dinero en pesos y las cotizaciones ingresadas."
 	
 	// Cargar datos ingresados por el usuario en variables.
 	escribir "Ingrese la cantidad de pesos a convertir: "

@@ -43,12 +43,12 @@ Algoritmo extra_ejercicio8
 	horasExtra = 0
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá ingresar el tipo de sueldo que tiene un empleado"	
-	escribir "Y dependiendo del tipo de sueldo, se solicitarán más datos."
+	escribir "Se pedirá ingresar el tipo de sueldo que tiene un empleado " sin saltar
+	escribir "y dependiendo del tipo de sueldo, se solicitarán más datos. " sin saltar
 	escribir "Finalmente se calculará el sueldo del empleado usando los datos ingresados."
 	
 	// Preguntando el tipo de sueldo
-	escribir "Ingrese el tipo de sueldo que corresponde al empleado: "
+	escribir "Ingrese el tipo de sueldo que corresponde al empleado."
 	escribir "Opciones: (a)Comisión, (b) Salario fijo + comisión, (c) Salario fijo."
 	leer tipoDeSueldo
 	

@@ -23,7 +23,7 @@ Algoritmo practicos_ejercicio4
 	// Se continúa solicitando ingresar números mientras el número ingresado sea mayor de 10.
 	mientras num > 10 Hacer
 		
-		Escribir "Ingrese otro número entero: "
+		Escribir "Ingrese otro número entero: " sin saltar
 		leer num
 		
 	FinMientras	

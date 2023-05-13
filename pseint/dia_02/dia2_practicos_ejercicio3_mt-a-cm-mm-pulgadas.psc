@@ -8,17 +8,17 @@
 
 Algoritmo practicos_ejercicio3
 	
-	/// Definiendo variables.
+	// Definición de variables.
 	definir metros como real
 	
-	/// Inicializando variables.
+	// Inicialización de variables.
 	metros=0
 	
-	/// Usuario ingresa valores a variables.
-	escribir "Ingrese el número de metros"
+	// Usuario ingresa valores a variables.
+	escribir "Ingrese el número de metros: " sin saltar
 	leer metros
 	
-	/// Se calcula e imprime el equivalente en centímetros, milímetros y pulgadas
+	// Se calcula y muestra por pantalla el equivalente en centímetros, milímetros y pulgadas
 	escribir "Equivale a ", metros * 100 " centímetros, ", metros * 1000, " milímetros y ", metros * 100 * 2.54, " pulgadas."
 	
 FinAlgoritmo

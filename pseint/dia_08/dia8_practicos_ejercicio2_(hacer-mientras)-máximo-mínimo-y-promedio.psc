@@ -45,7 +45,7 @@ Algoritmo practicos_ejercicio2
 		sumatoria = sumatoria + num
 		contador = contador + 1
 		
-		escribir "Ingrese un número entero (cero para finalizar): "
+		escribir "Ingrese un número entero (cero para finalizar): " sin saltar
 		leer num		
 		
 	mientras que (num <> 0)

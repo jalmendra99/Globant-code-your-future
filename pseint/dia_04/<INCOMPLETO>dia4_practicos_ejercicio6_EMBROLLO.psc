@@ -31,7 +31,7 @@
 // solicitudesEjecutivos = 3
 
 ////////// INCOMPLETO Hacer!!
-
+////////// VER EJERCICIO RESUELTO EN CLASE.
 
 Algoritmo extra_ejercicio6
 	
@@ -44,7 +44,7 @@ Algoritmo extra_ejercicio6
 	solicitudDeEmergencia = 5
 	
 	// Se informa premisa al usuario
-	escribir "Se ordenará e imprimirá un listado de tareas por hacer"
+	escribir "Se ordenará e imprimirá un listado de tareas por hacer " sin saltar
 	escribir "basado en los datos ingresados."
 	
 	// Cargar datos ingresados por el usuario en variables.
@@ -66,5 +66,19 @@ Algoritmo extra_ejercicio6
 		FinSi
 	FinSi
 	escribir ""
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 FinAlgoritmo

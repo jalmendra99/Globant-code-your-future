@@ -23,7 +23,7 @@ Algoritmo extra_ejercicio5
 	escribir "Se pedirá al usuario ingresar un año y se calculará si es bisiesto."
 	
 	// Cargando el año ingresado por el usuario.
-	escribir "Ingrese un año (1900 a 2900)"
+	escribir "Ingrese un año (1900 a 2900): " sin saltar
 	leer anio
 	
 	// Se determina si el año es bisiesto.

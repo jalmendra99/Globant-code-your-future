@@ -20,11 +20,11 @@ Algoritmo extra_ejercicio4
 	total = 0
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá al usuario ingresar la cantidad de llantas que quiere comprar"
+	escribir "Se pedirá al usuario ingresar la cantidad de llantas que quiere comprar " sin saltar
 	escribir "y se determinará el precio individual de cada llanta y del total de la compra."
 	
 	// Cargando la cantidad ingresada por el usuario.
-	escribir "Ingrese la cantidad de llantas a comprar: "
+	escribir "Ingrese la cantidad de llantas a comprar: " sin saltar
 	leer cantidad
 	
 	// Se determina el precio basandose en la cantidad ingresada.

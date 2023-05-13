@@ -26,9 +26,9 @@ Algoritmo practicos_ejercicio3
 	// Se continuará solicitando ingresar usuario y clave
 	// mientras que los ingresados no sean 1024 / 4567.
 	hacer 		
-		escribir "Ingrese un usuario (número entero): "
+		escribir "Ingrese un usuario (número entero): " sin saltar
 		leer usuarioIngresado
-		escribir "Ingrese una clave (número entero): "
+		escribir "Ingrese una clave (número entero): " sin saltar
 		leer claveIngresada		
 	mientras que (usuarioIngresado <> usuarioElegido) o (claveIngresada <> claveElegida)
 	

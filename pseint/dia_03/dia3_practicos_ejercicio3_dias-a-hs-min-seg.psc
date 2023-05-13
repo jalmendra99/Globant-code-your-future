@@ -18,10 +18,10 @@ Algoritmo practicos_ejercicio3
 	escribir "Se calculará la cantidad de horas, minutos y segundos respecto a la cantidad de días ingresada."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el número de días: "
+	escribir "Ingrese el número de días: " sin saltar
 	leer dias
 	
 	// Calcular y mostrar en pantalla
-	escribir dias, " días equivalen a ", dias * 24, " horas, ", dias * 1440, " minutos, y ", dias * 86400, " segundos."
+	escribir dias, " días equivalen a ", dias * 24, " horas, o ", dias * 1440, " minutos, o ", dias * 86400, " segundos."
 	
 FinAlgoritmo

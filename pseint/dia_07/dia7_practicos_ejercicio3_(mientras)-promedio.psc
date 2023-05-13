@@ -32,7 +32,7 @@ Algoritmo practicos_ejercicio3
 		cantidad = cantidad + 1
 		sumatoria = sumatoria + num
 		
-		Escribir "Ingrese un número entero: "
+		Escribir "Ingrese un número entero: " sin saltar
 		leer num
 		
 	FinMientras	

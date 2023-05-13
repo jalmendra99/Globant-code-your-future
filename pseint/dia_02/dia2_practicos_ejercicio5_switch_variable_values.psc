@@ -11,30 +11,31 @@
 
 Algoritmo practicos_ejercicio5
 	
-	/// Definiendo variables.
+	// Definición de variables.
 	definir num1, num2, numAuxiliar como entero
 	
-	/// Inicializando variables.
+	// Inicialización de variables.
 	num1 = 0
 	num2 = 0
 	numAuxiliar = 0
 	
-	/// Usuario ingresa valores a variables.
+	// Usuario ingresa valores a variables.
 	escribir "Ingresará dos números y el programa intercambiará los valores de los mismos."
-	escribir "Ingrese el primer número."
+	escribir "Ingrese el primer número: " sin saltar
 	leer num1
-	escribir "Ingrese el segundo número."
+	escribir "Ingrese el segundo número: " sin saltar
 	leer num2
 	
-	/// Se intercambian los valores de num1 y num2 
+	// Se intercambian los valores de num1 y num2.
 	numAuxiliar = num1
 	num1 = num2
 	num2 = numAuxiliar
 	
+	// Se muestra la información solicitada por pantalla.
 	escribir "Se han intercambiado los valores de los números."
 	escribir "Valor del primer número: ", num1
 	escribir "Valor del segundo número: ", num2
 	
-	/// Nota: Se podría haber resuelto sin usar la variable numAuxiliar.
+	/// Nota: Se podría haber resuelto sin usar la variable numAuxiliar, imprimiendo cruzado.
 	
 FinAlgoritmo

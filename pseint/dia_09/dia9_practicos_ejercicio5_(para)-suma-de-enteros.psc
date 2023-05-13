@@ -13,13 +13,13 @@ Algoritmo practicos_ejercicio5
 	suma = 0
 	
 	// Se informa premisa al usuario.
-	escribir sin saltar "Se solicitará ingresár un número natural positivo (N) y se mostrará "
+	escribir "Se solicitará ingresár un número natural positivo (N) y se mostrará " sin saltar
 	escribir " la suma de los primeros N números naturales"
 	
 	// Se solicita ingresar el número "N"
 	// y se verifica que sea positivo
 	repetir 
-		escribir "Ingrese un número natural positivo: "
+		escribir "Ingrese un número natural positivo: " sin saltar
 		leer n
 	Mientras Que (n <= 0)
 	

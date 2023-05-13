@@ -15,7 +15,7 @@ Algoritmo extra_ejercicio3
 	escribir "Se informará el salario de un empleado luego de descontarle el 20 al número ingresado."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese el salario bruto: "
+	escribir "Ingrese el salario bruto: " sin saltar
 	leer salario
 	
 	// Calcular el salario neto y mostrar al usuario

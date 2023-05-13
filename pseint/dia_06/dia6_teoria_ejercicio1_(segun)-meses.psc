@@ -19,7 +19,7 @@ Algoritmo teoria_ejercicio1
 	escribir "Se pedira ingresar un nú?ero y se mostrará el mes correspondiente al mismo."
 	
 	// Cargar datos ingresados por el usuario en variables.
-	escribir "Ingrese un número de mes (de 1 a 12): "
+	escribir "Ingrese un número de mes (de 1 a 12): " sin saltar
 	leer mes
 
 	// Se valida que el número esté entre 1 y 12

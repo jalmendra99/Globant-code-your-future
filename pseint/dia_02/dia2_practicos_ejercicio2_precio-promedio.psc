@@ -7,24 +7,24 @@
 
 Algoritmo practicos_ejercicio2
 	
-	/// Definiendo variables.
+	// Definición de variables.
 	definir precio1, precio2, precio3 como real
 	
-	/// Inicializando variables.
+	// Inicialización de variables.
 	precio1=0
 	precio2=0
 	precio3=0
 	
-	/// Usuario ingresa valores a variables.
+	// Usuario ingresa valores a variables.
 	escribir "Ingresará el precio de un mismo producto en tres establecimientos distintos.."
-	Escribir "Ingrese el precio #1: "
+	Escribir "Ingrese el precio #1: " sin saltar
 	leer precio1
-	Escribir "Ingrese el precio #2: "
+	Escribir "Ingrese el precio #2: " sin saltar
 	leer precio2
-	Escribir "Ingrese el precio #3: "
+	Escribir "Ingrese el precio #3: " sin saltar
 	leer precio3
 	
-	/// Se calcula e imprime el promedio solicitado.
+	// Se calcula y muestra por pantalla el promedio solicitado.
 	escribir "El precio promedio del producto es: ", (precio1 + precio2 + precio3) / 3
 	
 FinAlgoritmo
