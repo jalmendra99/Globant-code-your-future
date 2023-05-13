@@ -22,7 +22,7 @@ Algoritmo ejercicio13
 	// Se solicita la información al usuario.	
 	// Se fuerza a que el número ingresado sea mayor o igual a cero.
 	Hacer
-		escribir "Ingrese un número entero positivo: "
+		escribir "Ingrese un número entero positivo: " sin saltar
 		leer num		
 	Mientras Que num < 0
 	
@@ -57,6 +57,7 @@ Funcion retorno = EsCapicua (num)
 		temporal = trunc(temporal / 10)
 	FinMientras
 	
+	/////////////////////// INFO.
 	///////////////escribir num, " tiene ", digitos, " dígitos."
 	
 	// Volvemos a tomar una copia de num.
@@ -65,6 +66,7 @@ Funcion retorno = EsCapicua (num)
 	i = 1
 	retorno = Verdadero
 	mientras (i <= digitos / 2) y retorno == Verdadero Hacer
+		/////////////////////// INFO.
 		/////////////escribir sin saltar "pasada ", i, " - "
 		
 		si Digito(num, i) <> digito(num, digitos - i + 1) Entonces
@@ -75,6 +77,7 @@ Funcion retorno = EsCapicua (num)
 		
 		i = i + 1
 		
+		/////////////////////// INFO.
 		///////////////escribir retorno		
 	FinMientras
 	

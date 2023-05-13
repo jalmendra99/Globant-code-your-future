@@ -18,8 +18,8 @@ Algoritmo ejercicio8
 	resultado = Falso
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará loguearse con un usuario y contraseña. "
-	escribir            "Se verificará si los ingresados son correctos"
+	escribir "Se solicitará loguearse con un usuario y contraseña. " sin saltar
+	escribir "Se verificará si los ingresados son correctos"
 	
 	// Se verifica usuario y contraseña usando la función solicitada.
 	resultado = Login()
@@ -47,9 +47,9 @@ Funcion retorno = Login ()
 		
 		// Se solicita al usuario ingresar usuario y contraseña.
 		escribir "Intento #", intentos + 1, " (restan ", 3 - intentos, "):"
-		escribir "Ingrese el nombre de usuario (hint: usuario1): "
+		escribir "Ingrese el nombre de usuario (hint: usuario1):"
 		leer user
-		escribir "Ingrese la contraseña (hint: asdasd): "
+		escribir "Ingrese la contraseña (hint: asdasd):"
 		leer pass
 		
 		intentos = intentos + 1

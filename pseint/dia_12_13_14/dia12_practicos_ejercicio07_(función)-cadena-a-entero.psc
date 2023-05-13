@@ -19,9 +19,9 @@ Algoritmo ejercicio7
 	num = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número entero positivo de tres dígitos, el mismo "
-	escribir sin saltar "se ingresará como una cadena, y luego se convertirá a entero usando "
-	escribir            "la función solicitada."
+	escribir "Se solicitará ingresar un número entero positivo de tres dígitos, el mismo " sin saltar
+	escribir "se ingresará como una cadena, y luego se convertirá a entero usando " sin saltar
+	escribir "la función solicitada."
 	
 	// Se solicitan los datos al usuario.
 	hacer

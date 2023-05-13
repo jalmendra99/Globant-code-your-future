@@ -37,20 +37,19 @@ Algoritmo ejercicio3
 	divisor = 0
 	
 	// Se informa la premisa al usuario.
-	escribir sin saltar "Se solicitará ingresar dos números enteros y se procederá a dividir el primero por "
-	escribir            "el segundo utilizando el método de división por restas sucesivas."
+	escribir "Se solicitará ingresar dos números enteros y se procederá a dividir el " sin saltar
+	escribir "primero por el segundo utilizando el método de división por restas sucesivas."
 	
-	// Se solicita la información al usuario...	
-	
+	// Se solicita la información al usuario...		
 	// Se fuerza a que el dividendo sea mayor o igual a cero.
 	Hacer
-		escribir "Ingrese un número entero positivo para el dividendo: "
+		escribir "Ingrese un número entero positivo para el dividendo: " sin saltar
 		leer dividendo
 	Mientras Que dividendo < 0 
 	
 	// Se fuerza a que el divisor sea mayor a cero.
 	Hacer
-		escribir "Ingrese otro número entero positivo para el divisor: "
+		escribir "Ingrese otro número entero positivo para el divisor: " sin saltar
 		leer divisor
 	Mientras Que divisor <= 0 
 	

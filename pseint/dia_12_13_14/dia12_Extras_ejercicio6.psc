@@ -19,13 +19,13 @@ Algoritmo ejercicio6
 	angulo = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un punto con coordenadas polares (radio, ángulo) y se convertirán "
-	escribir            "en cartesianas (x, y)."
+	escribir "Se solicitará ingresar un punto con coordenadas polares (radio, ángulo) " sin saltar
+	escribir "y se convertirán en cartesianas (x, y)."
 	
 	// Se solicita la información al usuario.
-	escribir "Ingrese un número para el radio: "
+	escribir "Ingrese un número para el radio: " sin saltar
 	leer radio	
-	escribir "Ingrese otro número para el ángulo: "
+	escribir "Ingrese otro número para el ángulo: " sin saltar
 	leer angulo
 	
 	// Se convierten las coordenadas polares a cartesianas usando el procedimiento solicitado.

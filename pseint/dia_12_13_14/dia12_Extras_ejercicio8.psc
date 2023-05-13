@@ -20,7 +20,8 @@ Algoritmo ejercicio8
 	letra = ""
 	
 	// Se informa premisa al usuario.
-	escribir "Se pedirá ingresar el nombre al usuario y se mostrará el mismo alternando caracteres en mayúsculas y minúsculas."
+	escribir "Se pedirá ingresar el nombre al usuario y se mostrará el mismo " Sin Saltar
+	escribir "alternando caracteres en mayúsculas y minúsculas."
 	
 	// Se ingresa la frase.
 	escribir "Ingrese su nombre: "

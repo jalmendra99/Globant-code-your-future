@@ -19,13 +19,13 @@ Algoritmo ejercicio10
 	suma = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número entero de dos dígitos y "
-	escribir            "se sumarán los dos dígitos que componen ese número."
+	escribir "Se solicitará ingresar un número entero de dos dígitos y " sin saltar
+	escribir "se sumarán los dos dígitos que componen ese número."
 	
 	// Se solicita la información al usuario.	
 	// Se fuerza a que el número ingresado contenga dos dígitos.
 	Hacer
-		escribir "Ingrese un número entero positivo de dos dígitos: "
+		escribir "Ingrese un número entero positivo de dos dígitos: " sin saltar
 		leer num		
 	Mientras Que num > 99 o num < 10
 		

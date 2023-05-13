@@ -24,7 +24,7 @@ Algoritmo ejercicio11
 	// Se solicita la información al usuario.	
 	// Se fuerza a que el número ingresado sea mayor a cero.
 	Hacer
-		escribir "Ingrese un número entero positivo de dos dígitos: "
+		escribir "Ingrese un número entero positivo mayor a cero: " sin saltar
 		leer num		
 	Mientras Que num <= 0
 		

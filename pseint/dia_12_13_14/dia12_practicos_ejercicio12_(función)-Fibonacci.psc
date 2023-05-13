@@ -30,13 +30,13 @@ Algoritmo ejercicio12
 	resultado = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un número entero y calculará y mostrará el término correspondiente "
-	escribir            "a ese número en la secuencia de Fibonacci."
+	escribir "Se solicitará ingresar un número entero y calculará y mostrará el " sin saltar
+	escribir "término correspondiente a ese número en la secuencia de Fibonacci."
 	
 	// Se solicita la información al usuario.	
 	// Se fuerza a que el número ingresado sea mayor o igual a cero.
 	Hacer
-		escribir "Ingrese un número entero positivo: "
+		escribir "Ingrese un número entero positivo: " sin saltar
 		leer num		
 	Mientras Que num < 0
 		
@@ -74,9 +74,13 @@ Funcion retorno = Fibonacci (n)
 			terminoActual = terminoAnterior + terminoAnterior2
 		FinSi		
 		
+		// Imprime el término actual de la secuencia.
 		escribir Sin Saltar terminoActual, ", "    // 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 		
 	FinPara
+	
+	// Agrega un salto de línea en pantalla para prolijidad.
+	escribir ""
 	
 	retorno = terminoActual
 	

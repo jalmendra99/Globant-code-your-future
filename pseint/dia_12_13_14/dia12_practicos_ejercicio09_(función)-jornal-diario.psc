@@ -33,29 +33,29 @@ Algoritmo ejercicio9
 	horas = 0
 	
 	// Se informa la premisa al usuario.
-	escribir Sin Saltar "Se solicitará ingresar un nombre de trabajador, el día de trabajo, "
-	escribir sin saltar "el turno, la cantidad de horas trabajadas y si el día de trabajo "
-	escribir            "era festivo o no."
+	escribir "Se solicitará ingresar un nombre de trabajador, el día de trabajo, " sin saltar
+	escribir "el turno, la cantidad de horas trabajadas y si el día de trabajo " sin saltar
+	escribir "era festivo o no."
 	
 	// Se solicita la información al usuario.	
-	escribir "Ingrese el nombre del trabajador: "
+	escribir "Ingrese el nombre del trabajador: " sin saltar
 	leer nombre
 	
 	// Se solicita el turno y se fuerza a que sea d/D/n/N.
 	Hacer
-		escribir "ingrese el turno ([d/D] = día - [n/N] = noche)"
+		escribir "ingrese el turno ([d/D] = día - [n/N] = noche): " sin saltar
 		leer turno
 	Mientras Que turno <> "d" y turno <> "D" y turno <> "n" y turno <> "N"
 	
 	// Se solicitan las horas trabajadas y se fuerzan a ser 0 o positivas.
 	Hacer
-		escribir "Ingrese la cantidad de horas trabajadas: "
+		escribir "Ingrese la cantidad de horas trabajadas: " sin saltar
 		leer horas		
 	Mientras Que horas < 0
 	
 	// Se solicita confirmar si fué feriado y se fuerza a que sea s/S/n/N.
 	Hacer
-		escribir "¿Trabajó en día feriado? (s/S o n/N): "
+		escribir "¿Trabajó en día feriado? (s/S o n/N): " sin saltar
 		leer dia		
 	Mientras Que dia <> "s" y dia <> "S" y dia <> "n" y dia <> "N"
 	
