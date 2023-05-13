@@ -73,7 +73,7 @@ Algoritmo clase22_extras_ejercicio7
 ////////				leer matriz[producto, dia]		
 ////////			Mientras Que matriz[producto, dia] < 0			
 			
-			//////// DEBUG INFO.
+			//////// INFO.
 			// Se llena automáticamente la información de las ventas en la matriz con un número aleatorio entre 1 y 9.
 			matriz[producto, dia] = Aleatorio(1, 9)
 			
@@ -194,7 +194,8 @@ Algoritmo clase22_extras_ejercicio7
 finAlgoritmo
 
 
-// Subprograma imprimeMatriz
+
+// Subprograma imprimePlanilla
 // Imprime los valores de la "matriz" (de 7x6).
 SubProceso imprimePlanilla (matriz por referencia)
 	
@@ -222,6 +223,8 @@ SubProceso imprimePlanilla (matriz por referencia)
 			si columna <> 7 - 1 entonces
 				
 				////// HORRIBLE. EXPLICAR.
+				////// Para referencia, ver código de función imprimeMatrizEnteros() 
+				//////   en dia22_extra_ejercicio1 y otros..
 				segun cantidadDigitos(matriz[fila, columna]) hacer
 					1: escribir sin saltar "|   "
 					2: escribir sin saltar "|  "
@@ -247,7 +250,6 @@ FinSubProceso
 
 
 
-
 // Función cantidadDigitos()   <--- Usada por la función imprimePlanilla()
 // retorna la cantidad de dígitos que ocupa un número entero.
 // ej: 100 retorna 3; 10 retorna 2, 1000 retorna 4, etc
@@ -265,20 +267,3 @@ funcion digitos = cantidadDigitos(num)
 	FinMientras	
 	
 FinFuncion
-////////
-////////// Función calculaLargo
-////////// Retorna la cantidad de caracteres que ocupa "num".
-////////// Se usa para que al imprimir las columnas, no queden muy desprolijas o corridas.
-////////funcion largo = calculaLargo(num)
-////////	definir largo como entero
-////////	definir cantidad Como Entero
-////////	
-////////	cantidad = 1
-////////	largo = cantidad
-////////	
-////////	mientras trunc(num / 10  ^ cantidad) <> 0 Hacer		
-////////		cantidad = cantidad + 1
-////////		largo = cantidad
-////////	FinMientras
-////////	
-////////FinFuncion

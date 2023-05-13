@@ -58,7 +58,7 @@ Algoritmo clase22_extras_ejercicio8
 ////////				leer matriz[representante, zona]		
 ////////			Mientras Que matriz[representante, zona] < 0			
 			
-			//////// DEBUG INFO.
+			//////// INFO.
 			// Se llena automáticamente la información de las ventas en la matriz con un número aleatorio entre 1 y 9.
 			matriz[representante, zona] = Aleatorio(1, 9)
 			
@@ -168,7 +168,9 @@ SubProceso imprimePlanilla (matriz por referencia)
 			// Agrega un separador entre cada columna, a menos que sea la última columna.
 			si columna < 6 entonces
 				
-				////// HORRIBLE. EXPLICAR. O REUSAR IMPRIMEMATRIZENTEROS() DE LOS EJERCICIOS PRÁCTICOS 4 O 6
+				////// HORRIBLE. EXPLICAR. 
+				////// Para referencia, ver código de función imprimeMatrizEnteros() 
+				//////   en dia22_extra_ejercicio1 y otros.
 				segun cantidadDigitos(matriz[fila, columna]) hacer
 					1: escribir sin saltar "|    "
 					2: escribir sin saltar "|   "

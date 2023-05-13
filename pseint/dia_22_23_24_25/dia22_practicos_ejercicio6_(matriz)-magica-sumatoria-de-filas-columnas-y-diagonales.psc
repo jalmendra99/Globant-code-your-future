@@ -144,7 +144,7 @@ funcion magica = sumasMatriz (matriz por referencia, n)
 			magica = Falso
 		FinSi
 		
-////		//////// DEBUG INFO.
+////		//////// INFO.
 ////		// Se muestra en pantalla la sumatoria de las filas y de las columnas.
 ////		escribir "sumaFilas[", fila, "] = ", sumaFilas[fila]
 ////		escribir "sumaColumnas[", fila, "] = ", sumaColumnas[fila]
@@ -157,7 +157,7 @@ funcion magica = sumasMatriz (matriz por referencia, n)
 			magica = Falso
 		FinSi
 		
-////		/////// DEBUG INFO.
+////		/////// INFO.
 ////		// Se muestra en pantalla la sumatoria de las diagonales.
 ////		escribir "sumaDiag[", fila, "] = ", sumaDiag[fila]
 		
