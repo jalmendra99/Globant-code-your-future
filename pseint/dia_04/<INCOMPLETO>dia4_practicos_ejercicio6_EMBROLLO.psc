@@ -30,8 +30,8 @@
 // cantidadEmails = 6 
 // solicitudesEjecutivos = 3
 
-////////// INCOMPLETO Hacer!!
-////////// VER EJERCICIO RESUELTO EN CLASE.
+////////// INCOMPLETO.
+////////// VER EJERCICIO RESUELTO GRUPALMENTE EN CLASE.
 
 Algoritmo extra_ejercicio6
 	

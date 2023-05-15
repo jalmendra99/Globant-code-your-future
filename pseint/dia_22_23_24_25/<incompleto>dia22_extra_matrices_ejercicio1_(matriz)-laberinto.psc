@@ -44,7 +44,7 @@ Algoritmo clase22_extras_matrices_ejercicio1
 	
 	// Llenar laberinto
 	
-	// Recorrer laberinto (recursivo)
+	// Recorrer e imprimir laberinto (recursivo)
 	// Frenar esto "paso a paso" para que el usuario
 	// "vea" como se está recorriendo el laberinto.
 	
@@ -62,20 +62,17 @@ FinAlgoritmo
 
 
 
-// Subprograma imprimeMatriz 
-// Imprime una "matriz" de "n" x "n".
-SubProceso imprimeMatriz (matriz por referencia, n)
+// Subprograma imprimeLaberinto(laberinto, n, m)
+// Similar a subprograma imprimeMatriz(), pero no imprime separadores de columnas.
+// Imprime por pantalla una matriz "laberinto" de tamaño "n" x "n".
+SubProceso imprimeLaberinto (laberinto por referencia, n, m)
 	
 	definir fila, columna como entero
 	
 	// Para cada fila y columna se imprime el valor de la matriz.
 	para fila = 0 hasta n - 1 con paso 1 Hacer
-		para columna = 0 hasta n - 1 con paso 1 Hacer	
-			escribir Sin Saltar matriz[fila, columna]
-			// Agrega un separador entre cada valor, a menos que sea la última columna.
-			si columna <> n -1 entonces
-				escribir sin saltar " "
-			finsi			
+		para columna = 0 hasta m - 1 con paso 1 Hacer	
+			escribir Sin Saltar laberinto[fila, columna]
 		FinPara	
 		// Imprime un salto de línea para pasar a la siguiente línea en pantalla.
 		escribir ""
