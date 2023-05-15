@@ -69,10 +69,10 @@ Algoritmo dia26_ejercicio_cooperativo
 	
 	Dimension matriz[9,12]
 	
-	// Se inicializa la matriz utilizando el subprograma solicitado.
+	// Se inicializa la matriz llenándola de asteriscos utilizando el subprograma solicitado.
 	inicializarMatriz(matriz, 9, 12)
 	
-	// Se muestra la matriz inicializada
+	// Se muestra la matriz inicializada.
 	escribir "La matriz inicializada es:"
 	imprimirMatriz(matriz, 9, 12)
 	
@@ -148,7 +148,7 @@ SubProceso imprimirMatriz (matriz por referencia, filas, columnas)
 			// Agrega un separador entre cada valor, a menos que sea la última columna.
 			si columna <> columnas -1 entonces
 				escribir sin saltar " "
-			finsi			
+			finsi
 		FinPara	
 		// Imprime un salto de línea para pasar a la siguiente línea en pantalla.
 		escribir ""
