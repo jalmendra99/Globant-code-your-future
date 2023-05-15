@@ -119,8 +119,10 @@ FinAlgoritmo
 SubProceso inicializarMatriz(matriz por referencia, filas, columnas)
 	definir fila, columna Como Entero
 	
+	// Para cada fila y columna de la "matriz"...
 	para fila = 0 hasta filas - 1 con paso 1 hacer
 		para columna = 0 hasta columnas - 1 con paso 1 hacer
+			// Se asigna un asterisco a la posición actual en la matriz.
 			matriz[fila, columna] = "*"
 		FinPara
 	FinPara
@@ -163,13 +165,21 @@ FinSubProceso
 // Similar al ejercicio 12 de la guía.
 SubProceso  agregarPalabra (matriz, fila, palabra)
 	
-	definir columna Como Entero
+	definir posicion Como Entero
+	definir letra Como Caracter
 	
 	// Se asume que matriz es de 9 filas por 12 columnas
 	// sinó se deberán pasar como parámetros al subproceso.
 	
-	para columna = 0 hasta longitud(palabra) - 1 con paso 1 Hacer
-		matriz[fila, columna] = subcadena(palabra, columna, columna)
+	// Se recorren todas las posiciones de la "palabra" recibida.
+	para posicion = 0 hasta longitud(palabra) - 1 con paso 1 Hacer
+		
+		// Se asigna el caracter de la "posicion" actual de "palabra" en la variable "letra".
+		letra = subcadena(palabra, posicion, posicion)
+		
+		// Se asigna la "letra" a la "matriz" en la "fila" recibida 
+		// y en la columna equivalente a la "posición" actual.
+		matriz[fila, posicion] = subcadena(palabra, posicion, posicion)
 	FinPara
 	
 FinSubProceso
@@ -195,6 +205,8 @@ funcion posicion = buscarR (matriz por referencia, fila)
 	encontrada = Falso
 	columna = 0
 	Hacer
+		
+		// Se asigna el caracter de la "fila" y "columna" actuales de la "matriz".
 		letra = matriz[fila, columna]
 		letra = Mayusculas(letra)
 		si letra == "R" Entonces
@@ -205,10 +217,14 @@ funcion posicion = buscarR (matriz por referencia, fila)
 			////////			escribir "para matriz[", fila, ", ", columna, "] se encontró R en la posición ", columna, "."
 		FinSi	
 		
+		// Para pasar a la siguiente columna.
 		columna = columna + 1
 		
 	Mientras Que no encontrada y columna < 12
 	
+	// Se asigna a "posición" el valor de la última "columna" donde se encontró la letra "R".
+	// Se le resta 1 al valor de columna para no tomar en cuenta el último valor 
+	// de "columna" en el ciclo hacer..mientras, que no es válido.
 	posicion = columna - 1
 	
 FinFuncion
@@ -236,14 +252,16 @@ SubProceso acomodarPalabra (matriz Por Referencia)
 	// Se asume que matriz es de 9 filas por 12 columnas
 	// sinó se deberán pasar como parámetros al subproceso.
 	
+	// Para toda "fila" en la "matriz"
 	para fila = 0 hasta 9 - 1 con paso 1 Hacer
 		
+		// Se busca la primera "R" en la palabra correspondiente a la "fila" actual en la "matriz".
 		posicionR = buscarR(matriz, fila)		
 		
 		////////		///// INFO.
 		////////		escribir "Palabra actual: " sin saltar
 		
-		// Se guarda la palabraActual
+		// Se guarda en "palabraActual" la palabra correspondiente a la "fila" actual en la "matriz".
 		para columna = 0 hasta 12 - 1 con paso 1 Hacer
 			palabraActual[columna] = matriz[fila, columna]
 			
@@ -252,14 +270,16 @@ SubProceso acomodarPalabra (matriz Por Referencia)
 			
 		FinPara
 		
-		// Se llena de asteriscos la matriz, hasta la posición
-		// donde comenzará la palabra acomodada.
+		// Se llena de asteriscos la matriz en la fila actual, para las columnas desde la posición cero, 
+		// hasta la posición donde comenzará la palabra acomodada.
+		// Para que la primera "R" de la palabra acomodada quede guardada en la columna 5 de la "matriz", 
+		// se recorrerán las columnas desde cero hasta (5 - posicionR).
 		para columna = 0 hasta (5 - posicionR) con paso 1 Hacer
 			matriz[fila, columna] = "*"
 		FinPara		
 		
-		// Se agrega la palabra corrida hacia la derecha, cuantos caracteres sea
-		// necesario, o cero.
+		// Se agrega la palabra corrida hacia la derecha, tantos caracteres como sea
+		// necesario para que en la posición de la columna 5 se guarde su primera letra "R".
 		para columna = 5 - posicionR hasta 12 - 1 con paso 1 Hacer
 			matriz[fila, columna] = palabraActual[columna - (5 - posicionR)]
 		FinPara		
