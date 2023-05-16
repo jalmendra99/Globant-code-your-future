@@ -149,7 +149,7 @@ SubProceso imprimePlanilla (matriz por referencia)
 	definir fila, columna como entero
 	
 	// Imprime los títulos de la matriz.
-	escribir "                     Este | Oeste | Norte |  Sur  | Centro| Tot. vtas x vended"
+	escribir "                     Este   Oeste   Norte    Sur    Centro  vtas. x vended"
 	
 	// Para cada fila y columna, se imprime el valor de la matriz.
 	para fila = 0 hasta 5 - 1  con paso 1 Hacer
@@ -172,10 +172,10 @@ SubProceso imprimePlanilla (matriz por referencia)
 				////// Para referencia, ver código de función imprimeMatrizEnteros() 
 				//////   en dia22_extra_ejercicio1 y otros.
 				segun cantidadDigitos(matriz[fila, columna]) hacer
-					1: escribir sin saltar "|    "
-					2: escribir sin saltar "|   "
-					3: escribir sin saltar "|  "
-					4: escribir sin saltar "| "					
+					1: escribir sin saltar "     "
+					2: escribir sin saltar "    "
+					3: escribir sin saltar "   "
+					4: escribir sin saltar "  "					
 				FinSegun
 				
 			finsi			
