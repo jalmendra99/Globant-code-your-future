@@ -1,6 +1,6 @@
 // Día 26 - Desafío Ejercicio cooperativo
 // Fer V - jalmendra99@gmail.com
-// 
+//
 // Se debe crear una matriz con las siguientes palabras como se muestra 
 // a continuación. Luego de eso debemos acomodar las palabras para que la primera 
 // letra "R" de cada una quede en la posición 5, alineándose.
@@ -22,7 +22,7 @@
 // Recordemos que todo lo tenemos que hacer con subprocesos o funciones.
 // El ejercicio será mucho más sencillo si establecemos las bases como equipo al principio.
 // Se necesita programar los siguientes subprogramas:
-// 
+//
 // subprograma inicializarMatriz:
 // Debe recibir como parámetros la matriz a inicializar, la cantidad de filas y la cantidad de columnas.
 // En primera instancia inicializaremos la matriz con un "*" (asterisco) 
@@ -199,33 +199,32 @@ funcion posicion = buscarR (matriz por referencia, fila)
 	definir letra Como Caracter
 	definir encontrada Como Logico
 	
-	// Se asume que matriz es de 9 filas por 12 columnas
-	// sinó se deberán pasar como parámetros al subproceso.
+	// Se asume que la matriz recibida es de 9 filas por 12 columnas
 	
 	encontrada = Falso
-	columna = 0
+	columna = -1
 	Hacer
+		
+		// Para pasar a la siguiente columna.		
+		columna = columna + 1
 		
 		// Se asigna el caracter de la "fila" y "columna" actuales de la "matriz".
 		letra = matriz[fila, columna]
 		letra = Mayusculas(letra)
+		
+		////////			///// INFO.
+		////////			escribir "para matriz[", fila, ", ", columna, "] se encontr? R en la posici?n ", columna, "."
+		
+		// Si la letra actual
 		si letra == "R" Entonces
 			encontrada = Verdadero
 			posicion = columna
-			
-			////////			///// INFO.
-			////////			escribir "para matriz[", fila, ", ", columna, "] se encontró R en la posición ", columna, "."
 		FinSi	
 		
-		// Para pasar a la siguiente columna.
-		columna = columna + 1
-		
-	Mientras Que no encontrada y columna < 12
+	Mientras Que no encontrada y columna < 12 - 1
 	
 	// Se asigna a "posición" el valor de la última "columna" donde se encontró la letra "R".
-	// Se le resta 1 al valor de columna para no tomar en cuenta el último valor 
-	// de "columna" en el ciclo hacer..mientras, que no es válido.
-	posicion = columna - 1
+	posicion = columna
 	
 FinFuncion
 
