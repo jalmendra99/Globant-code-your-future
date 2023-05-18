@@ -15,14 +15,13 @@ public static void main(String[] args) {
     }
 }
 
-*/
-
+ */
 package javaintroej02;
 
 public class JavaIntroEj02 {
 
-    public static void main(String[] args) { 
-        
+    public static void main(String[] args) {
+
         // Declaración de variables.
         int numero = 48;
         long largo;
@@ -32,13 +31,13 @@ public class JavaIntroEj02 {
         boolean bandera = false;
         char caracter;
         String nombre;
-        
+
         // Inicialización de variables.        
         largo = 60000;
         // flotante = 0.2; // ¿Cuál es el problema acá?
-        dobleFlotante = 10.3;        
+        dobleFlotante = 10.3;
         caracter = 'a';  // o también indicando su valor Unicode, por ejemplo '\u0061'.
         nombre = "José Perez";
-        
-    } 
+
+    }
 }

@@ -17,8 +17,7 @@ public static void main(String[] args) {
     } 
 }
 
-*/
-
+ */
 package javaintroej01;
 
 public class JavaIntroEj01 {
@@ -34,7 +33,7 @@ public class JavaIntroEj01 {
         boolean bandera;
         char caracter;
         String nombre;
-        
+
     }
-    
+
 }
