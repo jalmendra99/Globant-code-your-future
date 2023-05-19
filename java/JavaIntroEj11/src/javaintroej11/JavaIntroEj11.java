@@ -1,5 +1,5 @@
 /*
-Java Intro - Ejercicio 11 - Funciones.
+Java Intro - Ejercicio 11 - Strings.
 Fer V - Jalmendra99@gmail.com
 
 EJERCICIO 11
