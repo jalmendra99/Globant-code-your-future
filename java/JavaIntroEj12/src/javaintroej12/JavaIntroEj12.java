@@ -8,8 +8,7 @@ pasados por el usuario, validando que el primer numero múltiplo del segundo
 e imprima si el primer numero es múltiplo del segundo, 
 sino informe que no lo son.
 
-
----------
+--
 
 Fer: Resuelto previamente en PSeInt como:
 
@@ -45,7 +44,7 @@ public class JavaIntroEj12 {
         System.out.print("Ingrese otro número entero para ver si es múltiiplo del primero: ");
         num2 = leer.nextInt();
 
-        EsMultiplo(num1, num2);
+        EsMultiplo(num1, num2);        
     }
 
     // Recibe dos números enteros: num1 y num2,
@@ -58,8 +57,6 @@ public class JavaIntroEj12 {
             System.out.println("El número " + num2 + " es múltiplo de " + num1 + ".");
         } else {
             System.out.println("El número " + num2 + " NO es múltiplo de " + num1 + ".");
-
         }
     }
-
 }
