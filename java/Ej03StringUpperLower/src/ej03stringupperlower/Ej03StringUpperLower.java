@@ -29,6 +29,6 @@ public class Ej03StringUpperLower {
 
         System.out.println("El nombre ingresado en mayúsculas es: " + nombre.toUpperCase() + ".");
         System.out.println("El nombre ingresado en minúsculas es: " + nombre.toLowerCase() + ".");
-J
+
     }
 }

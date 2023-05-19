@@ -34,6 +34,6 @@ public class Ej07ComparaString {
         } else {
             System.out.println("Incorrecto.");
         }
-eure
+
     }
 }
