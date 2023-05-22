@@ -69,16 +69,16 @@ public class Ej21BuscarSubmatriz {
         // Definición de variables.
         int[][] matriz = new int[10][10];
         int[][] submatriz = new int[3][3];
-        
+
         // coordenadas[0] contendrá el número de fila 
         // donde comienza la submatriz, si se encuentra en la matriz principal.
         // Y coordenadas[1] contendrá el número de columna.
-        int[] coordenadas = new int[2]; 
-        
+        int[] coordenadas = new int[2];
+
         // Se inicializa con coordenadas inválidas.
         coordenadas[0] = -1;
         coordenadas[1] = -1;
-        
+
         int num;  // para validar el número ingresado por el usuario.
 
         // Se informa la premisa al usuario.
@@ -102,10 +102,10 @@ public class Ej21BuscarSubmatriz {
         System.out.println("");
         System.out.println("La matriz principal, generada con números al azar, es:");
         LibFerArrays.imprimeMatrizEnteros(matriz, 10, 10);
-        
+
         System.out.println("");
         System.out.println("Ahora ingresará valores para llenar una matriz de 3x3:");
-        
+
         // Se llena la submatriz P con números ingresados por el usuario.
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
@@ -129,22 +129,20 @@ public class Ej21BuscarSubmatriz {
         System.out.println("");
         System.out.println("La submatriz ingresada es:");
         LibFerArrays.imprimeMatrizEnteros(submatriz, 3, 3);
-        
+
         // Se busca la submatriz dentro de la matriz, y si se encuentra,
         // las coordenadas quedarán grabadas en "coordenadas[0]" para el 
         // número de la fila donde la submatriz comienza dentro de la matriz, y
         // "coordenadas[1]" para el número de columna. 
         submatrizEnMatriz(matriz, 10, 10, submatriz, 3, 3, coordenadas);
 
+        System.out.println("");
         if (coordenadas[0] != -1) {
             System.out.println("La submatriz ingresada se encontró en la posición:");
             System.out.println("fila: " + coordenadas[0] + ", columna: " + coordenadas[1] + ".");
         } else {
             System.out.println("La submatriz ingresada NO se encontró en la matriz principal.");
         }
-
-        // Se imprime toda la matriz para verificar visualmente por pantalla.
-        LibFerArrays.imprimeMatrizEnteros(matriz, n, n);
 
     }
 
@@ -158,10 +156,10 @@ public class Ej21BuscarSubmatriz {
     // coordenadas[0] = el número de la fila donde la submatriz comienza en la matriz.
     // coordenadas[1] = el número de la columna.
     public static void submatrizEnMatriz(
-            int[][] matriz, int m, int n, 
-            int[][] submatriz, int o, int p, 
-            int[] coordenadas) {        
-        
+            int[][] matriz, int m, int n,
+            int[][] submatriz, int o, int p,
+            int[] coordenadas) {
+
         // Se recorren todas las posiciones de la matriz en búsqueda
         // de que coincida el valor de la posición actual, con el primer (0,0)
         // valor de la submatriz.
@@ -170,18 +168,37 @@ public class Ej21BuscarSubmatriz {
         // para las columnas, ya que buscár más allá de esos límites no serviría
         // porque la submatriz ya no entraría en esas últimas posiciones.
         ////////// EXPLICAR MEJOR POR SI NO QUEDA CLARO ////////////
-        for (int fila = 0 ; fila < m - o; fila++) {
+        for (int fila = 0; fila < m - o; fila++) {
             for (int columna = 0; columna < n - p; columna++) {
                 if (matriz[fila][columna] == submatriz[0][0]) {
-                    ////////////////////
-                    // Aquí se inicia un loop de tamaño 3x3
-                    // para ver si coinciden los 8 valores restantes 
-                    // de la submatriz en la matriz
-                } 
+                    
+                    // Se guardan las coordenadas..
+                    coordenadas[0] = fila;
+                    coordenadas[1] = columna;
+
+                    // Se recorre toda la submatriz y se vá comparando
+                    // cada valor con la matriz.
+                    // Si cualquiera de los 9 valores es diferente
+                    // entonces se dejan las comparaciones y se vuelve
+                    // a los loops que recorren la matriz principal
+                    // para continuar buscando
+                    for (int filaSub = 0; filaSub < o; filaSub++) {
+                        for (int columnaSub = 0; columnaSub < p; columnaSub++) {
+                            if (matriz[fila + filaSub][columna + columnaSub] != submatriz[filaSub][columnaSub]) {
+                                coordenadas[0] = -1;
+                                coordenadas[1] = -1;
+                                // Se sale del for de columnaSub.
+                                break;
+                            }
+                        }
+                        // Si se encontró alguna diferencia, se sale del for de filaSub también.
+                        if (coordenadas[0] == -1) {
+                            break;
+                        }
+                    }
+                }
             }
         }
-
-
 
     }
 
