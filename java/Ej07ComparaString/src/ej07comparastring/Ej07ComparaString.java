@@ -1,4 +1,3 @@
-
 /*
 Java - Ejercicios de aprendizaje
 Ejercicio 7 - Página 42

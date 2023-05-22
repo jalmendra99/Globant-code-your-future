@@ -1,4 +1,3 @@
-
 /*
 Java - Ejercicios de aprendizaje
 Ejercicio 6 - Página 42
@@ -28,7 +27,7 @@ public class Ej06ParOImpar {
 
         // Se ingresa el número.
         System.out.print("Ingrese un número entero: ");
-        numero = leer.nextInt();
+        numero = leer.nextInt();        
 
         // Se determina si el número ingresado es par o impar.
         if (numero % 2 == 0) {
