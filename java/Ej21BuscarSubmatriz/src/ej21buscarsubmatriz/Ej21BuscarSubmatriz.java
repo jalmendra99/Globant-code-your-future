@@ -168,8 +168,8 @@ public class Ej21BuscarSubmatriz {
         // para las columnas, ya que buscár más allá de esos límites no serviría
         // porque la submatriz ya no entraría en esas últimas posiciones.
         ////////// EXPLICAR MEJOR POR SI NO QUEDA CLARO ////////////
-        for (int fila = 0; fila < m - o; fila++) {
-            for (int columna = 0; columna < n - p; columna++) {
+        for (int fila = 0; fila < m - (o - 1); fila++) {
+            for (int columna = 0; columna < n - (p - 1); columna++) {
                 if (matriz[fila][columna] == submatriz[0][0]) {
                     
                     // Se guardan las coordenadas..
