@@ -96,9 +96,9 @@ public class main {
                     } while (opcion2 != 15);
 
                     break;
-                    
+
                 case 2:
-                    
+
                     do {
                         System.out.println("");
                         System.out.println("Ejercicios de aprendizaje:");
@@ -178,9 +178,9 @@ public class main {
                         }
                     } while (opcion2 != 22);
                     break;
-                    
+
                 case 3:
-                    
+
                     do {
                         System.out.println("");
                         System.out.println("Ejercicios extra:");
@@ -209,7 +209,7 @@ public class main {
                                 Ejercicios3Extra.Ej06Promedios.main(nada);
                                 break;
                             case 7:
-
+                                Ejercicios3Extra.Ej07MaximoMinimoPromedio.main(nada);
                                 break;
                             case 8:
 
@@ -269,14 +269,14 @@ public class main {
                         }
                     } while (opcion2 != 25);
                     break;
-                    
+
                 case 4:
                     System.out.println("Resolviendo...");
                     break;
-                    
+
                 case 5: // Salir.                    
                     break;
-                    
+
                 default:
                     System.out.println("Opción no válida.");
             }
