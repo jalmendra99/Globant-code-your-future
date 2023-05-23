@@ -18,7 +18,7 @@ package EjerciciosDeAprendizaje;
 
 import java.util.Scanner;
 
-public class EJ13DibujarCuadrado {
+public class Ej13DibujarCuadrado {
 
     public static void main(String[] args) {
 

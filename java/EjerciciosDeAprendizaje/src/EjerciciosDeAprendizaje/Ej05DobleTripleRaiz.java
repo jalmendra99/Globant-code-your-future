@@ -14,7 +14,7 @@ package EjerciciosDeAprendizaje;
 
 import java.util.Scanner;
 
-public class EJ05DobleTripleRaiz {
+public class Ej05DobleTripleRaiz {
 
     public static void main(String[] args) {
 

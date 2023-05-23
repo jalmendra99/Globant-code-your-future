@@ -21,7 +21,7 @@ package EjerciciosDeAprendizaje;
 
 import java.util.Scanner;
 
-public class EJ14VoidFunction {
+public class Ej14VoidFunction {
 
     public static void main(String[] args) {
 
