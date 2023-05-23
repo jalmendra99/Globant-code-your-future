@@ -191,9 +191,8 @@ public class LibFerArrays {
 -------------------------------------------------------------------------
 SI ESTA CLASE (LibFerArrays) se guarda en un paquete
 distinto de EjerciciosDeAprendizaje y en un proyecto distinto
-a EjerciciosDeAprendizaje, 
-entonces se deben seguír las siguientes instrucciones
-para importarlo en los ejercicios 17, 18, 19, 20, 21
+a Ejercicios, entonces se deben seguír las siguientes instrucciones
+para importarlo como librería en los ejercicios 17, 18, 19, 20, 21
 y cualquier otro que requiera del uso de los métodos de esta clase.
 
 -------------------------------------------------------------------------
