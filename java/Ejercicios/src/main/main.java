@@ -212,16 +212,16 @@ public class main {
                                 Ejercicios3Extra.Ej07MaximoMinimoPromedio.main(nada);
                                 break;
                             case 8:
-
+                                Ejercicios3Extra.Ej08Sumatorias.main(nada);
                                 break;
                             case 9:
-
+                                Ejercicios3Extra.Ej09DivisionConRestas.main(nada);
                                 break;
                             case 10:
-
+                                Ejercicios3Extra.Ej10AdivinaNumero.main(nada);
                                 break;
                             case 11:
-
+                                Ejercicios3Extra.Ej11DigitosDeEntero.main(nada);
                                 break;
                             case 12:
 
