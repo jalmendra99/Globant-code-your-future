@@ -17,6 +17,6 @@ public class JavaIntroEj13 {
 
         // Definición de variables.
         String[] Equipo = new String[9];
-
+        
     }
 }
