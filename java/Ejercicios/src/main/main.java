@@ -3,6 +3,9 @@ Java - Ejercicios
 Clase main para elejir el ejercicio a ejecutar.
 Fer V - Jalmendra99@gmail.com
 
+Muestra menús para elejír el paquete y la clase correspondientes
+al ejercicio que se quiere ejecutar.
+
  */
 package main;
 
@@ -93,7 +96,9 @@ public class main {
                     } while (opcion2 != 15);
 
                     break;
+                    
                 case 2:
+                    
                     do {
                         System.out.println("");
                         System.out.println("Ejercicios de aprendizaje:");
@@ -173,14 +178,105 @@ public class main {
                         }
                     } while (opcion2 != 22);
                     break;
+                    
                 case 3:
-                    System.out.println("Resolviendo...");
+                    
+                    do {
+                        System.out.println("");
+                        System.out.println("Ejercicios extra:");
+                        System.out.println("Elija una opción (1 a 24)");
+                        System.out.print("O 25 para volvér al menú anterior: ");
+
+                        opcion2 = leer.nextInt();
+
+                        switch (opcion2) {
+                            case 1:
+                                Ejercicios3Extra.Ej01MinutosADiasYHoras.main(nada);
+                                break;
+                            case 2:
+                                Ejercicios3Extra.Ej02RotarVariables.main(nada);
+                                break;
+                            case 3:
+                                Ejercicios3Extra.Ej03VocalONo.main(nada);
+                                break;
+                            case 4:
+                                Ejercicios3Extra.Ej04NumerosRomanos.main(nada);
+                                break;
+                            case 5:
+                                Ejercicios3Extra.Ej05ObraSocialCalculos.main(nada);
+                                break;
+                            case 6:
+                                Ejercicios3Extra.Ej06Promedios.main(nada);
+                                break;
+                            case 7:
+
+                                break;
+                            case 8:
+
+                                break;
+                            case 9:
+
+                                break;
+                            case 10:
+
+                                break;
+                            case 11:
+
+                                break;
+                            case 12:
+
+                                break;
+                            case 13:
+
+                                break;
+                            case 14:
+
+                                break;
+                            case 15:
+
+                                break;
+                            case 16:
+
+                                break;
+                            case 17:
+
+                                break;
+                            case 18:
+
+                                break;
+                            case 19:
+
+                                break;
+                            case 20:
+
+                                break;
+                            case 21:
+
+                                break;
+                            case 22:
+
+                                break;
+                            case 23:
+
+                                break;
+                            case 24:
+
+                                break;
+                            case 25: // Volver al menú anterior.                            
+                                break;
+                            default:
+                                System.out.println("Opción no válida.");
+                        }
+                    } while (opcion2 != 25);
                     break;
+                    
                 case 4:
                     System.out.println("Resolviendo...");
                     break;
+                    
                 case 5: // Salir.                    
                     break;
+                    
                 default:
                     System.out.println("Opción no válida.");
             }
