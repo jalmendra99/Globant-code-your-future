@@ -5,7 +5,7 @@ Dada una cantidad de grados centígrados se debe mostrar su equivalente
 en grados Fahrenheit. La fórmula correspondiente es: F = 32 + (9 * C / 5).
 
  */
-package ejerciciosEnClase30;
+package Ejercicios_EnClase30;
 
 import java.util.Scanner;
 

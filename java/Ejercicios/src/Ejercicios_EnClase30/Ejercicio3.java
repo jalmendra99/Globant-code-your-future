@@ -6,7 +6,7 @@ y después toda en minúsculas.
 Nota: investigar la función toUpperCase() y toLowerCase() en Java.
 
  */
-package ejerciciosEnClase30;
+package Ejercicios_EnClase30;
 
 import java.util.Scanner;
 
