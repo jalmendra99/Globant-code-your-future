@@ -1,6 +1,6 @@
 /*
 Java - Ejercicios de aprendizaje
-Librería creada con funciones comunes para manipular arreglos y otras utilidades.
+Clase creada con funciones comunes para manipular arreglos y otras utilidades.
 
 Fer V - Jalmendra99@gmail.com
 
