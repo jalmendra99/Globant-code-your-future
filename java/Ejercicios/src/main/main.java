@@ -7,17 +7,11 @@ Muestra menús para elejír el paquete y la clase correspondientes
 al ejercicio que se quiera ejecutar.
 
 
-Por hacer:
-----------
+Por hacer / dudas / preguntas:
+------------------------------
 - Ej19MatrizAntisimetrica - Mejorar legibiidad del código.
+- Ej24Fibonacci - Revisar función recursiva. Revisar información del link provisto.
 - 
-
-
-Dudas / Preguntas:
-------------------
-- 
-
-
 
  */
 package main;
@@ -254,7 +248,7 @@ public class main {
 
                                 break;
                             case 24:
-
+                                Ejercicios3Extra.Ej24Fibonacci.main(nada);
                                 break;
                             case 25: // Volver al menú anterior.                            
                                 break;

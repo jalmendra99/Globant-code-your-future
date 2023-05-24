@@ -1,6 +1,6 @@
 /*
 Java - Ejercicios extra
-Ejercicio 22 - Página 49
+Ejercicio 22 - Página 50
 Llenar una matriz con números aleatorios.
 
 Fer V - Jalmendra99@gmail.com

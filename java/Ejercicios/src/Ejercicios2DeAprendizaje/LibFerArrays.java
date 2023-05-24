@@ -8,8 +8,6 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ejercicios2DeAprendizaje;
 
-import com.sun.org.apache.xpath.internal.operations.Minus;
-
 public class LibFerArrays {
 
     // -----------------------------------------------------
