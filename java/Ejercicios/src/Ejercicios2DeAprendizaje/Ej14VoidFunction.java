@@ -29,7 +29,7 @@ public class Ej14VoidFunction {
 
         // Definición de variables.        
         double euros;
-        String eleccion;
+        int eleccion;
         boolean opcionValida = false;
 
         // Se informa la premisa al usuario.
@@ -40,44 +40,53 @@ public class Ej14VoidFunction {
         System.out.print("Ingrese un importe en Euros: ");
         euros = leer.nextDouble();
 
-        // Se pregunta a que formato convertir el importe ingresado.
-        eleccion = "";
-
         do {
 
-            System.out.println("Ingrese la moneda a convertir el importe ingresado.");
-            System.out.print("libras, pesos o yenes: ");
-            eleccion = leer.next();
+            System.out.println("Convertir el importe ingresado a otra moneda:");
+            System.out.println("1. Libras");
+            System.out.println("2. Pesos");
+            System.out.println("3. Yenes: ");
+            System.out.print("Elija una moneda: ");
+            eleccion = leer.nextInt();
 
-            opcionValida = opcionValida || eleccion.toUpperCase().equals("LIBRAS");
-            opcionValida = opcionValida || eleccion.toUpperCase().equals("PESOS");
-            opcionValida = opcionValida || eleccion.toUpperCase().equals("YENES");
-
-        } while (!opcionValida);
+        } while (eleccion < 1 || eleccion > 3);
 
         mostrarCambio(euros, eleccion);
 
     }
 
-    public static void mostrarCambio(double euros, String moneda) {
+    // convierte el importe ingresado en "euros" a otra moneda
+    // elegida según la "opción" seleccionada
+    // y muestra por pantalla el resultado.
+    public static void mostrarCambio(double euros, int opcion) {
 
         double resultado = 0.0;
+        String moneda;
 
-        switch (moneda.toUpperCase()) {
-            case "LIBRAS":
+        switch (opcion) {
+            case 1: // Libras.
                 resultado = euros * 0.86;
+                moneda = "Libras";
                 break;
-            case "PESOS":
+            case 2: // Pesos.
                 resultado = euros * 1.28611;
+                moneda = "Pesos";
                 break;
-            case "YENES":
+            case 3: // Yenes.
                 resultado = euros * 129.852;
+                moneda = "Yenes";
                 break;
             default:
                 System.out.println("Error en parámetro de función mostrarCambio.");
+                moneda = "ERROR";
                 break;
         }
 
-        System.out.println(euros + " Euros equivalen a " + resultado + " " + moneda + ".");
+        if (moneda.equals("ERROR")) {
+            System.out.println("Hubo un error al convertir la moneda.");
+        } else {
+            System.out.println(euros + " Euros equivalen a " + resultado + " " + moneda + ".");
+        }
+        
     }
 }

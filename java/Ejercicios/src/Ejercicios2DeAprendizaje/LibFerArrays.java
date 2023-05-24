@@ -1,6 +1,6 @@
 /*
 Java - Ejercicios de aprendizaje
-Clase creada con funciones comunes para manipular arreglos y otras utilidades.
+Clase creada con funciones (¿métodos?) comunes para manipular arreglos y otras utilidades.
 
 Fer V - Jalmendra99@gmail.com
 
@@ -11,7 +11,6 @@ package Ejercicios2DeAprendizaje;
 public class LibFerArrays {
 
     // -----------------------------------------------------
-    // Función cuentaDigitos
     // Retorna la cantidad de dígitos de un entero.
     // -----------
     // Código traído de PSeInt para referencia:
@@ -42,7 +41,6 @@ public class LibFerArrays {
     }
 
     // -----------------------------------------------------
-    // Función imprimeVectorEnteros
     // Imprime en pantalla un vector de enteros "vector" de tamaño "n".
     public static void imprimeVectorEnteros(int[] vector, int n) {
 
@@ -57,7 +55,6 @@ public class LibFerArrays {
     }
 
     // -----------------------------------------------------
-    // Función AzarPorCantDigitos
     // Devuelve un entero positivo al azar que sea de una cantidad
     // de dígitos entre "digitosMin" y "digitosMax"
     // con misma probabilidad para cualquier cantidad de dígitos
@@ -103,7 +100,6 @@ public class LibFerArrays {
     }
 
     // -----------------------------------------------------
-    // Función muestraMatrizEnteros(int[][] matriz, int m, int n)
     // Imprime por pantalla una "matriz" de tamaño "m" x "n".
     // Ordena los espaciados de las columnas para que en pantalla se muestre "prolija".
     public static void imprimeMatrizEnteros(int[][] matriz, int m, int n) {
@@ -160,9 +156,8 @@ public class LibFerArrays {
     }
 
     // -----------------------------------------------------
-    // Función calculaMayor(int[][] matriz, int m, int n)
     // Devuelve el mayor de todos los elementos de una "matriz" de tamaño "m" x "n".
-    // Usada por la función muestraMatrizEnteros(int[][] matriz, int m, int n)
+    // Usada por muestraMatrizEnteros(int[][] matriz, int m, int n)
     public static int calculaMayor(int[][] matriz, int m, int n) {
 
         int mayor = 0;
@@ -201,12 +196,12 @@ importarlos en otro proyecto con NetBeans de la siguiente forma:
 - ir a "projects".
 - Seleccionar y expandír el proyecto donde se importará esta clase.
 - Seleccionar y expandír "librerías" o "libraries".
-- click derecho allí y seleccionar "agregar JAR/carpeta" o "Add Jar/folder".
+- click derecho ahí y seleccionar "agregar JAR/carpeta" o "Add Jar/folder".
 - buscar el directorio / carpeta "LibFerArrays" -> "dist".
 - y dentro del mismo seleccionar el archivo "LibFerArrays.jar".
 - Finalmente agregar al código del paquete del proyecto actual la línea:
     import libferarrays.LibFerArrays;
-- Para utilizar cualquiera de las funciones de libferarrays:
+- Para utilizar cualquiera de las funciones (¿los métodos?) de libferarrays:
     escribir LibFerArrays. y presionar <CTRL> + <BARRA ESPACIADORA>
 
 Nota:

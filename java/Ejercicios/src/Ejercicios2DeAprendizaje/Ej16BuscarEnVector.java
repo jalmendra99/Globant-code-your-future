@@ -84,7 +84,8 @@ public class Ej16BuscarEnVector {
         }
 
         // Se muestra el vector completo para poder verificar visualmente.
-        System.out.print("El vector es: [");
+        System.out.print("El vector es:");
+        System.out.println("[");
         for (int i = 0; i < n - 1; i++) {
             System.out.print(vector[i] + " ");
         }

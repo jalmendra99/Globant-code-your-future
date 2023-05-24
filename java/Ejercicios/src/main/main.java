@@ -4,7 +4,20 @@ Clase main para elejir el ejercicio a ejecutar.
 Fer V - Jalmendra99@gmail.com
 
 Muestra menús para elejír el paquete y la clase correspondientes
-al ejercicio que se quiere ejecutar.
+al ejercicio que se quiera ejecutar.
+
+
+Por hacer:
+----------
+- Ej19MatrizAntisimetrica - Mejorar legibiidad del código.
+- 
+
+
+Dudas / Preguntas:
+------------------
+- 
+
+
 
  */
 package main;
@@ -23,26 +36,15 @@ public class main {
 
         // Muestra un menú principal para elegír el paquete.
         do {
-            System.out.println("");
-            System.out.println("Ejercicios:");
-            System.out.println("1. Java Intro");
-            System.out.println("2. De aprendizaje");
-            System.out.println("3. Extras   <-- todavía no están resueltos.");
-            System.out.println("4. En Clase <-- todavía no están resueltos.");
-            System.out.println("5. <Salir>");
-            System.out.print("Elija una opción:");
-
+            imprimeMenu(0);
             opcion = leer.nextInt();
 
             switch (opcion) {
-                case 1:
+
+                case 1: // Ejercicios Java Intro.
 
                     do {
-                        System.out.println("");
-                        System.out.println("Ejercicios Java Intro:");
-                        System.out.println("Elija una opción (1 a 14)");
-                        System.out.print("O 15 para volvér al menú anterior: ");
-
+                        imprimeMenu(1);
                         opcion2 = leer.nextInt();
 
                         switch (opcion2) {
@@ -97,14 +99,10 @@ public class main {
 
                     break;
 
-                case 2:
+                case 2: // Ejercicios de aprendizaje.
 
                     do {
-                        System.out.println("");
-                        System.out.println("Ejercicios de aprendizaje:");
-                        System.out.println("Elija una opción (1 a 21)");
-                        System.out.print("O 22 para volvér al menú anterior: ");
-
+                        imprimeMenu(2);
                         opcion2 = leer.nextInt();
 
                         switch (opcion2) {
@@ -179,14 +177,10 @@ public class main {
                     } while (opcion2 != 22);
                     break;
 
-                case 3:
+                case 3: // Ejercicios extra.
 
                     do {
-                        System.out.println("");
-                        System.out.println("Ejercicios extra:");
-                        System.out.println("Elija una opción (1 a 24)");
-                        System.out.print("O 25 para volvér al menú anterior: ");
-
+                        imprimeMenu(3);
                         opcion2 = leer.nextInt();
 
                         switch (opcion2) {
@@ -270,8 +264,45 @@ public class main {
                     } while (opcion2 != 25);
                     break;
 
-                case 4:
-                    System.out.println("Resolviendo...");
+                case 4: // Ejercicios en clase.
+
+                    do {
+                        imprimeMenu(4);
+                        opcion2 = leer.nextInt();
+
+                        switch (opcion2) {
+
+                            case 1:
+
+                                break;
+
+                            case 2:
+
+                                break;
+
+                            case 3:
+
+                                break;
+
+                            case 4:
+
+                                break;
+
+                            case 5:
+
+                                break;
+
+                            case 6:
+
+                                break;
+
+                            case 99: // Volver al menú anterior.
+
+                                break;
+
+                        }
+                    } while (opcion2 != 99);
+
                     break;
 
                 case 5: // Salir.                    
@@ -282,6 +313,48 @@ public class main {
             }
 
         } while (opcion != 5);
+
+    }
+
+    // Imprime por pantalla el menú correspondiente a la "opcion" recibida.
+    public static void imprimeMenu(int opcion) {
+
+        System.out.println("");
+
+        switch (opcion) {
+            case 0:
+                System.out.println("Ejercicios:");
+                System.out.println("1. Java Intro");
+                System.out.println("2. De aprendizaje");
+                System.out.println("3. Extras   <-- resolviendo...");
+                System.out.println("4. En Clase <-- resolviendo...");
+                System.out.println("5. <Salir>");
+                System.out.print("Elija una opción: ");
+                break;
+            case 1:
+                System.out.println("Ejercicios Java Intro:");
+                System.out.println("Elija una opción (1 a 14)");
+                System.out.print("O 15 para volvér al menú anterior: ");
+                break;
+            case 2:
+                System.out.println("Ejercicios de aprendizaje:");
+                System.out.println("Elija una opción (1 a 21)");
+                System.out.print("O 22 para volvér al menú anterior: ");
+                break;
+            case 3:
+                System.out.println("Ejercicios extra:");
+                System.out.println("Elija una opción (1 a 24)");
+                System.out.print("O 25 para volvér al menú anterior: ");
+                break;
+            case 4:
+                System.out.println("Ejercicios extra:");
+                System.out.println("Ingrese un número para ver si el ejercicio existe");
+                System.out.print("O 99 para volvér al menú anterior: ");
+                break;
+            default:
+                System.out.println("Error al imprimír el menú: Opción inválida.");
+
+        }
 
     }
 }
