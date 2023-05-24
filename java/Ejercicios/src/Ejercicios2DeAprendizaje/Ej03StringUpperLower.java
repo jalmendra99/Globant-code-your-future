@@ -21,13 +21,13 @@ public class Ej03StringUpperLower {
         Scanner leer = new Scanner(System.in);
 
         // Definición de variables.
-        String nombre;
+        String frase;
 
-        System.out.print("Ingrese su nombre: ");
-        nombre = leer.nextLine();
+        System.out.print("Ingrese una frase: ");
+        frase = leer.nextLine();
 
-        System.out.println("El nombre ingresado en mayúsculas es: " + nombre.toUpperCase() + ".");
-        System.out.println("El nombre ingresado en minúsculas es: " + nombre.toLowerCase() + ".");
+        System.out.println("En mayúsculas, la frase es: " + frase.toUpperCase() + ".");
+        System.out.println("En minúsculas, la frase es: " + frase.toLowerCase() + ".");
 
     }
 }

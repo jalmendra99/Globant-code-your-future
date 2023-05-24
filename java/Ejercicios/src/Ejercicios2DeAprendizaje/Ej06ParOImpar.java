@@ -17,6 +17,7 @@ public class Ej06ParOImpar {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
+        boolean esPar;
 
         // Definición de variables.
         int numero;
@@ -30,7 +31,10 @@ public class Ej06ParOImpar {
         numero = leer.nextInt();        
 
         // Se determina si el número ingresado es par o impar.
-        if (numero % 2 == 0) {
+        esPar = numero % 2 == 0;
+        
+        // Se muestra la información solicitada por pantalla.
+        if (esPar) {
             System.out.println("El número ingresado es par.");
         } else {
             System.out.println("El número ingresado es impar.");

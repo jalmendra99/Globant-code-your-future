@@ -56,46 +56,42 @@ public class Ej11Menu {
         numero2 = leer.nextInt();
 
         do {
-            System.out.println("");
-            System.out.println("MENU");
-            System.out.println("----");
-            System.out.println("1. Sumar");
-            System.out.println("2. Restar");
-            System.out.println("3. Multiplicar");
-            System.out.println("4. Dividir");
-            System.out.println("5. Salir ");
-            System.out.print("Elija opción: ");
+            imprimirMenu();
             opcion = leer.nextInt();
 
             // Se agrega un salto de línea para prolijidad.
             System.out.println("");
-            
+
             switch (opcion) {
                 case 1: // 1. Sumar
                     System.out.println(numero1 + " + " + numero2 + " = " + (numero1 + numero2));
                     break;
+                    
                 case 2: // 2. Restar
                     System.out.println(numero1 + " - " + numero2 + " = " + (numero1 - numero2));
                     break;
+                    
                 case 3: // 3. Multiplicar
                     System.out.println(numero1 + " * " + numero2 + " = " + (numero1 * numero2));
                     break;
+                    
                 case 4: // 4. Dividir
                     if (numero2 != 0) {
-                        
+
                         // To get a "double" (floating point precision) 
                         // result from an integer division,
                         // you must typecast it, using (double), otherwise
                         // you will only get integer precision from this division.
                         // Source: https://stackoverflow.com/questions/32571909/java-integer-double-division-confusion
                         division = (double) numero1 / numero2;
-                        
+
                         System.out.println(numero1 + " / " + numero2 + " = " + division);
-                        
+
                     } else {
                         System.out.println("No se puede dividir por cero.");
                     }
                     break;
+                    
                 case 5: // 5. Salir
 
                     // Se pregunta al usuario si está seguro.
@@ -108,11 +104,24 @@ public class Ej11Menu {
                     }
 
                     break;
+                    
                 default:
                     System.out.println("Opción no reconocida.");
             }
 
         } while (!salir);
 
+    }
+
+    private static void imprimirMenu() {
+        System.out.println("");
+        System.out.println("MENU");
+        System.out.println("----");
+        System.out.println("1. Sumar");
+        System.out.println("2. Restar");
+        System.out.println("3. Multiplicar");
+        System.out.println("4. Dividir");
+        System.out.println("5. Salir ");
+        System.out.print("Elija opción: ");
     }
 }

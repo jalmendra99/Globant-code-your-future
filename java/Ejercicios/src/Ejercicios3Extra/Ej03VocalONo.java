@@ -21,26 +21,42 @@ public class Ej03VocalONo {
         
         Scanner leer = new Scanner(System.in);
         
-        String letra;
+        String cadena;
+        char letra;
         boolean vocal = false;
         
         // El usuario ingresa la letra.
         System.out.print("Ingrese una letra para determinar si es vocal o no: ");
-        letra = leer.nextLine();
+        cadena = leer.next();
+
+        // Se toma solo el primer caracter, sin importar el resto de lo ingresado.
+        // y se pasa a mayúsculas para ser más sencillo de comparar.
+        letra = cadena.toUpperCase().charAt(0);
         
         // Se determina si la letra ingresada es una vocal o no.
-        vocal = letra.toUpperCase().equals("A") ||
-                letra.toUpperCase().equals("E") ||
-                letra.toUpperCase().equals("I") ||
-                letra.toUpperCase().equals("O") ||
-                letra.toUpperCase().equals("U");
-               
+        vocal = esVocal(letra);
+        
         // Se imprime por pantalla la información solicitada.
         if (vocal) {
             System.out.println("La letra ingresada es una vocal.");
         } else {
             System.out.println("La letra ingresada NO es una vocal.");
         }
+        
+    }
+    
+    // Retorna verdadero si la "letra" ingresada es una vocal.    
+    public static boolean esVocal(char letra) {
+        
+        boolean vocal = false;        
+        
+        vocal = letra == 'A' ||
+                letra == 'E' ||
+                letra == 'I' ||
+                letra == 'O' ||
+                letra == 'U';
+        
+        return vocal;
         
     }
     
