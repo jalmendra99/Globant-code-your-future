@@ -233,10 +233,10 @@ public class main {
                                 Ejercicios3Extra.Ej16IngreseNPersonas.main(nada);
                                 break;
                             case 17:
-
+                                Ejercicios3Extra.Ej17FuncionPrimo.main(nada);
                                 break;
                             case 18:
-
+                                Ejercicios3Extra.Ej18VectorSumarElementos.main(nada);
                                 break;
                             case 19:
 

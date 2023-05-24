@@ -34,8 +34,8 @@ en los índices: 4,4 - 4,5 - 4,6 - 5,4 - 5,5 - 5,6 - 6,4 - 6,5 - 6,6.
 
 -------------------------------------------------------------------------
 Este fuente usa métodos de la clase LibFerArrays
-que se encuentra en este mismo paquete (EjerciciosDeAprendizaje)
-por lo que para llamar a los mismso se usaría: LibFerArrays.NOMBREDEMETODO()
+que se encuentra en el paquete EjerciciosDeAprendizaje.
+por lo que para llamar a los mismos se usaría: LibFerArrays.NOMBREDEMETODO()
 -------------------------------------------------------------------------
 
  */

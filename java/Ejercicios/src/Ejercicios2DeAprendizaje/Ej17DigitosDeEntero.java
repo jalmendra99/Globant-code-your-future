@@ -11,8 +11,8 @@ cuántos de 2 dígitos, etcétera (hasta 5 dígitos).
 
 -------------------------------------------------------------------------
 Este fuente usa métodos de la clase LibFerArrays
-que se encuentra en este mismo paquete (EjerciciosDeAprendizaje)
-por lo que para llamar a los mismso se usaría: LibFerArrays.NOMBREDEMETODO()
+que se encuentra en el paquete EjerciciosDeAprendizaje.
+por lo que para llamar a los mismos se usaría: LibFerArrays.NOMBREDEMETODO()
 -------------------------------------------------------------------------
 
  */

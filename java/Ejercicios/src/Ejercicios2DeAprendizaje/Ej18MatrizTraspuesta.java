@@ -17,8 +17,8 @@ A = 1  0  4      B = 1  0  6
 
 -------------------------------------------------------------------------
 Este fuente usa métodos de la clase LibFerArrays
-que se encuentra en este mismo paquete (EjerciciosDeAprendizaje)
-por lo que para llamar a los mismso se usaría: LibFerArrays.NOMBREDEMETODO()
+que se encuentra en el paquete EjerciciosDeAprendizaje.
+por lo que para llamar a los mismos se usaría: LibFerArrays.NOMBREDEMETODO()
 -------------------------------------------------------------------------
 
  */

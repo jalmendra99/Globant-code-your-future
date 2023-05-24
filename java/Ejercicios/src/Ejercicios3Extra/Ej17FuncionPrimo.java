@@ -1,16 +1,15 @@
 /*
 Java - Ejercicios extra
-Ejercicio 16 - Página 48
-Ingresar N personas..
+Ejercicio 17 - Página 48
+Función numero primo.
 
 Fer V - Jalmendra99@gmail.com
 
-Diseñe una función que pida el nombre y la edad de N personas 
-e imprima los datos de las personas ingresadas por teclado 
-e indique si son mayores o menores de edad. 
-Después de cada persona, el programa debe preguntarle al usuario 
-si quiere seguir mostrando personas 
-y frenar cuando el usuario ingrese la palabra “No”.
+Crea una aplicación que nos pida un número por teclado 
+y con una función se lo pasamos por parámetro 
+para que nos indique si es o no un número primo, 
+debe devolver true si es primo, sino false.
+
 
  */
 package Ejercicios3Extra;
@@ -24,49 +23,41 @@ public class Ej17FuncionPrimo {
         Scanner leer = new Scanner(System.in);
 
         // Definición de variables.
-        int edad;
-        String nombre, respuesta;
-        boolean continuar = true;
+        int numero;
+        boolean numeroEsPrimo;
 
-        // Se informa la premisa al usuario.
-        System.out.println("Se solicitará ingresar el nombre y edad de <n> personas.");
-        System.out.print("Luego se mostrará por pantalla la información ingresada ");
-        System.out.println("y si la persona es mayor o menor de edad.");
+        // Se ingresa un número entero positivo.
+        do {
+            System.out.print("Ingrese un número entero: ");
+            numero = leer.nextInt();
+        } while (numero < 0);
 
-        
-        while (continuar) {
+        numeroEsPrimo = esPrimo(numero);
 
-            // Se ingresan los datos del usuario: nombre.
-            System.out.print("Ingrese el nombre de una persona: ");
-            nombre = leer.next();
+        if (numeroEsPrimo) {
+            System.out.println("El número " + numero + " es primo.");
+        } else {
+            System.out.println("El número " + numero + " NO es primo.");
+        }
 
-            // Se ingresan los datos del usuario: edad (mayor a cero).
-            do {
-                System.out.print("Ingrese la edad en años: ");
-                edad = leer.nextInt();
-            } while (edad <= 0);
+    }
 
-            // Se imprime la información de la persona.
-            System.out.print(nombre + " tiene " + edad + " años y ");
+    // Returna verdadero si el "numero" recibido es primo. Falso si no es.
+    public static boolean esPrimo(int numero) {
 
-            if (edad > 18) {
-                System.out.println("es mayor de edad.");
-            } else {
-                System.out.println("NO es mayor de edad.");
-            }
-
-            // El programa le pregunta al usuario si quiere
-            // seguír mostrando personas...
-            System.out.println("");
-            System.out.print("¿Desea continuar? (No = salir): ");
-            respuesta = leer.next();
-
-            // ...y frena cuando el usuario ingrese la palabra "No".
-            if (respuesta.toUpperCase().equals("NO")) {
-                continuar = false;
+        // Se recorren todos los números en el rango entre el "numero" y 1
+        // (sin incluírlos), para ver si "numero" tiene algún tercer múltiplo.
+        // Si aparece un tercer múltiplo, entonces el "numero" no es primo 
+        // y la función retorna falso.
+        for (int i = (numero - 1); i >= 2; i--) {
+            if (numero % i == 0) {
+                return false;
             }
         }
 
+        // Si se llegó hasta acá, no se encontró un tercer múltiplo,
+        // entonces el "numero" no es primo y la función retorna verdadero.
+        return true;
     }
 
 }
