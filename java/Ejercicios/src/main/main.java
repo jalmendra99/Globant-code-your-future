@@ -227,10 +227,10 @@ public class main {
                                 Ejercicios3Extra.Ej14MatrizPromedios.main(nada);
                                 break;
                             case 15:
-
+                                Ejercicios3Extra.Ej15Menu.main(nada);
                                 break;
                             case 16:
-
+                                Ejercicios3Extra.Ej16IngreseNPersonas.main(nada);
                                 break;
                             case 17:
 
