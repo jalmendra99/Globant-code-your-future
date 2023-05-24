@@ -245,10 +245,10 @@ public class main {
                                 Ejercicios3Extra.Ej20VectorLlenarAleatorio.main(nada);
                                 break;
                             case 21:
-
+                                Ejercicios3Extra.Ej21MatrizAlumnos.main(nada);
                                 break;
                             case 22:
-
+                                Ejercicios3Extra.Ej22MatrizLlenarAleatorio.main(nada);
                                 break;
                             case 23:
 

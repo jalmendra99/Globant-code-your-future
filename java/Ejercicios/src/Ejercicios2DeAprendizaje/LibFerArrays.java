@@ -46,28 +46,30 @@ public class LibFerArrays {
     // Imprime en pantalla un vector de enteros "vector" de tamaño "n".
     public static void imprimeVectorEnteros(int[] vector, int n) {
 
-        System.out.print("[");
+        //////System.out.print("[");
         for (int i = 0; i < n; i++) {
             System.out.print(vector[i]);
             if (i != n - 1) {
                 System.out.print(" ");
             }
         }
-        System.out.println("]");
+        System.out.println("");
+        //////System.out.println("]");
     }
 
     // -----------------------------------------------------
     // Imprime en pantalla un vector de floats "vector" de tamaño "n".
     public static void imprimeVectorFloat(float[] vector, int n) {
 
-        System.out.print("[");
+        //////System.out.print("[");
         for (int i = 0; i < n; i++) {
             System.out.print(vector[i]);
             if (i != n - 1) {
                 System.out.print(" ");
             }
         }
-        System.out.println("]");
+        System.out.println("");
+        //////System.out.println("]");
     }
 
     // -----------------------------------------------------
@@ -169,7 +171,7 @@ public class LibFerArrays {
 
                 // Se resetea el espaciado.
                 espaciado = espacios;
-                
+
                 // Se asigna el número de la posición actual de la matriz en "num".
                 num = matriz[fila][columna];
 

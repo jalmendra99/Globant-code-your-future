@@ -63,6 +63,7 @@ public class Ej18VectorSumarElementos {
         System.out.println("La sumatoria de los elementos del vector es: " + sumatoria + ".");
         
         // Se imprime por pantalla el vector para verificar visualmente.
+        System.out.println("\nEl vector es:");
         LibFerArrays.imprimeVectorEnteros(vector, tamanio);
     }
 
