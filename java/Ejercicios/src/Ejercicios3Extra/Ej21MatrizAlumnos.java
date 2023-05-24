@@ -44,11 +44,14 @@ public class Ej21MatrizAlumnos {
 
         // Definición de variables.
         int tamanio, aprobados, reprobados;
-        int[][] notas = new int[10][4];    // Las filas representan los 10 alumnos.
+        
+// Las filas representan los 10 alumnos.
+        // Las columnas son las 4 notas de c/u.        
+        int[][] notas = new int[10][4];     
+        
         float[] promedios = new float[10];
         float notaFinal;
 
-        // Las columnas son las 4 notas y el promedio.
         // Se informa la premisa al usuario.
         System.out.print("Se generará una matriz de float de tamaño 10 x 4 ");
         System.out.print("que contendrá para 10 alumnos, sus 4 notas. Luego se ");
@@ -66,7 +69,7 @@ public class Ej21MatrizAlumnos {
             for (int columna = 0; columna < 4; columna++) {
                 switch (columna) {
                     case 0:
-                        notaFinal += (notas[fila][columna] * 0.1);                        
+                        notaFinal += (notas[fila][columna] * 0.1);
                         break;
                     case 1:
                         notaFinal += (notas[fila][columna] * 0.15);

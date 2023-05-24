@@ -55,8 +55,7 @@ public class LibFerArrays {
         }
         System.out.println("]");
     }
-    
-    
+
     // -----------------------------------------------------
     // Imprime en pantalla un vector de floats "vector" de tamaño "n".
     public static void imprimeVectorFloat(float[] vector, int n) {
@@ -153,23 +152,26 @@ public class LibFerArrays {
     // Ordena los espaciados de las columnas para que en pantalla se muestre "prolija".
     public static void imprimeMatrizEnteros(int[][] matriz, int m, int n) {
 
-        int mayor, num, espacios;
+        int mayor, num, espacios, espaciado;
+
+        // Se calcula el número mayor que haya en la matriz...
+        // para usar como referente máximo al imprimir todos los
+        // demás valores.
+        mayor = calculaMayor(matriz, m, n);
+
+        // ...para calcular el espaciado necesario que hay que escribir
+        // entre columnas para que la matriz quede prolija.
+        espacios = cuentaDigitos(mayor);
 
         // Para cada fila y columna de la matriz...
         for (int fila = 0; fila < m; fila++) {
             for (int columna = 0; columna < n; columna++) {
 
+                // Se resetea el espaciado.
+                espaciado = espacios;
+                
                 // Se asigna el número de la posición actual de la matriz en "num".
                 num = matriz[fila][columna];
-
-                // Se calcula el número mayor que haya en la matriz...
-                // para usar como referente máximo al imprimir todos los
-                // demás valores.
-                mayor = calculaMayor(matriz, m, n);
-
-                // ...para calcular el espaciado necesario que hay que escribir
-                // entre columnas para que la matriz quede prolija.
-                espacios = cuentaDigitos(mayor);
 
                 // Se calcula la cantidad de dígitos del número actual "num", y dependiendo
                 // de la misma, se agregan o quitan espacios antes de escribirlo.
@@ -181,10 +183,10 @@ public class LibFerArrays {
                 // Se escribe la cantidad de espacios antes del número actual.
                 // quita un espacio si el número actual es negativo
                 if (num < 0) {
-                    espacios--;
+                    espaciado--;
                 }
 
-                for (int i = 0; i < (espacios - cuentaDigitos(num)); i++) {
+                for (int i = 0; i < (espaciado - cuentaDigitos(num)); i++) {
                     System.out.print(" ");
                 }
 
@@ -193,7 +195,7 @@ public class LibFerArrays {
 
                 // Mientras la columna que se está imprimiendo no sea la última, se escribe un espacio 
                 // para separar el valor de la columna actual, del de la siguiente.
-                if (columna != m - 1) {
+                if (columna != n - 1) {
                     System.out.print(" ");
                 }
             }
