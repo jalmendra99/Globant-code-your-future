@@ -4,9 +4,11 @@ Clase creada con funciones (¿métodos?) comunes para manipular arreglos y otras
 
 Fer V - Jalmendra99@gmail.com
 
-
+ 
  */
 package Ejercicios2DeAprendizaje;
+
+import com.sun.org.apache.xpath.internal.operations.Minus;
 
 public class LibFerArrays {
 
@@ -53,6 +55,21 @@ public class LibFerArrays {
         }
         System.out.println("]");
     }
+    
+    
+    // -----------------------------------------------------
+    // Imprime en pantalla un vector de floats "vector" de tamaño "n".
+    public static void imprimeVectorFloat(float[] vector, int n) {
+
+        System.out.print("[");
+        for (int i = 0; i < n; i++) {
+            System.out.print(vector[i]);
+            if (i != n - 1) {
+                System.out.print(" ");
+            }
+        }
+        System.out.println("]");
+    }
 
     // -----------------------------------------------------
     // Retorna verdadero si "vector1" y "vector2" tienen los mismos valores
@@ -64,12 +81,26 @@ public class LibFerArrays {
         // Si aparece algun elemento distinto, la funcion retorna falso.
         for (int i = 0; i < tamanio; i++) {
             if (vector1[i] != vector2[i]) {
-                return false
+                return false;
             }
         }
 
         // Si se llegó hasta acá, todos los valores en los vectores son iguales.
         return true;
+    }
+
+    // -----------------------------------------------------
+    // Llena el "vector" de "tamanio" con números al azar
+    // que estén dentro del rango (min, max) inclusive.
+    public static void llenaVectorEnterosAzar(int[] vector, int tamanio, int min, int max) {
+
+        // Se llenan todos los elementos del vector.        
+        for (int i = 0; i < tamanio; i++) {
+            vector[i] = (int) (Math.random() * (max - min) + 1) + min;
+        }
+        // Para generar un número aleatorio entre min y max...
+        // (Math.random() * (max - min) + 1) + min;
+        // https://stackoverflow.com/questions/7961788/math-random-explanation
     }
 
     // -----------------------------------------------------
@@ -110,7 +141,7 @@ public class LibFerArrays {
         // 1000...9999   <-- numDigitosAleatorio = 4
         // 10000..99999  <-- numDigitosAleatorio = 5
         // Para generar un número aleatorio entre min y max...
-        // ((max - min) + 1) + min);
+        // (Math.random() * (max - min) + 1) + min;
         // https://stackoverflow.com/questions/7961788/math-random-explanation
         // ------------------------------------------------------------------------
         // ------------------------------------------------------------------------
@@ -197,6 +228,22 @@ public class LibFerArrays {
         return mayor;
     }
 
+    // -----------------------------------------------------
+    // Llena la "matriz" de tamaño filas x columnas con números al azar
+    // que estén dentro del rango (min, max) inclusive.
+    public static void llenaMatrizEnterosAzar(int[][] matriz, int filas, int columnas, int min, int max) {
+
+        // Se llenan todos los elementos del vector.        
+        for (int fila = 0; fila < filas; fila++) {
+            for (int columna = 0; columna < columnas; columna++) {
+                matriz[fila][columna] = (int) (Math.random() * (max - min) + 1) + min;
+            }
+        }
+        // Para generar un número aleatorio entre min y max...
+        // (Math.random() * (max - min) + 1) + min;
+        // https://stackoverflow.com/questions/7961788/math-random-explanation
+    }
+
 }
 
 /*
@@ -228,4 +275,4 @@ Nota:
 
 Fuentes: https://www.youtube.com/watch?v=3oOmd9R1LMQ
 -------------------------------------------------------------------------
-*/
+ */

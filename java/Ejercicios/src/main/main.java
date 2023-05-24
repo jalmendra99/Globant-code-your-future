@@ -239,10 +239,10 @@ public class main {
                                 Ejercicios3Extra.Ej18VectorSumarElementos.main(nada);
                                 break;
                             case 19:
-
+                                Ejercicios3Extra.Ej19VectoresIguales.main(nada);
                                 break;
                             case 20:
-
+                                Ejercicios3Extra.Ej20VectorLlenarAleatorio.main(nada);
                                 break;
                             case 21:
 

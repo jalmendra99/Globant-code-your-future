@@ -41,8 +41,8 @@ public class Ej19VectoresIguales {
         
         // Se ingresa un número entero positivo.
         // Se fuerza a que sea mayor que cero.
-        do {
-            System.out.print("Ingrese el tamaño de los vectores: ");
+        do {            
+            System.out.print("\nIngrese el tamaño de los vectores: ");
             tamanio = leer.nextInt();
         } while (tamanio <= 0);
 
@@ -51,13 +51,13 @@ public class Ej19VectoresIguales {
         vector2 = new int[tamanio];
         
         // Se llena el vector1 con los enteros ingresados por el usuario.
-        System.out.println("Llenando el primer vector.");
+        System.out.println("\nLlenando el primer vector.");
         for (int posicion = 0; posicion < tamanio; posicion++) {
             System.out.print("Ingrese un valor para la posición #" + posicion + ": ");
             vector1[posicion] = leer.nextInt();
         }
         // Se llena el vector2 con los enteros ingresados por el usuario.
-        System.out.println("Llenando el segundo vector.");
+        System.out.println("\nLlenando el segundo vector.");
         for (int posicion = 0; posicion < tamanio; posicion++) {
             System.out.print("Ingrese un valor para la posición #" + posicion + ": ");
             vector2[posicion] = leer.nextInt();
@@ -67,6 +67,7 @@ public class Ej19VectoresIguales {
         vectoresSonIguales = LibFerArrays.comparaVectoresEnteros(vector1, vector2, tamanio);
         
         // Se muestra en pantalla la información solicitada.
+        System.out.println("");
         if (vectoresSonIguales) {
             System.out.println("Los vectores son iguales.");
         } else {
