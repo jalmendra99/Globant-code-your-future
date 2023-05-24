@@ -22,16 +22,105 @@ package Ejercicios3Extra;
 import java.util.Scanner;
 
 public class Ej23SopaDeLetras {
-    
+
     public static void main(String[] args) {
-        
+
         Scanner leer = new Scanner(System.in);
-        
-        
-        
-        
-        
-        
+
+        String palabra;
+        int filaAleatoria, numeroAleatorio;
+        boolean agregar;
+        char[][] sopaDeLetras = new char[20][20];
+
+        // Se inicializa la matriz de caracteres con el caracter '0'.
+        for (int fila = 0; fila < 20; fila++) {
+            for (int columna = 0; columna < 20; columna++) {
+                sopaDeLetras[fila][columna] = '0';
+            }
+        }
+
+        // Se informa la premisa al usuario.
+        System.out.print("Ingresará 5 palabras de entre 3 y 5 caracteres ");
+        System.out.print("y se construirá una sopa de letras de 20 x 20 caracteres con las mismas.\n");
+
+        // Se ingresan las 5 palabras
+        for (int j = 0; j < 5; j++) {
+
+            do {
+                System.out.print("Ingrese una palabra de entre 3 y 5 caracteres (restan " + (5 - j) + "): ");
+                palabra = leer.nextLine();
+            } while (palabra.length() < 3 || palabra.length() > 5);
+
+            do {
+                agregar = false;
+
+                // Se genera un número aleatorio de fila (entre 0 y 19 inclusive).
+                filaAleatoria = (int) (Math.random() * 20);
+
+                // Si la fila elegida al azar está vacía, se activa la señal
+                // para salir de este do..while y poder agregar la palabra
+                // a el vector sopaDeLetras.
+                if (sopaDeLetras[filaAleatoria][0] == '0') {
+                    agregar = true;
+                }
+
+            } while (agregar == false);
+
+            /////////////////////////////////////////////////////////////
+            // AGREGAR CÓDIGO PARA QUE ADEMÁS LA PALABRA
+            // COMIENCE EN UNA COLUMNA ALEATORIA, SIN PASARSE DEL LARGO 
+            // DE LA FILA.
+            /////////////////////////////////////////////////////////////
+            
+            // Se agrega la palabra al vector sopaDeLetras en una fila aleatoria.
+            for (int i = 0; i < palabra.length(); i++) {
+                sopaDeLetras[filaAleatoria][i] = palabra.charAt(i);
+            }
+
+            // Se agregan números aleatorios entre el final de la palabra y
+            // el final de la fila actual de la matriz .
+            for (int i = palabra.length(); i < 20; i++) {
+                // Se genera un número aleatorio de relleno (entre 0 y 9 inclusive).
+                numeroAleatorio = (int) (Math.random() * 10);
+                sopaDeLetras[filaAleatoria][i] = Integer.toString(numeroAleatorio).charAt(0);
+            }
+
+        }
+
+        // Las filas restantes (las que siguen rellenas
+        // con '0') se rellenan con números aleatorios entre 0 y 9.
+        for (int fila = 0; fila < 20; fila++) {
+
+            // Si la fila comienza con un '0', entonces está "vacía".
+            if (sopaDeLetras[fila][0] == '0') {
+
+                // Se llenan todas las columnas de la fila actual con números aleatorios.
+                for (int columna = 0; columna < 20; columna++) {
+
+                    // Se genera un número aleatorio de relleno (entre 0 y 9 inclusive).
+                    numeroAleatorio = (int) (Math.random() * 10);
+                    sopaDeLetras[fila][columna] = Integer.toString(numeroAleatorio).charAt(0);
+                }
+
+            }
+        }
+
+        // Se muestra la matriz sopaDeLetras por pantalla.
+        System.out.println("La sopa de letras generada es:");
+        for (int fila = 0; fila < 20; fila++) {
+            for (int columna = 0; columna < 20; columna++) {
+
+                // Se imprime el caracter de la posición actual de la matriz.
+                System.out.print(sopaDeLetras[fila][columna]);
+
+                // después del caracter de la última columna de cada fila
+                // no hace falta imprimir un espacio.
+                if (columna != (20 - 1)) {
+                    System.out.print(" ");
+                }
+            }
+            // Imprime un salto de lńea para pasar a mostrar la siguiente fila.
+            System.out.println("");
+        }
     }
-    
 }

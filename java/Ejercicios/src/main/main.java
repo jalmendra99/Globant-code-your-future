@@ -11,6 +11,8 @@ Por hacer / dudas / preguntas:
 ------------------------------
 - Ej19MatrizAntisimetrica - Mejorar legibiidad del código.
 - Ej24Fibonacci - Revisar función recursiva. Revisar información del link provisto.
+- Ej23SopaDeLetras - Agregar código para que la palabra aparezca en una
+                      columna al azar (además de la fila al azar).
 - 
 
  */
@@ -245,7 +247,7 @@ public class main {
                                 Ejercicios3Extra.Ej22MatrizLlenarAleatorio.main(nada);
                                 break;
                             case 23:
-
+                                Ejercicios3Extra.Ej23SopaDeLetras.main(nada);
                                 break;
                             case 24:
                                 Ejercicios3Extra.Ej24Fibonacci.main(nada);
@@ -320,8 +322,8 @@ public class main {
                 System.out.println("Ejercicios:");
                 System.out.println("1. Java Intro");
                 System.out.println("2. De aprendizaje");
-                System.out.println("3. Extras   <-- resolviendo...");
-                System.out.println("4. En Clase <-- resolviendo...");
+                System.out.println("3. Extras");
+                System.out.println("4. Hechos en Clase con compañeros <-- resolviendo...");
                 System.out.println("5. <Salir>");
                 System.out.print("Elija una opción: ");
                 break;
