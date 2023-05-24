@@ -224,13 +224,13 @@ public class main {
                                 Ejercicios3Extra.Ej11DigitosDeEntero.main(nada);
                                 break;
                             case 12:
-
+                                Ejercicios3Extra.Ej12NumerosACadenas.main(nada);
                                 break;
                             case 13:
-
+                                Ejercicios3Extra.Ej13EscaleraDeNumeros.main(nada);
                                 break;
                             case 14:
-
+                                Ejercicios3Extra.Ej14MatrizPromedios.main(nada);
                                 break;
                             case 15:
 

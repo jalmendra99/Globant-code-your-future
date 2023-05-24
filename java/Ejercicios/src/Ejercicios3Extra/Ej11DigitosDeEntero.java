@@ -1,7 +1,7 @@
 /*
 Java - Ejercicios extra
-Ejercicio 10 - Página 47
-Adivina un número.
+Ejercicio 11 - Página 47
+Calcular los dígitos de un número entero.
 
 Fer V - Jalmendra99@gmail.com
 
