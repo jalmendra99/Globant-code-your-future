@@ -55,6 +55,24 @@ public class LibFerArrays {
     }
 
     // -----------------------------------------------------
+    // Retorna verdadero si "vector1" y "vector2" tienen los mismos valores
+    // asignados en las mismas posiciones. Falso sino.
+    public static boolean comparaVectoresEnteros(int[] vector1, int[] vector2, int tamanio) {
+
+        // Para todos los elementos del "vector1",
+        // se comparan sus equivalentes contra el "vector2".
+        // Si aparece algun elemento distinto, la funcion retorna falso.
+        for (int i = 0; i < tamanio; i++) {
+            if (vector1[i] != vector2[i]) {
+                return false
+            }
+        }
+
+        // Si se llegó hasta acá, todos los valores en los vectores son iguales.
+        return true;
+    }
+
+    // -----------------------------------------------------
     // Devuelve un entero positivo al azar que sea de una cantidad
     // de dígitos entre "digitosMin" y "digitosMax"
     // con misma probabilidad para cualquier cantidad de dígitos
@@ -130,12 +148,11 @@ public class LibFerArrays {
                 //     num = 100 -> se imprime -> "100" (o sea, ningún espacio y el número de tres dígitos).
                 //  etc.
                 // Se escribe la cantidad de espacios antes del número actual.
-                
                 // quita un espacio si el número actual es negativo
                 if (num < 0) {
                     espacios--;
                 }
-                
+
                 for (int i = 0; i < (espacios - cuentaDigitos(num)); i++) {
                     System.out.print(" ");
                 }
