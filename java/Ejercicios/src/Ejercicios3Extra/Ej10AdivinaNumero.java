@@ -57,5 +57,4 @@ public class Ej10AdivinaNumero {
         System.out.println("¡Felicitaciones! Adivinó el número.");
 
     }
-
 }

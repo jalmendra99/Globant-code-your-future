@@ -102,7 +102,7 @@ public class Ej15Menu {
             }
 
         } while (!salir);
-
+        
     }
 
     private static void imprimirMenu() {

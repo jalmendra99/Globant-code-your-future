@@ -126,7 +126,7 @@ public class Ej21BuscarSubmatriz {
         } else {
             System.out.println("La submatriz ingresada NO se encontró en la matriz principal.");
         }
-
+        
     }
 
     // Funcion submatrizEnMatriz
@@ -182,7 +182,5 @@ public class Ej21BuscarSubmatriz {
                 }
             }
         }
-
     }
-
 }

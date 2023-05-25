@@ -39,7 +39,7 @@ public class Ej17FuncionPrimo {
         } else {
             System.out.println("El número " + numero + " NO es primo.");
         }
-
+        
     }
 
     // Returna verdadero si el "numero" recibido es primo. Falso si no es.

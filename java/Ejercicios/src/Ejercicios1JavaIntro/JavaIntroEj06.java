@@ -33,7 +33,7 @@ public class JavaIntroEj06 {
         } else {
             System.out.println("Ni " + num1 + ", ni " + num2 + " son mayores que 25.");
         }
-
+        
     }
 
 }

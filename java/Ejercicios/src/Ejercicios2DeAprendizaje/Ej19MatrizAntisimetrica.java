@@ -109,7 +109,7 @@ public class Ej19MatrizAntisimetrica {
         System.out.println("");
         System.out.println("Matriz: ");
         LibFerArrays.imprimeMatrizEnteros(matriz, filas, columnas);
-
+        
     }
 
 }

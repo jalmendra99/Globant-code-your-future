@@ -29,5 +29,4 @@ public class JavaIntroEj08 {
         }
         System.out.println("La nota seleccionada es: " + num);
     }
-
 }

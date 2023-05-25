@@ -18,7 +18,6 @@ Nota: investigar función equals() y como convertir números a String.
  */
 package Ejercicios3Extra;
 
-import Ejercicios2DeAprendizaje.LibFerArrays;
 import java.util.Scanner;
 
 public class Ej12NumerosACadenas {
@@ -54,11 +53,8 @@ public class Ej12NumerosACadenas {
                     }
 
                     System.out.println(cadena);
-
                 }
             }
-
         }
-
     }
 }

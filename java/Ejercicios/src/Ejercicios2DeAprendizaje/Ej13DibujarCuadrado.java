@@ -46,8 +46,7 @@ public class Ej13DibujarCuadrado {
             }
             // Se imprime un salto de línea.
             System.out.println("");
-
+            
         }
-
     }
 }

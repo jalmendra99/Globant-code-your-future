@@ -18,13 +18,9 @@ Utilizar sólo una variable auxiliar.
  */
 package Ejercicios3Extra;
 
-import java.util.Scanner;
-
 public class Ej02RotarVariables {
     
     public static void main(String[] args) {
-        
-        Scanner leer = new Scanner(System.in);
         
         int A, B, C, D, AUX;
         
@@ -42,6 +38,5 @@ public class Ej02RotarVariables {
         D = AUX;
         
         System.out.println("A = " + A + ", B = " + B + ", C = " + C + ", D = " + D);        
-        
     }
 }

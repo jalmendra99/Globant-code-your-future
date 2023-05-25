@@ -47,7 +47,7 @@ public class JavaIntroEj10 {
             // Imprime un salto de línea.
             System.out.println("");
         }
-
+        
     }
 
 }

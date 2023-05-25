@@ -48,7 +48,7 @@ public class Ej13EscaleraDeNumeros {
             System.out.println("");
 
         }
-
+        
     }
 
 }

@@ -124,7 +124,7 @@ public class Ej07MaximoMinimoPromedio {
         }
 
         return prom;
-
+        
     }
 
 }

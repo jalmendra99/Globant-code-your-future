@@ -49,7 +49,7 @@ public class JavaIntroEj09 {
         } while ((num != 0) && (iteracion < 20));
 
         System.out.println("La sumatoria es: " + sumatoria + ".");
-
+        
     }
 
 }

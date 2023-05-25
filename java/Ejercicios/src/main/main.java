@@ -89,7 +89,7 @@ public class main {
                             default:
                                 System.out.println("Opción no válida.");
                         }
-                    } while (opcion2 != 15);
+                    } while (opcion2 != 99);
 
                     break;
 
@@ -168,7 +168,7 @@ public class main {
                             default:
                                 System.out.println("Opción no válida.");
                         }
-                    } while (opcion2 != 22);
+                    } while (opcion2 != 99);
                     break;
 
                 case 3: // Ejercicios extra.
@@ -255,7 +255,7 @@ public class main {
                             default:
                                 System.out.println("Opción no válida.");
                         }
-                    } while (opcion2 != 25);
+                    } while (opcion2 != 99);
                     break;
 
                 case 4: // Ejercicios en clase.
@@ -267,17 +267,14 @@ public class main {
                         switch (opcion2) {
 
                             case 1:
-
+                                Ejercicios4EnClase.Clase30Ejercicio2.main(nada);
                                 break;
-
                             case 2:
-
+                                Ejercicios4EnClase.Clase30Ejercicio3.main(nada);
                                 break;
-
                             case 3:
-
+                                Ejercicios4EnClase.Clase30Ejercicio4.main(nada);
                                 break;
-
                             case 4:
 
                                 break;
@@ -299,14 +296,52 @@ public class main {
 
                     break;
 
-                case 5: // Salir.                    
+                case 5: // Extra-extra
+
+                    do {
+                        imprimeMenu(5);
+                        opcion2 = leer.nextInt();
+
+                        switch (opcion2) {
+
+                            case 1:
+
+                                break;
+                            case 2:
+
+                                break;
+                            case 3:
+
+                                break;
+                            case 4:
+
+                                break;
+
+                            case 5:
+
+                                break;
+
+                            case 6:
+
+                                break;
+
+                            case 99: // Volver al menú anterior.
+
+                                break;
+
+                        }
+                    } while (opcion2 != 99);
+
+                    break;
+
+                case 99: // Salir.                    
                     break;
 
                 default:
                     System.out.println("Opción no válida.");
             }
 
-        } while (opcion != 5);
+        } while (opcion != 99);
 
     }
 
@@ -318,30 +353,36 @@ public class main {
         switch (opcion) {
             case 0:
                 System.out.println("Ejercicios:");
-                System.out.println("1. Java Intro");
-                System.out.println("2. De aprendizaje");
-                System.out.println("3. Extras");
+                System.out.println("1. Java Intro (guía)");
+                System.out.println("2. De aprendizaje (guía)");
+                System.out.println("3. Extras (guía)");
                 System.out.println("4. Hechos en Clase con compañeros <-- resolviendo...");
-                System.out.println("5. <Salir>");
+                System.out.println("5. Extra - extra <-- resolviendo...");
+                System.out.println("99. <Salir>");
                 System.out.print("Elija una opción: ");
                 break;
             case 1:
                 System.out.println("Ejercicios Java Intro:");
                 System.out.println("Elija una opción (1 a 14)");
-                System.out.print("O 15 para volvér al menú anterior: ");
+                System.out.print("O 99 para volvér al menú anterior: ");
                 break;
             case 2:
                 System.out.println("Ejercicios de aprendizaje:");
                 System.out.println("Elija una opción (1 a 21)");
-                System.out.print("O 22 para volvér al menú anterior: ");
+                System.out.print("O 99 para volvér al menú anterior: ");
                 break;
             case 3:
                 System.out.println("Ejercicios extra:");
                 System.out.println("Elija una opción (1 a 24)");
-                System.out.print("O 25 para volvér al menú anterior: ");
+                System.out.print("O 99 para volvér al menú anterior: ");
                 break;
             case 4:
-                System.out.println("Ejercicios extra:");
+                System.out.println("Ejercicios en clase:");
+                System.out.println("Ingrese un número para ver si el ejercicio existe");
+                System.out.print("O 99 para volvér al menú anterior: ");
+                break;
+            case 5:
+                System.out.println("Ejercicios Extra-extra provistos por Egg:");
                 System.out.println("Ingrese un número para ver si el ejercicio existe");
                 System.out.print("O 99 para volvér al menú anterior: ");
                 break;

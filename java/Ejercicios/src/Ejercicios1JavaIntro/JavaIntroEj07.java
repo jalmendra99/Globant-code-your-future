@@ -60,7 +60,7 @@ public class JavaIntroEj07 {
                 System.out.println("No existe un valor válido para tipo de bomba");
 
         }
-
+        
     }
 
 }

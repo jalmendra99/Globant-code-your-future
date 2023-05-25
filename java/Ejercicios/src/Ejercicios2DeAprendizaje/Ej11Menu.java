@@ -110,7 +110,6 @@ public class Ej11Menu {
             }
 
         } while (!salir);
-
     }
 
     private static void imprimirMenu() {

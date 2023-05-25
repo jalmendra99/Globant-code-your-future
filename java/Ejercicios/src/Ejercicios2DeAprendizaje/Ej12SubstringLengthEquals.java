@@ -82,6 +82,6 @@ public class Ej12SubstringLengthEquals {
         // La información solicitada se muestra por pantalla.
         System.out.println("Cadenas correctas: " + correctas + ".");
         System.out.println("Cadenas INcorrectas: " + incorrectas + ".");
-
+        
     }
 }

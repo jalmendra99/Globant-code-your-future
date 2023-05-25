@@ -100,7 +100,7 @@ public class Ej20MatrizMagica {
 
         // Se imprime toda la matriz para verificar visualmente por pantalla.
         LibFerArrays.imprimeMatrizEnteros(matriz, n, n);
-
+        
     }
 
     // Funcion matrizEsMagica.

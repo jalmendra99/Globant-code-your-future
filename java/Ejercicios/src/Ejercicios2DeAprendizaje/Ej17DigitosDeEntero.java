@@ -81,7 +81,7 @@ public class Ej17DigitosDeEntero {
         // Se muestra el vector por pantalla para verificar visualmente.
         System.out.println("El vector es:");
         LibFerArrays.imprimeVectorEnteros(vector, n);
-
+        
     }
 
 }

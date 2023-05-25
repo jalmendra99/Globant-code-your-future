@@ -71,5 +71,4 @@ public class Ej05ObraSocialCalculos {
         // Se imprime por pantalla la información solicitada.
         System.out.println("Un tratamiento con costo " + costo + " para un socio tipo <" + letra + "> tiene un precio de " + precio);
     }
-
 }
