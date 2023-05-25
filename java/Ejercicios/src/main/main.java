@@ -11,8 +11,6 @@ Por hacer / dudas / preguntas:
 ------------------------------
 - Ej19MatrizAntisimetrica - Mejorar legibiidad del código.
 - Ej24Fibonacci - Revisar función recursiva. Revisar información del link provisto.
-- Ej23SopaDeLetras - Agregar código para que la palabra aparezca en una
-                      columna al azar (además de la fila al azar).
 - 
 
  */
