@@ -16,6 +16,11 @@ Finalmente imprima por pantalla la sopa de letras creada.
 Nota: Para resolver el ejercicio deberá investigar cómo se utilizan 
 las siguientes funciones de Java substring(), Length() y Math.random().
 
+
+Info:
+Convert int to char in java use: Integer.toString(NUMEROENTERO).charAt(0);
+https://stackoverflow.com/questions/17984975/convert-int-to-char-in-java
+
  */
 package Ejercicios3Extra;
 
@@ -28,7 +33,8 @@ public class Ej23SopaDeLetras {
         Scanner leer = new Scanner(System.in);
 
         String palabra;
-        int filaAleatoria, numeroAleatorio;
+        int filaAleatoria, columnaAleatoria, numeroAleatorio;
+        int col;
         boolean agregar;
         char[][] sopaDeLetras = new char[20][20];
 
@@ -48,7 +54,7 @@ public class Ej23SopaDeLetras {
 
             do {
                 System.out.print("Ingrese una palabra de entre 3 y 5 caracteres (restan " + (5 - j) + "): ");
-                palabra = leer.nextLine();
+                palabra = leer.next();
             } while (palabra.length() < 3 || palabra.length() > 5);
 
             do {
@@ -65,21 +71,29 @@ public class Ej23SopaDeLetras {
                 }
 
             } while (agregar == false);
-
-            /////////////////////////////////////////////////////////////
-            // AGREGAR CÓDIGO PARA QUE ADEMÁS LA PALABRA
-            // COMIENCE EN UNA COLUMNA ALEATORIA, SIN PASARSE DEL LARGO 
-            // DE LA FILA.
-            /////////////////////////////////////////////////////////////
+                       
+            // Se elige un número aleatorio entre 0 y <20-largo de palabra>
+            // para elegr la columna donde comenzará a escribirse la palabra
+            columnaAleatoria = (int) (Math.random() * (20 - palabra.length()));
+            
+            // Se agregan números aleatorios entre el comienzo de la fila
+            // actual de la matriz (columna 0) y el número aleatorio de columna
+            for (int i = 0; i < columnaAleatoria; i++) {
+                // Se genera un número aleatorio de relleno (entre 0 y 9 inclusive).
+                numeroAleatorio = (int) (Math.random() * 10);
+                sopaDeLetras[filaAleatoria][i] = Integer.toString(numeroAleatorio).charAt(0);
+            }
             
             // Se agrega la palabra al vector sopaDeLetras en una fila aleatoria.
-            for (int i = 0; i < palabra.length(); i++) {
-                sopaDeLetras[filaAleatoria][i] = palabra.charAt(i);
+            col = 0;
+            for (int i = columnaAleatoria; i < (columnaAleatoria + palabra.length()); i++) {
+                sopaDeLetras[filaAleatoria][i] = palabra.charAt(col);
+                col++;
             }
 
             // Se agregan números aleatorios entre el final de la palabra y
             // el final de la fila actual de la matriz .
-            for (int i = palabra.length(); i < 20; i++) {
+            for (int i = (columnaAleatoria + palabra.length()); i < 20; i++) {
                 // Se genera un número aleatorio de relleno (entre 0 y 9 inclusive).
                 numeroAleatorio = (int) (Math.random() * 10);
                 sopaDeLetras[filaAleatoria][i] = Integer.toString(numeroAleatorio).charAt(0);
