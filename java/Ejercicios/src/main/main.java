@@ -343,6 +343,9 @@ public class main {
 
         } while (opcion != 99);
 
+        // Solo se cierra en main, porque sinó deja de funcionar al pasar
+        // entre distintos ejercicios.
+        leer.close();
     }
 
     // Imprime por pantalla el menú correspondiente a la "opcion" recibida.
