@@ -24,6 +24,14 @@ y que calcule la serie hasta llegar a ese valor.
 Para conocer más acerca de la serie de Fibonacci consultar el siguiente link: 
 https://quantdare.com/numeros-de-fibonacci/
 
+
+--
+
+Nota Fer: Sequencia de wikipedia: 
+Posición: 1, 2, 3, 4, 5, 6, 7,  8,  9, 10, 11, 12, 13...
+Valor:    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
+https://en.wikipedia.org/wiki/Fibonacci_sequence
+
  */
 package Ejercicios3Extra;
 
@@ -65,7 +73,9 @@ public class Ej24Fibonacci {
     // Retorna Falso sino.
     public static int fibonacci(int n) {
         ////////System.out.println(n);
-        if (n <= 1) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
             return 1;
         } else {
             return (fibonacci(n - 1) + fibonacci(n - 2));
