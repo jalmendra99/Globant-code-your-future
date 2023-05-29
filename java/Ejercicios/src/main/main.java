@@ -9,8 +9,7 @@ al ejercicio que se quiera ejecutar.
 
 Por hacer / dudas / preguntas:
 ------------------------------
-- Ej19MatrizAntisimetrica - Mejorar legibiidad del código.
-- Ej24Fibonacci - Revisar función recursiva. Revisar información del link provisto.
+- Ej19MatrizAntisimetrica - Mejorar legibilidad del código.
 - 
 
  */
