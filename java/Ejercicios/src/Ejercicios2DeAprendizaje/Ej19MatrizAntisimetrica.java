@@ -76,12 +76,6 @@ public class Ej19MatrizAntisimetrica {
             }
         }
 
-        ////////////////////////////////////////////////////////////
-        // ESTE CÓDIGO SE PUEDE MEJORAR CON LOOPS INDEFINIDOS
-        // QUE CORTEN EN CUANTO APAREZCA EL PRIMER VALOR DIFERENTE
-        // Y USANDO FUNCIONES MÁS DESCRIPTIVAS EN VEZ DE LA CONDICIÓN
-        // HORRIBLE DEL IF.
-        ////////////////////////////////////////////////////////////
         diferentes = false;
         // para todas las filas y columnas de la matriz
         // se compara cada valor de la misma con su "transpuesta" cambiada de signo

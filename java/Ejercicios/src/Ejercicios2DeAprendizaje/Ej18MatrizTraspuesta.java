@@ -46,8 +46,7 @@ public class Ej18MatrizTraspuesta {
         }
 
         // Se muestra la matriz A por pantalla.
-        System.out.println("");
-        System.out.println("Matriz A:");
+        System.out.println("\nMatriz A:");
         LibFerArrays.imprimeMatrizEnteros(matriz, 4, 4);
 
         // Se llena la matriz B con los valores de A traspuesta.
@@ -58,8 +57,7 @@ public class Ej18MatrizTraspuesta {
         }
 
         // Se muestra la matriz traspuesta B por pantalla.
-        System.out.println("");
-        System.out.println("Matriz B (Traspuesta de A):");
+        System.out.println("\nMatriz B (Traspuesta de A):");
         LibFerArrays.imprimeMatrizEnteros(traspuesta, 4, 4);
 
     }
