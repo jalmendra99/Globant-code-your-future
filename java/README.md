@@ -1,3 +1,3 @@
 # Java 
 
-Java intro exercises.
+Java exercises.
