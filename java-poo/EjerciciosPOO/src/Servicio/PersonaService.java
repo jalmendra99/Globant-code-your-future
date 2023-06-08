@@ -8,48 +8,37 @@ Fer V - Jalmendra99@gmail.com
  */
 package Servicio;
 
+import Entidad.Persona;
+import java.util.Scanner;
+
 public class PersonaService {
 
-    // Atributos.
-    public String nombre;
-    public String apellido;
-    public int edad;
-
-    // Getters y setters.
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    // Constructor 1.
-    public PersonaService() {
+    Scanner leer = new Scanner(System.in);
+    
+    public Persona crearPersona() {
+        
+        // Instanciamos un objeto persona con sus atributos vacíos
+        Persona personaCompleta = new Persona();
+        
+        // Pedimos al usuario que ingrese la información
+        // que se alojará en el atributo por consola
+        System.out.println("Ingrese el nombre de la persona");
+        
+        // Utilizamos el objeto para invocar al método SET
+        // y con el Scanner recibimos la información.
+        personaCompleta.setNombre(leer.next());
+        
+        // Este método retorna un objeto persona con sus atributos
+        // llenos de información.
+        return personaCompleta;
         
     }
-            
-    // Constructor 2.
-    public PersonaService(String nombre, String apellido, int edad) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-    }
     
+    public void mostrarPersona(Persona personaAMostrar) {
+        
+        System.out.println("Nombre: " + personaAMostrar.getNombre());
+        System.out.println("Apellido: " + personaAMostrar.getApellido());
+        System.out.println("Edad: " + personaAMostrar.getEdad());
+        
+    }
 }
