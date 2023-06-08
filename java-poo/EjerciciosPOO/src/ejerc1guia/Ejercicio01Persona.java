@@ -6,10 +6,10 @@ Clase Persona.
 Fer V - Jalmendra99@gmail.com
 
  */
-package ejercicios1guia;
+package ejerc1guia;
 
-import ejercicios1guia.Entidad.Persona;
-import ejercicios1guia.Servicio.PersonaService;
+import ejerc1guia.Entidad.Persona;
+import ejerc1guia.Servicio.PersonaService;
 
 public class Ejercicio01Persona {
 

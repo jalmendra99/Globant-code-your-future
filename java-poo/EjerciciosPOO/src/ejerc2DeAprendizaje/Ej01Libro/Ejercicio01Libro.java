@@ -7,7 +7,7 @@ Fer V - Jalmendra99@gmail.com
 
  */
 
-package ejercicios2DeAprendizaje;
+package ejerc2DeAprendizaje.Ej01Libro;
 
 import java.util.Scanner;
 
