@@ -6,9 +6,9 @@ Clase Persona.
 Fer V - Jalmendra99@gmail.com
 
  */
-package Servicio;
+package ejercicios1guia.Servicio;
 
-import Entidad.Persona;
+import ejercicios1guia.Entidad.Persona;
 import java.util.Scanner;
 
 public class PersonaService {

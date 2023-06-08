@@ -8,8 +8,8 @@ Fer V - Jalmendra99@gmail.com
  */
 package ejercicios1guia;
 
-import Entidad.Persona;
-import Servicio.PersonaService;
+import ejercicios1guia.Entidad.Persona;
+import ejercicios1guia.Servicio.PersonaService;
 
 public class Ejercicio01Persona {
 

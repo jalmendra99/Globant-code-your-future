@@ -6,7 +6,7 @@ Clase Persona.
 Fer V - Jalmendra99@gmail.com
 
  */
-package Entidad;
+package ejercicios1guia.Entidad;
 
 public class Persona {
 
