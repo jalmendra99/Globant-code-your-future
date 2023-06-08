@@ -7,13 +7,10 @@ Fer V - Jalmendra99@gmail.com
 
  */
 
-package ejerc2DeAprendizaje.Ej01Libro;
-
-import java.util.Scanner;
+package Ej01Libro;
 
 public class Ejercicio01Libro {
 
-    Scanner leer = new Scanner(System.in);
     
     
 }
