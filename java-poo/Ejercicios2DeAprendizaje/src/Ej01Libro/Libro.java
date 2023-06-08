@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class Libro {
 
+    // Atributos
     public int ISBN;
     public String titulo;
     public String autor;
@@ -20,6 +21,7 @@ public class Libro {
 
     Scanner leer = new Scanner(System.in);
     
+    // Constructores
     public Libro(int ISBN, String titulo, String autor, int nroDePaginas) {
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -30,6 +32,7 @@ public class Libro {
     public Libro() {
     }
 
+    // Métodos
     public void cargarLibro() {
         System.out.println("Ingrese el ISBN");
         this.ISBN = leer.nextInt();
@@ -39,8 +42,6 @@ public class Libro {
         this.autor = leer.nextLine();
         System.out.println("Ingrese el Número de páginas");
         this.nroDePaginas = leer.nextInt();
-        
-        
     }
     
     public void mostrarLibro() {
@@ -49,6 +50,5 @@ public class Libro {
         System.out.println("Autor:" + autor);
         System.out.println("Número de páginas:" + nroDePaginas);
     }
-    
     
 }

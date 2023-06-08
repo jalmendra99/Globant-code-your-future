@@ -14,14 +14,17 @@ import java.util.Scanner;
 
 public class Circunferencia {
 
+    // Atributos
     private double radio;
 
     Scanner leer = new Scanner(System.in);
     
+    // Constructores
     public Circunferencia(double radio) {
         this.radio = radio;
     }
 
+    // Getters y Setters
     public double getRadio() {
         return radio;
     }
@@ -29,6 +32,8 @@ public class Circunferencia {
     public void setRadio(double radio) {
         this.radio = radio;
     }
+    
+    // Métodos
     
     ///////////////////////////////
     // REVISAR ESTO
