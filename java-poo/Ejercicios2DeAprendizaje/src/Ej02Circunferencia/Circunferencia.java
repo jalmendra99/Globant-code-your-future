@@ -2,7 +2,6 @@
 Java-POO - Ejercicios de aprendizaje.
 Ejercicio 2 - Página 27
 
-
 Fer V - Jalmendra99@gmail.com
 
  */
