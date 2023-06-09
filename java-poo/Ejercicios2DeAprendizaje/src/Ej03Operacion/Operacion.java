@@ -12,19 +12,20 @@ import java.util.Scanner;
 public class Operacion {
 
     // Atributos
-    private int numero1;
-    private int numero2;
-
-    Scanner leer = new Scanner(System.in);
+    private double numero1;
+    private double numero2;
 
     // Constructores
+    public Operacion() {
+    }
+
     public Operacion(int numero1, int numero2) {
         this.numero1 = numero1;
         this.numero2 = numero2;
     }
 
     // Getters y Setters
-    public int getNumero1() {
+    public double getNumero1() {
         return numero1;
     }
 
@@ -32,7 +33,7 @@ public class Operacion {
         this.numero1 = numero1;
     }
 
-    public int getNumero2() {
+    public double getNumero2() {
         return numero2;
     }
 
@@ -42,21 +43,22 @@ public class Operacion {
 
     // Métodos
     public void crearOperacion() {
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
         System.out.println("Ingrese el número1");
         numero1 = leer.nextInt();
         System.out.println("Ingrese el número2");
         numero2 = leer.nextInt();
     }
 
-    public int sumar() {
+    public double sumar() {
         return numero1 + numero2;
     }
 
-    public int restar() {
+    public double restar() {
         return numero1 - numero2;
     }
 
-    public int multiplicar() {
+    public double multiplicar() {
         if (numero1 != 0 && numero2 != 0) {
             return numero1 * numero2;
         } else {
@@ -65,7 +67,7 @@ public class Operacion {
         }
     }
 
-    public int dividir() {
+    public double dividir() {
         if (numero2 != 0) {
             return numero1 / numero2;
         } else {

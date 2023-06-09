@@ -38,7 +38,7 @@ public class main {
 
             // Imprime el nombre de la persona actual para referencia.
             System.out.print(personas[i].getNombre() + " ");
-            
+
             // Se calcula y verifica su IMC.
             switch (personas[i].calcularIMC()) {
                 case -1:
@@ -69,6 +69,12 @@ public class main {
         }
 
         // Se calculan los porcentajes solicitados.
+        porcentajeDebajo *= 100;
+        porcentajeBien *= 100;
+        porcentajeArriba *= 100;
+        porcentajeMayores *= 100;
+        porcentajeMenores *= 100;
+
         porcentajeDebajo /= CANTIDAD;
         porcentajeBien /= CANTIDAD;
         porcentajeArriba /= CANTIDAD;
@@ -83,15 +89,15 @@ public class main {
 
         // Cuantas en su peso ideal.
         System.out.println("En su peso ideal: " + porcentajeBien + "%");
-        
+
         // Cuantos por encima
         System.out.println("Por encima de su peso ideal: " + porcentajeArriba + "%");
-        
+
         // Cuantos son mayores de edad.
         System.out.println("Mayores de edad: " + porcentajeMayores + "%");
-        
+
         // Cuntos son menores.
         System.out.println("Menores de edad: " + porcentajeMenores + "%");
-        
+
     }
 }

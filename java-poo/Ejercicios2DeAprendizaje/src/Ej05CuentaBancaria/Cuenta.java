@@ -62,23 +62,22 @@ public class Cuenta {
     }
 
     // Métodos
-    
     public void crearCuenta() {
         Scanner leer = new Scanner(System.in);
 
         System.out.print("Ingrese el número de cuenta: ");
         numeroCuenta = leer.nextInt();
-        
+
         System.out.print("Ingrese el DNI: ");
         DNI = leer.nextLong();
-        
+
         System.out.print("Ingrese el Saldo actual: ");
         saldoActual = leer.nextInt();
-        
+
         System.out.print("Ingrese el Interés: ");
         interes = leer.nextDouble();
     }
-    
+
     public void ingresar(double ingreso) {
         saldoActual += ingreso;
     }
@@ -90,21 +89,19 @@ public class Cuenta {
             saldoActual -= retiro;
         }
     }
-    
+
     public void extraccionRapida(double retiro) {
-        saldoActual -= saldoActual * 0.2;
-        
         if (retiro > saldoActual * 0.2) {
             System.out.println("No se puede retirar más del 20% de su saldo en una extracción rápida.");
         } else {
             saldoActual -= retiro;
         }
     }
-    
+
     public void consultarSaldo() {
-        System.out.println("El saldo actual es " + saldoActual );
+        System.out.println("El saldo actual es " + saldoActual);
     }
-    
+
     public void consultarDatos() {
         System.out.println("Los datos de la cuenta son:");
         System.out.println("Número de cuenta: " + numeroCuenta);

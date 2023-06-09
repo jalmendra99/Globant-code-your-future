@@ -12,17 +12,20 @@ import java.util.Scanner;
 public class Rectangulo {
 
     // Atributos
-    private int base;
-    private int altura;
+    private double base;
+    private double altura;
 
-    // Constructores
+    // Constructores    
+    public Rectangulo() {
+    }
+
     public Rectangulo(int base, int altura) {
         this.base = base;
         this.altura = altura;
     }
 
     // Getters y Setters
-    public int getBase() {
+    public double getBase() {
         return base;
     }
 
@@ -30,37 +33,36 @@ public class Rectangulo {
         this.base = base;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
     public void setAltura(int altura) {
         this.altura = altura;
     }
-    
+
     // Métodos
-    
     public void crearRectangulo() {
-        Scanner leer = new Scanner(System.in);
-        System.out.print("Ingrese la base del rectángulo: ");
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        System.out.print("Ingrese la base del rectángulo en metros: ");
         base = leer.nextInt();
-        System.out.print("Ingrese la altura del rectángulo: ");
+        System.out.print("Ingrese la altura del rectángulo en metros: ");
         altura = leer.nextInt();
     }
-    
-    public int superficie() {
+
+    public double superficie() {
         return base * altura;
     }
 
-    public int perimetro() {
+    public double perimetro() {
         return (base + altura) * 2;
     }
 
     public void dibujaRectangulo() {
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < base; j++) {
-                if (i == 0 || i == altura || j == 0 || j == base) {
-                    System.out.println("*");
+                if (i == 0 || i == (altura - 1) || j == 0 || j == (base - 1)) {
+                    System.out.print("*");
                 } else {
                     System.out.print(" ");
                 }

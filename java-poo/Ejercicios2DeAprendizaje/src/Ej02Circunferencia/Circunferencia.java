@@ -6,20 +6,21 @@ Ejercicio 2 - Página 27
 Fer V - Jalmendra99@gmail.com
 
  */
-
 package Ej02Circunferencia;
 
 import java.util.Scanner;
-
 
 public class Circunferencia {
 
     // Atributos
     private double radio;
 
-    Scanner leer = new Scanner(System.in);
-    
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
+
     // Constructores
+    public Circunferencia() {
+    }
+
     public Circunferencia(double radio) {
         this.radio = radio;
     }
@@ -32,9 +33,8 @@ public class Circunferencia {
     public void setRadio(double radio) {
         this.radio = radio;
     }
-    
+
     // Métodos
-    
     ///////////////////////////////
     // REVISAR ESTO
     ///////////////////////////////
@@ -42,13 +42,13 @@ public class Circunferencia {
         System.out.println("Ingrese un radio");
         radio = leer.nextDouble();
     }
-    
+
     public double area() {
-        return Math.PI * radio * radio ;
+        return Math.PI * radio * radio;
     }
-    
+
     public double perimetro() {
         return 2 * Math.PI * radio;
     }
-            
+
 }

@@ -5,9 +5,7 @@ Ejercicio 6 - Página 28
 Fer V - Jalmendra99@gmail.com
 
  */
-
 package Ej06Nespresso;
-
 
 public class Cafetera {
 
@@ -23,9 +21,8 @@ public class Cafetera {
         this.capacidadMaxima = capacidadMaxima;
         this.cantidadActual = cantidadActual;
     }
-    
-    // Getters y setters
 
+    // Getters y setters
     public int getCapacidadMaxima() {
         return capacidadMaxima;
     }
@@ -41,30 +38,29 @@ public class Cafetera {
     public void setCantidadActual(int cantidadActual) {
         this.cantidadActual = cantidadActual;
     }
-    
+
     // Métodos
-    
     public void llenarCafetera() {
         cantidadActual = capacidadMaxima;
     }
-    
+
     public void servirTaza(int tamanioTazaVacia) {
-        
+
         if (tamanioTazaVacia > cantidadActual) {
-            System.out.println("La taza no está llena, solo tiene " + cantidadActual);
             cantidadActual = 0;
+            System.out.println("La taza no está llena, solo tiene " + cantidadActual);
         } else {
             cantidadActual -= tamanioTazaVacia;
             System.out.println("La taza está llena. Contiene " + tamanioTazaVacia);
         }
     }
-    
+
     public void vaciarCafetera() {
         cantidadActual = 0;
     }
-    
-    public void agregarCafe(int cantidadDeCafe) {
-        cantidadActual += cantidadDeCafe;
+
+    public void agregarCafe(int cantidad) {
+        cantidadActual += cantidad;
     }
-    
+
 }

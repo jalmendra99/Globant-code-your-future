@@ -73,7 +73,7 @@ public class Persona {
 
     // Métodos
     public void crearPersona() {
-        Scanner leer = new Scanner(System.in);
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
         System.out.print("Ingrese el nombre: ");
         nombre = leer.nextLine();
@@ -85,7 +85,6 @@ public class Persona {
         while (sexo != 'H' && sexo != 'M' && sexo != 'O') {
             System.out.print("Ingrese el sexo (H/M/O): ");
             sexo = leer.next().charAt(0);
-            leer.nextLine(); // Para eliminar el enter ingresado.
 
             if (sexo != 'H' && sexo != 'M' && sexo != 'O') {
                 System.out.println("La opción ingresada es inválida. Use H/M/O.");
