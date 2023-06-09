@@ -48,13 +48,16 @@ or GregorianCalendar(year + 1900, month, date).
 
 --
 
+Nota: Usando GregorianCalendar (y Calendar) en vez de Date porque los días del mes daban cualquier cosa.
 
 Fer V - Jalmendra99@gmail.com
 
  */
 package Ej11Date;
 
-import java.util.Date;
+////import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Ej11 {
@@ -72,11 +75,14 @@ public class Ej11 {
         System.out.print("Ingrese el dia: ");
         int dia = leer.nextInt();
 
-        Date fecha = new Date(anio - 1900, mes - 1, dia);
+        ////Date fecha = new Date(anio - 1900, mes - 1, dia);
+        GregorianCalendar fecha = new GregorianCalendar(anio, mes, dia);
 
-        Date hoy = new Date();
+        ////Date hoy = new Date();
+        GregorianCalendar hoy = new GregorianCalendar();
 
-        int diferenciaEnAnios = hoy.getYear() - fecha.getYear();
+        ////int diferenciaEnAnios = hoy.getYear() - fecha.getYear();
+        int diferenciaEnAnios = hoy.get(Calendar.YEAR) - fecha.get(Calendar.YEAR);
         System.out.println("La diferencia en años entre la fecha ingresada y hoy es de " + diferenciaEnAnios + " años.");
     }
 }
