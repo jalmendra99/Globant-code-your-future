@@ -23,23 +23,10 @@ hours, minutes, and seconds values, the following representations are used:
     A month is represented by an integer from 0 to 11; 0 is January, 
         1 is February, and so forth; thus 11 is December.
     A date (day of month) is represented by an integer from 1 to 31 in the usual manner.
-    An hour is represented by an integer from 0 to 23. 
-        Thus, the hour from midnight to 1 a.m. is hour 0, and the hour from noon to 1 p.m. is hour 12.
-    A minute is represented by an integer from 0 to 59 in the usual manner.
-    A second is represented by an integer from 0 to 61; 
-        the values 60 and 61 occur only for leap seconds and even then 
-        only in Java implementations that actually track leap seconds correctly. 
-        Because of the manner in which leap seconds are currently introduced, 
-        it is extremely unlikely that two leap seconds will occur in the same minute, 
-        but this specification follows the date and time conventions for ISO C. 
 
 [...]
 
 Constructor and Description
-
-Date()
-Allocates a Date object and initializes it so that it represents the time 
-at which it was allocated, measured to the nearest millisecond.
 
 Date(int year, int month, int date)
 Deprecated. 
