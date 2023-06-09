@@ -35,9 +35,6 @@ public class Circunferencia {
     }
 
     // Métodos
-    ///////////////////////////////
-    // REVISAR ESTO
-    ///////////////////////////////
     public void crearCircunferencia() {
         System.out.println("Ingrese un radio");
         radio = leer.nextDouble();
