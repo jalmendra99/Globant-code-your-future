@@ -7,7 +7,7 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej07Persona;
 
-public class main {
+public class Ej07 {
 
     public static void main(String[] args) {
 

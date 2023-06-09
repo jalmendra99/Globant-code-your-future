@@ -8,7 +8,7 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej04Rectangulo;
 
-public class main {
+public class Ej04 {
 
     public static void main(String[] args) {
 

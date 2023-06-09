@@ -10,7 +10,7 @@ package Ej06Nespresso;
 
 import java.util.Scanner;
 
-public class main {
+public class Ej06 {
 
     public static void main(String[] args) {
 

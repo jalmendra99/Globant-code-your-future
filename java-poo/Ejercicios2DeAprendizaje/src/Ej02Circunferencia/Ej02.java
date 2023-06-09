@@ -8,7 +8,7 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej02Circunferencia;
 
-public class main {
+public class Ej02 {
 
     public static void main(String[] args) {
 

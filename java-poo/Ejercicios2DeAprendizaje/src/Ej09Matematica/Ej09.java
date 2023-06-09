@@ -7,7 +7,7 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej09Matematica;
 
-public class main {
+public class Ej09 {
 
     public static void main(String[] args) {
 

@@ -9,7 +9,7 @@ package Ej08Cadena;
 
 import java.util.Scanner;
 
-public class main {
+public class Ej08 {
 
     public static void main(String[] args) {
 

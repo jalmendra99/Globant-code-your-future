@@ -7,7 +7,7 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej05CuentaBancaria;
 
-public class main {
+public class Ej05 {
 
     public static void main(String[] args) {
 
