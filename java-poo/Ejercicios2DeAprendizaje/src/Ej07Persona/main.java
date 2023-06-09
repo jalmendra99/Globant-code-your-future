@@ -28,7 +28,7 @@ public class main {
         double cantMenores = 0;         // ...menores de edad
 
         // Se crean "CANTIDAD" de nuevas instancias de "Persona"
-        // y se cargan los datos de cada una.
+        // y el usuario carga los datos de cada una.
         for (int i = 0; i < CANTIDAD; i++) {
             personas[i] = new Persona();
             personas[i].crearPersona();
