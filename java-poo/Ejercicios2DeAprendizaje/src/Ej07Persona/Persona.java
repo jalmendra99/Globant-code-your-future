@@ -116,7 +116,7 @@ public class Persona {
     }
     
     public boolean esMayorDeEdad() {
-        return (edad > 21);
+        return (edad > 18); // ¿Mayoría de edad a los 18 o a los 21?
     }
 
 }
