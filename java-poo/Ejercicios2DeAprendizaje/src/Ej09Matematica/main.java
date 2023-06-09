@@ -19,17 +19,17 @@ public class main {
         ma.setNum2((Math.random() * (10 - 0) + 1) + 0);
 
         // Se muestran los dos números por pantalla para referencia
-        System.out.println("El número 1 es " + ma.getNum1() + " y el número 2 es " + ma.getNum2());
+        System.out.printf("El número 1 es %.2f y el número 2 es %.2f\n", ma.getNum1(), ma.getNum2());
 
         // Se muestra el mayor de los dos números
-        System.out.println("El mayor de los dos números es " + ma.devolverMayor());
-        System.out.println("El menor de los dos números es " + ma.devolverMenor());
+        System.out.printf("El mayor de los dos números es %.2f\n", ma.devolverMayor());
+        System.out.printf("El menor de los dos números es %.2f\n", ma.devolverMenor());
 
         // Se calcula la potencia del mayor número elevado al menor número.
-        System.out.println("El mayor número elevado al menor número resulta en: " + ma.calcularPotencia());
+        System.out.printf("El mayor número elevado al menor número resulta en: %.2f\n", ma.calcularPotencia());
 
         // Se calcula la raíz cuadrada del menor de los valores.
-        System.out.println("La raíz cuadrada del valor absoluto del menor número es: " + ma.calcularRaiz());
+        System.out.printf("La raíz cuadrada del valor absoluto del menor número es: %.2f\n", ma.calcularRaiz());
 
     }
 }
