@@ -121,7 +121,7 @@ public class Curso {
 
         // Se fuerza a que la cantidad de días ingresada sea entre 1 y 7.
         cantidadDiasPorSemana = -1;
-        while (cantidadDiasPorSemana == -1) {
+        while (cantidadDiasPorSemana < 1 || cantidadDiasPorSemana > 7) {
             System.out.print("Ingrese la cantidad de días por semana (1-7): ");
             cantidadDiasPorSemana = leer.nextInt();
             if (cantidadDiasPorSemana < 1 || cantidadDiasPorSemana > 7) {
@@ -131,7 +131,7 @@ public class Curso {
 
         // Se fuerza a que la cantidad de horas por día ingresada sea entre 1 y 24.
         cantidadHorasPorDia = -1;
-        while (cantidadHorasPorDia == -1) {
+        while (cantidadHorasPorDia < 1 || cantidadHorasPorDia > 24) {
             System.out.print("Ingrese la cantidad de horas por día (1-24): ");
             cantidadHorasPorDia = leer.nextInt();
             if (cantidadHorasPorDia < 1 || cantidadHorasPorDia > 24) {
