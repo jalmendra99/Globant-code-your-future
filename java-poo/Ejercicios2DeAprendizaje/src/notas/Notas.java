@@ -5,7 +5,7 @@ Notas
 Fer V - Jalmendra99@gmail.com
 
 Revisar:
--
+- Ejercicios
 -
 
 Resueltas / finalizadas:
