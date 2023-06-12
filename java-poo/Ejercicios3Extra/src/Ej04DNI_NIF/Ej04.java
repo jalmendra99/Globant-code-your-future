@@ -5,7 +5,11 @@ Ejercicio 4 - Página 34
 Fer V - Jalmendra99@gmail.com
 
 --
-&
+
+Info: https://es.calcuworld.com/calculadoras-matematicas/calculadora-de-resto/
+
+--
+
 Algunas pruebas:
 DNI         División    resto(posición) letra
 12341234    536575      9               D 

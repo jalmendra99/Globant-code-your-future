@@ -4,6 +4,10 @@ Ejercicio 4 - Página 34
 
 Fer V - Jalmendra99@gmail.com
 
+--
+
+Info: https://www.baeldung.com/java-initialize-array
+
  */
 package Ej04DNI_NIF;
 
