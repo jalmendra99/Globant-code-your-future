@@ -27,10 +27,10 @@ public class Ej08Sumatorias {
         int numero;
 
         // Se informa la premisa al usuario.
-        System.out.print("Ingresará números enteros hasta ingresar un  ");
+        System.out.print("Ingresará números enteros hasta ingresar un ");
         System.out.print("múltiplo de 5. Luego se mostrará el total de ");
         System.out.print("los números leídos y la cantidad de números pares ");
-        System.out.println("e impares.");
+        System.out.println("e impares. El 5 no se tomará en cuenta.");
 
         total = pares = impares = 0;
 

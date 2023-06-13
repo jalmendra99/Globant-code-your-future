@@ -28,7 +28,7 @@ public class Ej17FuncionPrimo {
 
         // Se ingresa un número entero positivo.
         do {
-            System.out.print("Ingrese un número entero: ");
+            System.out.print("Ingrese un número entero para ver si es primo: ");
             numero = leer.nextInt();
         } while (numero < 0);
 

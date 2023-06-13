@@ -61,7 +61,22 @@ public class Ej22MatrizLlenarAleatorio {
         // Se imprime por pantalla la matriz.
         System.out.println("\nLa matriz es:");
         LibFerArrays.imprimeMatrizEnteros(matriz, filas, columnas);
+        
+        // Se muestra la sumatoria de los valores de la matriz.
+        System.out.print("La sumatoria de los elementos de la matriz es: ");
+        System.out.print(sumarValoresMatriz(matriz, filas, columnas));
+        System.out.println("");
 
+    }
+    
+    private static int sumarValoresMatriz(int [][] matriz, int filas, int columnas) {
+        int sumatoria = 0;
+        for (int fila = 0; fila < filas; fila++) {
+            for (int columna = 0 ; columna < columnas; columna++) {
+                sumatoria += matriz[fila][columna];
+            }
+        }
+        return sumatoria;
     }
 
 }

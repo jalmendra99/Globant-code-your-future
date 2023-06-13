@@ -37,7 +37,7 @@ public class Ej04NumerosRomanos {
         if (romano.equals("no es válido")) {
             System.out.println("Hubo un error al convertír el número ingresado.");
         } else {
-            System.out.println(numero + " en arábicos, equivale a " + romano + " en números romanos.");
+            System.out.println(numero + " en arábicos equivale a " + romano + " en números romanos.");
         }
         
     }

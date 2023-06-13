@@ -54,7 +54,7 @@ public class Ej20VectorLlenarAleatorio {
 
         // Se muestra en pantalla la información solicitada.
         // Se imprime por pantalla el vector para verificar visualmente.        
-        System.out.println("\nEl vector1 es:");
+        System.out.println("\nEl vector es:");
         LibFerArrays.imprimeVectorEnteros(vector, tamanio);
 
     }

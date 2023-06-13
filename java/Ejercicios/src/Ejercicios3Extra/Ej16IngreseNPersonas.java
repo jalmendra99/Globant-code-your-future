@@ -49,7 +49,7 @@ public class Ej16IngreseNPersonas {
             // Se imprime la información de la persona.
             System.out.print(nombre + " tiene " + edad + " años y ");
 
-            if (edad > 18) {
+            if (edad >= 18) {
                 System.out.println("es mayor de edad.");
             } else {
                 System.out.println("NO es mayor de edad.");
