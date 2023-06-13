@@ -34,7 +34,7 @@ import java.util.Scanner;
 public class Curso {
 
     // Constante para jugar con distintas cantidades para el vector de alumnos.
-    private final int CANT_ALUMNOS = 2;
+    private final int CANT_ALUMNOS = 5;
 
     // Atributos
     private String nombreCurso;
