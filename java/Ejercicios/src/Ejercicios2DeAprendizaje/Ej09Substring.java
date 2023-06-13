@@ -28,7 +28,7 @@ public class Ej09Substring {
 
         // Se informa la premisa al usuario.
         System.out.print("Se pedirá al usuario ingresar una frase ");
-        System.out.print("y se verificará si la primera letra es una 'A'");
+        System.out.print("y se verificará si la primera letra es una 'A' mayúscula");
         System.out.println("");
 
         // Se ingresa la frase.
