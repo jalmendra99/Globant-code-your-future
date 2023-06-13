@@ -18,7 +18,7 @@ DNI         División    resto(posición) letra
 24          1           1               R
 
  */
-package Ej04DNI_NIF;
+package Ej04DniNif;
 
 public class Ej04 {
 

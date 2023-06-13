@@ -9,7 +9,7 @@ Fer V - Jalmendra99@gmail.com
 Info: https://www.baeldung.com/java-initialize-array
 
  */
-package Ej04DNI_NIF;
+package Ej04DniNif;
 
 import java.util.Scanner;
 
