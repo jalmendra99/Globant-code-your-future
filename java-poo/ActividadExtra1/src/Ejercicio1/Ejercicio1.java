@@ -17,35 +17,36 @@ public class Ejercicio1 {
         Vehiculo bici = new Vehiculo("bicicleta");
 
         // Avanzan 5 segundos
-        System.out.println("En 5 segundos...");
-        System.out.println("El auto recorrió " + auto.moverse(5) + " metros.");
-        System.out.println("La moto recorrió " + moto.moverse(5) + " metros.");
-        System.out.println("La bici recorrió " + bici.moverse(5) + " metros.");
+        System.out.println("En 5 segundos recorrieron...");
+        System.out.print("El auto " + auto.moverse(5) + " metros, ");
+        System.out.print("la moto " + moto.moverse(5) + " metros y ");
+        System.out.println("la bici " + bici.moverse(5) + " metros.");
 
         // Avanzan 10 segundos
-        System.out.println("En 10 segundos...");
-        System.out.println("El auto recorrió " + auto.moverse(10) + " metros.");
-        System.out.println("La moto recorrió " + moto.moverse(10) + " metros.");
-        System.out.println("La bici recorrió " + bici.moverse(10) + " metros.");
+        System.out.println("En 10 segundos recorrieron...");
+        System.out.print("El auto " + auto.moverse(10) + " metros, ");
+        System.out.print("la moto " + moto.moverse(10) + " metros y ");
+        System.out.println("la bici " + bici.moverse(10) + " metros.");
 
         // Avanzan 1 minuto (60 segundos)
-        System.out.println("En 1 minuto...");
-        System.out.println("El auto recorrió " + auto.moverse(60) + " metros.");
-        System.out.println("La moto recorrió " + moto.moverse(60) + " metros.");
-        System.out.println("La bici recorrió " + bici.moverse(60) + " metros.");
+        System.out.println("En 1 minuto recorrieron...");
+        System.out.print("El auto " + auto.moverse(60) + " metros, ");
+        System.out.print("la moto " + moto.moverse(60) + " metros y ");
+        System.out.println("la bici " + bici.moverse(60) + " metros.");
 
         // Ver cual avanzó más luego de avanzar por
         // 5 minutos (300 segundos) y frenar.
         int recorridoAuto = auto.moverse(300) + auto.frenar();
         int recorridoMoto = moto.moverse(300) + moto.frenar();
         int recorridoBici = bici.moverse(300) + bici.frenar();
-        System.out.println("Luego de avanzar por 5 minutos y frenar...");
-        System.out.println("El auto recorrió " + recorridoAuto + " metros.");
-        System.out.println("La moto recorrió " + recorridoMoto + " metros.");
-        System.out.println("La bici recorrió " + recorridoBici + " metros.");
+        System.out.println("Luego de avanzar por 5 minutos y frenar recorrieron...");
+        System.out.print("El auto " + recorridoAuto + " metros, ");
+        System.out.print("la moto " + recorridoMoto + " metros y ");
+        System.out.println("la bici " + recorridoBici + " metros.");
 
-        System.out.print("Y en este último caso el vehículo que más avanzó fué ");
+        System.out.print("En este último caso el vehículo que más avanzó fué ");
 
+        // Se calcula el mayor recorrido y se muestra por pantalla
         if (recorridoAuto > recorridoMoto && recorridoAuto > recorridoBici) {
             System.out.println("el auto.");
         } else if (recorridoMoto > recorridoAuto && recorridoMoto > recorridoBici) {

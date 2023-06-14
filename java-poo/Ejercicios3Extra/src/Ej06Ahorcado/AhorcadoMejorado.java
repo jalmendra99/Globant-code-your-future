@@ -131,7 +131,7 @@ public class AhorcadoMejorado {
         for (int i = 0; i < letrasEncontradas.length; i++) {
             if (letrasEncontradas[i] == letra) {
                 System.out.println("La letra ingresada ya había sido adivinada.");
-                return 0;
+                return 1;
             }
         }
 
