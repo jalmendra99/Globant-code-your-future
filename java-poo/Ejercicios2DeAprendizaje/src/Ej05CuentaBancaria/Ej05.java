@@ -23,48 +23,43 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej05CuentaBancaria;
 
+import Ej05CuentaBancaria.entidad.Cuenta;
+import Ej05CuentaBancaria.servicio.CuentaService;
+
 public class Ej05 {
 
     public static void main(String[] args) {
 
-        // Crea una cuenta
-        Cuenta cu = new Cuenta();
+        // Crea un objeto CuentaService para interactuar con objetos Cuenta.
+        CuentaService cs = new CuentaService();
 
-        // Agrega los datos a la cuenta
-        cu.crearCuenta();
+        // Crea una cuenta nueva y solicita al usuario cargar sus atributos.
+        Cuenta cuenta1 = cs.crearCuenta();
 
         // Consulta de saldo #1
-        cu.consultarSaldo();
+        cs.consultarSaldo(cuenta1);
 
-        // Ingresa saldo
-        System.out.println("Ingresando 1000 a la cuenta...");
-        cu.ingresar(1000);
+        // Ingresando saldo
+        cs.ingresar(cuenta1);
 
         // Consulta de saldo #2
-        cu.consultarSaldo();
+        cs.consultarSaldo(cuenta1);
 
-        // Retira saldo
-        System.out.println("Retirando 600 de la cuenta...");
-        cu.retirar(600);
+        // Retirando saldo
+        cs.retirar(cuenta1);
 
         // Consulta de saldo #3
-        cu.consultarSaldo();
+        cs.consultarSaldo(cuenta1);
 
-        // Intento de Extracción rápida
-        // En la cuenta actualmente hay 400, así que
-        // Si se pide extraer 100, daría error (por ser 100 más del 20% de 400)
-        // Si se pide extraer 70, funcionaría (por ser 70 menos del 20% de 400)
-        System.out.println("Intentando extracción rápida de 100");
-        cu.extraccionRapida(100);
-
-        System.out.println("Intentando extracción rápida de 70");
-        cu.extraccionRapida(70);
+        // Intento de dos extracciones rápidas para ver si se cumple lo del límite del 20%.
+        cs.extraccionRapida(cuenta1);
+        cs.extraccionRapida(cuenta1);
 
         // Consulta de saldo #4
-        cu.consultarSaldo();
+        cs.consultarSaldo(cuenta1);
 
         // Consulta de datos de la cuenta
-        cu.consultarDatos();
+        cs.consultarDatos(cuenta1);
     }
 
 }

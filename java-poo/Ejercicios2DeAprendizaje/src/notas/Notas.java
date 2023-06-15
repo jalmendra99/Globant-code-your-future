@@ -6,7 +6,8 @@ Fer V - Jalmendra99@gmail.com
 
 Revisar:
 - Crear clases "service" para todos los objetos. Pedido por gente de egg.
--
+- Ejercicio 5 - hacer un menú (ingresar, retirar, extracción rapida, ver saldo, ver info de cuenta).
+- 
 
 Resueltas / finalizadas:
 - Ejercicio 2, punto c (método crearCircunferencia). Resuelto.

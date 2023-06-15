@@ -5,16 +5,14 @@ Ejercicio 5 - Página 28
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej05CuentaBancaria;
-
-import java.util.Scanner;
+package Ej05CuentaBancaria.entidad;
 
 public class Cuenta {
 
     // Atributos
     private int numeroCuenta;
     private long DNI;
-    private int saldoActual;
+    private double saldoActual;
     private double interes;
 
     // Constructores
@@ -45,11 +43,11 @@ public class Cuenta {
         this.DNI = DNI;
     }
 
-    public int getSaldoActual() {
+    public double getSaldoActual() {
         return saldoActual;
     }
 
-    public void setSaldoActual(int saldoActual) {
+    public void setSaldoActual(double saldoActual) {
         this.saldoActual = saldoActual;
     }
 
@@ -62,22 +60,6 @@ public class Cuenta {
     }
 
     // Métodos
-    public void crearCuenta() {
-        Scanner leer = new Scanner(System.in);
-
-        System.out.print("Ingrese el número de cuenta: ");
-        numeroCuenta = leer.nextInt();
-
-        System.out.print("Ingrese el DNI: ");
-        DNI = leer.nextLong();
-
-        System.out.print("Ingrese el Saldo actual: ");
-        saldoActual = leer.nextInt();
-
-        System.out.print("Ingrese el Interés: ");
-        interes = leer.nextDouble();
-    }
-
     public void ingresar(double ingreso) {
         saldoActual += ingreso;
     }
@@ -97,17 +79,4 @@ public class Cuenta {
             saldoActual -= retiro;
         }
     }
-
-    public void consultarSaldo() {
-        System.out.println("El saldo actual es " + saldoActual);
-    }
-
-    public void consultarDatos() {
-        System.out.println("Los datos de la cuenta son:");
-        System.out.println("Número de cuenta: " + numeroCuenta);
-        System.out.println("DNI: " + DNI);
-        System.out.println("Saldo actual: " + saldoActual);
-        System.out.println("Interés: " + interes);
-    }
-
 }
