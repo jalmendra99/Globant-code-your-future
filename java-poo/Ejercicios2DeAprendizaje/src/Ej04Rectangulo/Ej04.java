@@ -16,23 +16,23 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej04Rectangulo;
 
+import Ej04Rectangulo.entidad.Rectangulo;
+import Ej04Rectangulo.servicio.RectanguloService;
+
 public class Ej04 {
 
     public static void main(String[] args) {
 
-        // Crea un Rectángulo
-        Rectangulo rec = new Rectangulo();
+        // Crea una clase RectánguloService para acceder a objetos Rectángulo.
+        RectanguloService rs = new RectanguloService();
 
-        // Carga lo datos del Rectángulo
-        rec.crearRectangulo();
+        // Crea un rectángulo y solicita al usuario que llene sus atributos.
+        Rectangulo r = rs.crearRectangulo();
 
         // Calcula y muestra la superficie del Rectángulo
-        System.out.println("La superficie del rectángulo es " + rec.superficie() + " m2.");
-
-        // Calcula y muestra el perímetro del Rectángulo
-        System.out.println("El perímetro del rectángulo es " + rec.perimetro() + " m2.");
+        rs.mostrarSuperficieYPerimetro(r);
 
         // Dibuja el Rectángulo
-        rec.dibujaRectangulo();
+        rs.dibujaRectangulo(r);
     }
 }
