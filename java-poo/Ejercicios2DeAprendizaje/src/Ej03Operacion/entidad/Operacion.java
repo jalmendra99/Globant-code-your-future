@@ -5,9 +5,7 @@ Ejercicio 3 - Página 27
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej03Operacion;
-
-import java.util.Scanner;
+package Ej03Operacion.entidad;
 
 public class Operacion {
 
@@ -29,7 +27,7 @@ public class Operacion {
         return numero1;
     }
 
-    public void setNumero1(int numero1) {
+    public void setNumero1(double numero1) {
         this.numero1 = numero1;
     }
 
@@ -37,19 +35,11 @@ public class Operacion {
         return numero2;
     }
 
-    public void setNumero2(int numero2) {
+    public void setNumero2(double numero2) {
         this.numero2 = numero2;
     }
 
     // Métodos
-    public void crearOperacion() {
-        Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        System.out.println("Ingrese el número1");
-        numero1 = leer.nextInt();
-        System.out.println("Ingrese el número2");
-        numero2 = leer.nextInt();
-    }
-
     public double sumar() {
         return numero1 + numero2;
     }

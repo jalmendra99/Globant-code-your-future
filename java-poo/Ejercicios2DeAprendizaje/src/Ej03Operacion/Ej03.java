@@ -23,20 +23,20 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej03Operacion;
 
+import Ej03Operacion.entidad.Operacion;
+import Ej03Operacion.servicio.OperacionService;
+
 public class Ej03 {
 
     public static void main(String[] args) {
 
-        // Crea una Operación
-        Operacion op = new Operacion();
+        // Crea un servicio para interactuar con la clase Operacion
+        OperacionService os = new OperacionService();
 
         // Carga los datos de la Operación
-        op.crearOperacion();
+        Operacion o = os.crearOperacion();
 
         // Muestra suma, resta, multiplicación y división
-        System.out.println("Suma: " + op.getNumero1() + " + " + op.getNumero2() + " = " + op.sumar());
-        System.out.println("Resta: " + op.getNumero1() + " - " + op.getNumero2() + " = " + op.restar());
-        System.out.println("Multiplicación: " + op.getNumero1() + " * " + op.getNumero2() + " = " + op.multiplicar());
-        System.out.println("División: " + op.getNumero1() + " / " + op.getNumero2() + " = " + op.dividir());
+        os.mostrarResultados(o);
     }
 }
