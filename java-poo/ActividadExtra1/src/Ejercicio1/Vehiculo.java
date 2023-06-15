@@ -36,7 +36,7 @@ public class Vehiculo {
     // Constructores
     public Vehiculo() {
     }
-
+    
     public Vehiculo(String tipo) {
         this.tipo = tipo;
     }

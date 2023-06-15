@@ -5,7 +5,7 @@ Notas
 Fer V - Jalmendra99@gmail.com
 
 Revisar:
-- 
+- Crear clases "service" para todos los objetos. Pedido por gente de egg.
 - 
 
 Resueltas / finalizadas:
