@@ -24,8 +24,9 @@ https://stackoverflow.com/questions/24766572/java-is-outputting-the-wrong-value-
 https://www.wikihow.com/Calculate-the-Area-of-a-Rhombus
 
  */
-package Ejercicio2;
+package Ejercicio2.servicio;
 
+import Ejercicio2.*;
 import Ejercicio2.entidad.Pentagono;
 import Ejercicio2.entidad.Cuadrado;
 import Ejercicio2.entidad.Rombo;
@@ -35,7 +36,7 @@ import Ejercicio2.entidad.Circulo;
 import Ejercicio2.entidad.Triangulo;
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class ServiceFiguras {
 
     public static void main(String[] args) {
 

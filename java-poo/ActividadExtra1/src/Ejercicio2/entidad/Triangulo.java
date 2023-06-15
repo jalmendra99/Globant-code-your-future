@@ -9,7 +9,7 @@ Info: https://es.calcuworld.com/calculadoras-matematicas/hipotenusa/
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ejercicio2;
+package Ejercicio2.entidad;
 
 public class Triangulo {
 

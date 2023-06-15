@@ -14,24 +14,33 @@ e) Método perimetro(): para calcular el perímetro (𝐏𝐞𝐫𝐢𝐦𝐞�
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej02Circunferencia;
+package Ej02Circunferencia.servicio;
 
 import Ej02Circunferencia.entidad.Circunferencia;
-import Ej02Circunferencia.servicio.CircunferenciaService;
+import java.util.Scanner;
 
-public class Ej02 {
+public class CircunferenciaService {
+
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
     
-    public static void main(String[] args) {
+    public Circunferencia crearCircunferencia () {
 
-        // Crea un servicio para acceder a Circunferencia
-        CircunferenciaService cs = new CircunferenciaService();
+        // Crea una circunferencia vacía
+        Circunferencia circu = new Circunferencia();
 
-        // Crea una circunferencia nueva
-        Circunferencia c = cs.crearCircunferencia();
-
-        // Muestra área y perímetro
-        cs.mostrarRadioYPerimetro(c);
+        // Se solicita el radio al usuario
+        System.out.println("Ingrese un radio");
+        double radio = leer.nextDouble();
         
+        circu.setRadio(radio);
+        
+        return circu;
     }
     
+    public void mostrarRadioYPerimetro(Circunferencia c) {
+        // Muestra área y perímetro
+        System.out.println("El área del círculo es: " + c.getArea());
+        System.out.println("Y el perímetro es: " + c.getPerimetro());
+    }
+
 }

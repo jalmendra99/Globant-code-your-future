@@ -8,7 +8,7 @@ Fer V - Jalmendra99@gmail.com
 Info: https://www.wikihow.com/Calculate-the-Area-of-a-Rhombus
 
  */
-package Ejercicio2;
+package Ejercicio2.entidad;
 
 import java.util.Scanner;
 

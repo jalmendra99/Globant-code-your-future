@@ -11,7 +11,7 @@ Se asume que el pentágono es regular.
 
 
  */
-package Ejercicio2;
+package Ejercicio2.entidad;
 
 public class Pentagono {
 

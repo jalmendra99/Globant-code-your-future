@@ -5,7 +5,7 @@ Ejercicio 2 - Página 3
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ejercicio2;
+package Ejercicio2.entidad;
 
 public class Cuadrado {
 
