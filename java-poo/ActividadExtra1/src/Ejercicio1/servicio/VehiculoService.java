@@ -89,7 +89,8 @@ public class VehiculoService {
                 metrosRecorridos = 1 * segundos;
                 break;
             default:
-                System.out.println("Error: Tipo de vehículo incorrecto.");
+                System.out.println("Error <moverse>: Tipo de vehículo incorrecto.");
+                System.out.println(ve.getTipo());
                 break;
         }
         return metrosRecorridos;
@@ -112,7 +113,8 @@ public class VehiculoService {
     // luego de moverse durante "segundos" y frenar.
     public void mostrarMovimientoConFrenada(Vehiculo ve, int segundos) {
         int metrosTotales = moverse(ve, 300) + frenar(ve);
-        System.out.println("En " + segundos + " segundos, " + ve.getTipo() + " se movió " + metrosTotales + " metros.");
+        System.out.print("Incluyendo la frenada, ");
+        System.out.println("en " + segundos + " segundos, " + ve.getTipo() + " se movió " + metrosTotales + " metros.");
     }
 
     // Devuelve la cantidad de metros recorridos por un Vehiculo "ve"
@@ -120,7 +122,7 @@ public class VehiculoService {
     public int frenar(Vehiculo ve) {
         int metrosRecorridos = 0;
         switch (ve.getTipo()) {
-            case "automóvil": // Dejará de avanzar y se frenará 2 metros más adelante.
+            case "automovil": // Dejará de avanzar y se frenará 2 metros más adelante.
                 metrosRecorridos += 2;
                 break;
             case "motocicleta": // Dejará de avanzar y se frenará 2 metros más adelante.
@@ -129,10 +131,29 @@ public class VehiculoService {
             case "bicicleta": // En el caso de la bicicleta, se frenará y no avanzará.
                 break;
             default:
-                System.out.println("Error: Tipo de vehículo incorrecto.");
+                System.out.println("Error <frenar>: Tipo de vehículo incorrecto.");
                 break;
         }
         return metrosRecorridos;
+    }
+
+    public void mostrarCualRecorreMas(Vehiculo[] ve, int segundos) {
+        // Calculando el vehículo que mayor recorrido hizo en 5 min + la frenada.
+        System.out.print("El vehículo que más avanzó con la frenada después de moverse durante " + segundos + " segundos fué ");
+
+        // Guarda lo que recorrió cada vehículo.
+        int recorridoAuto = moverseYFrenar(ve[0], segundos);
+        int recorridoMoto = moverseYFrenar(ve[1], segundos);
+        int recorridoBici = moverseYFrenar(ve[2], segundos);
+
+        // Se calcula el mayor recorrido y se muestra por pantalla
+        if (recorridoAuto > recorridoMoto && recorridoAuto > recorridoBici) {
+            System.out.println("el auto.");
+        } else if (recorridoMoto > recorridoAuto && recorridoMoto > recorridoBici) {
+            System.out.println("la moto.");
+        } else {
+            System.out.println("la bici.");
+        }
     }
 
 }
