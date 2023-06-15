@@ -7,42 +7,48 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ejercicio1;
 
+import Ejercicio1.entidad.Vehiculo;
+import Ejercicio1.servicio.VehiculoService;
+
 public class Ejercicio1 {
 
     public static void main(String[] args) {
 
-        // Crea tres vehículos
-        Vehiculo auto = new Vehiculo("automóvil");
-        Vehiculo moto = new Vehiculo("motocicleta");
-        Vehiculo bici = new Vehiculo("bicicleta");
-
-        // Avanzan 5 segundos
-        System.out.println("En 5 segundos recorrieron...");
-        System.out.print("El auto " + auto.moverse(5) + " metros, ");
-        System.out.print("la moto " + moto.moverse(5) + " metros y ");
-        System.out.println("la bici " + bici.moverse(5) + " metros.");
+        // Crea una clase VehiculoService para interactuar con clases Vehiculo
+        VehiculoService vs = new VehiculoService();
+        
+        Vehiculo auto = vs.crearVehiculo("automovil");
+        Vehiculo moto = vs.crearVehiculo("motocicleta");
+        Vehiculo bici = vs.crearVehiculo("bicicleta");
+        
+        // Los vehículos avanzan 5 segundos
+        vs.mostrarMovimiento(auto, 5);
+        vs.mostrarMovimiento(moto, 5);
+        vs.mostrarMovimiento(bici, 5);
 
         // Avanzan 10 segundos
-        System.out.println("En 10 segundos recorrieron...");
-        System.out.print("El auto " + auto.moverse(10) + " metros, ");
-        System.out.print("la moto " + moto.moverse(10) + " metros y ");
-        System.out.println("la bici " + bici.moverse(10) + " metros.");
+        vs.mostrarMovimiento(auto, 10);
+        vs.mostrarMovimiento(moto, 10);
+        vs.mostrarMovimiento(bici, 10);
 
         // Avanzan 1 minuto (60 segundos)
-        System.out.println("En 1 minuto recorrieron...");
-        System.out.print("El auto " + auto.moverse(60) + " metros, ");
-        System.out.print("la moto " + moto.moverse(60) + " metros y ");
-        System.out.println("la bici " + bici.moverse(60) + " metros.");
+        vs.mostrarMovimiento(auto, 60);
+        vs.mostrarMovimiento(moto, 60);
+        vs.mostrarMovimiento(bici, 60);
 
         // Ver cual avanzó más luego de avanzar por
         // 5 minutos (300 segundos) y frenar.
-        int recorridoAuto = auto.moverse(300) + auto.frenar();
-        int recorridoMoto = moto.moverse(300) + moto.frenar();
-        int recorridoBici = bici.moverse(300) + bici.frenar();
-        System.out.println("Luego de avanzar por 5 minutos y frenar recorrieron...");
-        System.out.print("El auto " + recorridoAuto + " metros, ");
-        System.out.print("la moto " + recorridoMoto + " metros y ");
-        System.out.println("la bici " + recorridoBici + " metros.");
+        int recorridoAuto = vs.moverseYFrenar(auto,300);
+        int recorridoMoto = vs.moverseYFrenar(moto,300);
+        int recorridoBici = vs.moverseYFrenar(bici,300);
+        
+        System.out.println("Luego de avanzar por 5 minutos (300 segundos) y frenar...");
+        vs.mostrarMovimientoConFrenada(auto, 300);
+        vs.mostrarMovimientoConFrenada(moto, 300);
+        vs.mostrarMovimientoConFrenada(bici, 300);
+//        System.out.print("El auto " + recorridoAuto + " metros, ");
+//        System.out.print("la moto " + recorridoMoto + " metros y ");
+//        System.out.println("la bici " + recorridoBici + " metros.");
 
         System.out.print("En este último caso el vehículo que más avanzó fué ");
 
@@ -54,6 +60,5 @@ public class Ejercicio1 {
         } else {
             System.out.println("la bici.");
         }
-
     }
 }

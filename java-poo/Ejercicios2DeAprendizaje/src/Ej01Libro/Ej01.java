@@ -14,18 +14,21 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej01Libro;
 
+import Ej01Libro.entidad.Libro;
+import Ej01Libro.servicio.LibroService;
+
 public class Ej01 {
 
     public static void main(String[] args) {
 
-        // Crea un libro
-        Libro librin = new Libro();
+        // Crea un libroService para interactuar con la clase Libro
+        LibroService ls = new LibroService();
 
-        // Carga los datos del libro
-        librin.cargarLibro();
+        // Crea un libro y carga los datos del libro
+        Libro lib1 = ls.crearLibro();
 
         // Muestra el libro
-        librin.mostrarLibro();
+        ls.mostrarLibro(lib1);
 
     }
 
