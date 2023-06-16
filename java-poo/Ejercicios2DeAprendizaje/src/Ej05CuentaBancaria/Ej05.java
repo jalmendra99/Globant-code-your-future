@@ -36,30 +36,9 @@ public class Ej05 {
         // Crea una cuenta nueva y solicita al usuario cargar sus atributos.
         Cuenta cuenta1 = cs.crearCuenta();
 
-        // Consulta de saldo #1
-        cs.consultarSaldo(cuenta1);
-
-        // Ingresando saldo
-        cs.ingresar(cuenta1);
-
-        // Consulta de saldo #2
-        cs.consultarSaldo(cuenta1);
-
-        // Retirando saldo
-        cs.retirar(cuenta1);
-
-        // Consulta de saldo #3
-        cs.consultarSaldo(cuenta1);
-
-        // Intento de dos extracciones rápidas para ver si se cumple lo del límite del 20%.
-        cs.extraccionRapida(cuenta1);
-        cs.extraccionRapida(cuenta1);
-
-        // Consulta de saldo #4
-        cs.consultarSaldo(cuenta1);
-
-        // Consulta de datos de la cuenta
-        cs.consultarDatos(cuenta1);
+        // Hace varias pruebas con la cuenta 
+        // (ingreso, extracción, extracción express, consulta saldo y muestra info de cuenta)
+        cs.hacerPruebas(cuenta1);
     }
 
 }

@@ -68,4 +68,31 @@ public class CuentaService {
             c.setSaldoActual((c.getSaldoActual() - retiro));
         }
     }
+
+    public void hacerPruebas(Cuenta cuenta1) {
+        // Consulta de saldo #1
+        consultarSaldo(cuenta1);
+
+        // Ingresando saldo
+        ingresar(cuenta1);
+
+        // Consulta de saldo #2
+        consultarSaldo(cuenta1);
+
+        // Retirando saldo
+        retirar(cuenta1);
+
+        // Consulta de saldo #3
+        consultarSaldo(cuenta1);
+
+        // Intento de dos extracciones rápidas para ver si se cumple lo del límite del 20%.
+        extraccionRapida(cuenta1);
+        extraccionRapida(cuenta1);
+
+        // Consulta de saldo #4
+        consultarSaldo(cuenta1);
+
+        // Consulta de datos de la cuenta
+        consultarDatos(cuenta1);
+    }
 }

@@ -5,7 +5,7 @@ Ejercicio 6 - Página 28
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej06Nespresso;
+package Ej06Nespresso.entidad;
 
 public class Cafetera {
 
