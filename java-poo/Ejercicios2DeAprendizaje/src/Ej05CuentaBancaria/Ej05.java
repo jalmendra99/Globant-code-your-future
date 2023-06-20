@@ -40,5 +40,4 @@ public class Ej05 {
         // (ingreso, extracción, extracción express, consulta saldo y muestra info de cuenta)
         cs.hacerPruebas(cuenta1);
     }
-
 }

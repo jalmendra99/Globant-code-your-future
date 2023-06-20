@@ -37,7 +37,7 @@ public class CuentaService {
     }
 
     public void consultarSaldo(Cuenta c) {
-        System.out.println("El saldo actual es " + c.getSaldoActual());
+        System.out.println("\nEl saldo actual es " + c.getSaldoActual());
     }
 
     public void consultarDatos(Cuenta c) {
@@ -63,36 +63,51 @@ public class CuentaService {
         double retiro = leer.nextDouble();
         if (retiro > (c.getSaldoActual() * 0.2)) {
             System.out.println("No se puede retirar más del 20% de su saldo en una extracción rápida.");
-            System.out.println("Su saldo actual es $" + c.getSaldoActual());
         } else {
             c.setSaldoActual((c.getSaldoActual() - retiro));
         }
     }
 
     public void hacerPruebas(Cuenta cuenta1) {
-        // Consulta de saldo #1
-        consultarSaldo(cuenta1);
-
-        // Ingresando saldo
-        ingresar(cuenta1);
-
-        // Consulta de saldo #2
-        consultarSaldo(cuenta1);
-
-        // Retirando saldo
-        retirar(cuenta1);
-
-        // Consulta de saldo #3
-        consultarSaldo(cuenta1);
-
-        // Intento de dos extracciones rápidas para ver si se cumple lo del límite del 20%.
-        extraccionRapida(cuenta1);
-        extraccionRapida(cuenta1);
-
-        // Consulta de saldo #4
-        consultarSaldo(cuenta1);
-
-        // Consulta de datos de la cuenta
-        consultarDatos(cuenta1);
+        boolean salir = false;
+        int opcion;
+        do {
+            System.out.println("\nMenú de operaciones:");
+            System.out.println("1. Consulta de saldo");
+            System.out.println("2. Ingresar saldo");
+            System.out.println("3. Retirar saldo");
+            System.out.println("4. Extracción rápida");
+            System.out.println("5. Consulta de datos de la cuenta");
+            System.out.println("6. Salir");
+            System.out.print("Ingrese una opción: ");
+            opcion = leer.nextInt();
+            switch (opcion) {
+                case 1: // Consulta de Saldo
+                    consultarSaldo(cuenta1);
+                    break;
+                case 2: // Ingresar saldo
+                    ingresar(cuenta1);
+                    consultarSaldo(cuenta1);
+                    break;
+                case 3: // Retirar saldo
+                    retirar(cuenta1);
+                    consultarSaldo(cuenta1);
+                    break;
+                case 4: // Extracción rápida
+                    extraccionRapida(cuenta1);
+                    consultarSaldo(cuenta1);
+                    break;
+                case 5: // Consulta de datos de la cuenta
+                    consultarDatos(cuenta1);
+                    break;
+                case 6: // Salir
+                    System.out.println("Saliendo...");
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción incorrecta. Ingrese un número entre 1 y 6.");
+                    break;
+            }
+        } while (!salir);
     }
 }
