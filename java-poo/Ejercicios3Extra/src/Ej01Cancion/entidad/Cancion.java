@@ -12,7 +12,7 @@ Se deberán además definir los métodos getters y setters correspondientes.
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej01Cancion;
+package Ej01Cancion.entidad;
 
 public class Cancion {
 

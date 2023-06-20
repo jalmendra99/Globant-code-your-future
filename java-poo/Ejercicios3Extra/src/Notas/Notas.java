@@ -6,7 +6,7 @@ Fer V - Jalmendra99@gmail.com
 
 Revisar:
 - Crear clases "service" para todos los objetos. Pedido por gente de egg.
-- ej6. cambiar la clase puntos por punto. y en el service hacer cosas con dos objetso punto.
+- ej6. cambiar la clase puntos por punto. y en el service hacer cosas con dos objetos punto.
 - 
 
 Resueltas / finalizadas:

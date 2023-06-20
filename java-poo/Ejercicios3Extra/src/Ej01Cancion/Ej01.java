@@ -7,6 +7,8 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej01Cancion;
 
+import Ej01Cancion.entidad.Cancion;
+
 public class Ej01 {
 
     public static void main(String[] args) {
@@ -15,15 +17,14 @@ public class Ej01 {
         Cancion ca1 = new Cancion();
 
         // Crea un objeto Cancion con titulo y autor.
-        Cancion ca2 = new Cancion("Dig", "Incubus");
+        Cancion ca2 = new Cancion("Canción 2", "Artista 2");
 
         // Agregando título y autor a ca1 usando setters.
-        ca1.setAutor("Home");
-        ca1.setTitulo("Resonance");
+        ca1.setAutor("Artista 1");
+        ca1.setTitulo("Canción 1");
 
         // Mostrando información por pantalla usando getters
         System.out.println("Primera canción: " + ca1.getTitulo() + " de " + ca1.getAutor());
         System.out.println("Segunda canción: " + ca2.getTitulo() + " de " + ca2.getAutor());
     }
-
 }
