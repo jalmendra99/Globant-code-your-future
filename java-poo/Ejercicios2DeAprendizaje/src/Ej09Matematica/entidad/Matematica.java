@@ -5,7 +5,7 @@ Ejercicio 9 - Página 30
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej09Matematica;
+package Ej09Matematica.entidad;
 
 public class Matematica {
 
