@@ -21,30 +21,24 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej12Persona;
 
-import java.util.Scanner;
+import Ej12Persona.entidad.Persona;
+import Ej12Persona.servicio.PersonaService;
 
 public class Ej12 {
 
     public static void main(String[] args) {
 
-        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        // Se crea un objeto PersonaService para crear y manipular objetos Persona
+        PersonaService ps = new PersonaService();
 
-        // Se crea una Persona
-        Persona pe = new Persona();
-
-        // Se agregan datos a la Persona
-        pe.crearPersona();
+        // Se crea un objeto Persona y se solicita ingresar sus datos
+        Persona pe = ps.crearPersona();
 
         // Se compara la edad de la persona con otra edad ingresada por el usuario
-        System.out.print("Ingrese una edad para comparar con la persona: ");
-        if (pe.menorQue(leer.nextInt())) {
-            System.out.println("La edad de la persona es menor que la ingresada.");
-        } else {
-            System.out.println("La edad de la persona es igual o mayor que la ingresada.");
-        }
+        ps.hacerPruebas(pe);
 
         // Se muestran los datos de la Persona
-        pe.mostrarPersona();
+        ps.mostrarPersona(pe);
     }
 
 }
