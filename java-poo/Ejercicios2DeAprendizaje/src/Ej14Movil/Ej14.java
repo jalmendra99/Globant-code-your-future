@@ -7,18 +7,20 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej14Movil;
 
+import Ej14Movil.entidad.Movil;
+import Ej14Movil.servicio.MovilService;
+
 public class Ej14 {
 
     public static void main(String[] args) {
 
-        // Se crea un objeto Movil
-        Movil mo = new Movil();
+        // Se crea un objeto MovilService para crear y manipular objetos Movil
+        MovilService ms = new MovilService();
 
-        // Se cargan los datos
-        mo.cargarCelular();
+        // Se crea un objeto Movil y se cargan sus datos
+        Movil mo = ms.crearCelular();
 
         // Se muestran los datos
-        mo.mostrarMovil();
+        ms.mostrarMovil(mo);
     }
-
 }

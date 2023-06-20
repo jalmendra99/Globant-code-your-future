@@ -21,7 +21,7 @@ A continuación, se implementarán los siguientes métodos:
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej14Movil;
+package Ej14Movil.entidad;
 
 import java.util.Scanner;
 
@@ -96,46 +96,6 @@ public class Movil {
 
     public void setCodigo(int[] codigo) {
         this.codigo = codigo;
-    }
-
-    // Métodos
-    public void cargarCelular() {
-        System.out.print("Ingrese la marca: ");
-        marca = leer.nextLine();
-
-        System.out.print("Ingrese el precio: ");
-        precio = leer.nextDouble();
-        leer.nextLine(); // elimina el \n colgado...
-
-        System.out.print("Ingrese el modelo: ");
-        modelo = leer.nextLine();
-
-        System.out.print("Ingrese la cantidad de GB de memoria RAM: ");
-        memoriaRam = leer.nextInt();
-
-        System.out.print("Ingrese la cantidad de GB de almacenamiento: ");
-        almacenamiento = leer.nextInt();
-
-        ingresarCodigo();
-    }
-
-    public void ingresarCodigo() {
-        for (int i = 0; i < codigo.length; i++) {
-            System.out.print("Ingrese el código #" + (i + 1) + ": ");
-            codigo[i] = leer.nextInt();
-        }
-    }
-
-    // agregado
-    public void mostrarMovil() {
-        System.out.println("Marca: " + marca);
-        System.out.printf("Precio: %.2f\n", precio);
-        System.out.println("Modelo: " + modelo);
-        System.out.println("RAM: " + memoriaRam + " GB");
-        System.out.println("Almacenamiento: " + almacenamiento + " GB");
-        for (int i = 0; i < codigo.length; i++) {
-            System.out.println("Código #" + (i + 1) + ": " + codigo[i]);
-        }
     }
 
 }
