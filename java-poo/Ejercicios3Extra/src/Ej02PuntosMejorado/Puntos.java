@@ -15,8 +15,9 @@ http://www.matematicatuya.com/GRAFICAecuaciones/S1a.html
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej02Puntos;
+package Ej02PuntosMejorado;
 
+import Ej02Puntos.*;
 import java.util.Scanner;
 
 public class Puntos {

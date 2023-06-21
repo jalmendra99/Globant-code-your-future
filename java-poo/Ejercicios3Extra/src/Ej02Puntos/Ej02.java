@@ -7,20 +7,23 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej02Puntos;
 
+import Ej02Puntos.entidad.Puntos;
+import Ej02Puntos.servicio.PuntosService;
+
 public class Ej02 {
 
     public static void main(String[] args) {
 
-        // Crea un nuevo par de Puntos
-        Puntos pu = new Puntos();
+        // Crea un objeto PuntosService para crear y manipular objetos Puntos
+        PuntosService ps = new PuntosService();
 
-        // Carga las coordenadas de los dos puntos
-        pu.crearPuntos();
+        // Crea dos puntos y carga sus coordenadas
+        Puntos pu = ps.crearPuntos();
 
         // Calcula y muestra la distancia entre los puntos
-        System.out.println("La distancia entre los dos puntos es: " + pu.distancia());
+        ps.mostrarDistancia(pu);
 
         // Muestra la información de los puntos
-        pu.mostrarPuntos();
+        ps.mostrarPuntos(pu);
     }
 }
