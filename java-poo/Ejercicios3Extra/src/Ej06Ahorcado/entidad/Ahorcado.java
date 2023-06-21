@@ -64,7 +64,7 @@ Mensaje: Lo sentimos, no hay más oportunidades
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej06Ahorcado;
+package Ej06Ahorcado.entidad;
 
 import java.util.Scanner;
 
