@@ -5,7 +5,7 @@ Ejercicio 5 - Página 35
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej05AdivinaMes;
+package Ej05AdivinaMes.entidad;
 
 public class AdivinaMes {
 

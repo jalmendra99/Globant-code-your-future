@@ -20,30 +20,20 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej05AdivinaMes;
 
-import java.util.Scanner;
+import Ej05AdivinaMes.entidad.AdivinaMes;
+import Ej05AdivinaMes.servicio.AdivinaMesService;
 
 public class Ej05 {
 
     public static void main(String[] args) {
 
-        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        // Se crea un objeto AdivinaMesService para interactuar con objetos AdivinaMes
+        AdivinaMesService as = new AdivinaMesService();
 
-        String mesIngresado;
-
-        // Se crea un nuevo objeto AdivinaMes
-        AdivinaMes am = new AdivinaMes();
-
+        // Se crea un objeto AdivinaMes
+        AdivinaMes am = as.CreaAdivinaMes();
+        
         // Se le pide ingresar meses al usuario hasta que adivine uno
-        System.out.print("Adivine el mes secreto (hint: es " + am.getMesSecreto() + "). ");
-        System.out.print("Introduzca el nombre del mes en minúsculas: ");
-        mesIngresado = leer.nextLine();
-
-        while (!am.mesSecretoEs(mesIngresado)) {
-            System.out.print("No ha acertado. ");
-            System.out.print("Intente adivinarlo introduciendo otro mes: ");
-            mesIngresado = leer.nextLine();
-        }
-        System.out.println("¡Há acertado!");
+        as.hacerPruebas(am);
     }
-
 }
