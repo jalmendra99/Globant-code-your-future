@@ -20,18 +20,20 @@ DNI         División    resto(posición) letra
  */
 package Ej04DniNif;
 
+import Ej04DniNif.entidad.Nif;
+import Ej04DniNif.servicio.NifService;
+
 public class Ej04 {
 
     public static void main(String[] args) {
 
-        // Crea una clase NIF
-        NIF nif = new NIF();
+        // Crea un objeto NifService para crear e interactuar con objetos Nif.
+        NifService ns = new NifService();
 
-        // Carga los datos
-        nif.crearNif();
+        // Crea un objeto Nif y carga sus datos
+        Nif nif1 = ns.crearNif();
 
-        // Muestra la información de la clase NIF
-        nif.mostrar();
+        // Muestra la información de la clase Nif
+        ns.mostrar(nif1);
     }
-
 }
