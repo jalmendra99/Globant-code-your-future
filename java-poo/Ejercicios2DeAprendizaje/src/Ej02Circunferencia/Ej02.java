@@ -20,18 +20,16 @@ import Ej02Circunferencia.entidad.Circunferencia;
 import Ej02Circunferencia.servicio.CircunferenciaService;
 
 public class Ej02 {
-    
+
     public static void main(String[] args) {
 
-        // Crea un servicio para acceder a Circunferencia
+        // Crea un objeto CircunferenciaService para crear y manipular objetos Circunferencia
         CircunferenciaService cs = new CircunferenciaService();
 
         // Crea una circunferencia nueva
-        Circunferencia c = cs.crearCircunferencia();
+        Circunferencia circulo1 = cs.crearCircunferencia();
 
         // Muestra área y perímetro
-        cs.mostrarRadioYPerimetro(c);
-        
+        cs.mostrarRadioYPerimetro(circulo1);
     }
-    
 }

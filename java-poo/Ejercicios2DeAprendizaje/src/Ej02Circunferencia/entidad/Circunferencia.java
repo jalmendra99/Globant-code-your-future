@@ -50,10 +50,6 @@ public class Circunferencia {
     }
 
     // Métodos
-    public void crearCircunferencia() {
-
-    }
-
     private void Area() {
         area = Math.PI * radio * radio;
     }
@@ -61,5 +57,4 @@ public class Circunferencia {
     private void Perimetro() {
         perimetro = 2 * Math.PI * radio;
     }
-
 }
