@@ -72,10 +72,12 @@ public class CursoService {
     }
 
     public void cargarAlumnos(Curso cu) {
+        String[] alumnos = new String[cu.getAlumnos().length];
         for (int i = 0; i < cu.getAlumnos().length; i++) {
             System.out.print("Ingrese el nombre para el alumno #" + (i + 1) + ": ");
-            cu.getAlumnos()[i] = leer.next();
+            alumnos[i] = leer.next();
         }
+        cu.setAlumnos(alumnos);
     }
 
     public double calcularGananciaSemanal(Curso cu) {
@@ -85,4 +87,14 @@ public class CursoService {
                 * cu.getCantidadDiasPorSemana();
     }
 
+    public void mostrarGananciaSemanal(Curso cu) {
+        System.out.printf("La ganancia semanal es: $%.2f\n", calcularGananciaSemanal(cu));
+    }
+
+    public void mostrarAlumnos(Curso cu) {
+        System.out.println("Listado de alumnos:");
+        for (int i = 0; i < cu.getAlumnos().length; i++) {
+            System.out.println("Alumno #" + (i + 1) + ": " + cu.getAlumnos()[i]);
+        }
+    }
 }

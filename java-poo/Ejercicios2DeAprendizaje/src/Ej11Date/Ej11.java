@@ -47,6 +47,9 @@ Fer V - Jalmendra99@gmail.com
  */
 package Ej11Date;
 
+// import java.util.Date;
+// import java.util.Calendar;
+// import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.time.*;
 
@@ -69,18 +72,15 @@ public class Ej11 {
         ////Date fecha = new Date(anio - 1900, mes - 1, dia);
         ////Date hoy = new Date();
         ////int diferenciaEnAnios = hoy.getYear() - fecha.getYear();
-
-
         //// Acá se resolvió usando java.util.GregorianCalendar
         //GregorianCalendar fecha = new GregorianCalendar(anio, mes, dia);
         //GregorianCalendar hoy = new GregorianCalendar();
         //int diferenciaEnAnios = hoy.get(Calendar.YEAR) - fecha.get(Calendar.YEAR);
-
         // Resuelto usando java.Time.
-        LocalDate fecha = LocalDate.of(anio, mes, dia);        
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
         LocalDate hoy = LocalDate.now();
         int diferenciaEnAnios = hoy.getYear() - fecha.getYear();
-        
+
         System.out.println("La diferencia en años entre la fecha ingresada y hoy es de " + diferenciaEnAnios + " años.");
     }
 }
