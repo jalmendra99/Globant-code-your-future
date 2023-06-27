@@ -8,23 +8,22 @@ Fer V - Jalmendra99@gmail.com
 package Ej01Cancion;
 
 import Ej01Cancion.entidad.Cancion;
+import Ej01Cancion.servicio.CancionService;
 
 public class Ej01 {
 
     public static void main(String[] args) {
 
-        // Crea un objeto Cancion sin título ni autor. 
-        Cancion ca1 = new Cancion();
+        // Crea un objeto CancionService para crear e interactuar con objetos Cancion.
+        CancionService cs = new CancionService();
+
+        // Crea un objeto Cancion y solicita al usuario ingresar los datos
+        Cancion ca1 = cs.crearCancion();
 
         // Crea un objeto Cancion con titulo y autor.
-        Cancion ca2 = new Cancion("Canción 2", "Artista 2");
+        Cancion ca2 = cs.crearCancion("Canción 2", "Artista 2");
 
-        // Agregando título y autor a ca1 usando setters.
-        ca1.setAutor("Artista 1");
-        ca1.setTitulo("Canción 1");
-
-        // Mostrando información por pantalla usando getters
-        System.out.println("Primera canción: " + ca1.getTitulo() + " de " + ca1.getAutor());
-        System.out.println("Segunda canción: " + ca2.getTitulo() + " de " + ca2.getAutor());
+        cs.mostrarCancion(ca1);
+        cs.mostrarCancion(ca2);
     }
 }
