@@ -35,17 +35,20 @@ or GregorianCalendar(year + 1900, month, date).
 
 --
 
-Nota: Usando GregorianCalendar (y Calendar) en vez de Date porque los días del mes daban cualquier cosa.
+Nota: 
+- Inicialmente se reemplazó java.util.Date por java.util.GregorianCalendar
+- Finalmente se reemplazó java.util.GregorianCalendar por java.Time porque 
+    es lo que fué más usado por el grupo (y porque no está deprecado para nada)
+
+
 
 Fer V - Jalmendra99@gmail.com
 
  */
 package Ej11Date;
 
-////import java.util.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
+import java.time.*;
 
 public class Ej11 {
 
@@ -62,14 +65,22 @@ public class Ej11 {
         System.out.print("Ingrese el dia: ");
         int dia = leer.nextInt();
 
+        ////// Acá se resolvió usando java.util.Date
         ////Date fecha = new Date(anio - 1900, mes - 1, dia);
-        GregorianCalendar fecha = new GregorianCalendar(anio, mes, dia);
-
         ////Date hoy = new Date();
-        GregorianCalendar hoy = new GregorianCalendar();
-
         ////int diferenciaEnAnios = hoy.getYear() - fecha.getYear();
-        int diferenciaEnAnios = hoy.get(Calendar.YEAR) - fecha.get(Calendar.YEAR);
+
+
+        //// Acá se resolvió usando java.util.GregorianCalendar
+        //GregorianCalendar fecha = new GregorianCalendar(anio, mes, dia);
+        //GregorianCalendar hoy = new GregorianCalendar();
+        //int diferenciaEnAnios = hoy.get(Calendar.YEAR) - fecha.get(Calendar.YEAR);
+
+        // Resuelto usando java.Time.
+        LocalDate fecha = LocalDate.of(anio, mes, dia);        
+        LocalDate hoy = LocalDate.now();
+        int diferenciaEnAnios = hoy.getYear() - fecha.getYear();
+        
         System.out.println("La diferencia en años entre la fecha ingresada y hoy es de " + diferenciaEnAnios + " años.");
     }
 }

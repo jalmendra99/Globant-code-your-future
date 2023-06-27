@@ -45,7 +45,7 @@ public class Ej07 {
 
         // La cantidad de personas a crear se guarda en 
         // una constante para poder jugar con distintas cantidades.
-        final int CANTIDAD = 2;
+        final int CANTIDAD = 4;
 
         // Se crea un objeto PersonaService para crear e interactuar con objetos Persona
         PersonaService ps = new PersonaService();
