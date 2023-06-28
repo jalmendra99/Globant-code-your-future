@@ -14,13 +14,12 @@ Resueltas / finalizadas:
 - Ejercicio 7: La mayoría de edad= ¿18 o 21?. Usé 18. 
     Info: Cambió de 21 a 18 en Diciembre de 2009.
     https://www.marval.com/publicacion/ley-de-mayoria-de-edad-5645
-- 
+- Ejercicio 11: Cambiar date por gregoriancalendar
+- Ejercicio 11: cambiar java.util.GregorianCalendar por java.Time
 
 
  */
-
 package notas;
-
 
 public class Notas {
 

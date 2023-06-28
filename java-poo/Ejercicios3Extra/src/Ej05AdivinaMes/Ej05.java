@@ -32,7 +32,7 @@ public class Ej05 {
 
         // Se crea un objeto AdivinaMes
         AdivinaMes am = as.CreaAdivinaMes();
-        
+
         // Se le pide ingresar meses al usuario hasta que adivine uno
         as.hacerPruebas(am);
     }
