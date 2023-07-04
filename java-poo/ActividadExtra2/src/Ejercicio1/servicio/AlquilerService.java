@@ -5,20 +5,47 @@ Ejercicio # - Página #
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ejercicio1.service;
+package Ejercicio1.servicio;
 
 import Ejercicio1.entidad.Alquiler;
 import Ejercicio1.entidad.Pelicula;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Arrays;
-import javax.swing.plaf.basic.BasicPopupMenuSeparatorUI;
+import java.util.Scanner;
 
 public class AlquilerService {
+
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     public Alquiler crearAlquiler(Pelicula peli, LocalDate fechaInicio, LocalDate fechaFin) {
         Alquiler alqui = new Alquiler(peli, fechaInicio, fechaFin);
         alqui.setPrecio(calcularPrecio(alqui));
+        return alqui;
+    }
+
+    public Alquiler crearAlquiler(Pelicula[] pelis) {
+        Alquiler alqui = new Alquiler();
+        PeliculaService ps = new PeliculaService();
+
+        //peli, fechaInicio, fechaFin
+        System.out.println("Creando un alquiler.");
+        MostrarPeliculas(pelis);
+
+        Pelicula peli;
+        // Fuerza a que la película ingresada exista en el arreglo de películas
+        do {
+            System.out.print("Ingrese el nombre de la película a alquilar: ");
+            String nombrePelicula = leer.next();
+            peli = ps.buscarPeliculaPorTitulo(pelis, nombrePelicula);
+            alqui.setPeliAlquilada(peli);
+            if (peli == null) {
+                System.out.println("La película ingresada no existe");
+            }
+        } while (peli == null);
+
+        alqui.setPrecio(calcularPrecio(alqui));
+        System.out.println("El alquiler ha sido creado correctamente.");
         return alqui;
     }
 

@@ -24,7 +24,9 @@ public class Ej10 {
     public static void main(String[] args) {
 
         // Arreglos
-        double[] arregloA = new double[50];
+        double[] arregloA = new double[50]; // arregloA[3]   0, 1, 2
+//        double arregloC[] = new double[50];
+        
         double[] arregloB = new double[20];
 
         // Inicializa el arreglo a con 50 números al azar reales
@@ -38,12 +40,14 @@ public class Ej10 {
         Arrays.sort(arregloA);
 
         // llena los primeros 10 elementos de b con los 10 primeros de a
-        for (int i = 0; i < 10; i++) {
-            arregloB[i] = arregloA[i];
-        }
+//        for (int i = 0; i < 10; i++) {
+//            arregloB[i] = arregloA[i];
+//        }
+
+        arregloB = Arrays.copyOf(arregloA, 20);
 
         // Llena los siguientes 10 elementos de b con 0.5
-        Arrays.fill(arregloB, 10, 19, 0.5);
+        Arrays.fill(arregloB, 10, 20, 0.5);
 
         // Muestra los dos arreglos resultantes.
         System.out.print("A ordenado = ");
