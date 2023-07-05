@@ -2,6 +2,8 @@
 Java-POO - Ejercicios extra.
 Ejercicio # - Página #
 
+******INCOMPLETO. EN PROCESO DE MODIFICARLO**********
+
 El programa debe permitir al usuario ingresar los datos de las películas disponibles 
 y los datos de los alquileres realizados, y mostrar por pantalla un menú 
 con las opciones de cargar una pelicula, hacer una lista de todas las peliculas disponibles, 
