@@ -39,13 +39,16 @@ public class Ej10 {
         // Se ordena el arreglo a de menor a mayor
         Arrays.sort(arregloA);
 
+        
         // llena los primeros 10 elementos de b con los 10 primeros de a
 //        for (int i = 0; i < 10; i++) {
 //            arregloB[i] = arregloA[i];
 //        }
 
-        arregloB = Arrays.copyOf(arregloA, 20);
+//        arregloB = Arrays.copyOfRange(arregloA, 0, 10);
 
+        arregloB = Arrays.copyOf(arregloA, 20); // acá nunca se usan las últimas 10 posiciones.
+        
         // Llena los siguientes 10 elementos de b con 0.5
         Arrays.fill(arregloB, 10, 20, 0.5);
 

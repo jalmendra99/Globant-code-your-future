@@ -40,10 +40,21 @@ public class MovilService {
     }
 
     public void ingresarCodigo(Movil mo) {
+//        // Ingresando el código de a un número por vez y asignandoselos a un array de enteros.
+//        int[] codigo = new int[mo.getCodigo().length];
+//        for (int i = 0; i < codigo.length; i++) {
+//            System.out.print("Ingrese el código #" + (i + 1) + ": ");
+//            codigo[i] = leer.nextInt();
+//        }
+//        mo.setCodigo(codigo);
+        
+        // Ingresando el código como una cadena de texto y convirtiendola a un array de enteros.
         int[] codigo = new int[mo.getCodigo().length];
+        System.out.print("Ingrese el código numérico de " + mo.getCodigo().length + " dígitos: ");
+        String codigoCadena = leer.next();
         for (int i = 0; i < codigo.length; i++) {
-            System.out.print("Ingrese el código #" + (i + 1) + ": ");
-            codigo[i] = leer.nextInt();
+            //codigo[i] = Integer.valueOf(String.valueOf(codigoCadena.charAt(i)));
+            codigo[i] = Integer.valueOf(codigoCadena.substring(i, i+1));
         }
         mo.setCodigo(codigo);
     }
