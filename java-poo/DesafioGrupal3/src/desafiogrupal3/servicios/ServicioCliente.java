@@ -42,15 +42,28 @@ public class ServicioCliente {
     }
 
     public void actualizarCliente(int id, String nombre, int edad, double altura, double peso, String objetivo) {
-        Cliente cli = new Cliente(nombre, edad, altura, peso, objetivo);
-        listaClientes.set(id, cli);
+//        Cliente cli = new Cliente(nombre, edad, altura, peso, objetivo);
+//        listaClientes.set(id, cli);
+        int posicion = buscarClientePorId(id);
+        Cliente cli = listaClientes.get(posicion);
+        cli.setNombre(nombre);
+        cli.setEdad(edad);
+        cli.setAltura(altura);
+        cli.setPeso(peso);
+        cli.setObjetivo(objetivo);
+
+//        listaClientes.set(id, cli);
+//        listaClientes.get(posicion).setNombre(nombre);
+//        listaClientes.get(posicion).setEdad(edad);
+//        listaClientes.get(posicion).setAltura(altura);
+//        listaClientes.get(posicion).setPeso(peso);
+//        listaClientes.get(posicion).setObjetivo(objetivo);
     }
 
     public void actualizarClientePorTeclado() {
         int id;
 
-        Cliente cli = new Cliente();
-
+//        Cliente cli = new Cliente();
         // Verifica que exista un Cliente en la posición id de listaClientes
         System.out.println("Se solicitó actualizar un cliente.");
         System.out.println("Verificando que exista un cliente con el id ingresado...");
@@ -60,6 +73,8 @@ public class ServicioCliente {
             id = leer.nextInt();
             posicion = buscarClientePorId(id);
         } while (posicion == -1);
+
+        Cliente cli = listaClientes.get(buscarClientePorId(id));
 
         cli = validarDatosCliente(cli);
         actualizarCliente(posicion, cli.getNombre(), cli.getEdad(), cli.getAltura(), cli.getPeso(), cli.getObjetivo());

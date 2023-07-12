@@ -43,14 +43,19 @@ public class ServicioRutina {
     }
 
     public void actualizarRutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion) {
-        Rutina rut = new Rutina(nombre, duracion, nivelDificultad, descripcion);
-        listaRutinas.set(id, rut);
+//        Rutina rut = new Rutina(nombre, duracion, nivelDificultad, descripcion);
+//        listaRutinas.set(id, rut);
+        int posicion = buscarRutinaPorId(id);
+        Rutina rut = listaRutinas.get(posicion);
+        rut.setNombre(nombre);
+        rut.setDuracion(duracion);
+        rut.setNivelDificultad(nivelDificultad);
+        rut.setDescripcion(descripcion);
+
     }
 
     public void actualizarRutinaPorTeclado() {
         int id;
-
-        Rutina rut = new Rutina();
 
         // Verifica que exista un Rutina en la posición id de listaRutinas
         System.out.println("Se solicitó actualizar una rutina.");
@@ -61,6 +66,8 @@ public class ServicioRutina {
             id = leer.nextInt();
             posicion = buscarRutinaPorId(id);
         } while (posicion == -1);
+
+        Rutina rut = listaRutinas.get(buscarRutinaPorId(id));
 
         rut = validarDatosRutina(rut);
         actualizarRutina(posicion, rut.getNombre(),
