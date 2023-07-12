@@ -16,10 +16,15 @@ public class ServicioCliente {
 
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
-    public void registrarCliente(int cantidad) {
+    public void registrarCliente(String nombre, int edad, double altura, double peso, String objetivo) {
+        Cliente cli = new Cliente(nombre, edad, altura, peso, objetivo);
+        listaClientes.add(cli);
+    }
+
+    public void registrarClientePorTeclado(int cantidad) {
         for (int i = 0; i < cantidad; i++) {
             Cliente cli = new Cliente();
-            System.out.println("Registrando un cliente con el id: " + cli.getId());
+            System.out.println("\nRegistrando un cliente con el id: " + cli.getId());
             validarDatosCliente(cli);
             listaClientes.add(cli);
         }
@@ -30,7 +35,7 @@ public class ServicioCliente {
     }
 
     public void mostrarClientes() {
-        System.out.println("Mostrando listado actual de clientes...");
+        System.out.println("\nMostrando listado actual de clientes...");
         for (Cliente cli : listaClientes) {
             System.out.println(cli);
         }
@@ -43,11 +48,7 @@ public class ServicioCliente {
 
     public void actualizarClientePorTeclado() {
         int id;
-//        String nombre;
-//        int edad;
-//        double altura;
-//        double peso;
-//        String objetivo;
+
         Cliente cli = new Cliente();
 
         // Verifica que exista un Cliente en la posición id de listaClientes
@@ -63,11 +64,11 @@ public class ServicioCliente {
         cli = validarDatosCliente(cli);
         actualizarCliente(posicion, cli.getNombre(), cli.getEdad(), cli.getAltura(), cli.getPeso(), cli.getObjetivo());
     }
-    
+
     // si encuentra un cliente con el id solicitado, devuelve la posición del mismo en listaClientes.
     // Si no lo encuentra, devuelve -1
     public int buscarClientePorId(int id) {
-        for (Cliente cli: listaClientes) {
+        for (Cliente cli : listaClientes) {
             if (cli.getId() == id) {
                 System.out.println("Se encontró un cliente con el id " + id);
                 return listaClientes.indexOf(cli);
@@ -133,6 +134,6 @@ public class ServicioCliente {
         System.out.print("Ingrese el ID a eliminar: ");
         id = leer.nextInt();
 
-        eliminarCliente(id);
+        eliminarCliente(buscarClientePorId(id));
     }
 }

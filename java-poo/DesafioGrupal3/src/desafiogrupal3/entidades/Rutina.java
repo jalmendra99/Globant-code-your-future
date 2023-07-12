@@ -9,9 +9,8 @@ package desafiogrupal3.entidades;
 public class Rutina {
 
     // Atributos
-    
     public static int next_id = -1; // next_id es estático y se comparte entre todos los elementos de la clase
-    
+
     private final int id; // Es constante. Se asigna una vez y no se modifica más.
     private String nombre;
     private int duracion;
@@ -19,7 +18,7 @@ public class Rutina {
     private String descripcion;
 
     // Constructores
-    public Rutina() {                
+    public Rutina() {
         next_id++;
         id = next_id;
     }
@@ -72,10 +71,9 @@ public class Rutina {
     }
 
     // To string
-
     @Override
     public String toString() {
         return "Rutina{" + "id=" + id + ", nombre=" + nombre + ", duracion=" + duracion + ", nivelDificultad=" + nivelDificultad + ", descripcion=" + descripcion + '}';
     }
-    
+
 }
