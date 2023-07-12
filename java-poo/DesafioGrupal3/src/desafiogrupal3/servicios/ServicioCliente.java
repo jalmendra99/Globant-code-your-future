@@ -73,13 +73,13 @@ public class ServicioCliente {
     public void eliminarCliente(int id) {
         listaClientes.remove(id);
     }
-    
+
     public void ingresarIDParaEliminarCliente() {
         int id;
-        
+
         System.out.print("Ingrese el ID a eliminar: ");
         id = leer.nextInt();
-        
+
         eliminarCliente(id);
     }
 }

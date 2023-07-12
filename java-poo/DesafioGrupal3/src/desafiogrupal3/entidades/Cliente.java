@@ -10,16 +10,14 @@ public class Cliente {
 
     // Atributos
     //////static int next_id = 0; // next_id es estático y se comparte entre todos los elementos de la clase
-    
-    private int id; 
+    private int id;
     private String nombre;
     private int edad;
     private double altura;
     private double peso;
     private String objetivo;
-    
-    // Constructores
 
+    // Constructores
     public Cliente() {
     }
 
@@ -31,9 +29,8 @@ public class Cliente {
         this.peso = peso;
         this.objetivo = objetivo;
     }
-    
-    // Getters y Setters
 
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -81,5 +78,5 @@ public class Cliente {
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
-    
+
 }

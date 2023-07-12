@@ -9,7 +9,6 @@ https://www.w3schools.com/java/java_arraylist.asp
  */
 package desafiogrupal3;
 
-import desafiogrupal3.entidades.Cliente;
 import desafiogrupal3.servicios.ServicioCliente;
 
 public class DesafioGrupal3 {

@@ -7,29 +7,27 @@ Fer V - Jalmendra99@gmail.com
 package desafiogrupal3.entidades;
 
 public class Rutina {
-    
+
     // Atributos
     private int id;
     private String nombre;
     private int duracion;
-    private int nivelDificultad;
+    private String nivelDificultad;
     private String descripcion;
-    
-    // Constructores
 
+    // Constructores
     public Rutina() {
     }
 
-    public Rutina(int id, String nombre, int duracion, int nivelDificultad, String descripcion) {
+    public Rutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.duracion = duracion;
         this.nivelDificultad = nivelDificultad;
         this.descripcion = descripcion;
     }
-    
-    // Getters y setters
 
+    // Getters y setters
     public int getId() {
         return id;
     }
@@ -54,11 +52,11 @@ public class Rutina {
         this.duracion = duracion;
     }
 
-    public int getNivelDificultad() {
+    public String getNivelDificultad() {
         return nivelDificultad;
     }
 
-    public void setNivelDificultad(int nivelDificultad) {
+    public void setNivelDificultad(String nivelDificultad) {
         this.nivelDificultad = nivelDificultad;
     }
 
