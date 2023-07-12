@@ -9,8 +9,9 @@ package desafiogrupal3.entidades;
 public class Cliente {
 
     // Atributos
-    //////static int next_id = 0; // next_id es estático y se comparte entre todos los elementos de la clase
-    private int id;
+    public static int next_id = -1; // next_id es estático y se comparte entre todos los elementos de la clase
+    
+    private final int id; // Es constante. Se asigna una vez y no se modifica más.
     private String nombre;
     private int edad;
     private double altura;
@@ -19,10 +20,13 @@ public class Cliente {
 
     // Constructores
     public Cliente() {
+        next_id++;
+        id = next_id;
     }
 
-    public Cliente(int id, String nombre, int edad, double altura, double peso, String objetivo) {
-        this.id = id;
+    public Cliente(String nombre, int edad, double altura, double peso, String objetivo) {
+        next_id++;
+        id = next_id;
         this.nombre = nombre;
         this.edad = edad;
         this.altura = altura;
@@ -31,12 +35,9 @@ public class Cliente {
     }
 
     // Getters y Setters
+    // No se usa setId porque se calcula una vez y no se modifica más. Es final.
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -79,4 +80,11 @@ public class Cliente {
         this.objetivo = objetivo;
     }
 
+    // to string
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", altura=" + altura + ", peso=" + peso + ", objetivo=" + objetivo + '}';
+    }
+    
 }

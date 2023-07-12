@@ -20,14 +20,36 @@ public class DesafioGrupal3 {
         // Agregamos 2 clientes
         sc.registrarCliente(2);
 
-        // Actualizamos un cliente.
-        sc.ingresarDatosParaActualizar();
+        // Muestra listado actual de clientes
+        sc.mostrarClientes();
 
-        // Eliminamos un cliente
-        sc.ingresarIDParaEliminarCliente();
+        // Actualizamos un cliente hardcodeado
+        System.out.println("Se actualizará un cliente de la posición 0 del ArrayList (julio, 20, 1.81, 90, world peace)...");
+        sc.actualizarCliente(0, "julio", 20, 1.81, 90, "World peace");
 
-        // Obtenemos los clientes y los mostramos
-        sc.obtenerClientes();
+        // Muestra listado actual de clientes
+        sc.mostrarClientes();
+
+        // Actualizamos un cliente solicitando los datos al usuario.
+        System.out.println("Se actualizará un cliente soilcitando los datos al usuario...");
+        sc.actualizarClientePorTeclado();
+
+        // Muestra listado actual de clientes
+        sc.mostrarClientes();
+
+        // Eliminamos un cliente hardcodeado
+        System.out.println("Se eliminará el cliente de la posición 0 del ArrayList...");
+        sc.eliminarCliente(0);
+
+        // Muestra listado actual de clientes
+        sc.mostrarClientes();
+
+        // Eliminamos un cliente solicitando los datos al usuario.
+        System.out.println("Se eliminará un cliente solicitando los datos al usuario...");
+        sc.eliminarClientePorTeclado();
+
+        // Muestra listado actual de clientes
+        sc.mostrarClientes();
 
     }
 
