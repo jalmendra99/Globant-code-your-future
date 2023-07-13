@@ -79,7 +79,19 @@ public class ServicioCliente {
         cli = validarDatosCliente(cli);
         actualizarCliente(posicion, cli.getNombre(), cli.getEdad(), cli.getAltura(), cli.getPeso(), cli.getObjetivo());
     }
-
+//
+//    public void borrame() {
+//        
+////        for (Cliente cli:listaClientes) {
+////            cli.getNombre();
+////        }
+//
+//        listaClientes.forEach((cli) -> {
+//            cli.getNombre();
+//        });
+//        
+//    }
+    
     // si encuentra un cliente con el id solicitado, devuelve la posición del mismo en listaClientes.
     // Si no lo encuentra, devuelve -1
     public int buscarClientePorId(int id) {

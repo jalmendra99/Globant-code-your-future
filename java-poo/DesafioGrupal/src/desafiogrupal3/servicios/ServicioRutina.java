@@ -43,14 +43,13 @@ public class ServicioRutina {
     }
 
     public void actualizarRutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion) {
-//        Rutina rut = new Rutina(nombre, duracion, nivelDificultad, descripcion);
-//        listaRutinas.set(id, rut);
         int posicion = buscarRutinaPorId(id);
         Rutina rut = listaRutinas.get(posicion);
         rut.setNombre(nombre);
         rut.setDuracion(duracion);
         rut.setNivelDificultad(nivelDificultad);
         rut.setDescripcion(descripcion);
+        // No hace falta usar listaRutinas.set(id, rut) porque la rutina se trae por referencia.
 
     }
 
