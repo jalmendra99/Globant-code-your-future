@@ -1,6 +1,5 @@
 /*
-Java-POO - Ejercicios extra.
-Ejercicio # - Página #
+Java-POO - Actividad extra 2.
 
 Escribir un programa en Java que simule un servicio de alquiler de películas. 
 El programa debe tener una clase Pelicula que represente los datos de una película, como 

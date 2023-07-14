@@ -1,6 +1,5 @@
 /*
-Java-POO - Ejercicios extra.
-Ejercicio # - Página #
+Java-POO - Actividad extra 2.
 
 Fer V - Jalmendra99@gmail.com
 

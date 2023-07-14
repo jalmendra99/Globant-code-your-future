@@ -1,8 +1,10 @@
 /*
-Java-POO - Ejercicios extra.
-Ejercicio # - Página #
+Java-POO - Actividad extra 2.
 
 ******INCOMPLETO. EN PROCESO DE MODIFICARLO**********
+Se modificará para utilizar ArrayList dinámicos en vez de Arrays estáticos.
+*****************************************************
+
 
 El programa debe permitir al usuario ingresar los datos de las películas disponibles 
 y los datos de los alquileres realizados, y mostrar por pantalla un menú 
@@ -31,7 +33,7 @@ public class Ejercicio1 {
         AlquilerService as = new AlquilerService();
 
         Pelicula[] peliculas = new Pelicula[5];
-        Alquiler[] alquileres = new Alquiler[3]; // ¿Que se usa para que la cantidad sea dinámica?
+        Alquiler[] alquileres = new Alquiler[3]; // ¿Que se usa para que la cantidad sea dinámica? ArrayList.
 
         boolean salir = true;
         int opcion;
@@ -60,6 +62,7 @@ public class Ejercicio1 {
     }
 
     private static boolean ejecutarOpcion(int opcion, PeliculaService ps, AlquilerService as, Pelicula[] peliculas, Alquiler[] alquileres) {
+        boolean salir = false;
         switch (opcion) {
             case 1:
                 System.out.println("Eligió ingresar (crear) una película.");
@@ -116,8 +119,10 @@ public class Ejercicio1 {
                 break;
             case 7:
                 System.out.println("Eligió salír. Saliendo!...");
+                salir = true;
                 break;
         }
+        ////////////////return salir;
     }
 
 }
