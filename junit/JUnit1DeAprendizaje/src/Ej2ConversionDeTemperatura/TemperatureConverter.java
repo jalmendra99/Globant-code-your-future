@@ -4,6 +4,12 @@ Ejercicio 2 - Página 10
 
 Fer V - Jalmendra99@gmail.com
 
+2. Conversión de Temperatura:
+Crea una clase TemperatureConverter que convierta entre diferentes unidades de temperatura 
+(por ejemplo, Celsius, Fahrenheit, Kelvin). Escribe pruebas unitarias para 
+asegurarte de que la conversión entre las diferentes unidades se realiza correctamente 
+y produce los resultados esperados.
+
 ---
 Info: 
 https://www.thoughtco.com/temperature-conversion-formulas-609324
