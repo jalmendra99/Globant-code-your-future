@@ -23,7 +23,7 @@ public class Cliente {
         next_id++;
         id = next_id;
     }
-
+    
     public Cliente(String nombre, int edad, double altura, double peso, String objetivo) {
         next_id++;
         id = next_id;
