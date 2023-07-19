@@ -44,21 +44,18 @@ public class PasswordValidatorTest {
         System.out.println("respetaLongitudMinima");
         String pass = "";
         int longitudMinima = 0;
-        boolean expResult = true;
         boolean result = PasswordValidator.respetaLongitudMinima(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertTrue(result);
 
         pass = "holaMundo";
         longitudMinima = 8;
-        expResult = true;
         result = PasswordValidator.respetaLongitudMinima(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertTrue(result);
 
         pass = "porQueSibaritaEsTanRica?";
         longitudMinima = 100;
-        expResult = false; // es más corta que la longitudMinima.
         result = PasswordValidator.respetaLongitudMinima(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertFalse(result); // es más corta que la longitudMinima.
 
     }
 
@@ -69,19 +66,16 @@ public class PasswordValidatorTest {
     public void testTieneCaracteresEspeciales() {
         System.out.println("tieneCaracteresEspeciales");
         String pass = "";
-        boolean expResult = false; // no tiene caracteres especiales
         boolean result = PasswordValidator.tieneCaracteresEspeciales(pass);
-        assertEquals(expResult, result);
+        assertFalse(result); // no tiene caracteres especiales
 
         pass = "holaMundo";
-        expResult = false; // no tiene caracteres especiales
         result = PasswordValidator.tieneCaracteresEspeciales(pass);
-        assertEquals(expResult, result);
+        assertFalse(result); // no tiene caracteres especiales
 
         pass = "porQueSibaritaEsTanRica?";
-        expResult = true;
         result = PasswordValidator.tieneCaracteresEspeciales(pass);
-        assertEquals(expResult, result);
+        assertTrue(result);
 
     }
 
@@ -92,19 +86,16 @@ public class PasswordValidatorTest {
     public void testTieneLetrasMayusculas() {
         System.out.println("tieneLetrasMayusculas");
         String pass = "";
-        boolean expResult = false; // no tiene mayúsculas
         boolean result = PasswordValidator.tieneLetrasMayusculas(pass);
-        assertEquals(expResult, result);
+        assertFalse(result); // no tiene mayúsculas
         
         pass = "holaMundo";
-        expResult = true;
         result = PasswordValidator.tieneLetrasMayusculas(pass);
-        assertEquals(expResult, result);
+        assertTrue(result);
 
         pass = "porQueSibaritaEsTanRica?";
-        expResult = true;
         result = PasswordValidator.tieneLetrasMayusculas(pass);
-        assertEquals(expResult, result);
+        assertTrue(result);
         
     }
 
@@ -113,33 +104,28 @@ public class PasswordValidatorTest {
         System.out.println("Contraseñas válidas");
         int longitudMinima = 0;
         String pass = "";
-        boolean expResult = false; // no tiene caracteres especiales, ni mayúsculas
         boolean result = PasswordValidator.contraseniaValida(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertFalse(result);  // no tiene caracteres especiales, ni mayúsculas
         
         longitudMinima = 8;
         pass = "holaMundo";
-        expResult = false; // no tiene caracteres especiales
         result = PasswordValidator.contraseniaValida(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertFalse(result); // no tiene caracteres especiales
         
         longitudMinima = 8;
-        pass = "holaMundo!"; // Se agregó un caracter especial
-        expResult = true; 
+        pass = "holaMundo!";
         result = PasswordValidator.contraseniaValida(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertTrue(result);  // Se agregó un caracter especial
 
         longitudMinima = 100;
         pass = "porQueSibaritaEsTanRica?";
-        expResult = false; // es más corta que la longitudMinima.
         result = PasswordValidator.contraseniaValida(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertFalse(result); // es más corta que la longitudMinima.
         
-        longitudMinima = 10; // Se achicó la longitudMinima.
+        longitudMinima = 10;
         pass = "porQueSibaritaEsTanRica?";
-        expResult = true;
         result = PasswordValidator.contraseniaValida(pass, longitudMinima);
-        assertEquals(expResult, result);
+        assertTrue(result);  // Se achicó la longitudMinima.
         
     }
 
