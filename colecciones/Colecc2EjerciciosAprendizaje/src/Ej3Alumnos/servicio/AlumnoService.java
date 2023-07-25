@@ -31,7 +31,7 @@ public class AlumnoService {
             a.setNombre(leer.next());
 
             for (int i = 0; i < 3; i++) {
-                System.out.print("Ingrese la nota # " + (i+1) + ": ");
+                System.out.print("Ingrese la nota # " + (i + 1) + ": ");
                 a.agregarNota(leer.nextInt());
             }
 

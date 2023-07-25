@@ -14,7 +14,7 @@ public class Ej4 {
     public static void main(String[] args) {
 
         PeliculaService ps = new PeliculaService();
-        
+
         ps.mostrarMenu();
     }
 

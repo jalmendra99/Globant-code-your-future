@@ -16,7 +16,7 @@ public class Ej3 {
         AlumnoService as = new AlumnoService();
 
         as.crearAlumnos();
-        
+
         as.notaFinal();
 
     }

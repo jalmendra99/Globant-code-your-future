@@ -12,10 +12,10 @@ import Ej1Perros.servicio.PerroService;
 public class Ej1 {
 
     public static void main(String[] args) {
-        
+
         PerroService ps = new PerroService();
         ps.mostrarMenu();
-        
+
     }
 
 }

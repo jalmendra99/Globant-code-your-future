@@ -13,9 +13,8 @@ public class Perro {
     private String raza;
     private String nombre;
     private String chip_id;
-    
-    // Constructores
 
+    // Constructores
     public Perro() {
     }
 
@@ -30,7 +29,6 @@ public class Perro {
     }
 
     // Getters & Setters
-
     public String getRaza() {
         return raza;
     }
@@ -54,12 +52,11 @@ public class Perro {
     public void setChip_id(String chip_id) {
         this.chip_id = chip_id;
     }
-    
-    // toString
 
+    // toString
     @Override
     public String toString() {
         return "Perro{" + "raza=" + raza + ", nombre=" + nombre + ", chip_id=" + chip_id + '}';
     }
-    
+
 }

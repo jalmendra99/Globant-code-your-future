@@ -18,12 +18,12 @@ public class PerroComparators {
             return o1.getRaza().compareTo(o2.getRaza());
         }
     };
-    
+
     public static Comparator<Perro> ordenarPorRazaAlfabeticamenteDesc = new Comparator<Perro>() {
         @Override
         public int compare(Perro o1, Perro o2) {
             return o2.getRaza().compareTo(o1.getRaza());
         }
     };
-    
+
 }

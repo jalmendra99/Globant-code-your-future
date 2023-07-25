@@ -18,28 +18,26 @@ public class PeliculaComparators {
             return o1.getDuracionEnMinutos().compareTo(o2.getDuracionEnMinutos());
         }
     };
-    
+
     public static Comparator<Pelicula> ordenarPorDuracionRev = new Comparator<Pelicula>() {
         @Override
         public int compare(Pelicula o1, Pelicula o2) {
             return o2.getDuracionEnMinutos().compareTo(o1.getDuracionEnMinutos());
         }
     };
-    
+
     public static Comparator<Pelicula> ordenarPorTitulo = new Comparator<Pelicula>() {
         @Override
         public int compare(Pelicula o1, Pelicula o2) {
             return o1.getTitulo().compareTo(o2.getTitulo());
         }
     };
-    
+
     public static Comparator<Pelicula> ordenarPorDirector = new Comparator<Pelicula>() {
         @Override
         public int compare(Pelicula o1, Pelicula o2) {
             return o1.getDirector().compareTo(o2.getDirector());
         }
     };
-    
-    
-    
+
 }

@@ -8,15 +8,13 @@ Fer V - Jalmendra99@gmail.com
 package Ej4Cine.entidad;
 
 public class Pelicula {
-    
+
     // Atributos
-    
     private String titulo;
     private String director;
     private Integer duracionEnMinutos;
-    
-    // Constructores
 
+    // Constructores
     public Pelicula() {
     }
 
@@ -25,9 +23,8 @@ public class Pelicula {
         this.director = director;
         this.duracionEnMinutos = duracionEnHoras;
     }
-    
-    // Getters y setters
 
+    // Getters y setters
     public String getTitulo() {
         return titulo;
     }
@@ -51,16 +48,11 @@ public class Pelicula {
     public void setDuracionEnMinutos(Integer duracionEnHoras) {
         this.duracionEnMinutos = duracionEnHoras;
     }
-    
-    
-    
-    // toString
 
+    // toString
     @Override
     public String toString() {
         return "Pelicula{" + "titulo=" + titulo + ", director=" + director + ", duracionEnHoras=" + duracionEnMinutos + '}';
     }
-    
-    
 
 }
