@@ -8,7 +8,7 @@ Fer V - Jalmendra99@gmail.com
 package Ej1Perros.servicio;
 
 import Ej1Perros.entidad.Perro;
-import Ej1Perros.utilidad.Comparadores;
+import Ej1Perros.utilidad.PerroComparators;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -66,7 +66,7 @@ public class PerroService {
 
     public void mostrarPerrosOrdenados() {
         System.out.println("Mostrando todos los perros de manera ordenada (alfabéticamente):");
-        Collections.sort(perros, Comparadores.ordenarPorRazaAlfabeticamente);
+        Collections.sort(perros, PerroComparators.ordenarPorRazaAlfabeticamente);
         for (Perro pe : perros) {
             System.out.println(pe);
         }

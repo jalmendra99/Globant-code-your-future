@@ -10,7 +10,7 @@ package Ej1Perros.utilidad;
 import Ej1Perros.entidad.Perro;
 import java.util.Comparator;
 
-public class Comparadores {
+public class PerroComparators {
 
     public static Comparator<Perro> ordenarPorRazaAlfabeticamente = new Comparator<Perro>() {
         @Override
