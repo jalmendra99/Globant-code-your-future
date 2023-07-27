@@ -19,7 +19,6 @@ public class Ej5 {
 
         System.out.println("---ordenando alfabéticamente---");
         ps.ordenarAlfabeticamente();
-//        ps.mostrarPaises();
 
         ps.eliminarPaisPorTeclado();
     }
