@@ -21,9 +21,8 @@ public class CantanteFamoso {
     // Atributos
     private String nombre;
     private String discoConMasVentas;
-    
-    // Constructores
 
+    // Constructores
     public CantanteFamoso() {
     }
 
@@ -31,9 +30,8 @@ public class CantanteFamoso {
         this.nombre = nombre;
         this.discoConMasVentas = discoConMasVentas;
     }
-    
-    // Getters y setters
 
+    // Getters y setters
     public String getNombre() {
         return nombre;
     }
@@ -49,13 +47,11 @@ public class CantanteFamoso {
     public void setDiscoConMasVentas(String discoConMasVentas) {
         this.discoConMasVentas = discoConMasVentas;
     }
-    
-    // toString
 
+    // toString
     @Override
     public String toString() {
         return "CantanteFamoso{" + "nombre=" + nombre + ", discoConMasVentas=" + discoConMasVentas + '}';
     }
-    
-    
+
 }

@@ -23,13 +23,13 @@ import java.util.Scanner;
 
 public class Ej2 {
 
+    private static final int CANTIDAD_DE_CANTANTES = 5;
+
     private static Scanner leer = new Scanner(System.in).useDelimiter("\n");
     // Crea una lista de tipo CantanteFamoso
     private static ArrayList<CantanteFamoso> cantantes = new ArrayList();
 
     public static void main(String[] args) {
-
-        final int CANTIDAD_DE_CANTANTES = 5;
 
         // Agrega 5 objetos de tipo CantanteFamoso a la lista.
         System.out.println("Inicialmente se agregarán 5 cantantes...");
@@ -77,7 +77,7 @@ public class Ej2 {
 
             switch (opcion) {
                 case 1:
-                    agregarCantante();
+                    cantantes.add(agregarCantante());
                     break;
                 case 2:
                     muestraCantantes();
@@ -98,6 +98,8 @@ public class Ej2 {
 
     private static void eliminaCantante() {
         String nombre;
+        boolean encontrado = false;
+
         System.out.println("\nEliminando cantante..");
         System.out.print("Ingrese el nombre del cantante a eliminar: ");
         nombre = leer.next();
@@ -106,11 +108,15 @@ public class Ej2 {
             if (iterator.next().getNombre().equalsIgnoreCase(nombre)) {
                 iterator.remove();
                 System.out.println("El cantante " + nombre + " há sido eliminado.");
-                break;
-            } else {
-                System.out.println("No se encontró el cantante " + nombre + ".");
+                encontrado = true;
+                // también se podría usar 'return' y listo
+                // pero si se pide eliminar un repetido, solo se eliminaría la primera
+                // instancia del mismo que se encuentre, y no las demás.
             }
+        }
 
+        if (!encontrado) {
+            System.out.println("No se encontró el cantante " + nombre + ".");
         }
     }
 }
