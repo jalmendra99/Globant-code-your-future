@@ -1,11 +1,11 @@
 /*
-Java - UML - Ejercicios de Aprendizaje.
-Ejercicio 1 - Página 10
+Java - UML - Ejercicios de Aprendizaje extra.
+Ejercicio 1 - Página 12
 
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej1PersonaYPerro.entidades;
+package Ej1PersonaYPerro2.entidades;
 
 public class Persona {
 
@@ -26,6 +26,14 @@ public class Persona {
         this.edad = edad;
         this.documento = documento;
         this.perro = perro;
+    }
+
+    // Agrego un constructor sin asignar perro, para poder crear personas y perros por separado
+    public Persona(String nombre, String apellido, int edad, int documento) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.documento = documento;
     }
 
     // Getters y setters 
@@ -71,9 +79,9 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido
-                + "\nedad=" + edad + ", documento=" + documento
-                + "\nperro=" + perro + '}';
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + 
+                "edad=" + edad + ", documento=" + documento + 
+                "\nperro=" + perro + '}';
     }
 
 }

@@ -1,6 +1,6 @@
 /*
 Java - UML - Ejercicios de Aprendizaje.
-Ejercicio nnn - Página nnn
+Ejercicio 3 - Página 11
 
 Fer V - Jalmendra99@gmail.com
 

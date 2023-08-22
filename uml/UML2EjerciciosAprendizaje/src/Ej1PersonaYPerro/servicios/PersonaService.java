@@ -1,5 +1,5 @@
 /*
-Java - colecciones - Ejercicios de Aprendizaje extra.
+Java - UML - Ejercicios de Aprendizaje.
 Ejercicio 1 - Página 10
 
 Fer V - Jalmendra99@gmail.com

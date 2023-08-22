@@ -1,11 +1,11 @@
 /*
-Java - UML - Ejercicios de Aprendizaje.
-Ejercicio 1 - Página 10
+Java - UML - Ejercicios de Aprendizaje extra.
+Ejercicio 1 - Página 12
 
 Fer V - Jalmendra99@gmail.com
 
  */
-package Ej1PersonaYPerro.entidades;
+package Ej1PersonaYPerro2.entidades;
 
 public class Perro {
 
