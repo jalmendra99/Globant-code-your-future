@@ -41,16 +41,18 @@ public class Electrodomestico {
         return color;
     }
 
+    /* modificado para utilizar la función comprobarColor */
     public void setColor(String color) {
-        this.color = color;
+        this.color = comprobarColor(color);
     }
 
     public char getConsumoEnergetico() {
         return consumoEnergetico;
     }
 
+    /* modificado para utilizar la función comprobarConsumoEnergetico */
     public void setConsumoEnergetico(char consumoEnergetico) {
-        this.consumoEnergetico = consumoEnergetico;
+        this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
     }
 
     public double getPeso() {
@@ -97,34 +99,27 @@ public class Electrodomestico {
                 resultado = color;
                 break;
             default:
-                resultado = "BLANCO";
+                resultado = "Blanco";
                 break;
         }
         return resultado;
     }
 
-    public Electrodomestico crearElectrodomestico() {
+    public void crearElectrodomestico() {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-
-        double precio;
-        String color;
-        char consumoEnergetico;
-        double peso;
 
         System.out.println("\nCreando un electrodoméstico..");
 
         System.out.print("Ingrese el color (Negro, Rojo, Azul, Gris, por defecto: Blanco): ");
-        color = leer.next();
+        this.color = comprobarColor(leer.next());
 
         System.out.print("Ingrese el consumoEnergetico (A, B, C, D, E, por defecto: F): ");
-        consumoEnergetico = leer.next().charAt(0);
+        this.consumoEnergetico = comprobarConsumoEnergetico(leer.next().charAt(0));
 
         System.out.print("Ingrese el peso (entre 1 y 100 aprox): ");
-        peso = leer.nextDouble();
+        this.peso = leer.nextDouble();
 
-        precio = precioFinal();
-
-        return new Electrodomestico(precio, color, consumoEnergetico, peso);
+        this.precio = precioFinal();
 
     }
 
@@ -173,5 +168,5 @@ public class Electrodomestico {
     public String toString() {
         return "Electrodomestico{" + "precio=" + precio + ", color=" + color + ", consumoEnergetico=" + consumoEnergetico + ", peso=" + peso + '}';
     }
-    
+
 }

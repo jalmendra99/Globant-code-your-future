@@ -24,7 +24,6 @@ public class Lavadora extends Electrodomestico {
     }
 
     // Getters y setters
-    
     public double getCarga() {
         return carga;
     }
@@ -34,38 +33,32 @@ public class Lavadora extends Electrodomestico {
     }
 
     // Métodos
-    
-    public Lavadora crearLavadora() {
+    public void crearLavadora() {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        
-        Lavadora lava = new Lavadora();
-        
-        lava = (Lavadora) super.crearElectrodomestico();
 
+        super.crearElectrodomestico();
+
+        System.out.println("Creando una lavadora..");
         System.out.print("Ingrese el tamaño de la carga (kg): ");
-        lava.carga = leer.nextDouble();
-        
+        this.carga = leer.nextDouble();
+
         super.setPrecio(precioFinal());
-        
-        return lava;
+
     }
-    
+
     private double precioFinal() {
         double precio = super.getPrecio();
-        
+
         if (this.carga > 30) {
             precio += 500;
         }
-        
-        return precio;        
+
+        return precio;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " Lavadora{" + "carga=" + carga + '}';
+        return " Lavadora{ " + super.toString() + " carga=" + carga + '}';
     }
-
-    
-    
 
 }

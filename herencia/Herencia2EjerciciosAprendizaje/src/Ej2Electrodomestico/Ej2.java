@@ -15,18 +15,17 @@ public class Ej2 {
     public static void main(String[] args) {
 
         /**
-         * Vamos a crear una Lavadora y un Televisor 
-         * y llamar a los métodos necesarios para mostrar el precio final de los dos electrodomésticos.
+         * Vamos a crear una Lavadora y un Televisor y llamar a los métodos
+         * necesarios para mostrar el precio final de los dos electrodomésticos.
          */
-         
         Lavadora lava = new Lavadora();
         Televisor tele = new Televisor();
-        
+
         lava.crearLavadora();
         tele.crearTelevisor();
-        
+
         System.out.println(lava);
-        
+
         System.out.println(tele);
     }
 

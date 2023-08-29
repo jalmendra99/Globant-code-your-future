@@ -43,26 +43,25 @@ public class Televisor extends Electrodomestico {
     }
 
     // Métodos
-    public Televisor crearTelevisor() {
+    public void crearTelevisor() {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
         char siNo;
 
-        Televisor tele = new Televisor();
+        super.crearElectrodomestico();
 
-        tele = (Televisor) super.crearElectrodomestico();
-
+        System.out.println("Creando un televisor..");
         System.out.print("Ingrese la resolución (pulgadas): ");
-        tele.resolucion = leer.nextInt();
+        this.resolucion = leer.nextInt();
 
         do {
             System.out.print("¿Tiene sintonizador TDT? (s/n): ");
             siNo = leer.next().toUpperCase().charAt(0);
 
             if (siNo == 'S') {
-                tele.sintonizadorTDT = true;
+                this.sintonizadorTDT = true;
             } else if (siNo == 'N') {
-                tele.sintonizadorTDT = false;
+                this.sintonizadorTDT = false;
             } else {
                 System.out.println("Por favor responda S o N..");
             }
@@ -70,7 +69,6 @@ public class Televisor extends Electrodomestico {
 
         super.setPrecio(precioFinal());
 
-        return tele;
     }
 
     private double precioFinal() {
@@ -89,8 +87,7 @@ public class Televisor extends Electrodomestico {
 
     @Override
     public String toString() {
-        return super.toString() + " Televisor{" + "resolucion=" + resolucion + ", sintonizadorTDT=" + sintonizadorTDT + '}';
+        return " Televisor{ " + super.toString() + " resolucion=" + resolucion + ", sintonizadorTDT=" + sintonizadorTDT + '}';
     }
-    
-    
+
 }
