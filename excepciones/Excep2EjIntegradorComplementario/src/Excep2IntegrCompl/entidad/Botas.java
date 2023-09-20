@@ -6,13 +6,11 @@ Página 15 de la guia de excepciones
 Fer V - Jalmendra99@gmail.com
 
  */
-package Excep2IntegrCompl;
+package Excep2IntegrCompl.entidad;
 
-public class EjInt {
+public class Botas extends Dispositivo {
 
-    public static void main(String[] args) {
-
-
-    }
-
+    // Atributos
+    
+    
 }
