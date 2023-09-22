@@ -1,3 +1,8 @@
+-- Actividad 5 - página 23
+-- Fer Vega - jalmendra99@gmail.com
+--
+-- Correr script superheroes.sql
+
 use superheroes;
 
 -- a
