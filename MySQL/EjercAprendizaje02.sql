@@ -4,6 +4,15 @@
 -- Ejecutar tienda.sql
 
 
+-- *******************************
+-- * REVISAR
+-- *******************************
+-- Consultas Multitabla:
+-- Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN. 
+-- ejercicio 2
+-- *******************************
+
+
 -- 1. Lista el nombre de todos los productos que hay en la tabla producto.
 SELECT * FROM producto;
 
@@ -141,7 +150,10 @@ ON p.codigo_fabricante = f.codigo;
 -- 2. Devuelve un listado donde sólo aparezcan aquellos fabricantes que no tienen 
 -- ningún producto asociado.
 
--- ********<<REVISAR>>**************
+SELECT * FROM fabricante f
+LEFT JOIN producto p
+ON p.codigo_fabricante = f.codigo
+WHERE p.codigo IS null;
 
 
 -- 
@@ -224,15 +236,3 @@ WHERE f.codigo IN (
 		)
 	)
 ;
-
-
-
-
-
-
-
-
-
-
-
-
