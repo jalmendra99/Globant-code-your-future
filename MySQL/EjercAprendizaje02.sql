@@ -4,15 +4,6 @@
 -- Ejecutar tienda.sql
 
 
--- *******************************
--- * REVISAR
--- *******************************
--- Consultas Multitabla:
--- Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN. 
--- ejercicio 2
--- *******************************
-
-
 -- 1. Lista el nombre de todos los productos que hay en la tabla producto.
 SELECT * FROM producto;
 
