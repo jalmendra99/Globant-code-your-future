@@ -31,7 +31,7 @@ WHERE cargo_emp = "Secretaria";
 
 -- 7. Obtener los datos de los empleados vendedores, ordenados por nombre alfabéticamente.
 SELECT * FROM empleados
-WHERE cargo_emp = "Vendedor"
+WHERE cargo_emp = 'Vendedor'
 ORDER BY nombre;
 
 
@@ -44,10 +44,10 @@ ORDER BY sal_emp;
 -- 9. Obtener el nombre de o de los jefes que tengan su departamento 
 -- situado en la ciudad de “Ciudad Real”
 SELECT nombre FROM empleados
-WHERE cargo_emp LIKE "Jefe%"
+WHERE cargo_emp LIKE 'Jefe%'
 AND id_depto IN (
 SELECT id_depto FROM departamentos
-WHERE UPPER(ciudad) = UPPER("Ciudad Real"));
+WHERE UPPER(ciudad) = UPPER('Ciudad Real'));
 
 -- SELECT id_depto FROM departamentos WHERE nombre_depto = "CIUDAD REAL";
 -- SELECT * FROM departamentos;
@@ -59,7 +59,7 @@ WHERE UPPER(ciudad) = UPPER("Ciudad Real"));
 -- 10. Elabore un listado donde para cada fila, figure el alias ‘Nombre’ y ‘Cargo’ 
 -- para las respectivas tablas de empleados.
 
-SELECT nombre AS "Nombre", cargo_emp AS "Cargo" FROM empleados;
+SELECT nombre AS 'Nombre', cargo_emp AS 'Cargo' FROM empleados;
 
 
 -- 11. Listar los salarios y comisiones de los empleados del departamento 2000, 
@@ -72,7 +72,7 @@ ORDER BY comision_emp;
 -- 12. Obtener el valor total a pagar a cada empleado del departamento 3000, 
 -- que resulta de: sumar el salario y la comisión, más una bonificación de 500. 
 -- Mostrar el nombre del empleado y el total a pagar, en orden alfabético.
-SELECT nombre, SUM(sal_emp) + SUM(comision_emp) + 500 AS "Total a pagar"
+SELECT nombre, SUM(sal_emp) + SUM(comision_emp) + 500 AS 'Total a pagar'
 FROM empleados
 WHERE id_depto = 3000
 GROUP BY nombre
@@ -83,12 +83,12 @@ ORDER BY nombre;
 
 
 -- 13. Muestra los empleados cuyo nombre empiece con la letra J.
-SELECT * FROM empleados WHERE nombre LIKE "J%";
+SELECT * FROM empleados WHERE nombre LIKE 'J%';
 
 
 -- 14. Listar el salario, la comisión, el salario total (salario + comisión) y nombre, 
 -- de aquellos empleados que tienen comisión superior a 1000.
-SELECT nombre, sal_emp, comision_emp, sal_emp + comision_emp AS "Salario total"
+SELECT nombre, sal_emp, comision_emp, sal_emp + comision_emp AS 'Salario total'
 FROM empleados
 WHERE comision_emp > 1000;
 
@@ -111,20 +111,20 @@ WHERE comision_emp <= sal_emp * 0.3;
 
 -- 18. Hallar los empleados cuyo nombre no contiene la cadena “MA”
 SELECT * FROM empleados
-WHERE nombre NOT LIKE "%MA%";
+WHERE nombre NOT LIKE '%MA%';
 
 
 -- 19. Obtener los nombres de los departamentos que sean “Ventas”, 
 -- “Investigación” o ‘Mantenimiento.
 -- Nota: ¿Pregunta mal redactada?
 SELECT * FROM departamentos
-WHERE UCASE(nombre_depto) IN ("VENTAS", "INVESTIGACION", "MANTENIMIENTO");
+WHERE UCASE(nombre_depto) IN ('VENTAS', 'INVESTIGACION', 'MANTENIMIENTO');
 
 
 -- 20. Ahora obtener el contrario, los nombres de los departamentos 
 -- que no sean “Ventas” ni “Investigación” ni ‘Mantenimiento.
 SELECT * FROM departamentos
-WHERE UCASE(nombre_depto) NOT IN ("VENTAS", "INVESTIGACION", "MANTENIMIENTO");
+WHERE UCASE(nombre_depto) NOT IN ('VENTAS', 'INVESTIGACION', 'MANTENIMIENTO');
 
 
 -- 21. Mostrar el salario más alto de la empresa.
@@ -139,7 +139,7 @@ LIMIT 1;
 
 
 -- 23. Hallar el salario más alto, el más bajo y la diferencia entre ellos.
-SELECT MAX(sal_emp) AS "Máximo", MIN(sal_emp) AS "Mínimo", MAX(sal_emp) - MIN(sal_emp) AS "Diferencia"
+SELECT MAX(sal_emp) AS 'Máximo', MIN(sal_emp) AS 'Mínimo', MAX(sal_emp) - MIN(sal_emp) AS 'Diferencia'
 FROM empleados;
 
 
@@ -155,13 +155,13 @@ GROUP BY empleados.id_depto;
 
 -- 25. Consultas con Having. Hallar los departamentos que tienen más de tres
 -- empleados. Mostrar el número de empleados de esos departamentos. 
-SELECT COUNT(*) AS "Cantidad de empleados", id_depto FROM empleados
+SELECT COUNT(*) AS 'Cantidad de empleados', id_depto FROM empleados
 GROUP BY id_depto
 HAVING COUNT(*) > 3;
 
 
 -- 26. Consultas con Having. Hallar los departamentos que no tienen empleados
-SELECT COUNT(*) AS "Cantidad de empleados", id_depto FROM empleados
+SELECT COUNT(*) AS 'Cantidad de empleados', id_depto FROM empleados
 GROUP BY id_depto
 HAVING COUNT(*) = 0;
 

@@ -11,7 +11,7 @@ SELECT nombre FROM jugadores ORDER BY nombre;
 -- 2. Mostrar el nombre de los jugadores que sean pivots (‘C’) 
 -- y que pesen más de 200 libras, ordenados por nombre alfabéticamente.
 SELECT nombre, posicion FROM jugadores
-WHERE upper(posicion) LIKE "%C%"
+WHERE upper(posicion) LIKE '%C%'
 AND peso > 200
 ORDER BY nombre;
 
@@ -22,13 +22,13 @@ SELECT nombre FROM equipos ORDER BY nombre;
 
 -- 4. Mostrar el nombre de los equipos del este (East). 
 SELECT nombre, division FROM equipos
-WHERE upper(division) LIKE "%EAST%";
+WHERE upper(division) LIKE '%EAST%';
 
 
 -- 5. Mostrar los equipos donde su ciudad empieza con la letra ‘c’, 
 -- ordenados por nombre. 
 SELECT * FROM equipos
-WHERE upper(ciudad) LIKE "C%"
+WHERE upper(ciudad) LIKE 'C%'
 ORDER BY nombre;
 
 
@@ -41,7 +41,7 @@ ORDER BY nombre_equipo;
 
 -- 7. Mostrar todos los jugadores del equipo “Raptors” ordenados por nombre.
 SELECT * FROM jugadores
-WHERE Nombre_equipo = "Raptors"
+WHERE Nombre_equipo = 'Raptors'
 ORDER BY nombre;
 
 
@@ -49,14 +49,14 @@ ORDER BY nombre;
 SELECT e.Puntos_por_partido 
 FROM estadisticas e, jugadores j
 WHERE e.jugador = j.codigo
-AND j.Nombre = "Pau Gasol";
+AND j.Nombre = 'Pau Gasol';
 
 
 -- 9. Mostrar los puntos por partido del jugador ‘Pau Gasol’ en la temporada ’04/05′.
 SELECT e.Puntos_por_partido 
 FROM estadisticas e, jugadores j
 WHERE e.jugador = j.codigo
-AND j.Nombre = "Pau Gasol"
+AND j.Nombre = 'Pau Gasol'
 AND temporada = "04/05";
 
 
@@ -85,7 +85,7 @@ LIMIT 1;
 -- 13. Mostrar el nombre del equipo, conferencia y división 
 -- del jugador más alto de la NBA.
 -- 
--- Fer: checks..
+-- Checks:
 -- SELECT Nombre, Altura FROM jugadores ORDER BY Altura DESC;
 
 SELECT j.Nombre, e.Nombre, e.Conferencia, e.Division

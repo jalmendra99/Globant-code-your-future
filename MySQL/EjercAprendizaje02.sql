@@ -67,7 +67,7 @@ SELECT * FROM producto WHERE codigo_fabricante IN (1, 3, 5);
 
 -- 15. Devuelve una lista con el nombre de todos los productos que contienen 
 -- la cadena Portátil en el nombre.
-SELECT * FROM producto WHERE upper(nombre) LIKE "%PORTATIL%";
+SELECT * FROM producto WHERE upper(nombre) LIKE '%PORTATIL%';
 
 
 -- 
@@ -99,13 +99,13 @@ AND p.codigo = (SELECT codigo FROM producto ORDER BY precio LIMIT 1);
 
 -- 4. Devuelve una lista de todos los productos del fabricante Lenovo.
 SELECT * FROM producto
-WHERE codigo_fabricante = (SELECT codigo FROM fabricante WHERE upper(nombre) = "LENOVO");
+WHERE codigo_fabricante = (SELECT codigo FROM fabricante WHERE upper(nombre) = 'LENOVO');
 
 
 -- 5. Devuelve una lista de todos los productos del fabricante Crucial que tengan 
 -- un precio mayor que $200.
 SELECT * FROM producto
-WHERE codigo_fabricante = (SELECT codigo FROM fabricante WHERE upper(nombre) = "CRUCIAL")
+WHERE codigo_fabricante = (SELECT codigo FROM fabricante WHERE upper(nombre) = 'CRUCIAL')
 AND precio > 200;
 
 
@@ -113,7 +113,7 @@ AND precio > 200;
 -- Hewlett-Packard. Utilizando el operador IN.
 SELECT * FROM producto
 WHERE codigo_fabricante IN  
-(SELECT codigo FROM fabricante WHERE upper(nombre) IN ("ASUS", "HEWLETT-PACKARD"));
+(SELECT codigo FROM fabricante WHERE upper(nombre) IN ('ASUS', 'HEWLETT-PACKARD'));
 
 
 -- 7. Devuelve un listado con el nombre de producto, precio y nombre de fabricante, 
@@ -153,7 +153,7 @@ WHERE p.codigo IS null;
 -- 
 -- 1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER JOIN). 
 SELECT * FROM producto p, fabricante f
-WHERE f.codigo = (SELECT codigo FROM fabricante WHERE upper(nombre) = "LENOVO");
+WHERE f.codigo = (SELECT codigo FROM fabricante WHERE upper(nombre) = 'LENOVO');
 
 
 -- 2. Devuelve todos los datos de los productos que tienen el mismo precio que el producto más caro 
@@ -164,7 +164,7 @@ AND precio = (
 	SELECT max(precio) FROM producto p, fabricante f
 	WHERE p.codigo_fabricante = f.codigo
 	AND f.codigo = (
-		SELECT codigo FROM fabricante WHERE upper(nombre) = "LENOVO"
+		SELECT codigo FROM fabricante WHERE upper(nombre) = 'LENOVO'
 		)
 	)
 ;
@@ -172,7 +172,7 @@ AND precio = (
 
 -- 3. Lista el nombre del producto más caro del fabricante Lenovo.
 SELECT * FROM producto p, fabricante f
-WHERE f.codigo = (SELECT codigo FROM fabricante WHERE upper(nombre) = "LENOVO")
+WHERE f.codigo = (SELECT codigo FROM fabricante WHERE upper(nombre) = 'LENOVO')
 AND p.codigo = (SELECT codigo FROM producto ORDER BY precio DESC LIMIT 1);
 
 
@@ -180,10 +180,10 @@ AND p.codigo = (SELECT codigo FROM producto ORDER BY precio DESC LIMIT 1);
 --    de todos sus productos.
 SELECT * from producto p, fabricante f
 WHERE p.codigo_fabricante = f.codigo
-AND p.codigo_fabricante = (SELECT codigo FROM fabricante WHERE upper(nombre) = "ASUS")
+AND p.codigo_fabricante = (SELECT codigo FROM fabricante WHERE upper(nombre) = 'ASUS')
 AND p.precio > (
 SELECT AVG(precio) FROM producto WHERE codigo_fabricante = (
-	SELECT codigo FROM fabricante WHERE upper(nombre) = "ASUS"
+	SELECT codigo FROM fabricante WHERE upper(nombre) = 'ASUS'
     )
 );
 
@@ -222,7 +222,7 @@ WHERE f.codigo IN (
 	HAVING count(p.codigo_fabricante) = (
 		SELECT count(codigo) FROM producto 
 		WHERE codigo_fabricante = (
-			SELECT codigo FROM fabricante WHERE upper(nombre) = "LENOVO"
+			SELECT codigo FROM fabricante WHERE upper(nombre) = 'LENOVO'
 			)
 		)
 	)
