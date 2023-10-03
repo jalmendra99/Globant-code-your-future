@@ -43,52 +43,67 @@ SELECT DISTINCT estado FROM pedido;
 --    algún pago en 2008. Tenga en cuenta que deberá eliminar aquellos códigos de cliente 
 --    que aparezcan repetidos. Resuelva la consulta:
 --       o Utilizando la función YEAR de MySQL. 
---       o Utilizando la función DATE_FORMAT de MySQL. 
---       o Sin utilizar ninguna de las funciones anteriores.
+SELECT DISTINCT codigo_cliente FROM pago WHERE year(fecha_pago) = 2008;
 
+--       o Utilizando la función DATE_FORMAT de MySQL. 
+-- REFERENCE: https://www.w3schools.com/sql/func_mysql_date_format.asp
+SELECT DISTINCT codigo_cliente FROM pago WHERE DATE_FORMAT(fecha_pago, '%Y') = 2008;
+
+--       o Sin utilizar ninguna de las funciones anteriores.
+SELECT DISTINCT codigo_cliente FROM pago WHERE fecha_pago LIKE '%2008%';
 
 
 -- 9. Devuelve un listado con el código de pedido, código de cliente, fecha esperada 
 --    y fecha de entrega de los pedidos que no han sido entregados a tiempo.
-
+SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega 
+FROM pedido 
+WHERE fecha_entrega > fecha_esperada;
 
 
 -- 10. Devuelve un listado con el código de pedido, código de cliente, fecha esperada 
 --    y fecha de entrega de los pedidos cuya fecha de entrega ha sido al menos dos días 
 --    antes de la fecha esperada.
 --       o Utilizando la función ADDDATE de MySQL. 
---       o Utilizando la función DATEDIFF de MySQL. 
+-- REFERENCE: https://www.w3schools.com/sql/func_mysql_adddate.asp
+SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega
+FROM pedido
+WHERE adddate(fecha_esperada, INTERVAL 2 DAY) <= fecha_entrega;
 
+--       o Utilizando la función DATEDIFF de MySQL. 
+-- REFERENCE: https://www.w3schools.com/sql/func_mysql_datediff.asp
+SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega
+FROM pedido
+WHERE datediff(fecha_esperada, fecha_entrega) >= 2;
 
 
 -- 11. Devuelve un listado de todos los pedidos que fueron rechazados en 2009. 
-
+SELECT * FROM pedido WHERE upper(estado) = 'RECHAZADO' and YEAR(fecha_entrega) = 2009;
 
 
 -- 12. Devuelve un listado de todos los pedidos que han sido entregados en el mes 
 --    de enero de cualquier año.
-
+SELECT * FROM pedido WHERE MONTH(fecha_entrega) = 1;
 
 
 -- 13. Devuelve un listado con todos los pagos que se realizaron en el año 2008 
 --    mediante Paypal. Ordene el resultado de mayor a menor.
-
+SELECT * FROM pago WHERE YEAR(fecha_pago) = 2008 AND upper(forma_pago) = 'PAYPAL';
 
 
 -- 14. Devuelve un listado con todas las formas de pago que aparecen en la tabla pago. 
 --    Tenga en cuenta que no deben aparecer formas de pago repetidas.
-
+SELECT DISTINCT forma_pago FROM pago;
 
 
 -- 15. Devuelve un listado con todos los productos que pertenecen a la gama Ornamentales 
 --    y que tienen más de 100 unidades en stock. El listado deberá estar ordenado 
 --    por su precio de venta, mostrando en primer lugar los de mayor precio.
-
+SELECT * FROM producto WHERE upper(gama) = 'ORNAMENTALES' AND cantidad_en_stock > 100;
 
 
 -- 16. Devuelve un listado con todos los clientes que sean de la ciudad de Madrid 
 --    y cuyo representante de ventas tenga el código de empleado 11 o 30.
-
+SELECT * FROM cliente WHERE upper(ciudad) = 'MADRID' AND codigo_empleado_rep_ventas IN (11, 30);
 
 
 -- ************************************************
@@ -98,12 +113,18 @@ SELECT DISTINCT estado FROM pedido;
 --
 -- 1. Obtén un listado con el nombre de cada cliente y el nombre y apellido 
 --    de su representante de ventas.
-
+SELECT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2 
+FROM cliente c 
+INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado;
 
 
 -- 2. Muestra el nombre de los clientes que hayan realizado pagos junto con 
 --    el nombre de sus representantes de ventas.
-
+SELECT DISTINCT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2 
+FROM cliente c 
+INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+INNER JOIN pago p ON c.codigo_cliente = p.codigo_cliente
+ORDER BY c.nombre_cliente;
 
 
 -- 3. Muestra el nombre de los clientes que no hayan realizado pagos junto con 
@@ -111,9 +132,15 @@ SELECT DISTINCT estado FROM pedido;
 
 
 
+
 -- 4. Devuelve el nombre de los clientes que han hecho pagos y el nombre 
 --    de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
-
+SELECT DISTINCT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2, o.ciudad
+FROM cliente c 
+INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+INNER JOIN pago p ON c.codigo_cliente = p.codigo_cliente
+INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina
+ORDER BY c.nombre_cliente;
 
 
 -- 5. Devuelve el nombre de los clientes que no hayan hecho pagos y el nombre de
@@ -122,23 +149,55 @@ SELECT DISTINCT estado FROM pedido;
 
 
 -- 6. Lista la dirección de las oficinas que tengan clientes en Fuenlabrada.
-
+SELECT DISTINCT o.linea_direccion1, o.linea_direccion2
+FROM empleado e 
+INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina
+INNER JOIN cliente c ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+AND upper(c.ciudad) = 'FUENLABRADA'
+ORDER BY o.linea_direccion1;
 
 
 -- 7. Devuelve el nombre de los clientes y el nombre de sus representantes 
 --    junto con la ciudad de la oficina a la que pertenece el representante.
-
+SELECT DISTINCT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2, o.ciudad
+FROM empleado e 
+INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina
+INNER JOIN cliente c ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+ORDER BY c.nombre_cliente;
 
 
 -- 8. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
-
+SELECT concat(e.nombre, e.apellido1, e.apellido2) AS empleado,
+	   concat(j.nombre, j.apellido1, j.apellido2) AS jefe
+FROM empleado e 
+INNER JOIN empleado j
+ON e.codigo_jefe = j.codigo_empleado;
 
 
 -- 9. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido. 
-
+SELECT DISTINCT c.nombre_cliente
+FROM cliente c INNER JOIN pedido p
+ON c.codigo_cliente = p.codigo_cliente
+WHERE p.fecha_entrega > p.fecha_esperada;
 
 
 -- 10. Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente. 
+-- REFERENCIA DEL DIAGRAMA ENTIDAD-RELACIÓN: cliente -> pedido.codigo_cliente -> detalle_pedido.codigo_pedido -> producto.codigo_producto
+
+SELECT c.nombre_cliente, p.gama 
+FROM producto p 
+INNER JOIN detalle_pedido d ON p.codigo_producto = d.codigo_producto
+INNER JOIN pedido pe ON d.codigo_pedido = pe.codigo_pedido
+INNER JOIN cliente c ON pe.codigo_cliente = c.codigo_cliente
+;
+--GROUP BY c.nombre_cliente;
+
+
+
+
+
+
+
 
 
 
@@ -202,41 +261,60 @@ SELECT DISTINCT estado FROM pedido;
 -- ******************
 -- 
 -- 1.. ¿Cuántos empleados hay en la compañía? 
-
+SELECT count(nombre) AS 'Cantidad de empleados en la compañía' FROM empleado;
 
 
 -- 2.. ¿Cuántos clientes tiene cada país? 
-
+SELECT pais, count(codigo_cliente) AS 'Cantidad de clientes'
+FROM cliente
+GROUP BY pais
+ORDER BY count(codigo_cliente);
 
 
 -- 3.. ¿Cuál fue el pago medio en 2009?
-
+SELECT avg(total) AS 'Pago medio en 2009'
+FROM pago
+WHERE year(fecha_pago) = 2009;
 
 
 -- 4.. ¿Cuántos pedidos hay en cada estado? Ordena el resultado 
 --    de forma descendente por el número de pedidos.
-
+SELECT estado, count(codigo_pedido) AS 'Cantidad de pedidos'
+FROM pedido
+GROUP BY estado;
 
 
 -- 5. Calcula el precio de venta del producto más caro y más barato en una misma consulta. 
-
+SELECT max(precio_venta) AS 'Precio de producto más caro',
+       min(precio_venta) AS 'Precio de producto más barato'
+FROM producto;
 
 
 -- 6. Calcula el número de clientes que tiene la empresa. 
-
+SELECT count(codigo_cliente) AS 'Cantidad de clientes que tiene la empresa'
+FROM cliente;
 
 
 -- 7. ¿Cuántos clientes tiene la ciudad de Madrid? 
-
+SELECT count(codigo_cliente) AS 'Cantidad de clientes en Madrid'
+FROM cliente
+WHERE upper(ciudad) = 'MADRID';
 
 
 -- 8. ¿Calcula cuántos clientes tiene cada una de las ciudades que empiezan por M?
-
+SELECT count(codigo_cliente) AS 'Cantidad de clientes en ciudades que empiezan por M'
+FROM cliente
+WHERE upper(ciudad) LIKE 'M%';
 
 
 -- 9. Devuelve el nombre de los representantes de ventas y el número de clientes
 --    al que atiende cada uno.
-
+SELECT c.codigo_empleado_rep_ventas, 
+       concat(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Representante de ventas',
+       count(codigo_cliente) AS 'Número de clientes que atiende'
+FROM cliente c
+INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado
+GROUP BY c.codigo_empleado_rep_ventas;
 
 
 -- 10. Calcula el número de clientes que no tiene asignado representante de ventas. 
