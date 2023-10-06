@@ -2,6 +2,7 @@
 -- Fer Vega - jalmendra99@gmail.com
 --
 -- Ejecutar nba.sql
+use nba
 
 
 -- 1. Mostrar el nombre de todos los jugadores ordenados alfabéticamente.
@@ -150,3 +151,19 @@ SELECT codigo, equipo_local, equipo_visitante,
 		IF(puntos_local > puntos_visitante, equipo_local, equipo_visitante)
 	) as 'Equipo ganador'
 FROM partidos;
+-- Resuelto por otro alumno:
+-- SELECT codigo, equipo_local, equipo_visitante, equipo_local AS equipo_ganador 
+-- FROM partidos WHERE puntos_local > puntos_visitante 
+-- UNION SELECT codigo, equipo_local, equipo_visitante, equipo_visitante AS equipo_ganador 
+-- FROM partidos WHERE puntos_local < puntos_visitante 
+-- UNION SELECT codigo, equipo_local, equipo_visitante, null AS equipo_ganador 
+-- FROM partidos WHERE puntos_local = puntos_visitante ORDER BY codigo;
+--
+-- Resuelto por otro alumno:
+-- SELECT codigo, equipo_local, equipo_visitante, puntos_local, puntos_visitante, 
+-- 	CASE 
+-- 		WHEN partidos.puntos_local > partidos.puntos_visitante THEN partidos.equipo_local
+-- 		WHEN partidos.puntos_local < partidos.puntos_visitante THEN partidos.equipo_visitante
+-- 		ELSE NULL 
+-- 	END AS equipo_ganador 
+-- FROM partidos;

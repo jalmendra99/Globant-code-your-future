@@ -2,7 +2,7 @@
 -- Fer Vega - jalmendra99@gmail.com
 --
 -- Ejecutar personal_inserts.sql
-
+use personal
 
 -- 1. Obtener los datos completos de los empleados.
 SELECT * FROM empleados;
@@ -164,6 +164,19 @@ HAVING COUNT(*) > 3;
 SELECT COUNT(*) AS 'Cantidad de empleados', id_depto FROM empleados
 GROUP BY id_depto
 HAVING COUNT(*) = 0;
+
+-- RESUELTO POR OTRO USUARIO
+SELECT d.id_depto, d.nombre_depto
+FROM departamentos d
+LEFT JOIN empleados e ON d.id_depto = e.id_depto
+GROUP BY d.id_depto
+HAVING COUNT(e.id_depto) = 0;
+-- RESUELTO POR OTRO USUARIO
+SELECT d.id_depto, d.nombre_depto
+FROM departamentos d
+LEFT JOIN empleados e 
+ON d.id_depto = e.id_depto
+WHERE e.id_depto IS NULL;
 
 -- Agregando info de departamentos..
 SELECT id_emp, departamentos.* 

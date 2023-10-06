@@ -2,6 +2,7 @@
 -- Fer Vega - jalmendra99@gmail.com
 --
 -- Ejecutar tienda.sql
+use tienda
 
 
 -- 1. Lista el nombre de todos los productos que hay en la tabla producto.

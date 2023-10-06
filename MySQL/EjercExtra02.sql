@@ -2,6 +2,7 @@
 -- Fer Vega - jalmendra99@gmail.com
 --
 -- Ejecutar jardineria.sql
+use jardineria
 
 
 -- **************************
