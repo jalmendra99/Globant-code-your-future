@@ -9,7 +9,8 @@ package jdbc1tienda.persistencia;
 import jdbc1tienda.entidades.Fabricante;
 
 public final class DAOExtFabricante extends DAO {
-    
+
+    // g) Ingresar un fabricante a la base de datos 
     public void guardarFabricante(Fabricante f) throws Exception {
         try {
             if (f == null) {
@@ -21,10 +22,12 @@ public final class DAOExtFabricante extends DAO {
             insertarModificarEliminar(sql);
 
         } catch (Exception e) {
-            throw e;
+            e.printStackTrace();
+            desconectarBase();
+            throw new Exception("Error de sistema en guardarFabricante.");
         }
     }
-    
+
     public void modificarFabricante(Fabricante f) throws Exception {
         try {
             if (f == null) {
@@ -32,11 +35,13 @@ public final class DAOExtFabricante extends DAO {
             }
             String sql = "UPDATE fabricante SET (codigo, nombre)"
                     + "VALUES ( '" + f.getCodigo() + "', '" + f.getNombre() + "');";
-                    
+
             insertarModificarEliminar(sql);
-            
+
         } catch (Exception e) {
-            throw e;
+            e.printStackTrace();
+            desconectarBase();
+            throw new Exception("Error de sistema en modificarFabricante.");
         }
     }
 
@@ -47,18 +52,34 @@ public final class DAOExtFabricante extends DAO {
             }
             String sql = "DELETE FROM fabricante WHERE "
                     + "codigo = " + f.getCodigo() + " AND nombre = '" + f.getNombre() + "';";
-                    
+
             insertarModificarEliminar(sql);
-            
+
         } catch (Exception e) {
-            throw e;
+            e.printStackTrace();
+            desconectarBase();
+            throw new Exception("Error de sistema en eliminarFabricante.");
         }
     }
-    
-    public void consultaGenerica() {
-        
-        
-        
+
+    // g) Ingresar un fabricante a la base de datos  
+    // Busca el próximo código disponible (esto debería hacerse automático en la base de datos, no?
+    public int proximoCodigoFabricante() throws Exception {
+        try {
+
+            String sql = "SELECT max(codigo) + 1 FROM fabricante;";
+
+            consultarBase(sql);
+
+            desconectarBase();
+
+            return resultado.getInt(1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            desconectarBase();
+            throw new Exception("Error de sistema en proximoCodigoFabricante.");
+        }
     }
-    
+
 }

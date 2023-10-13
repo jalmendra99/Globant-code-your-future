@@ -82,10 +82,19 @@ public abstract class DAO {
                 COMMIT;
             
                 **Sin rollback igual anda
-            */
+             */
             throw ex;
         } finally {
             desconectarBase();
+        }
+    }
+
+    protected void consultarBase(String sql) throws Exception {
+        try {
+            sentencia = conexion.createStatement();
+            resultado = sentencia.executeQuery(sql);
+        } catch (Exception ex) {
+            throw ex;
         }
     }
 
