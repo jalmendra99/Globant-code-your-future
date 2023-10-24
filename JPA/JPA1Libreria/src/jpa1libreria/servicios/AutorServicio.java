@@ -9,6 +9,7 @@ package jpa1libreria.servicios;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import jpa1libreria.entidades.Autor;
 
@@ -18,188 +19,124 @@ public class AutorServicio {
     private Scanner leer = new Scanner(System.in).useDelimiter("\n");
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1LibreriaPU");
     EntityManager em = emf.createEntityManager();
+    private Autor autor = null;
 
     // Constructores
     public AutorServicio() {
+    }
+
+    // Getter y setter Autor
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     // Métodos
     //
     // Crear
     public Autor crearAutorDesdeTeclado() {
-        Autor a = new Autor();
+        Autor autor = new Autor();
+        String nombre;
+
         System.out.println("\nCreando un Autor..");
 
-//        System.out.print("Ingrese el ID: ");
-//        a.setId(leer.nextInt());
+        // (13.a) Validando que el nombre no sea un texto vacío
+        do {
+            System.out.print("Ingrese el nombre: ");
+            nombre = leer.next();
+        } while (nombre.length() < 1);
+        autor.setNombre(nombre);
 
-        System.out.print("Ingrese el nombre: ");
-        a.setNombre(leer.next());
+        autor.setAlta(true);
 
-//        System.out.print("¿Dar de alta? (s/n): ");
-//        if (leer.next().toUpperCase().charAt(0) == 'S') {
-//            a.setAlta(true);
-//        } else {
-//            a.setAlta(false);
-//        }
-        a.setAlta(true);
+        // Guarda el autor creado
+        autor = insertarAutor(autor);
 
-        return a;
+        return autor;
     }
 
     // Insertar
-    public void insertarAutor(Autor a) {
-
-        try {
-            em.getTransaction().begin();
-            em.persist(a);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println(e);
+    public Autor insertarAutor(Autor autor) {
+        Autor aut = null;
+        // (13.b) Asegurarse de no ingresar datos duplicados..
+        buscarAutorPorNombre(autor.getNombre());
+        if (this.autor == null) {
+            // Guardando autor
+            try {
+                em.getTransaction().begin();
+                em.persist(autor);
+                em.getTransaction().commit();
+                System.out.println("\nSe guardó el autor con el nombre " + autor.getNombre() + ".");
+                aut = autor;
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } else { // Si ya existía un autor con ese mismo nombre en la base de datos..
+            System.out.println("\nYa existe un autor con el nombre " + autor.getNombre() + ". No se guardará este registro duplicado.");
+            aut = this.autor;
         }
+        return aut;
+    }
+
+    // Ingresar nombre de Autor para buscar
+    public String solicitarPorTecladoNombreAutorParaBuscar() {
+
+        String nombre;
+
+        System.out.println("\nBuscando un Autor por nombre..");
+        System.out.print("Ingrese el nombre a buscar: ");
+
+        // (13.a) Validando que el nombre no sea un texto vacío
+        do {
+            nombre = leer.next();
+        } while (nombre.length() < 1);
+        return nombre;
 
     }
 
     // 8) Busqueda de un Autor por nombre.
-    public Autor buscarAutorPorNombre() {
-        System.out.println("\nBuscando un Autor por nombre..");
-        System.out.print("Ingrese el nombre a buscar: ");
-        String nombre = leer.next();
+    public void buscarAutorPorNombre(String nombre) {
 
-        Autor a = (Autor) em.createQuery("SELECT a "
-                + "FROM autor a "
-                + "WHERE a.nombre = :nombre").setParameter("nombre", nombre).getSingleResult();
+        try {
+            Autor a = (Autor) em.createQuery("SELECT a "
+                    + "FROM Autor a "
+                    + "WHERE a.nombre = :nombre").setParameter("nombre", nombre).getSingleResult();
 
-        return a;
+            System.out.println("Se encontró el autor " + a);
+
+            // Guarda una copia del Autor encontrado
+            this.autor = a;
+
+//        return a;
+        } catch (NoResultException nre) {
+            System.out.println("\nNo se encontró este autor en la base de datos.");
+        }
+
     }
 
     // Eliminar
     public void eliminarAutor(Autor a) {
-        em.getTransaction().begin();
-        em.remove(a);
-        em.getTransaction().commit();
+        try {
+            em.getTransaction().begin();
+            em.remove(a);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
     // Actualizar (merge)
     public void actualizarAutor(Autor a) {
-        em.getTransaction().begin();
-        em.merge(a);
-        em.getTransaction().commit();
+        try {
+            em.getTransaction().begin();
+            em.merge(a);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
-    // 
-//    
-//    
-//    
-//    
-//    // a) Lista el nombre de todos los productos que hay en la tabla producto. 
-//    public void listarAutoresNombre() throws Exception {
-//        ArrayList<Autor> productos = new ArrayList();
-//        productos = dao.listarAutorsNombre();
-//
-//        for (Autor producto : productos) {
-//            System.out.println(producto);
-//        }
-//    }
-//
-//    // b) Lista los nombres y los precios de todos los productos de la tabla producto. 
-//    public void listarAutoresNombreYPrecio() throws Exception {
-//        ArrayList<Autor> productos = new ArrayList();
-//        productos = dao.listarAutorsNombreYPrecio();
-//
-//        for (Autor producto : productos) {
-//            System.out.println(producto);
-//        }
-//    }
-//
-//    // c) Listar aquellos productos que su precio esté entre 120 y 202. 
-//    public void listarAutoresEntrePrecios(int precioMin, int precioMax) throws Exception {
-//        ArrayList<Autor> productos = new ArrayList();
-//        productos = dao.listarAutorsEntrePrecios(precioMin, precioMax);
-//
-//        for (Autor producto : productos) {
-//            System.out.println(producto);
-//        }
-//
-//    }
-//
-//    // d) Buscar y listar todos los Portátiles de la tabla producto. 
-//    public void listarAutoresBuscarNombre(String nombre) throws Exception {
-//        ArrayList<Autor> productos = new ArrayList();
-//        productos = dao.listarAutorsBuscarNombre(nombre);
-//
-//        for (Autor producto : productos) {
-//            System.out.println(producto);
-//        }
-//
-//    }
-//
-//    // e) Listar el nombre y el precio del producto más barato.
-//    public void listarAutoresNombrePrecioDelMasBarato() throws Exception {
-//        ArrayList<Autor> productos = new ArrayList();
-//        productos = dao.listarAutorsNombrePrecioDelMasBarato();
-//
-//        for (Autor producto : productos) {
-//            System.out.println(producto);
-//        }
-//
-//    }
-//
-//    // f) Ingresar un producto a la base de datos. 
-//    public void ingresarAutor() throws Exception {
-//
-//        Autor p = new Autor();
-//
-//        System.out.println("\nIngresando un producto..");
-//        p.setCodigo(dao.proximoCodigoAutor());
-//
-//        System.out.print("Ingrese el nombre: ");
-//        p.setNombre(leer.next());
-//
-//        System.out.print("Ingrese el precio: ");
-//        p.setPrecio(leer.nextDouble());
-//
-//        System.out.print("Ingrese el código del fabricante: ");
-//        p.setCodigo(leer.nextInt());
-//
-//        dao.guardarAutor(p);
-//        System.out.println("Autor guardado: " + p);
-//    }
-//
-//    // h) Editar un producto con datos a elección.
-//    public void modificarAutorPorCodigo() throws Exception {
-//
-//        Autor p = new Autor();
-//
-//        System.out.println("\nModificando un producto..");
-//
-//        System.out.print("Ingrese el código del producto a modificar: ");
-//        p = dao.buscarAutorPorCodigo(leer.nextInt());
-//
-//        System.out.println("\nEl nombre del producto es: " + p.getNombre());
-//        System.out.print("Ingrese un nuevo nombre o <enter> para dejar el mismo: ");
-//        String nombre = leer.next();
-//        if (!nombre.equals("")) {
-//            p.setNombre(leer.next());
-//        }
-//
-//        System.out.printf("El precio del producto es: %.2f", p.getPrecio());
-//        System.out.print("Ingrese el nuevo precio o <enter> para dejar el mismo: ");
-//        String precio = leer.next();
-//        if (!precio.equals("")) {
-//            double precioD = Double.valueOf(precio);
-//            p.setPrecio(precioD);
-//        }
-//
-//        System.out.println("El código del fabricante del producto es :" + p.getCodigoFabricante());
-//        System.out.print("Ingrese el nuevo código del fabricante o <enter> para dejar el mismo: ");
-//        String codigo = leer.next();
-//        if (!codigo.equals("")) {
-//            int codigoI = Integer.valueOf(codigo);
-//            p.setCodigoFabricante(codigoI);
-//        }
-//
-//        dao.modificarAutorPorCodigo(p);
-//        System.out.println("Autor modificado: " + p);
-//    }
 }
