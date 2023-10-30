@@ -7,22 +7,21 @@
 package jpa1libreria.servicios;
 
 import java.util.Scanner;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
-import javax.persistence.Persistence;
 import jpa1libreria.entidades.Autor;
+import jpa1libreria.persistencia.DAOAutor;
 
-public class AutorServicio {
+public class ServiceAutor {
 
     // Atributos
     private Scanner leer = new Scanner(System.in).useDelimiter("\n");
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1LibreriaPU");
-    EntityManager em = emf.createEntityManager();
+//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1LibreriaPU");
+//    EntityManager em = emf.createEntityManager();
     private Autor autor = null;
+    private DAOAutor daoAutor;
 
     // Constructores
-    public AutorServicio() {
+    public ServiceAutor() {
     }
 
     // Getter y setter Autor
@@ -53,7 +52,7 @@ public class AutorServicio {
         autor.setAlta(true);
 
         // Guarda el autor creado
-        autor = insertarAutor(autor);
+        insertarAutor(autor);
 
         return autor;
     }
@@ -62,28 +61,18 @@ public class AutorServicio {
     public Autor insertarAutor(Autor autor) {
         Autor aut = null;
         // (13.b) Asegurarse de no ingresar datos duplicados..
-        buscarAutorPorNombre(autor.getNombre());
+        this.autor = daoAutor.buscarAutorPorNombre(autor.getNombre());
         if (this.autor == null) {
-            // Guardando autor
-            try {
-                em.getTransaction().begin();
-                em.persist(autor);
-                em.getTransaction().commit();
-                System.out.println("\nSe guardó el autor con el nombre " + autor.getNombre() + ".");
-                aut = autor;
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+            aut = daoAutor.insertarAutor(autor);
         } else { // Si ya existía un autor con ese mismo nombre en la base de datos..
             System.out.println("\nYa existe un autor con el nombre " + autor.getNombre() + ". No se guardará este registro duplicado.");
             aut = this.autor;
         }
-        return aut;
+        return aut; // TODO: PARA QUE ESTO??
     }
 
     // Ingresar nombre de Autor para buscar
     public String solicitarPorTecladoNombreAutorParaBuscar() {
-
         String nombre;
 
         System.out.println("\nBuscando un Autor por nombre..");
@@ -93,49 +82,31 @@ public class AutorServicio {
         do {
             nombre = leer.next();
         } while (nombre.length() < 1);
-        return nombre;
 
+        return nombre;
     }
 
     // 8) Busqueda de un Autor por nombre.
-    public void buscarAutorPorNombre(String nombre) {
-
-        try {
-            Autor a = (Autor) em.createQuery("SELECT a "
-                    + "FROM Autor a "
-                    + "WHERE a.nombre = :nombre").setParameter("nombre", nombre).getSingleResult();
-
-            System.out.println("Se encontró el autor " + a);
-
-            // Guarda una copia del Autor encontrado
-            this.autor = a;
-
-//        return a;
-        } catch (NoResultException nre) {
-            System.out.println("\nNo se encontró este autor en la base de datos.");
-        }
-
+    public void buscarAutorPorNombre() {
+        String nombre = solicitarPorTecladoNombreAutorParaBuscar();
+        daoAutor.buscarAutorPorNombre(nombre);
     }
 
     // Eliminar
-    public void eliminarAutor(Autor a) {
-        try {
-            em.getTransaction().begin();
-            em.remove(a);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            System.out.println(ex);
+    public void eliminarAutor() {
+        if (this.autor == null) {
+            System.out.println("\nPrimero busque un Autor para eliminar/borrar.");
+        } else {
+            daoAutor.eliminarAutor(this.autor);
         }
     }
 
     // Actualizar (merge)
-    public void actualizarAutor(Autor a) {
-        try {
-            em.getTransaction().begin();
-            em.merge(a);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            System.out.println(ex);
+    public void actualizarAutor() {
+        if (this.autor == null) {
+            System.out.println("\nPrimero busque un Autor para actualizar/modificar.");
+        } else {
+            daoAutor.actualizarAutor(this.autor);
         }
     }
 

@@ -12,18 +12,21 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import jpa1libreria.entidades.Editorial;
 import jpa1libreria.entidades.Libro;
+import jpa1libreria.persistencia.DAOLibro;
 
-public class LibroServicio {
+public class ServiceLibro {
 
     // Atributos
     private Scanner leer = new Scanner(System.in).useDelimiter("\n");
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1LibreriaPU");
     EntityManager em = emf.createEntityManager();
     private List<Libro> libros = null;
+    private DAOLibro daoLibro;
 
     // Constructores
-    public LibroServicio() {
+    public ServiceLibro() {
     }
 
     // Getter y setter
@@ -44,8 +47,8 @@ public class LibroServicio {
     // Crear
     public Libro crearLibroDesdeTeclado() {
         Libro libro = new Libro();
-        AutorServicio as = new AutorServicio();
-        EditorialServicio es = new EditorialServicio();
+        ServiceAutor as = new ServiceAutor();
+        ServiceEditorial es = new ServiceEditorial();
 
         String titulo;
         Integer anio;
@@ -89,33 +92,26 @@ public class LibroServicio {
     }
 
     // Insertar
-    public void insertarLibro(Libro libro) {
-
+    public Libro insertarLibro(Libro libro) {
+        Libro lib = null;
         // (13.b) Asegurarse de no ingresar datos duplicados..
-
-        // No se puede buscar solo por libro.getIsbn() porque ese isbn va a ser siempre distinto
+        // No se puede buscar solo por libro.getIsbn() porque ese isbn va a ser null o distinto
         // al de un posible libro igual pero ya guardado en la base.
-        // Entonces hay que ignorar el nuevo isbn y buscar por las demás condiciones...
-        // *ESE* sería un libro encontrado en la base de datos, que es "igual" al libro que se está intentando insertar.       
-        buscarLibroPorTODO(libro);
-        
+        // Entonces ignoré el nuevo isbn y busco por las demás condiciones...
+        // *ESE* sería un libro encontrado en la base de datos, que es "igual" al objeto libro que se está intentando insertar.       
+        this.limpiarArrayLibros();
+        lib = daoLibro.buscarLibroPorTODO(libro);
+        this.libros.add(lib);
+
         if (this.libros == null) {
-            // Guardando libro
-            try {
-                em.getTransaction().begin();
-                em.persist(libro);
-                em.getTransaction().commit();
-                System.out.println("\nSe guardó correctamente un libro con estas características");
-                System.out.println(libro);
-            } catch (Exception ex) {
-                System.out.println(ex);
-            }
+            lib = daoLibro.insertarLibro(libro);
         } else { // Si ya existía un libro con las mismas características en la base de datos..
             System.out.println("\nYa existe un libro con las mismas características (excepto el isbn generado automáticamente)..");
             System.out.println(libro);
             System.out.println("No se guardará este registro duplicado.");
+            lib = this.libros.get(0);
         }
-
+        return lib; // TODO: PARA QUE ESTO??
     }
 
     // Ingresar isbn para buscar
@@ -188,125 +184,55 @@ public class LibroServicio {
 
     // 9) Busqueda de un Libro por isbn.
     public void buscarLibroPorIsbn(Long isbn) {
+        Libro lib = null;
 
-        try {
-            Libro l = (Libro) em.createQuery("SELECT l "
-                    + "FROM Libro l "
-                    + "WHERE l.isbn = :isbn").setParameter("isbn", isbn).getSingleResult();
+        this.limpiarArrayLibros();
+        lib = daoLibro.buscarLibroPorIsbn(isbn);
+        this.libros.add(lib);
 
-            // Guarda una copia del libro encontrado
-            this.limpiarArrayLibros();
-            this.libros.add(l);
-
-//        return l;
-        } catch (NoResultException nre) {
-            System.out.println("\nNo se encontró este libro en la base de datos.");
+        if (this.libros == null) {
+            System.out.println("\nNo se encontró un libro con el isbn ingresado.");
         }
     }
 
     // 10) Busqueda de un Libro por título.
     public void buscarLibroPorTitulo(String titulo) {
-        try {
-            Libro l = (Libro) em.createQuery("SELECT l "
-                    + "FROM Libro l "
-                    + "WHERE l.titulo = :titulo").setParameter("titulo", titulo).getSingleResult();
+        Libro lib = null;
 
-            // Guarda una copia del libro encontrado
-            this.limpiarArrayLibros();
-            this.libros.add(l);
+        this.limpiarArrayLibros();
+        lib = daoLibro.buscarLibroPorTitulo(titulo);
+        this.libros.add(lib);
 
-//        return l;
-        } catch (NoResultException nre) {
-            System.out.println("\nNo se encontró el libro.");
+        if (this.libros == null) {
+            System.out.println("\nNo se encontró un libro con el título ingresado.");
         }
+
     }
 
     // 11) Busqueda de un/unos Libro(s) por nombre de Autor.
     public void buscarLibrosPorNombreAutor(String autor) {
-        try {
-//            ArrayList<Libro> libros = (ArrayList<Libro>) em.createQuery("SELECT l "
-//                    + "FROM Libro l "
-//                    + "WHERE l.autor.nombre LIKE = :autor").setParameter("autor", autor).getResultList();
-            List<Libro> libros = em.createQuery(
-                    "SELECT l FROM Libro l WHERE l.autor.nombre LIKE :autor"
-            ).setParameter("autor", autor).getResultList();
+        List<Libro> libros = null;
 
-            // Guarda una copia del libro encontrado
-            this.libros = libros;
+        this.limpiarArrayLibros();
+        libros = daoLibro.buscarLibrosPorNombreAutor(autor);
 
-//        return libros;
-            if (this.libros.size() == 0) {
-                System.out.println("\nNo se encontró el libro");
-            }
-        } catch (Exception ex) {
-            System.out.println(ex);
+        if (this.libros == null) {
+            System.out.println("\nNo se encontraron libros con el autor ingresado.");
         }
+
     }
 
     // 12) Busqueda de un/unos Libro(s) por nombre de Editorial.
     public void buscarLibrosPorNombreEditorial(String editorial) {
-        try {
-            List<Libro> libros = em.createQuery(
-                    "SELECT l FROM Libro l WHERE l.editorial.nombre LIKE :editorial"
-            ).setParameter("editorial", editorial).getResultList();
+        List<Libro> libros = null;
 
-            // Guarda una copia del libro encontrado
-            this.libros = libros;
+        this.limpiarArrayLibros();
+        libros = daoLibro.buscarLibrosPorNombreEditorial(editorial);
 
-//        return libros;
-            if (this.libros.size() == 0) {
-                System.out.println("\nNo se encontró el libro");
-            }
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
-    }
-
-    // Busqueda de un Libro por TODO (para verificar antes de insertar libros repetidos)
-    public void buscarLibroPorTODO(Libro libro) {
-        try {
-            Libro l = (Libro) em.createQuery("SELECT l "
-                    + "FROM Libro l "
-                    + "WHERE l.titulo = :titulo "
-                    + "AND l.anio = :anio "
-                    + "AND l.autor.nombre = :autor "
-                    + "AND l.editorial.nombre = :editorial ")
-                    .setParameter("titulo", libro.getTitulo())
-                    .setParameter("anio", libro.getAnio())
-                    .setParameter("autor", libro.getAutor().getNombre())
-                    .setParameter("editorial", libro.getEditorial().getNombre())
-                    .getSingleResult();
-
-            // Guarda una copia del libro encontrado
-            this.limpiarArrayLibros();
-            this.libros.add(l);
-
-//        return l;
-        } catch (NoResultException nre) {
-            System.out.println("\nNo se encontró el libro.");
-        }
-    }
-
-    // Eliminar
-    public void eliminarLibro(Libro l) {
-        try {
-            em.getTransaction().begin();
-            em.remove(l);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
-
-    // Actualizar (merge)
-    public void actualizarLibro(Libro l) {
-        try {
-            em.getTransaction().begin();
-            em.merge(l);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            System.out.println(e);
+        if (this.libros == null) {
+            System.out.println("\nNo se encontraron libros con la editorial ingresada.");
         }
 
     }
+
 }

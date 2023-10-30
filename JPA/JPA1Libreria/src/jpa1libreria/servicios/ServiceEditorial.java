@@ -12,17 +12,19 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import jpa1libreria.entidades.Editorial;
+import jpa1libreria.persistencia.DAOEditorial;
 
-public class EditorialServicio {
+public class ServiceEditorial {
 
     // Atributos
     private Scanner leer = new Scanner(System.in).useDelimiter("\n");
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1LibreriaPU");
     EntityManager em = emf.createEntityManager();
     private Editorial editorial = null;
+    private DAOEditorial daoEditorial;
 
     // Constructores
-    public EditorialServicio() {
+    public ServiceEditorial() {
     }
 
     // Getter y setter Editorial
@@ -59,32 +61,21 @@ public class EditorialServicio {
     }
 
     // Insertar
-    public Editorial insertarEditorial(Editorial e) {
-        Editorial edit = null;
+    public Editorial insertarEditorial(Editorial editorial) {
+        Editorial edi = null;
         // (13.b) Asegurarse de no ingresar datos duplicados..
-        buscarEditorialPorNombre(e.getNombre());
-
-        if (this.getEditorial() == null) {
-            // Guardando autor
-            try {
-                em.getTransaction().begin();
-                em.persist(e);
-                em.getTransaction().commit();
-                System.out.println("\nSe guardó la editorial con el nombre " + e.getNombre() + ".");
-                edit = e;
-            } catch (Exception ex) {
-                System.out.println(ex);
-            }
-        } else { // Si ya existía una editorial con ese mismo nombre en la base de datos..
-            System.out.println("\nYa existe una editorial con el nombre " + e.getNombre() + ". No se guardará este registro duplicado.");
-            edit = this.editorial;
+        this.editorial = daoEditorial.buscarEditorialPorNombre(editorial.getNombre());
+        if (this.editorial == null) {
+            edi = daoEditorial.insertarEditorial(editorial);
+        } else { // Si ya existía un autor con ese mismo nombre en la base de datos..
+            System.out.println("\nYa existe una Editorial con el nombre " + editorial.getNombre() + ". No se guardará este registro duplicado.");
+            edi = this.editorial;
         }
-        return edit;
+        return edi; // TODO: PARA QUE ESTO??
     }
 
     // Ingresar nombre de Editorial para buscar
     public String solicitarPorTecladoNombreEditorialParaBuscar() {
-
         String nombre;
 
         System.out.println("\nBuscando una editorial por nombre..");
@@ -94,49 +85,32 @@ public class EditorialServicio {
         do {
             nombre = leer.next();
         } while (nombre.length() < 1);
-        return nombre;
 
+        return nombre;
     }
 
     // Busqueda de un Editorial por nombre.
-    public void buscarEditorialPorNombre(String nombre) {
-
-        try {
-            Editorial e = (Editorial) em.createQuery("SELECT e "
-                    + "FROM Editorial e "
-                    + "WHERE e.nombre = :nombre").setParameter("nombre", nombre).getSingleResult();
-
-            System.out.println("Se encontró la editorial " + e);
-
-            // Guarda una copia de la Editorial encontrada
-            this.editorial = e;
-
-//        return e;
-        } catch (NoResultException nre) {
-            System.out.println("\nNo se encontró esa editorial en la base de datos.");
-        }
+    public void buscarEditorialPorNombre() {
+        String nombre = solicitarPorTecladoNombreEditorialParaBuscar();
+        daoEditorial.buscarEditorialPorNombre(nombre);
     }
 
     // Eliminar
-    public void eliminarEditorial(Editorial e) {
-        try {
-            em.getTransaction().begin();
-            em.remove(e);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            System.out.println(ex);
+    public void eliminarEditorial() {
+        if (this.editorial == null) {
+            System.out.println("\nPrimero busque una Editorial para eliminar/borrar.");
+        } else {
+            daoEditorial.eliminarEditorial(this.editorial);
         }
     }
 
     // Actualizar (merge)
-    public void actualizarEditorial(Editorial e) {
-        try {
-            em.getTransaction().begin();
-            em.merge(e);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            System.out.println(ex);
+    public void actualizarEditorial() {
+        if (this.editorial == null) {
+            System.out.println("\nPrimero busque una Editorial para actualizar/modificar.");
+        } else {
+            daoEditorial.actualizarEditorial(this.editorial);
         }
-
     }
+
 }
