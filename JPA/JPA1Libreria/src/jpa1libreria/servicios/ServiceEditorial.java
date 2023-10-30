@@ -9,7 +9,6 @@ package jpa1libreria.servicios;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import jpa1libreria.entidades.Editorial;
 import jpa1libreria.persistencia.DAOEditorial;

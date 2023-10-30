@@ -66,6 +66,6 @@ public class DAOEditorial extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-
     }
+
 }

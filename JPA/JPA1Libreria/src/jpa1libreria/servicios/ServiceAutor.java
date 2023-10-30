@@ -7,7 +7,6 @@
 package jpa1libreria.servicios;
 
 import java.util.Scanner;
-import javax.persistence.NoResultException;
 import jpa1libreria.entidades.Autor;
 import jpa1libreria.persistencia.DAOAutor;
 
@@ -15,8 +14,6 @@ public class ServiceAutor {
 
     // Atributos
     private Scanner leer = new Scanner(System.in).useDelimiter("\n");
-//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1LibreriaPU");
-//    EntityManager em = emf.createEntityManager();
     private Autor autor = null;
     private DAOAutor daoAutor;
 

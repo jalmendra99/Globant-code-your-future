@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
-import jpa1libreria.entidades.Editorial;
 import jpa1libreria.entidades.Libro;
 import jpa1libreria.persistencia.DAOLibro;
 
@@ -233,6 +231,24 @@ public class ServiceLibro {
             System.out.println("\nNo se encontraron libros con la editorial ingresada.");
         }
 
+    }
+
+    // Eliminar
+    public void eliminarLibro() {
+        if (this.libros == null) {
+            System.out.println("\nPrimero busque un Libro para eliminar/borrar.");
+        } else {
+            daoLibro.eliminarLibro(this.libros.get(0));
+        }
+    }
+
+    // Actualizar (merge)
+    public void actualizarLibro() {
+        if (this.libros == null) {
+            System.out.println("\nPrimero busque un Libro para actualizar/modificar.");
+        } else {
+            daoLibro.eliminarLibro(this.libros.get(0));
+        }
     }
 
 }

@@ -11,7 +11,6 @@ import jpa1libreria.entidades.Autor;
 
 public final class DAOAutor extends DAO {
 
-//    private Autor autor = null;
     // Insertar
     public Autor insertarAutor(Autor autor) {
         Autor aut = null;

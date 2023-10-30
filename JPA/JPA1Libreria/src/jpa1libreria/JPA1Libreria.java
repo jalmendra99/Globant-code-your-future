@@ -115,7 +115,6 @@ public class JPA1Libreria {
                             es.actualizarEditorial();
                             break;
                         case 'C': //ELIMINAR Editorial
-//                                es.eliminarEditorial(es.buscarEditorialPorNombre(es.solicitarPorTecladoNombreEditorialParaBuscar()));
                             es.eliminarEditorial();
                             break;
                         case 'D': //BUSCAR Editorial
@@ -176,9 +175,7 @@ public class JPA1Libreria {
                 default:
                     throw new AssertionError();
             }
-
         } while (op != 'E');
-
     }
 
 }
