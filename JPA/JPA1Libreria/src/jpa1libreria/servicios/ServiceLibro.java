@@ -42,6 +42,55 @@ public class ServiceLibro {
 
     // Métodos
     //
+    // Menú
+    public void menu(char op) {
+        char op3;
+        switch (op) {
+            case 'A': //CREAR Libro
+                crearLibroDesdeTeclado();
+                break;
+            case 'B': //MODIFICAR Libro
+                actualizarLibro();
+                break;
+            case 'C': //ELIMINAR Libro                                
+                eliminarLibro();
+                break;
+            case 'D': //BUSCAR Libro (por: título / isbn / autor.nombre / editorial.nombre
+                System.out.println("\n** Buscar libro **");
+                System.out.println("Ingrese el método de búsqueda. Buscar un libro ingresando..");
+                System.out.println("a) título");
+                System.out.println("b) isbn");
+                System.out.println("c) Nombre del Autor");
+                System.out.println("d) Nombre de la Editorial");
+                System.out.println("e) <Cancelar>");
+                System.out.println("");
+                System.out.print("Elija una opción (a..e): ");
+                op3 = leer.next().toUpperCase().charAt(0);
+                switch (op3) {
+                    case 'A': // título
+                        buscarLibroPorTitulo(solicitarPorTecladoTituloLibroParaBuscar());
+                        break;
+                    case 'B': // isbn
+                        buscarLibroPorIsbn(solicitarPorTecladoIsbnLibroParaBuscar());
+                        break;
+                    case 'C': // Nombre del Autor
+                        buscarLibrosPorNombreAutor(solicitarPorTecladoNombreAutorLibroParaBuscar());
+                        break;
+                    case 'D': // Nombre de la Editorial
+                        buscarLibrosPorNombreEditorial(solicitarPorTecladoNombreEditorialLibroParaBuscar());
+                        break;
+                    case 'E': // <Cancelar>
+                        System.out.println("\nCancelando...");
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
     // Crear
     public Libro crearLibroDesdeTeclado() {
         Libro libro = new Libro();

@@ -32,6 +32,26 @@ public class ServiceAutor {
 
     // Métodos
     //
+    // Menú
+    public void menu(char op) {
+        switch (op) {
+            case 'A': //CREAR Autor
+                crearAutorDesdeTeclado();
+                break;
+            case 'B': //MODIFICAR Autor
+                actualizarAutor();
+                break;
+            case 'C': //ELIMINAR Autor
+                eliminarAutor();
+                break;
+            case 'D': //BUSCAR Autor
+                buscarAutorPorNombre();
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
     // Crear
     public Autor crearAutorDesdeTeclado() {
         Autor autor = new Autor();

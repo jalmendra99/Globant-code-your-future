@@ -37,6 +37,26 @@ public class ServiceEditorial {
 
     // Métodos
     //
+    // Menú
+    public void menu(char op) {
+        switch (op) {
+            case 'A': //CREAR Editorial
+                crearEditorialDesdeTeclado();
+                break;
+            case 'B': //MODIFICAR Editorial
+                actualizarEditorial();
+                break;
+            case 'C': //ELIMINAR Editorial
+                eliminarEditorial();
+                break;
+            case 'D': //BUSCAR Editorial
+                buscarEditorialPorNombre();
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
     // Crear
     public Editorial crearEditorialDesdeTeclado() {
         Editorial editorial = new Editorial();

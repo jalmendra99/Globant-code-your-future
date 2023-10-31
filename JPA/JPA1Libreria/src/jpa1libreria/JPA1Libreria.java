@@ -19,9 +19,6 @@
 package jpa1libreria;
 
 import java.util.Scanner;
-import jpa1libreria.entidades.Autor;
-import jpa1libreria.entidades.Editorial;
-import jpa1libreria.entidades.Libro;
 import jpa1libreria.servicios.ServiceAutor;
 import jpa1libreria.servicios.ServiceEditorial;
 import jpa1libreria.servicios.ServiceLibro;
@@ -41,10 +38,7 @@ public class JPA1Libreria {
     private static void menu(ServiceAutor as, ServiceEditorial es, ServiceLibro ls) throws Exception {
 
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        char op, op2, op3;
-        Autor autorEncontrado = null;
-        Editorial editorialEncontrada = null;
-        Libro libroEncontrado = null;
+        char op, op2;
 
         do {
 
@@ -89,85 +83,13 @@ public class JPA1Libreria {
 
             switch (op2) {
                 case 'A': // a) Autor
-                    switch (op) {
-                        case 'A': //CREAR Autor
-                            as.crearAutorDesdeTeclado();
-                            break;
-                        case 'B': //MODIFICAR Autor
-                            as.actualizarAutor();
-                            break;
-                        case 'C': //ELIMINAR Autor
-                            as.eliminarAutor();
-                            break;
-                        case 'D': //BUSCAR Autor
-                            as.buscarAutorPorNombre();
-                            break;
-                        default:
-                            throw new AssertionError();
-                    }
+                    as.menu(op);
                     break;
                 case 'B': // b) Editorial
-                    switch (op) {
-                        case 'A': //CREAR Editorial
-                            es.crearEditorialDesdeTeclado();
-                            break;
-                        case 'B': //MODIFICAR Editorial
-                            es.actualizarEditorial();
-                            break;
-                        case 'C': //ELIMINAR Editorial
-                            es.eliminarEditorial();
-                            break;
-                        case 'D': //BUSCAR Editorial
-                            es.buscarEditorialPorNombre();
-                            break;
-                        default:
-                            throw new AssertionError();
-                    }
+                    es.menu(op);
                     break;
                 case 'C': // c) Libro
-                    switch (op) {
-                        case 'A': //CREAR Libro
-                            ls.crearLibroDesdeTeclado();
-                            break;
-                        case 'B': //MODIFICAR Libro
-                            ls.actualizarLibro();
-                        case 'C': //ELIMINAR Libro                                
-                            ls.eliminarLibro();
-                            break;
-                        case 'D': //BUSCAR Libro (por: título / isbn / autor.nombre / editorial.nombre
-                            System.out.println("\n** Buscar libro **");
-                            System.out.println("Ingrese el método de búsqueda. Buscar un libro ingresando..");
-                            System.out.println("a) título");
-                            System.out.println("b) isbn");
-                            System.out.println("c) Nombre del Autor");
-                            System.out.println("d) Nombre de la Editorial");
-                            System.out.println("e) <Cancelar>");
-                            System.out.println("");
-                            System.out.print("Elija una opción (a..e): ");
-                            op3 = leer.next().toUpperCase().charAt(0);
-                            switch (op3) {
-                                case 'A': // título
-                                    ls.buscarLibroPorTitulo(ls.solicitarPorTecladoTituloLibroParaBuscar());
-                                    break;
-                                case 'B': // isbn
-                                    ls.buscarLibroPorIsbn(ls.solicitarPorTecladoIsbnLibroParaBuscar());
-                                    break;
-                                case 'C': // Nombre del Autor
-                                    ls.buscarLibrosPorNombreAutor(ls.solicitarPorTecladoNombreAutorLibroParaBuscar());
-                                    break;
-                                case 'D': // Nombre de la Editorial
-                                    ls.buscarLibrosPorNombreEditorial(ls.solicitarPorTecladoNombreEditorialLibroParaBuscar());
-                                    break;
-                                case 'E': // <Cancelar>
-                                    System.out.println("\nCancelando...");
-                                    break;
-                                default:
-                                    throw new AssertionError();
-                            }
-                            break;
-                        default:
-                            throw new AssertionError();
-                    }
+                    ls.menu(op);
                     break;
                 case 'D': // d) <volver al menú anterior>
                     System.out.println("\nVolviendo al menú anterior...");
