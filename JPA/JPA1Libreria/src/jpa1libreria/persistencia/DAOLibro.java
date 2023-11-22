@@ -14,9 +14,8 @@ public class DAOLibro extends DAO {
 
     // Insertar
     public Libro insertarLibro(Libro libro) {
-
+        conectarBase();
         Libro lib = null;
-
         try {
             em.getTransaction().begin();
             em.persist(libro);
@@ -27,12 +26,13 @@ public class DAOLibro extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
         return lib;
-
     }
 
     // 9) Busqueda de un Libro por isbn.
     public Libro buscarLibroPorIsbn(Long isbn) {
+        conectarBase();
         Libro l = null;
         try {
             l = (Libro) em.createQuery("SELECT l "
@@ -42,11 +42,13 @@ public class DAOLibro extends DAO {
         } catch (NoResultException nre) {
             System.out.println("\nNo se encontró este libro en la base de datos.");
         }
+        desconectarBase();
         return l;
     }
 
     // 10) Busqueda de un Libro por título.
     public Libro buscarLibroPorTitulo(String titulo) {
+        conectarBase();
         Libro l = null;
         try {
             l = (Libro) em.createQuery("SELECT l "
@@ -56,11 +58,13 @@ public class DAOLibro extends DAO {
         } catch (NoResultException nre) {
             System.out.println("\nNo se encontró el libro.");
         }
+        desconectarBase();
         return l;
     }
 
     // 11) Busqueda de un/unos Libro(s) por nombre de Autor.
     public List<Libro> buscarLibrosPorNombreAutor(String autor) {
+        conectarBase();
         List<Libro> libros = null;
         try {
             libros = em.createQuery(
@@ -70,11 +74,13 @@ public class DAOLibro extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
         return libros;
     }
 
     // 12) Busqueda de un/unos Libro(s) por nombre de Editorial.
     public List<Libro> buscarLibrosPorNombreEditorial(String editorial) {
+        conectarBase();
         List<Libro> libros = null;
         try {
             libros = em.createQuery(
@@ -84,13 +90,14 @@ public class DAOLibro extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
         return libros;
     }
 
     // Busqueda de un Libro por TODO (para verificar antes de insertar libros repetidos)
     public Libro buscarLibroPorTODO(Libro libro) {
+        conectarBase();
         Libro l = null;
-
         try {
             l = (Libro) em.createQuery("SELECT l "
                     + "FROM Libro l "
@@ -107,11 +114,13 @@ public class DAOLibro extends DAO {
         } catch (NoResultException nre) {
             System.out.println("\nNo se encontró el libro.");
         }
+        desconectarBase();
         return l;
     }
 
     // Eliminar
     public void eliminarLibro(Libro l) {
+        conectarBase();
         try {
             em.getTransaction().begin();
             em.remove(l);
@@ -119,10 +128,12 @@ public class DAOLibro extends DAO {
         } catch (Exception e) {
             System.out.println(e);
         }
+        desconectarBase();
     }
 
     // Actualizar (merge)
     public void actualizarLibro(Libro l) {
+        conectarBase();
         try {
             em.getTransaction().begin();
             em.merge(l);
@@ -130,7 +141,7 @@ public class DAOLibro extends DAO {
         } catch (Exception e) {
             System.out.println(e);
         }
-
+        desconectarBase();
     }
 
 }

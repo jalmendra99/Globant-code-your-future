@@ -1,17 +1,21 @@
 /**
- * Java - JPA - Ejercicios de Aprendizaje.
- * Ejercicio 1 - Página 18
+ * Java - Spring - maven - Proyecto 1 - librería
+ * Guía 1, página 4
+ * Videos Spring #1 to #14
  *
  * Fer V - Jalmendra99@gmail.com
  */
-package jpa1libreria.entidades;
+package com.egg.biblioteca.entidades;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Libro implements Serializable {
@@ -23,17 +27,25 @@ public class Libro implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long isbn;
     private String titulo;
-    private Integer anio;
     private Integer ejemplares;
+    private Integer anio;
     private Integer ejemplaresPrestados;
     private Integer ejemplaresRestantes;
-    private boolean alta;
+    
+    @Temporal(TemporalType.DATE)    
+    private Date alta;
 
     @ManyToOne
     private Autor autor;
+    
     @ManyToOne
     private Editorial editorial;
 
+    // Constructor
+    public Libro() {
+        
+    }
+    
     // Getters y setters
     public Long getIsbn() {
         return isbn;
@@ -67,7 +79,7 @@ public class Libro implements Serializable {
         return ejemplaresRestantes;
     }
 
-    public boolean isAlta() {
+    public Date getAlta() {
         return alta;
     }
 
@@ -99,7 +111,7 @@ public class Libro implements Serializable {
         this.ejemplaresRestantes = ejemplaresRestantes;
     }
 
-    public void setAlta(boolean alta) {
+    public void setAlta(Date alta) {
         this.alta = alta;
     }
 

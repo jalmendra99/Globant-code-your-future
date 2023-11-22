@@ -3,6 +3,8 @@
  * Ejercicio 1 - Página 18
  *
  * TO DO:
+ * - Agregar codigo conectar y desconectar a DAO
+ * - Agregar los conectar y desconectar correspondientes en cada transacción..
  * - Al eliminar un autor o una editorial, verificar si pertenecen a algún libro (o catch exceptions al eliminar).
  * - Agregar al menú principal la opción de Mostrar por pantalla el elemento previamente buscado.
  * -

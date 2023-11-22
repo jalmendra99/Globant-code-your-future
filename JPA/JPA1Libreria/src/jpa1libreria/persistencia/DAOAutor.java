@@ -13,6 +13,7 @@ public final class DAOAutor extends DAO {
 
     // Insertar
     public Autor insertarAutor(Autor autor) {
+        conectarBase();
         Autor aut = null;
         // Guardando autor
         try {
@@ -24,11 +25,13 @@ public final class DAOAutor extends DAO {
         } catch (Exception e) {
             System.out.println(e);
         }
+        desconectarBase();
         return aut;
     }
 
     // 8) Busqueda de un Autor por nombre.
     public Autor buscarAutorPorNombre(String nombre) {
+        conectarBase();
         Autor a = null;
         try {
             a = (Autor) em.createQuery("SELECT a "
@@ -40,13 +43,13 @@ public final class DAOAutor extends DAO {
         } catch (NoResultException nre) {
             System.out.println("\nNo se encontró este autor en la base de datos.");
         }
-
+        desconectarBase();
         return a;
-
     }
 
     // Eliminar
     public void eliminarAutor(Autor a) {
+        conectarBase();
         try {
             em.getTransaction().begin();
             em.remove(a);
@@ -54,10 +57,12 @@ public final class DAOAutor extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
     }
 
     // Actualizar (merge)
     public void actualizarAutor(Autor a) {
+        conectarBase();
         try {
             em.getTransaction().begin();
             em.merge(a);
@@ -65,5 +70,6 @@ public final class DAOAutor extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
     }
 }

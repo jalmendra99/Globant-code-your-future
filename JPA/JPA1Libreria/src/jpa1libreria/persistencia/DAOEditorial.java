@@ -13,8 +13,8 @@ public class DAOEditorial extends DAO {
 
     // Insertar
     public Editorial insertarEditorial(Editorial e) {
+        conectarBase();
         Editorial edit = null;
-
         // Guardando editorial
         try {
             em.getTransaction().begin();
@@ -25,12 +25,13 @@ public class DAOEditorial extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
         return edit;
     }
 
     // Busqueda de un Editorial por nombre.
     public Editorial buscarEditorialPorNombre(String nombre) {
-
+        conectarBase();
         Editorial e = null;
         try {
             e = (Editorial) em.createQuery("SELECT e "
@@ -42,12 +43,13 @@ public class DAOEditorial extends DAO {
         } catch (NoResultException nre) {
             System.out.println("\nNo se encontró esa editorial en la base de datos.");
         }
-
+        desconectarBase();
         return e;
     }
 
     // Eliminar
     public void eliminarEditorial(Editorial e) {
+        conectarBase();
         try {
             em.getTransaction().begin();
             em.remove(e);
@@ -55,10 +57,12 @@ public class DAOEditorial extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
     }
 
     // Actualizar (merge)
     public void actualizarEditorial(Editorial e) {
+        conectarBase();
         try {
             em.getTransaction().begin();
             em.merge(e);
@@ -66,6 +70,7 @@ public class DAOEditorial extends DAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+        desconectarBase();
     }
 
 }
